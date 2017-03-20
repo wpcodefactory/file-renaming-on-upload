@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInit899afcbf99c41bc2b42ca936f40efdf1
 {
     public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'Pablo_Pacheco\\WP_Namespace_Autoloader\\' => 38,
+        ),
         'C' => 
         array (
             'Composer\\Installers\\' => 20,
@@ -14,6 +18,10 @@ class ComposerStaticInit899afcbf99c41bc2b42ca936f40efdf1
     );
 
     public static $prefixDirsPsr4 = array (
+        'Pablo_Pacheco\\WP_Namespace_Autoloader\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pablo-pacheco/wp-namespace-autoloader/src',
+        ),
         'Composer\\Installers\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',

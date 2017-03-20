@@ -1,0 +1,5 @@
+plugin.php
+vendor/
+tests/
+.idea
+.idea/*

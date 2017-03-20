@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "68c4605aae32b15511bb136086146e8a",
-    "content-hash": "ac626b2c7daeacda511c50764687ab2a",
+    "hash": "4a634b3055079d46a94ea91bf3feabdc",
+    "content-hash": "ccf6ae7c04eb27c27c24a827e802cc2f",
     "packages": [
         {
             "name": "composer/installers",
@@ -115,6 +115,52 @@
             "time": "2016-08-13 20:53:52"
         },
         {
+            "name": "pablo-pacheco/wp-namespace-autoloader",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pablo-pacheco/wp-namespace-autoloader.git",
+                "reference": "489f07932d23651028a9206cd8c544121f35b4fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pablo-pacheco/wp-namespace-autoloader/zipball/489f07932d23651028a9206cd8c544121f35b4fb",
+                "reference": "489f07932d23651028a9206cd8c544121f35b4fb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pablo_Pacheco\\WP_Namespace_Autoloader\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv2"
+            ],
+            "authors": [
+                {
+                    "name": "Pablo dos S G Pacheco",
+                    "email": "pablo.sg.pacheco@gmail.com"
+                }
+            ],
+            "description": "A PHP autoloader class that follows the WordPress coding standards for class names and class filenames",
+            "homepage": "https://github.com/pablo-pacheco/wp-namespace-autoloader",
+            "keywords": [
+                "autoload",
+                "namespace",
+                "wordpress",
+                "wp"
+            ],
+            "time": "2017-02-18 20:41:56"
+        },
+        {
             "name": "tareq1988/wordpress-settings-api-class",
             "version": "dev-master",
             "source": {
@@ -163,7 +209,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "tareq1988/wordpress-settings-api-class": 20
+        "tareq1988/wordpress-settings-api-class": 20,
+        "pablo-pacheco/wp-namespace-autoloader": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
