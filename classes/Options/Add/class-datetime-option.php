@@ -46,8 +46,8 @@ if ( ! class_exists( 'FROU\Options\Add\Datetime_Option' ) ) {
 
 			$structure_rules = $filename_infs['structure']['rules'];
 			if ( strpos( $structure_rules, '{' . $this->structure_rule . '}' ) !== false ) {
-				$datetime = \DateTime::createFromFormat('U.u', microtime(true));
-				$format = $datetime->format($this->get_option( self::OPTION_DATETIME_TEXT, 'Y-m-d_H-i-s_u' ));
+				$datetime                                                           = \DateTime::createFromFormat( 'U.u', microtime( true ) );
+				$format                                                             = $datetime->format( $this->get_option( self::OPTION_DATETIME_TEXT, 'Y-m-d_H-i-s_u' ) );
 				$filename_infs['structure']['translation'][ $this->structure_rule ] = $format;
 			}
 
@@ -55,8 +55,8 @@ if ( ! class_exists( 'FROU\Options\Add\Datetime_Option' ) ) {
 		}
 
 		public function add_fields( $fields, $section ) {
-			$datetime = \DateTime::createFromFormat('U.u', microtime(true));
-			$format = $datetime->format($this->get_option( self::OPTION_DATETIME_TEXT, 'Y-m-d_H-i-s_u' ));
+			$datetime = \DateTime::createFromFormat( 'U.u', microtime( true ) );
+			$format   = $datetime->format( $this->get_option( self::OPTION_DATETIME_TEXT, 'Y-m-d_H-i-s_u' ) );
 
 			$new_options = array(
 				array(

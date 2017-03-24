@@ -52,7 +52,7 @@ if ( ! class_exists( 'FROU\Options\General\File_Name_Structure' ) ) {
 				array(
 					'name'    => self::OPTION_FILE_NAME_STRUCTURE,
 					'label'   => __( 'File name structure', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Manages all the filename rules. If you want only the filename, leave it as <b>{filename}</b>', 'file-renaming-on-upload' ) . '<br /><br />' . __( 'Options available:', 'file-renaming-on-upload' ) . apply_filters( 'frou_structure_rules_list', '' ),
+					'desc'    => __( 'Manages all the filename rules. If you want only the filename, leave it as <b>{filename}</b>', 'file-renaming-on-upload' ) . '<br /><br />' . __( 'Rules available:', 'file-renaming-on-upload' ) . apply_filters( 'frou_structure_rules_list', '' ),
 					'default' => '{siteurl}-{filename}',
 					'type'    => 'text',
 				),
