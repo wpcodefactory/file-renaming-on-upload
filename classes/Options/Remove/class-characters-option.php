@@ -16,8 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 } // Exit if accessed directly
 
 
-if ( ! class_exists( 'FROU\Options\Remove\Characters' ) ) {
-	class Characters extends Option {
+if ( ! class_exists( 'FROU\Options\Remove\Characters_Option' ) ) {
+	class Characters_Option extends Option {
 
 		const OPTION_CHARACTERS      = 'characters';
 		const OPTION_CHARACTERS_TEXT = 'characters_text';
@@ -25,6 +25,10 @@ if ( ! class_exists( 'FROU\Options\Remove\Characters' ) ) {
 		function init() {
 			parent::init();
 			add_action( 'sanitize_file_name_chars', array( $this, 'sanitize_file_name_chars' ) );
+
+			/*add_filter('frou',function($filename, $structure){
+
+			});*/
 		}
 
 		public function sanitize_file_name_chars( $chars ) {
@@ -55,9 +59,9 @@ if ( ! class_exists( 'FROU\Options\Remove\Characters' ) ) {
 				),
 			);
 
-			return array_merge( $fields, $new_options );
+			return parent::add_fields( array_merge( $fields, $new_options ), $section );
 
-			return $fields;
+			//return $fields;
 		}
 	}
 }

@@ -18,6 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\Options\Option' ) ) {
 	class Option {
 
+		public $fields = array();
 		protected $section;
 
 		function __construct( $args = array() ) {
@@ -32,18 +33,29 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 			add_filter( "frou_fields_{$this->section}", array( $this, 'add_fields' ), 10, 2 );
 		}
 
-		function get_option( $option, $default = '' ) {
-			$section = $this->section;
+		function get_option( $option, $default = '', $section = null ) {
+			if(!$section){
+				$section = $this->section;
+			}
+
 			$options = get_option( $section );
 
 			if ( isset( $options[ $option ] ) ) {
 				return $options[ $option ];
 			}
 
+			foreach ( $this->fields as $index => $field ) {
+				if ( $field['name'] == $option && isset( $field['default'] ) ) {
+					return $field['default'];
+					break;
+				}
+			}
+
 			return $default;
 		}
 
 		public function add_fields( $fields, $section ) {
+			$this->fields = $fields;
 			return $fields;
 		}
 	}

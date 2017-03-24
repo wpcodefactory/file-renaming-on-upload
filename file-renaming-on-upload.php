@@ -14,7 +14,6 @@ namespace FROU;
 
 require __DIR__ . '/vendor/autoload.php';
 
-use FROU\Admin_Pages\Settings_Page;
 use Pablo_Pacheco\WP_Namespace_Autoloader\WP_Namespace_Autoloader;
 
 // Configures Autoloader
@@ -25,35 +24,13 @@ $autoloader = new WP_Namespace_Autoloader( array(
 ) );
 $autoloader->init();
 
-
-//new General_Settings_Page();
-
-//\Frou\Plugin_Core::getInstance();
-
-Plugin_Core::getInstance();
-
-
-
-
-
-
-//require __DIR__ . '/vendor/pablo-pacheco/wp-namespace-autoloader/src/class-wp-namespace-autoloader.php';
-
-
-
-
-
-// Load composer dependencies
-
-
-/*new WP_Namespace_Autoloader( array(
-	'directory'   => __DIR__,
-	'namespace'   => __NAMESPACE__,
-	'classes_dir' => 'classes',
-	'namespace_to_lowercase' => true
-
-) );*/
-
-
-
-
+$plugin = Plugin_Core::getInstance();
+$plugin->init( array(
+	'plugin_file_path' => __FILE__,
+	'action_links'     => array(
+		array(
+			'url'  => admin_url( 'options-general.php?page=frou' ),
+			'text' => __( 'Settings', 'file-renaming-on-upload' ),
+		),
+	),
+) );

@@ -75,12 +75,12 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 					'title' => __( 'Remove', 'file-renaming-on-upload' ),
 				),
 				array(
-					'id'    => 'frou_convert_opt',
-					'title' => __( 'Convert', 'file-renaming-on-upload' ),
-				),
-				array(
 					'id'    => 'frou_add_opt',
 					'title' => __( 'Add', 'file-renaming-on-upload' ),
+				),
+				array(
+					'id'    => 'frou_convert_opt',
+					'title' => __( 'Convert', 'file-renaming-on-upload' ),
 				),
 			);
 			$this->settings_api->set_sections( $sections );
