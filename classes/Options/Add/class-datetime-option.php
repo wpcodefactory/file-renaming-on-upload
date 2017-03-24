@@ -64,12 +64,12 @@ if ( ! class_exists( 'FROU\Options\Add\Datetime_Option' ) ) {
 					'label'   => __( 'Datetime', 'file-renaming-on-upload' ),
 					'desc'    => __( 'Inserts datetime', 'file-renaming-on-upload' ) . ' - ' . '<strong>{' . $this->structure_rule . '}</strong>',
 					'type'    => 'checkbox',
-					'default' => 'on',
+					'default' => 'no',
 				),
 
 				array(
 					'name'        => self::OPTION_DATETIME_TEXT,
-					'desc'        => sprintf( __( 'Datetime format. E.g <b>%s</b>', 'file-renaming-on-upload' ), $format ) . '<br />' . sprintf( __( 'You can see more formats <a target="_blank" href="%s">here</a>', 'file-renaming-on-upload' ), 'http://php.net/manual/function.date.php' ),
+					'desc'        => __( 'Datetime format. ', 'file-renaming-on-upload' ) . sprintf( __( 'You can see more formats <a target="_blank" href="%s">here</a>', 'file-renaming-on-upload' ), 'http://php.net/manual/function.date.php' ).'<br />'.sprintf( __( 'Result: <b>%s</b>', 'file-renaming-on-upload' ), $format ),
 					'type'        => 'text',
 					'default'     => 'Y-m-d_H-i-s_u',
 					'placeholder' => 'Y-m-d_H-i-s_u',
