@@ -9,6 +9,7 @@
 
 namespace FROU\Options\Add;
 
+use FROU\Options\Add_Option;
 use FROU\Options\Option;
 use FROU\Plugin_Core;
 use FROU\WordPress\Plugin;
@@ -19,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 if ( ! class_exists( 'FROU\Options\Add\Site_URL_Option' ) ) {
-	class Site_URL_Option extends Option {
+	class Site_URL_Option extends Add_Option {
 
 		const OPTION_SITE_URL      = 'site_url';
 		const OPTION_SITE_URL_TEXT = 'site_url_text';
@@ -57,28 +58,35 @@ if ( ! class_exists( 'FROU\Options\Add\Site_URL_Option' ) ) {
 			add_filter( 'frou_sanitize_file_name', array( $this, 'frou_sanitize_file_name' ), 11 );
 		}
 
+		public function add_structure_rule( $structure_rules ) {
+			if ( ! filter_var( $this->get_option( self::OPTION_SITE_URL, true ), FILTER_VALIDATE_BOOLEAN ) ) {
+				return $structure_rules;
+			}
+			$structure_rules[] = $this->structure_rule;
+
+			return $structure_rules;
+		}
+
 		public function frou_sanitize_file_name( $filename_infs ) {
 			if ( ! filter_var( $this->get_option( self::OPTION_SITE_URL, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $filename_infs;
 			}
 
 			$structure_rules = $filename_infs['structure']['rules'];
-			if ( strpos( $structure_rules, '{siteurl}' ) !== false ) {
-				$site_url                                             = $this->get_option( self::OPTION_SITE_URL_TEXT );
-				$filename_infs['structure']['translation']['siteurl'] = $site_url;
+			if ( strpos( $structure_rules, '{' . $this->structure_rule . '}' ) !== false ) {
+				$site_url                                                           = $this->get_option( self::OPTION_SITE_URL_TEXT );
+				$filename_infs['structure']['translation'][ $this->structure_rule ] = $site_url;
 			}
-
 
 			return $filename_infs;
 		}
 
 		public function add_fields( $fields, $section ) {
 			$new_options = array(
-				// Site URL
 				array(
 					'name'    => self::OPTION_SITE_URL,
 					'label'   => __( 'Site URL', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Inserts site URL', 'file-renaming-on-upload' ) . ' - ' . '<strong>{siteurl}</strong>',
+					'desc'    => __( 'Inserts site URL', 'file-renaming-on-upload' ) . ' - ' . '<strong>{' . $this->structure_rule . '}</strong>',
 					'type'    => 'checkbox',
 					'default' => 'on',
 				),

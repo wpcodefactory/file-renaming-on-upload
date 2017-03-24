@@ -21,6 +21,7 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 		public $fields = array();
 		protected $section;
 
+
 		function __construct( $args = array() ) {
 			$args = wp_parse_args( $args, array(
 				'section' => null,

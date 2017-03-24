@@ -48,9 +48,9 @@ if ( ! class_exists( 'FROU\Options\General\Enable_Option' ) ) {
 			foreach ( $filename_arr['structure']['translation'] as $key => $translation ) {
 				$filename = str_replace( "{" . $key . "}", $translation, $filename );
 			}
-			debug( $filename );
-			debug( $filename_arr );
-
+			$filename = preg_replace('/\{.*\}/', "", $filename);
+			//debug( $filename );
+			//debug( $filename_arr );
 
 			return $filename;
 		}

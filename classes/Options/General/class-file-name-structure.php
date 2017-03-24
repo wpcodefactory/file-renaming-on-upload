@@ -24,6 +24,18 @@ if ( ! class_exists( 'FROU\Options\General\File_Name_Structure' ) ) {
 		function init() {
 			parent::init();
 			add_filter( 'frou_sanitize_file_name', array( $this, 'frou_sanitize_file_name' ) );
+			add_filter( 'frou_structure_rules_list', array( $this, 'possible_structure_rules' ) );
+		}
+
+		public function possible_structure_rules( $list ) {
+			$list = apply_filters( 'frou_structure_rules', array( 'filename' ) );
+
+			return
+				'
+			<ul style="list-style:inside">
+				<li><strong>{' . implode( '}</strong></li><li><strong>{', $list ) . '}</strong></li>
+			</ul>
+			';
 		}
 
 		public function frou_sanitize_file_name( $filename_infs ) {
@@ -33,11 +45,14 @@ if ( ! class_exists( 'FROU\Options\General\File_Name_Structure' ) ) {
 		}
 
 		public function add_fields( $fields, $section ) {
+
+			//'<ul style="list-style:inside"><li>{asdasd}</li><li>{asdkasd}</li><li>{gkk577}</li></ul>'
+
 			$new_options = array(
 				array(
 					'name'    => self::OPTION_FILE_NAME_STRUCTURE,
 					'label'   => __( 'File name structure', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Manages all the filename rules. If you want only the filename, leave it as <b>{filename}</b> only', 'file-renaming-on-upload' ),
+					'desc'    => __( 'Manages all the filename rules. If you want only the filename, leave it as <b>{filename}</b>', 'file-renaming-on-upload' ) . '<br /><br />' . __( 'Options available:', 'file-renaming-on-upload' ) . apply_filters( 'frou_structure_rules_list', '' ),
 					'default' => '{siteurl}-{filename}',
 					'type'    => 'text',
 				),

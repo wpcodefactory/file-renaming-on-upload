@@ -10,6 +10,7 @@
 namespace FROU\Options;
 
 
+use FROU\Options\Add\Datetime_Option;
 use FROU\Options\Add\Site_URL_Option;
 use FROU\Options\Convert\Accents_Option;
 use FROU\Options\Convert\Lowercase_Option;
@@ -39,7 +40,9 @@ if ( ! class_exists( 'FROU\Options\Options' ) ) {
 			$option->init();
 
 			// Add options
-			$option = new Site_URL_Option( array( 'section' => 'frou_add_opt' ) );
+			$option = new Site_URL_Option( array( 'section' => 'frou_add_opt', 'structure_rule' => 'siteurl' ) );
+			$option->init();
+			$option = new Datetime_Option( array( 'section' => 'frou_add_opt', 'structure_rule' => 'datetime' ) );
 			$option->init();
 
 			// Convert options
