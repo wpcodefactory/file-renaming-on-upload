@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72e5ec9a-b0d8-44f9-9a62-27a2f2b7cfab" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/Admin_Pages/Sections/class-add-section.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/Admin_Pages/Sections/class-convert-section.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/Admin_Pages/Sections/class-general-section.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/Admin_Pages/Sections/class-remove-section.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/Options/Add/class-datetime-option.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/Options/Add/class-site-url-option.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/Options/Convert/class-accents-option.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/Options/Convert/class-lowercase-option.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/Options/Remove/class-characters-option.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classes/Options/General/class-file-name-structure.php" afterPath="$PROJECT_DIR$/classes/Options/General/class-filename-structure-option.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Admin_Pages/class-settings-page.php" afterPath="$PROJECT_DIR$/classes/Admin_Pages/class-settings-page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Options/General/class-enable-option.php" afterPath="$PROJECT_DIR$/classes/Options/General/class-enable-option.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Options/class-option.php" afterPath="$PROJECT_DIR$/classes/Options/class-option.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Options/class-options.php" afterPath="$PROJECT_DIR$/classes/Options/class-options.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/WeDevs/class-settings-api.php" afterPath="$PROJECT_DIR$/classes/WeDevs/class-settings-api.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/class-plugin-core.php" afterPath="$PROJECT_DIR$/classes/class-plugin-core.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/Functions/class-functions.php" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -360,18 +344,18 @@
       <workItem from="1490312625459" duration="8379000" />
       <workItem from="1490364387207" duration="188000" />
       <workItem from="1490380520967" duration="11671000" />
-      <workItem from="1490458447816" duration="15927000" />
+      <workItem from="1490458447816" duration="16197000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104976000" />
+    <option name="totallyTimeSpent" value="105246000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24307036" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24307036" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -583,13 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Functions/class-functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="9" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="31" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/Admin_Pages/Sections/class-remove-section.php" />
     <entry file="file://$PROJECT_DIR$/classes/Admin_Pages/Sections/class-general-section.php" />
     <entry file="file://$PROJECT_DIR$/classes/Admin_Pages/Sections/class-convert-section.php" />
@@ -766,6 +743,14 @@
             <marker date="1490499246924" expanded="true" signature="969:1067" ph="..." />
             <marker date="1490499246924" expanded="true" signature="1068:1071" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Functions/class-functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="31" column="9" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="31" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
