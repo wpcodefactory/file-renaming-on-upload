@@ -13,6 +13,7 @@ use FROU\Admin_Pages\Sections\Remove_Section;
 use FROU\Admin_Pages\Settings_Page;
 use FROU\Functions\Functions;
 
+use FROU\Options\General\Enable_Option;
 use FROU\Options\Options;
 use FROU\WeDevs\Settings_Api;
 use FROU\WordPress\Plugin;
@@ -29,10 +30,8 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 */
 		public $settings_api;
 
-		/**
-		 * @var Functions
-		 */
-		//public $functions;
+		public $current_filename_modified;
+		public $current_filename_original;
 
 		/**
 		 * @var Options
@@ -46,29 +45,51 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			return parent::getInstance();
 		}
 
-		protected function __construct() {
-			parent::__construct();
-			//add_action( 'init', array( $this, 'init' ) );
-			//add_action( 'init', array( $this, 'add_options' ) );
-
-
-			//add_filter( 'plugin_action_links_' . ALG_WC_APVA_BASENAME, array( $this, 'action_links' ) );
-			//add_action( 'sanitize_file_name_chars', array( $this, 'sanitize_file_name_chars' ) );
-		}
-
 		public function init( $args = array() ) {
 			parent::init( $args );
 			add_action( 'init', array( $this, 'handle_settings_page' ) );
 			add_action( 'init', array( $this, 'add_options' ) );
+			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename' ) );
+			//add_action( 'add_attachment', array( $this, 'add_attachment' ) );
+			//add_filter('wp_insert_attachment_data',array($this,'insert_attachment_data'),10,2);
+			//add_action('wp_insert_post',array($this,'insert_post'));
 		}
 
-		/*public function init( $args = array()){
 
-			add_action( 'init', array( $this, 'handle_settings_page' ) );
-			add_action( 'init', array( $this, 'add_options' ) );
-		}*/
+		public function sanitize_filename( $filename ) {
+			$option = new Enable_Option( array( 'section' => 'frou_general_opt' ) );
+			if ( ! filter_var( $option->get_option( $option->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
+				return $filename;
+			}
 
-		public function handle_settings_page(){
+			$info              = pathinfo( $filename );
+			$extension         = empty( $info['extension'] ) ? '' : $info['extension'];
+			$filename_original = $info['filename'];
+
+
+			$filename_arr = apply_filters( 'frou_sanitize_file_name',
+				array(
+					'filename_original' => $filename_original,
+					'extension'         => $extension,
+					'structure'         => array(
+						'rules'       => '',
+						'translation' => array( 'filename' => $filename_original ),
+					),
+				)
+			);
+
+			$filename = $filename_arr['structure']['rules'];
+			foreach ( $filename_arr['structure']['translation'] as $key => $translation ) {
+				$filename = str_replace( "{" . $key . "}", $translation, $filename );
+			}
+			$filename_only = preg_replace( '/\{.*\}/U', "", $filename );
+			$filename      = $filename_only . '.' . $extension;
+
+
+			return $filename;
+		}
+
+		public function handle_settings_page() {
 			if ( ! is_admin() ) {
 				return;
 			}
@@ -77,42 +98,9 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			new Settings_Page( $this );
 		}
 
-		public function add_options(){
-			$this->set_options(new Options());
+		public function add_options() {
+			$this->set_options( new Options() );
 		}
-
-		/*public function sanitize_file_name_chars( $chars ) {
-			$frou         = Plugin_Core::getInstance();
-			$remove_chars = filter_var( $frou->settings_api->get_option( Remove_Section::OPTION_CHARACTERS, 'frou_remove_opt' ), FILTER_VALIDATE_BOOLEAN );
-			if ( $remove_chars ) {
-				$chars_to_remove = $frou->settings_api->get_option( Remove_Section::OPTION_CHARACTERS_TEXT, 'frou_remove_opt' );
-				$chars           = explode( " ", $chars_to_remove );
-			}
-
-			return $chars;
-		}*/
-
-
-
-		/**
-		 * @return Functions
-		 */
-		/*public function get_functions( $smart = true ) {
-			if ( $smart ) {
-				if ( ! $this->functions ) {
-					$this->set_functions( new Functions() );
-				}
-			}
-
-			return $this->functions;
-		}*/
-
-		/**
-		 * @param Functions $functions
-		 */
-		/*public function set_functions( $functions ) {
-			$this->functions = $functions;
-		}*/
 
 		/**
 		 * @return Options

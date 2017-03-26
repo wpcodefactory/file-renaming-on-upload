@@ -10,13 +10,14 @@
 namespace FROU\Options;
 
 
-use FROU\Options\Add\Datetime_Option;
-use FROU\Options\Add\Site_URL_Option;
-use FROU\Options\Convert\Accents_Option;
-use FROU\Options\Convert\Lowercase_Option;
 use FROU\Options\General\Enable_Option;
-use FROU\Options\General\File_Name_Structure;
-use FROU\Options\Remove\Characters_Option;
+use FROU\Options\General\Filename_Structure_Option;
+
+use FROU\Options\General\Permalink_Update_Option;
+use FROU\Options\Rules\Datetime_Option;
+use FROU\Options\Rules\Filename;
+use FROU\Options\Rules\Filename_Option;
+use FROU\Options\Rules\SiteURL_Option;
 
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -27,16 +28,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\Options\Options' ) ) {
 	class Options {
 
+
 		function __construct() {
 
+
 			// Remove options
-			$option = new Characters_Option( array( 'section' => 'frou_remove_opt' ) );
+			/*$option = new Characters_Option( array( 'section' => 'frou_remove_opt' ) );
 			$option->init();
 
 			// General options
 			$option = new Enable_Option( array( 'section' => 'frou_general_opt' ) );
 			$option->init();
-			$option = new File_Name_Structure( array( 'section' => 'frou_general_opt' ) );
+			$option = new Filename_Structure_Option( array( 'section' => 'frou_general_opt' ) );
 			$option->init();
 
 			// Add options
@@ -49,8 +52,42 @@ if ( ! class_exists( 'FROU\Options\Options' ) ) {
 			$option = new Accents_Option( array( 'section' => 'frou_convert_opt' ) );
 			$option->init();
 			$option = new Lowercase_Option( array( 'section' => 'frou_convert_opt' ) );
+			$option->init();*/
+
+			// General options
+			$option = new Enable_Option( array( 'section' => 'frou_general_opt' ) );
 			$option->init();
+			$option = new Permalink_Update_Option(array( 'section' => 'frou_general_opt' ));
+			$option->init();
+			$option = new Filename_Structure_Option( array( 'section' => 'frou_general_opt' ) );
+			$option->init();
+
+			// Rules
+			$option = new Filename_Option( array( 'section' => 'frou_filenaming_rules_opt' ) );
+			$option->init();
+			$option = new SiteURL_Option( array( 'section' => 'frou_filenaming_rules_opt' ) );
+			$option->init();
+			$option = new Datetime_Option( array( 'section' => 'frou_filenaming_rules_opt' ) );
+			$option->init();
+
+			/*$option = new Characters_Option( array( 'section' => 'frou_filenaming_rules_opt' ) );
+			$option->init();
+
+
+
+			// Add options
+			$option = new Site_URL_Option( array( 'section' => 'frou_filenaming_rules_opt', 'structure_rule' => 'siteurl' ) );
+			$option->init();
+			$option = new Datetime_Option( array( 'section' => 'frou_filenaming_rules_opt', 'structure_rule' => 'datetime' ) );
+			$option->init();
+
+			// Convert options
+			$option = new Accents_Option( array( 'section' => 'frou_filenaming_rules_opt' ) );
+			$option->init();
+			$option = new Lowercase_Option( array( 'section' => 'frou_filenaming_rules_opt' ) );
+			$option->init();*/
 		}
+
 
 	}
 }

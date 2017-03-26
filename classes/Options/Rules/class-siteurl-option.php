@@ -1,16 +1,17 @@
 <?php
 /**
- * File renaming on upload - Enable Option
+ * File renaming on upload - Site URL Option
  *
  * @version 1.0.0
  * @since   1.0.0
  * @author  Pablo S G Pacheco
  */
 
-namespace FROU\Options\Add;
+namespace FROU\Options\Rules;
 
 use FROU\Options\Add_Option;
 use FROU\Options\Option;
+use FROU\Options\Rule_Option;
 use FROU\Plugin_Core;
 use FROU\WordPress\Plugin;
 
@@ -19,24 +20,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 } // Exit if accessed directly
 
 
-if ( ! class_exists( 'FROU\Options\Add\Site_URL_Option' ) ) {
-	class Site_URL_Option extends Add_Option {
+if ( ! class_exists( 'FROU\Options\Rules\SiteURL_Option' ) ) {
+	class SiteURL_Option extends Rule_Option {
 
-		const OPTION_SITE_URL      = 'site_url';
-		const OPTION_SITE_URL_TEXT = 'site_url_text';
+		public $option_siteurl_text = 'siteurl_text';
 
-		/*
-		const OPTION_SITE_URL_POSITION = 'site_url_position';
+		function __construct( array $args = array() ) {
+			parent::__construct( $args );
+			$this->option_id = 'siteurl';
+		}
 
-		const OPTION_DATETIME          = 'datetime';
-		const OPTION_DATETIME_POSITION = 'datetime_position';
+		public function add_structure_rule( $structure_rules ) {
+			if ( ! filter_var( $this->get_option( $this->option_id, false ), FILTER_VALIDATE_BOOLEAN ) ) {
+				return $structure_rules;
+			}
+			$structure_rules[] = $this->option_id;
 
-		const OPTION_CHARACTERS_PREPEND      = 'characters_prepend';
-		const OPTION_CHARACTERS_PREPEND_TEXT = 'characters_prepend_text';
-
-		const OPTION_CHARACTERS_APPEND      = 'characters_append';
-		const OPTION_CHARACTERS_APPEND_TEXT = 'characters_append_text';
-		*/
+			return $structure_rules;
+		}
 
 		function get_site_url() {
 			$siteURL           = get_home_url();
@@ -58,24 +59,15 @@ if ( ! class_exists( 'FROU\Options\Add\Site_URL_Option' ) ) {
 			add_filter( 'frou_sanitize_file_name', array( $this, 'frou_sanitize_file_name' ), 11 );
 		}
 
-		public function add_structure_rule( $structure_rules ) {
-			if ( ! filter_var( $this->get_option( self::OPTION_SITE_URL, true ), FILTER_VALIDATE_BOOLEAN ) ) {
-				return $structure_rules;
-			}
-			$structure_rules[] = $this->structure_rule;
-
-			return $structure_rules;
-		}
-
 		public function frou_sanitize_file_name( $filename_infs ) {
-			if ( ! filter_var( $this->get_option( self::OPTION_SITE_URL, true ), FILTER_VALIDATE_BOOLEAN ) ) {
+			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $filename_infs;
 			}
 
 			$structure_rules = $filename_infs['structure']['rules'];
-			if ( strpos( $structure_rules, '{' . $this->structure_rule . '}' ) !== false ) {
-				$site_url                                                           = $this->get_option( self::OPTION_SITE_URL_TEXT );
-				$filename_infs['structure']['translation'][ $this->structure_rule ] = $site_url;
+			if ( strpos( $structure_rules, '{' . $this->option_id . '}' ) !== false ) {
+				$site_url                                                      = $this->get_option( $this->option_siteurl_text );
+				$filename_infs['structure']['translation'][ $this->option_id ] = $site_url;
 			}
 
 			return $filename_infs;
@@ -84,20 +76,25 @@ if ( ! class_exists( 'FROU\Options\Add\Site_URL_Option' ) ) {
 		public function add_fields( $fields, $section ) {
 			$new_options = array(
 				array(
-					'name'    => self::OPTION_SITE_URL,
+					'name'    => $this->option_id,
 					'label'   => __( 'Site URL', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Inserts site URL', 'file-renaming-on-upload' ) . ' - ' . '<strong>{' . $this->structure_rule . '}</strong>',
+					'desc'    => __( 'Enables site URL rule', 'file-renaming-on-upload' ) . ' - ' . '<strong>{' . $this->option_id . '}</strong>',
 					'type'    => 'checkbox',
 					'default' => 'on',
 				),
 
 				array(
-					'name'        => self::OPTION_SITE_URL_TEXT,
+					'name'        => $this->option_siteurl_text,
 					'desc'        => __( 'The site URL (Change it the way you like)', 'file-renaming-on-upload' ),
 					'type'        => 'text',
 					'placeholder' => $this->get_site_url(),
 					'default'     => $this->get_site_url(),
 				),
+				array(
+					'name' => 'siteurl_separator',
+					'type' => 'separator',
+				),
+
 			);
 
 			return parent::add_fields( array_merge( $fields, $new_options ), $section );

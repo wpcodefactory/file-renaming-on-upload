@@ -42,35 +42,13 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		}
 
 		function admin_init() {
-
-			// Sections
-			/*$general_section = new General_Section( $this->core );
-			$add_section     = new Add_Section( $this->core );
-			$remove_section  = new Remove_Section( $this->core );
-			$convert_section = new Convert_Section( $this->core );
-
-			$this->settings_api->add_section( $general_section->get_settings_sections() );
-			$this->settings_api->add_section( $add_section->get_settings_sections() );
-			$this->settings_api->add_section( $remove_section->get_settings_sections() );
-			$this->settings_api->add_section( $convert_section->get_settings_sections() );
-
-			// Fields
-			$this->settings_api->set_fields(
-				array_merge(
-					$general_section->get_settings_fields(),
-					$add_section->get_settings_fields(),
-					$remove_section->get_settings_fields(),
-					$convert_section->get_settings_fields()
-				)
-			);*/
-
 			// Sections
 			$sections = array(
 				array(
 					'id'    => 'frou_general_opt',
 					'title' => __( 'General Settings', 'file-renaming-on-upload' ),
 				),
-				array(
+				/*array(
 					'id'    => 'frou_remove_opt',
 					'title' => __( 'Remove', 'file-renaming-on-upload' ),
 				),
@@ -81,6 +59,10 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 				array(
 					'id'    => 'frou_convert_opt',
 					'title' => __( 'Convert', 'file-renaming-on-upload' ),
+				),*/
+				array(
+					'id'    => 'frou_filenaming_rules_opt',
+					'title' => __( 'Rules', 'file-renaming-on-upload' ),
 				),
 			);
 			$this->settings_api->set_sections( $sections );
@@ -112,19 +94,6 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 				'plugin_page',
 			) );
 		}
-
-		/*function custom( $args ) {
-
-			$value       = esc_attr( $this->settings_api->get_option( $args['id'], $args['section'], $args['std'] ) );
-			$size        = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
-			$type        = isset( $args['type'] ) ? $args['type'] : 'text';
-			$placeholder = empty( $args['placeholder'] ) ? '' : ' placeholder="' . $args['placeholder'] . '"';
-
-			$html = sprintf( '<input type="%1$s" class="%2$s-text" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"%6$s/>', $type, $size, $args['section'], $args['id'], $value, $placeholder );
-			$html .= $this->settings_api->get_field_description( $args );
-
-			echo $html;
-		}*/
 
 		function plugin_page() {
 			echo '<div class="wrap">';
