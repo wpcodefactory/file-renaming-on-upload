@@ -30,15 +30,6 @@ if ( ! class_exists( 'FROU\Options\Rules\SiteURL_Option' ) ) {
 			$this->option_id = 'siteurl';
 		}
 
-		public function add_structure_rule( $structure_rules ) {
-			if ( ! filter_var( $this->get_option( $this->option_id, false ), FILTER_VALIDATE_BOOLEAN ) ) {
-				return $structure_rules;
-			}
-			$structure_rules[] = $this->option_id;
-
-			return $structure_rules;
-		}
-
 		function get_site_url() {
 			$siteURL           = get_home_url();
 			$lastChar          = substr( $siteURL, strlen( $siteURL ) - 1 );

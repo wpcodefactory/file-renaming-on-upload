@@ -1,0 +1,116 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: File renaming on upload\n"
+"POT-Creation-Date: 2017-03-26 00:46-0300\n"
+"PO-Revision-Date: 2017-01-17 13:05-0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+"X-Poedit-SearchPathExcluded-1: tasks\n"
+"X-Poedit-SearchPathExcluded-2: vendor\n"
+
+#: classes/Admin_Pages/class-settings-page.php:49
+msgid "General Settings"
+msgstr ""
+
+#: classes/Admin_Pages/class-settings-page.php:65
+msgid "Rules"
+msgstr ""
+
+#: classes/Options/General/class-enable-option.php:35
+msgid "Enable plugin"
+msgstr ""
+
+#: classes/Options/General/class-enable-option.php:36
+msgid "Enables the plugin"
+msgstr ""
+
+#: classes/Options/General/class-filename-structure-option.php:57
+msgid "Filename structure"
+msgstr ""
+
+#: classes/Options/General/class-filename-structure-option.php:58
+msgid ""
+"Manages the filename structure using rules. If you want only the "
+"filename, leave it as <b>{filename}</b>"
+msgstr ""
+
+#: classes/Options/General/class-filename-structure-option.php:58
+msgid "Rules available:"
+msgstr ""
+
+#: classes/Options/General/class-permalink-update-option.php:75
+msgid "Update permalink"
+msgstr ""
+
+#: classes/Options/General/class-permalink-update-option.php:76
+msgid "Updates attachment permalink following filename rules"
+msgstr ""
+
+#: classes/Options/Rules/class-datetime-option.php:60
+msgid "Datetime"
+msgstr ""
+
+#: classes/Options/Rules/class-datetime-option.php:61
+msgid "Enables Datetime rule"
+msgstr ""
+
+#: classes/Options/Rules/class-datetime-option.php:68
+msgid "Datetime format. "
+msgstr ""
+
+#: classes/Options/Rules/class-datetime-option.php:68
+#, php-format
+msgid "You can see more formats <a target=\"_blank\" href=\"%s\">here</a>"
+msgstr ""
+
+#: classes/Options/Rules/class-datetime-option.php:68
+#, php-format
+msgid "Result: <b>%s</b>"
+msgstr ""
+
+#: classes/Options/Rules/class-filename-option.php:92
+msgid "Filename"
+msgstr ""
+
+#: classes/Options/Rules/class-filename-option.php:93
+msgid "Enables filename rule"
+msgstr ""
+
+#: classes/Options/Rules/class-filename-option.php:101
+msgid "Converts all accent characters from filename to ASCII characters"
+msgstr ""
+
+#: classes/Options/Rules/class-filename-option.php:108
+msgid "Converts all characters from filename to lowercase"
+msgstr ""
+
+#: classes/Options/Rules/class-filename-option.php:115
+msgid "Removes characters from filename"
+msgstr ""
+
+#: classes/Options/Rules/class-siteurl-option.php:80
+msgid "Site URL"
+msgstr ""
+
+#: classes/Options/Rules/class-siteurl-option.php:81
+msgid "Enables site URL rule"
+msgstr ""
+
+#: classes/Options/Rules/class-siteurl-option.php:88
+msgid "The site URL (Change it the way you like)"
+msgstr ""
+
+#: file-renaming-on-upload.php:33
+msgid "Settings"
+msgstr ""

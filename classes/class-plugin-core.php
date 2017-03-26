@@ -56,6 +56,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		}
 
 
+
 		public function sanitize_filename( $filename ) {
 			$option = new Enable_Option( array( 'section' => 'frou_general_opt' ) );
 			if ( ! filter_var( $option->get_option( $option->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {

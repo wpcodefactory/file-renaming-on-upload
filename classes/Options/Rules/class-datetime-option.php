@@ -35,8 +35,17 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 			add_filter( 'frou_sanitize_file_name', array( $this, 'frou_sanitize_file_name' ), 11 );
 		}
 
+		public function add_structure_rule( $structure_rules ) {
+			if ( ! filter_var( $this->get_option( $this->option_id, false ), FILTER_VALIDATE_BOOLEAN ) ) {
+				return $structure_rules;
+			}
+			$structure_rules[] = $this->option_id;
+
+			return $structure_rules;
+		}
+
 		public function frou_sanitize_file_name( $filename_infs ) {
-			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
+			if ( ! filter_var( $this->get_option( $this->option_id, false ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $filename_infs;
 			}
 
@@ -65,7 +74,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 
 				array(
 					'name'        => $this->option_datetime_format,
-					'desc'        => __( 'Datetime format. ', 'file-renaming-on-upload' ) . sprintf( __( 'You can see more formats <a target="_blank" href="%s">here</a>', 'file-renaming-on-upload' ), 'http://php.net/manual/function.date.php' ) . '<br />' . sprintf( __( 'Result: <b>%s</b>', 'file-renaming-on-upload' ), $format ),
+					'desc'        => __( 'Datetime format ', 'file-renaming-on-upload' ) . sprintf( __( 'You can see more formats <a target="_blank" href="%s">here</a>', 'file-renaming-on-upload' ), 'http://php.net/manual/function.date.php' ) . '<br />' . sprintf( __( 'Result: <b>%s</b>', 'file-renaming-on-upload' ), $format ),
 					'type'        => 'text',
 					'default'     => 'Y-m-d_H-i-s_u',
 					'placeholder' => 'Y-m-d_H-i-s_u',

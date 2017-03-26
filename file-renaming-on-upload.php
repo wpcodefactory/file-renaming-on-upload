@@ -27,6 +27,9 @@ $autoloader->init();
 $plugin = Plugin_Core::getInstance();
 $plugin->init( array(
 	'plugin_file_path' => __FILE__,
+	'translation'      => array(
+		'slug' => 'file-renaming-on-upload',
+	),
 	'action_links'     => array(
 		array(
 			'url'  => admin_url( 'options-general.php?page=frou' ),
