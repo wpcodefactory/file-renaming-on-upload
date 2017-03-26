@@ -1,10 +1,9 @@
 <?php
-
 /*
 Plugin Name: File Renaming on upload
 Plugin URI: http://wordpress.org/extend/plugins/file-renaming-on-upload/
 Description: Renames files on upload
-Version: 2.0.0
+Version: 1.4.0
 Author: Pablo S G Pacheco
 Author URI: https://github.com/pablo-pacheco
 License: GPL2
@@ -24,6 +23,7 @@ $autoloader = new WP_Namespace_Autoloader( array(
 ) );
 $autoloader->init();
 
+
 $plugin = Plugin_Core::getInstance();
 $plugin->init( array(
 	'plugin_file_path' => __FILE__,
@@ -32,7 +32,7 @@ $plugin->init( array(
 	),
 	'action_links'     => array(
 		array(
-			'url'  => admin_url( 'options-general.php?page=frou' ),
+			'url'  => admin_url( 'options-general.php?page=file-renaming-on-upload' ),
 			'text' => __( 'Settings', 'file-renaming-on-upload' ),
 		),
 	),

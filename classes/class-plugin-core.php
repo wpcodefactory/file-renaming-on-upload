@@ -45,18 +45,37 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			return parent::getInstance();
 		}
 
+		/**
+		 * Initialize
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param array $args
+		 */
 		public function init( $args = array() ) {
 			parent::init( $args );
 			add_action( 'init', array( $this, 'handle_settings_page' ) );
 			add_action( 'init', array( $this, 'add_options' ) );
 			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename' ) );
+
 			//add_action( 'add_attachment', array( $this, 'add_attachment' ) );
 			//add_filter('wp_insert_attachment_data',array($this,'insert_attachment_data'),10,2);
 			//add_action('wp_insert_post',array($this,'insert_post'));
 		}
 
-
-
+		/**
+		 * Sanitizes filename.
+		 *
+		 * It's the main function of this plugin
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $filename
+		 *
+		 * @return mixed|string
+		 */
 		public function sanitize_filename( $filename ) {
 			$option = new Enable_Option( array( 'section' => 'frou_general_opt' ) );
 			if ( ! filter_var( $option->get_option( $option->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
@@ -66,7 +85,6 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			$info              = pathinfo( $filename );
 			$extension         = empty( $info['extension'] ) ? '' : $info['extension'];
 			$filename_original = $info['filename'];
-
 
 			$filename_arr = apply_filters( 'frou_sanitize_file_name',
 				array(
@@ -90,6 +108,12 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			return $filename;
 		}
 
+		/**
+		 * Manages the settings page
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
 		public function handle_settings_page() {
 			if ( ! is_admin() ) {
 				return;
@@ -99,6 +123,12 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			new Settings_Page( $this );
 		}
 
+		/**
+		 * Creates the options inside settings pages
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
 		public function add_options() {
 			$this->set_options( new Options() );
 		}

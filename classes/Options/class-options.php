@@ -29,6 +29,14 @@ if ( ! class_exists( 'FROU\Options\Options' ) ) {
 	class Options {
 
 
+		/**
+		 * Constructor
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param array $args
+		 */
 		function __construct() {
 
 

@@ -18,6 +18,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\Options\Rule_Option' ) ) {
 	class Rule_Option extends Option {
 
+		/**
+		 * Add option_id as rule as default
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $structure_rules
+		 *
+		 * @return array
+		 */
 		public function add_structure_rule( $structure_rules ) {
 			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $structure_rules;
@@ -27,6 +37,12 @@ if ( ! class_exists( 'FROU\Options\Rule_Option' ) ) {
 			return $structure_rules;
 		}
 
+		/**
+		 * Initializes
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
 		function init() {
 			parent::init();
 			add_filter( 'frou_structure_rules', array( $this, 'add_structure_rule' ) );

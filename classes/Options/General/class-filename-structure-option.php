@@ -19,21 +19,41 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\Options\General\Filename_Structure_Option' ) ) {
 	class Filename_Structure_Option extends Option {
 
-
-		//const BETWEEN_CHARACTERS = 'between_characters';
-
+		/**
+		 * Initializes
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
 		function init() {
 			parent::init();
 			add_filter( 'frou_sanitize_file_name', array( $this, 'frou_sanitize_file_name' ) );
-			add_filter( 'frou_structure_rules_list', array( $this, 'possible_structure_rules' ) );
+			add_filter( 'frou_structure_rules_list', array( $this, 'create_list_with_structure_rules' ) );
 		}
 
+		/**
+		 * Constructor
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param array $args
+		 */
 		function __construct( array $args = array() ) {
 			parent::__construct( $args );
 			$this->option_id = 'filename_structure';
 		}
 
-		public function possible_structure_rules( $list ) {
+		/**
+		 * Creates a list with available filename structure rules
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 * @param $list
+		 *
+		 * @return string
+		 */
+		public function create_list_with_structure_rules( $list ) {
 			$list = apply_filters( 'frou_structure_rules', array() );
 
 			return
@@ -44,12 +64,28 @@ if ( ! class_exists( 'FROU\Options\General\Filename_Structure_Option' ) ) {
 			';
 		}
 
+		/**
+		 * Puts what the user wants as rules inside the filter "frou_structure_rules_list"
+		 *
+		 * @return mixed
+		 */
 		public function frou_sanitize_file_name( $filename_infs ) {
-			$filename_infs['structure']['rules'] = $this->get_option( $this->option_id );
+			$filename_infs['structure']['rules'] = sanitize_text_field( $this->get_option( $this->option_id ) );
 
 			return $filename_infs;
 		}
 
+		/**
+		 * Adds settings fields
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $fields
+		 * @param $section
+		 *
+		 * @return mixed
+		 */
 		public function add_fields( $fields, $section ) {
 			$new_options = array(
 				array(

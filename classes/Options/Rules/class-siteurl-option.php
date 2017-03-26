@@ -25,11 +25,26 @@ if ( ! class_exists( 'FROU\Options\Rules\SiteURL_Option' ) ) {
 
 		public $option_siteurl_text = 'siteurl_text';
 
+		/**
+		 * Constructor
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param array $args
+		 */
 		function __construct( array $args = array() ) {
 			parent::__construct( $args );
 			$this->option_id = 'siteurl';
 		}
 
+		/**
+		 * Gets site url
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 * @return mixed|string
+		 */
 		function get_site_url() {
 			$siteURL           = get_home_url();
 			$lastChar          = substr( $siteURL, strlen( $siteURL ) - 1 );
@@ -45,11 +60,27 @@ if ( ! class_exists( 'FROU\Options\Rules\SiteURL_Option' ) ) {
 			return $finalSiteURL;
 		}
 
+		/**
+		 * Initializes
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
 		function init() {
 			parent::init();
 			add_filter( 'frou_sanitize_file_name', array( $this, 'frou_sanitize_file_name' ), 11 );
 		}
 
+		/**
+		 * Inserts site url on 'frou_sanitize_file_name' filter
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $filename_infs
+		 *
+		 * @return mixed
+		 */
 		public function frou_sanitize_file_name( $filename_infs ) {
 			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $filename_infs;
@@ -64,6 +95,17 @@ if ( ! class_exists( 'FROU\Options\Rules\SiteURL_Option' ) ) {
 			return $filename_infs;
 		}
 
+		/**
+		 * Adds settings fields
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $fields
+		 * @param $section
+		 *
+		 * @return mixed
+		 */
 		public function add_fields( $fields, $section ) {
 			$new_options = array(
 				array(

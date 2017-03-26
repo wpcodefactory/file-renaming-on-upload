@@ -22,6 +22,14 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 		protected $section;
 		public $option_id;
 
+		/**
+		 * Constructor
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param array $args
+		 */
 		function __construct( $args = array() ) {
 			$args = wp_parse_args( $args, array(
 				'section' => null,
@@ -30,12 +38,30 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 			$this->section = $args['section'];
 		}
 
+		/**
+		 * Initializes
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
 		function init() {
 			add_filter( "frou_fields_{$this->section}", array( $this, 'add_fields' ), 10, 2 );
 		}
 
+		/**
+		 * Gets option from this option section
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param        $option
+		 * @param string $default
+		 * @param null   $section
+		 *
+		 * @return string
+		 */
 		function get_option( $option, $default = '', $section = null ) {
-			if(!$section){
+			if ( ! $section ) {
 				$section = $this->section;
 			}
 
@@ -55,8 +81,15 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 			return $default;
 		}
 
+		/**
+		 * Add settings fields
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
 		public function add_fields( $fields, $section ) {
 			$this->fields = $fields;
+
 			return $fields;
 		}
 	}

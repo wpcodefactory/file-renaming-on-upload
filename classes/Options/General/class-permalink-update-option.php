@@ -1,6 +1,6 @@
 <?php
 /**
- * File renaming on upload - Enable Option
+ * File renaming on upload - Permalink update Option
  *
  * @version 1.0.0
  * @since   1.0.0
@@ -22,11 +22,25 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 		public $current_filename_modified;
 		public $current_filename_original;
 
+		/**
+		 * Constructor
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param array $args
+		 */
 		function __construct( array $args = array() ) {
 			parent::__construct( $args );
 			$this->option_id = 'update_permalink';
 		}
 
+		/**
+		 * Initializes
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
 		function init() {
 			parent::init();
 			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename_before' ), 9 );
@@ -34,6 +48,15 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 			add_action( 'add_attachment', array( $this, 'add_attachment' ) );
 		}
 
+		/**
+		 * Gets original filename when a file is uploaded
+		 *
+		 * @param $filename
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 * @return mixed
+		 */
 		public function sanitize_filename_after( $filename ) {
 			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $filename;
@@ -46,6 +69,15 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 			return $filename;
 		}
 
+		/**
+		 * Gets the modified filename when a file is uploaded and the plugin has done its work
+		 *
+		 * @param $filename
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 * @return mixed
+		 */
 		public function sanitize_filename_before( $filename ) {
 			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $filename;
@@ -58,6 +90,14 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 			return $filename;
 		}
 
+		/**
+		 * After a file is uploaded, make its name unique
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $post_id
+		 */
 		public function add_attachment( $post_id ) {
 			$post = get_post( $post_id );
 			if ( $post->post_type != 'attachment' ) {
@@ -68,6 +108,17 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 			wp_update_post( $post );
 		}
 
+		/**
+		 * Adds settings fields
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $fields
+		 * @param $section
+		 *
+		 * @return mixed
+		 */
 		public function add_fields( $fields, $section ) {
 			$new_options = array(
 				array(

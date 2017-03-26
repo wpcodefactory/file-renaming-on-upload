@@ -1,6 +1,6 @@
 <?php
 /**
- * File renaming on upload - Remove Characters Option
+ * File renaming on upload - Filename Option
  *
  * @version 1.0.0
  * @since   1.0.0
@@ -28,11 +28,25 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		public $option_remove_characters = 'filename_remove_chars';
 		public $option_remove_characters_text = 'filename_remove_chars_text';
 
+		/**
+		 * Constructor
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param array $args
+		 */
 		function __construct( array $args = array() ) {
 			parent::__construct( $args );
 			$this->option_id = 'filename';
 		}
 
+		/**
+		 * Initializes
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
 		function init() {
 			parent::init();
 			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_accents' ), 11 );
@@ -40,6 +54,15 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 			add_action( 'sanitize_file_name_chars', array( $this, 'remove_chars' ) );
 		}
 
+		/**
+		 * Removes chars from filename
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 * @param $chars
+		 *
+		 * @return array
+		 */
 		public function remove_chars( $chars ) {
 			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $chars;
@@ -55,6 +78,16 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 			return $chars;
 		}
 
+		/**
+		 * Converts filename to lowercase
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $filename_infs
+		 *
+		 * @return mixed
+		 */
 		public function convert_lowercase( $filename_infs ) {
 			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $filename_infs;
@@ -70,6 +103,16 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 			return $filename_infs;
 		}
 
+		/**
+		 * Converts all accent characters from filename to ASCII characters
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $filename_infs
+		 *
+		 * @return mixed
+		 */
 		public function convert_accents( $filename_infs ) {
 			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $filename_infs;
@@ -85,6 +128,17 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 			return $filename_infs;
 		}
 
+		/**
+		 * Adds settings fields
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $fields
+		 * @param $section
+		 *
+		 * @return mixed
+		 */
 		public function add_fields( $fields, $section ) {
 			$new_options = array(
 				array(

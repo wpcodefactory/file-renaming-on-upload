@@ -25,16 +25,40 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 
 		public $option_datetime_format = 'datetime_format';
 
+		/**
+		 * Constructor
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param array $args
+		 */
 		function __construct( array $args = array() ) {
 			parent::__construct( $args );
 			$this->option_id = 'datetime';
 		}
 
+		/**
+		 * Initializes
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
 		function init() {
 			parent::init();
 			add_filter( 'frou_sanitize_file_name', array( $this, 'frou_sanitize_file_name' ), 11 );
 		}
 
+		/**
+		 * Turns this rule off as default
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $structure_rules
+		 *
+		 * @return array
+		 */
 		public function add_structure_rule( $structure_rules ) {
 			if ( ! filter_var( $this->get_option( $this->option_id, false ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $structure_rules;
@@ -44,6 +68,16 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 			return $structure_rules;
 		}
 
+		/**
+		 * Inserts datetime on 'frou_sanitize_file_name' filter
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $filename_infs
+		 *
+		 * @return mixed
+		 */
 		public function frou_sanitize_file_name( $filename_infs ) {
 			if ( ! filter_var( $this->get_option( $this->option_id, false ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $filename_infs;
@@ -59,6 +93,17 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 			return $filename_infs;
 		}
 
+		/**
+		 * Adds settings fields
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $fields
+		 * @param $section
+		 *
+		 * @return mixed
+		 */
 		public function add_fields( $fields, $section ) {
 			$datetime = \DateTime::createFromFormat( 'U.u', microtime( true ) );
 			$format   = $datetime->format( $this->get_option( $this->option_datetime_format, 'Y-m-d_H-i-s_u' ) );

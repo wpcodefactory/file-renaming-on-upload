@@ -41,6 +41,12 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 			add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		}
 
+		/**
+		 * Creates settings separated by tabs
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
 		function admin_init() {
 			// Sections
 			$sections = array(
@@ -48,18 +54,6 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 					'id'    => 'frou_general_opt',
 					'title' => __( 'General Settings', 'file-renaming-on-upload' ),
 				),
-				/*array(
-					'id'    => 'frou_remove_opt',
-					'title' => __( 'Remove', 'file-renaming-on-upload' ),
-				),
-				array(
-					'id'    => 'frou_add_opt',
-					'title' => __( 'Add', 'file-renaming-on-upload' ),
-				),
-				array(
-					'id'    => 'frou_convert_opt',
-					'title' => __( 'Convert', 'file-renaming-on-upload' ),
-				),*/
 				array(
 					'id'    => 'frou_filenaming_rules_opt',
 					'title' => __( 'Rules', 'file-renaming-on-upload' ),
@@ -78,6 +72,18 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 			$this->settings_api->admin_init();
 		}
 
+		/**
+		 * Gets an option inside a setting
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param        $option
+		 * @param        $section
+		 * @param string $default
+		 *
+		 * @return string
+		 */
 		function get_option( $option, $section, $default = '' ) {
 			$options = get_option( $section );
 
@@ -88,13 +94,25 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 			return $default;
 		}
 
+		/**
+		 * Creates the menu
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
 		function admin_menu() {
-			add_options_page( 'File renaming', 'File renaming (new)', 'delete_posts', 'frou', array(
+			add_options_page( 'File renaming', 'File renaming', 'delete_posts', 'file-renaming-on-upload', array(
 				$this,
 				'plugin_page',
 			) );
 		}
 
+		/**
+		 * Shows the admin page
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
 		function plugin_page() {
 			echo '<div class="wrap">';
 			echo '<h2>File Renaming on upload</h2>';
