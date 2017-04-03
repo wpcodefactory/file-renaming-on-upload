@@ -19,6 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\Options\General\Filename_Structure_Option' ) ) {
 	class Filename_Structure_Option extends Option {
 
+		public $option_characters_between='filename_structure_chars_between';
+
 		/**
 		 * Initializes
 		 *
@@ -71,6 +73,7 @@ if ( ! class_exists( 'FROU\Options\General\Filename_Structure_Option' ) ) {
 		 */
 		public function frou_sanitize_file_name( $filename_infs ) {
 			$filename_infs['structure']['rules'] = sanitize_text_field( $this->get_option( $this->option_id ) );
+			$filename_infs['structure']['separator'] = sanitize_text_field( $this->get_option( $this->option_characters_between) );
 
 			return $filename_infs;
 		}
@@ -91,16 +94,17 @@ if ( ! class_exists( 'FROU\Options\General\Filename_Structure_Option' ) ) {
 				array(
 					'name'    => $this->option_id,
 					'label'   => __( 'Filename structure', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Manages the filename structure using rules. If you want only the filename, leave it as <b>{filename}</b>', 'file-renaming-on-upload' ) . '<br /><br />' . __( 'Rules available:', 'file-renaming-on-upload' ) . apply_filters( 'frou_structure_rules_list', '' ),
-					'default' => '{siteurl}-{filename}',
+					'desc'    => __( 'Manages the filename structure using rules. If you want only the filename, leave it as <b>{filename}.</b>', 'file-renaming-on-upload' ) .  ' '.__( 'Rules available:', 'file-renaming-on-upload' ) . apply_filters( 'frou_structure_rules_list', '' ),
+					'default' => '{siteurl}{posttitle}{filename}',
 					'type'    => 'text',
 				),
-				/*array(
-					'name'    => self::BETWEEN_CHARACTERS,
-					'desc'    => __( 'Characters used to separate rules', 'file-renaming-on-upload' ),
+				array(
+					'name'    => $this->option_characters_between,
+					'desc'    => __( 'Character(s) used to separate rules', 'file-renaming-on-upload' ),
+					'size'    => 'small',
 					'default' => '-',
 					'type'    => 'text',
-				),*/
+				),
 			);
 
 			return parent::add_fields( array_merge( $fields, $new_options ), $section );

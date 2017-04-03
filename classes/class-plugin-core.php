@@ -64,6 +64,35 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			//add_action('wp_insert_post',array($this,'insert_post'));
 		}
 
+		protected function remove_unused_rules( $filename, $args ) {
+
+			preg_match_all( '/\{.*\}/U', $filename, $filename_rules_arr );
+			if ( is_array( $filename_rules_arr ) && count( $filename_rules_arr ) > 0 ) {
+				foreach ( $filename_rules_arr[0] as $rule ) {
+					$rule_without_bracket = substr( $rule, 1, - 1 );
+					if ( ! array_key_exists( $rule_without_bracket, $args['structure']['translation'] ) ) {
+						$filename = str_replace( $rule, '', $filename );
+					}
+				}
+			}
+
+			return $filename;
+		}
+
+		protected function translate_rules( $filename, $args ) {
+			foreach ( $args['structure']['translation'] as $key => $translation ) {
+				$filename = str_replace( "{" . $key . "}", $translation, $filename );
+			}
+
+			return $filename;
+		}
+
+		protected function add_separator( $filename, $args ) {
+			$separator = $args['structure']['separator'];
+
+			return preg_replace( '/\}\{/U', "}{$separator}{", $filename );
+		}
+
 		/**
 		 * Sanitizes filename.
 		 *
@@ -92,18 +121,17 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 					'extension'         => $extension,
 					'structure'         => array(
 						'rules'       => '',
+						'separator'   => '-',
 						'translation' => array( 'filename' => $filename_original ),
 					),
 				)
 			);
 
 			$filename = $filename_arr['structure']['rules'];
-			foreach ( $filename_arr['structure']['translation'] as $key => $translation ) {
-				$filename = str_replace( "{" . $key . "}", $translation, $filename );
-			}
-			$filename_only = preg_replace( '/\{.*\}/U', "", $filename );
-			$filename      = $filename_only . '.' . $extension;
-
+			$filename = $this->remove_unused_rules( $filename, $filename_arr );
+			$filename = $this->add_separator( $filename, $filename_arr );
+			$filename = $this->translate_rules( $filename, $filename_arr );
+			$filename = $filename . '.' . $extension;
 
 			return $filename;
 		}

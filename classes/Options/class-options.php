@@ -17,6 +17,7 @@ use FROU\Options\General\Permalink_Update_Option;
 use FROU\Options\Rules\Datetime_Option;
 use FROU\Options\Rules\Filename;
 use FROU\Options\Rules\Filename_Option;
+use FROU\Options\Rules\Post_Title_Option;
 use FROU\Options\Rules\SiteURL_Option;
 
 
@@ -76,6 +77,8 @@ if ( ! class_exists( 'FROU\Options\Options' ) ) {
 			$option = new SiteURL_Option( array( 'section' => 'frou_filenaming_rules_opt' ) );
 			$option->init();
 			$option = new Datetime_Option( array( 'section' => 'frou_filenaming_rules_opt' ) );
+			$option->init();
+			$option = new Post_Title_Option( array( 'section' => 'frou_filenaming_rules_opt' ) );
 			$option->init();
 
 			/*$option = new Characters_Option( array( 'section' => 'frou_filenaming_rules_opt' ) );

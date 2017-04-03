@@ -11,6 +11,7 @@ namespace FROU\Options\Rules;
 
 use FROU\Options\Option;
 use FROU\Options\Rule_Option;
+use FROU\WordPress\Post;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -23,10 +24,14 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		// Convert
 		public $option_convert_accents = 'filename_convert_accents';
 		public $option_convert_lowercase = 'filename_convert_lowercase';
+		public $option_convert_posttitle = 'filename_convert_posttitle';
 
 		// Remove
 		public $option_remove_characters = 'filename_remove_chars';
 		public $option_remove_characters_text = 'filename_remove_chars_text';
+
+		//public $current_filename_modified;
+		//public $current_filename_original;
 
 		/**
 		 * Constructor
@@ -49,8 +54,9 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		 */
 		function init() {
 			parent::init();
-			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_accents' ), 11 );
-			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_lowercase' ), 11 );
+			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_posttitle' ), 11 );
+			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_accents' ), 12 );
+			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_lowercase' ), 12 );
 			add_action( 'sanitize_file_name_chars', array( $this, 'remove_chars' ) );
 		}
 
@@ -76,6 +82,37 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 			$chars           = explode( " ", $chars_to_remove );
 
 			return $chars;
+		}
+
+		/**
+		 * Converts filename to posttitle
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $filename_infs
+		 *
+		 * @return mixed
+		 */
+		public function convert_posttitle( $filename_infs ) {
+			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
+				return $filename_infs;
+			}
+
+			if ( ! filter_var( $this->get_option( $this->option_convert_posttitle, false ), FILTER_VALIDATE_BOOLEAN ) ) {
+				return $filename_infs;
+			}
+
+
+
+			$post_slug = Post::get_post_slug();
+			if ( empty( $post_slug ) ) {
+				return $filename_infs;
+			}
+
+			$filename_infs['structure']['translation']['filename'] = $post_slug;
+
+			return $filename_infs;
 		}
 
 		/**
@@ -152,16 +189,23 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 				array(
 					'name'    => $this->option_convert_accents,
 					//'label'   => __( 'Accents', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Converts all accent characters from filename to ASCII characters', 'file-renaming-on-upload' ),
+					'desc'    => __( 'Converts all filename accent characters to ASCII characters', 'file-renaming-on-upload' ),
 					'type'    => 'checkbox',
 					'default' => 'on',
 				),
 				array(
 					'name'    => $this->option_convert_lowercase,
 					//'label'   => __( 'Lowercase', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Converts all characters from filename to lowercase', 'file-renaming-on-upload' ),
+					'desc'    => __( 'Converts all filename characters to lowercase', 'file-renaming-on-upload' ),
 					'type'    => 'checkbox',
 					'default' => 'on',
+				),
+				array(
+					'name'    => $this->option_convert_posttitle,
+					//'label'   => __( 'Lowercase', 'file-renaming-on-upload' ),
+					'desc'    => __( 'Converts filename to post title whenever it is possible', 'file-renaming-on-upload' ),
+					'type'    => 'checkbox',
+					'default' => 'off',
 				),
 				array(
 					'name'    => $this->option_remove_characters,

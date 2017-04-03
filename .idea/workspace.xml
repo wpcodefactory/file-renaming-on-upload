@@ -2,20 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72e5ec9a-b0d8-44f9-9a62-27a2f2b7cfab" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/Options/class-add-option.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/file-renaming-on-upload.iml" afterPath="$PROJECT_DIR$/.idea/file-renaming-on-upload.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Admin_Pages/class-settings-page.php" afterPath="$PROJECT_DIR$/classes/Admin_Pages/class-settings-page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Options/General/class-enable-option.php" afterPath="$PROJECT_DIR$/classes/Options/General/class-enable-option.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Options/General/class-filename-structure-option.php" afterPath="$PROJECT_DIR$/classes/Options/General/class-filename-structure-option.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Options/General/class-permalink-update-option.php" afterPath="$PROJECT_DIR$/classes/Options/General/class-permalink-update-option.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Options/Rules/class-datetime-option.php" afterPath="$PROJECT_DIR$/classes/Options/Rules/class-datetime-option.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Options/Rules/class-filename-option.php" afterPath="$PROJECT_DIR$/classes/Options/Rules/class-filename-option.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Options/Rules/class-siteurl-option.php" afterPath="$PROJECT_DIR$/classes/Options/Rules/class-siteurl-option.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Options/class-option.php" afterPath="$PROJECT_DIR$/classes/Options/class-option.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Options/class-options.php" afterPath="$PROJECT_DIR$/classes/Options/class-options.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Options/class-rule-option.php" afterPath="$PROJECT_DIR$/classes/Options/class-rule-option.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/WeDevs/class-settings-api.php" afterPath="$PROJECT_DIR$/classes/WeDevs/class-settings-api.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/class-plugin-core.php" afterPath="$PROJECT_DIR$/classes/class-plugin-core.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file-renaming-on-upload.php" afterPath="$PROJECT_DIR$/file-renaming-on-upload.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,74 +29,17 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="class-enable-option.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Options/General/class-enable-option.php">
+      <file leaf-file-name="class-filename-structure-option.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classes/Options/General/class-filename-structure-option.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="44" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="54" selection-end-column="11" />
+            <state relative-caret-position="619">
+              <caret line="98" column="40" lean-forward="true" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="40" />
               <folding>
-                <element signature="e#6#125#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class-datetime-option.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Options/Rules/class-datetime-option.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="51" column="8" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="60" selection-end-column="11" />
-              <folding>
-                <element signature="e#6#127#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class-siteurl-option.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Options/Rules/class-siteurl-option.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="67" selection-end-column="11" />
-              <folding>
-                <element signature="e#6#127#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class-option.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Options/class-option.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="31" selection-end-column="11" />
-              <folding>
-                <element signature="e#6#118#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class-options.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Options/class-options.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="38" column="11" lean-forward="false" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
-              <folding>
-                <element signature="e#6#119#0#PHP" expanded="true" />
-                <element signature="e#147#186#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class-rule-option.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classes/Options/class-rule-option.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="41" column="10" lean-forward="true" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
-              <folding>
-                <element signature="e#6#134#0#PHP" expanded="true" />
+                <element signature="e#6#137#0#PHP" expanded="true" />
+                <marker date="1491145521306" expanded="true" signature="1322:1339" ph="..." />
+                <marker date="1491145521306" expanded="true" signature="1340:1350" ph="..." />
+                <marker date="1491145521306" expanded="true" signature="1340:1438" ph="..." />
+                <marker date="1491145521306" expanded="true" signature="1439:1442" ph="..." />
               </folding>
             </state>
           </provider>
@@ -111,12 +49,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>default</find>
-      <find>std</find>
-      <find>four</find>
-      <find>px</find>
-      <find>label_for</find>
-      <find>tab</find>
       <find>ra</find>
       <find>multi</find>
       <find>page_fr</find>
@@ -141,6 +73,12 @@
       <find>ajax-product-search-woocommerce</find>
       <find>self::OPTION_FILENAME_STRUCTURE</find>
       <find>get_option</find>
+      <find>Post title</find>
+      <find>desc</find>
+      <find>style</find>
+      <find>callback_text</find>
+      <find>$filename_arr</find>
+      <find>remove_chars</find>
     </findStrings>
     <replaceStrings>
       <replace>$namespace</replace>
@@ -151,6 +89,7 @@
       <replace>$this-&gt;option_datetime_format</replace>
       <replace>$this-&gt;option_id</replace>
       <replace>file-renaming-on-upload</replace>
+      <replace>$args</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -159,9 +98,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/classes/admin_pages/class-general-settings-page.php" />
-        <option value="$PROJECT_DIR$/vendor/pablo-pacheco/wp-namespace-autoloader/src/class-wp-namespace-autoloader.php" />
         <option value="$PROJECT_DIR$/vendor/pablo-pacheco/wp-namespace-autoloader/composer.json" />
         <option value="$PROJECT_DIR$/classes/WordPress/Plugin/class-wp-plugin.php" />
         <option value="$PROJECT_DIR$/classes/WordPress/Plugin/class-plugin.php" />
@@ -194,22 +130,25 @@
         <option value="$PROJECT_DIR$/classes/Options/Rules/class-filename.php" />
         <option value="$PROJECT_DIR$/classes/Options/Rules/class-site-url-option.php" />
         <option value="$PROJECT_DIR$/vendor/tareq1988/wordpress-settings-api-class/src/class.settings-api.php" />
-        <option value="$PROJECT_DIR$/classes/WeDevs/class-settings-api.php" />
         <option value="$PROJECT_DIR$/classes/Options/General/class-permalink-option.php" />
         <option value="$PROJECT_DIR$/classes/Options/General/class-between-characters-option.php" />
         <option value="$PROJECT_DIR$/classes/WordPress/class-plugin.php" />
-        <option value="$PROJECT_DIR$/classes/class-plugin-core.php" />
         <option value="$PROJECT_DIR$/classes/Admin_Pages/class-settings-page.php" />
         <option value="$PROJECT_DIR$/file-renaming-on-upload.php" />
         <option value="$PROJECT_DIR$/classes/Options/General/class-enable-option.php" />
-        <option value="$PROJECT_DIR$/classes/Options/General/class-filename-structure-option.php" />
-        <option value="$PROJECT_DIR$/classes/Options/General/class-permalink-update-option.php" />
         <option value="$PROJECT_DIR$/classes/Options/Rules/class-datetime-option.php" />
-        <option value="$PROJECT_DIR$/classes/Options/Rules/class-filename-option.php" />
-        <option value="$PROJECT_DIR$/classes/Options/Rules/class-siteurl-option.php" />
         <option value="$PROJECT_DIR$/classes/Options/class-option.php" />
-        <option value="$PROJECT_DIR$/classes/Options/class-options.php" />
         <option value="$PROJECT_DIR$/classes/Options/class-rule-option.php" />
+        <option value="$PROJECT_DIR$/classes/Options/Rules/class-post-title.php" />
+        <option value="$PROJECT_DIR$/classes/Options/class-options.php" />
+        <option value="$PROJECT_DIR$/classes/Options/Rules/class-siteurl-option.php" />
+        <option value="$PROJECT_DIR$/classes/WeDevs/class-settings-api.php" />
+        <option value="$PROJECT_DIR$/classes/Options/General/class-permalink-update-option.php" />
+        <option value="$PROJECT_DIR$/classes/Options/General/class-filename-structure-option.php" />
+        <option value="$PROJECT_DIR$/classes/class-plugin-core.php" />
+        <option value="$PROJECT_DIR$/classes/Options/Rules/class-post-title-option.php" />
+        <option value="$PROJECT_DIR$/classes/WordPress/class-post.php" />
+        <option value="$PROJECT_DIR$/classes/Options/Rules/class-filename-option.php" />
       </list>
     </option>
   </component>
@@ -260,6 +199,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -286,10 +227,106 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file-renaming-on-upload" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file-renaming-on-upload" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WordPress" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file-renaming-on-upload" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file-renaming-on-upload" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeDevs" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file-renaming-on-upload" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file-renaming-on-upload" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Options" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file-renaming-on-upload" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file-renaming-on-upload" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Options" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rules" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file-renaming-on-upload" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file-renaming-on-upload" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Options" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="General" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -301,14 +338,38 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\wp-tests\wp\content\plugins\file-renaming-on-upload\classes\Options\Rules" />
+      <recent name="C:\xampp\htdocs\wp-tests\wp\content\plugins\file-renaming-on-upload\classes\WordPress" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\wp-tests\wp\content\plugins\file-renaming-on-upload\classes\Options\Rules" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\wp-tests\wp\content\plugins\file-renaming-on-upload\classes\WordPress" />
-    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
       <config-file value="" />
       <node-interpreter value="project" />
@@ -393,34 +454,36 @@
       <workItem from="1490312625459" duration="8379000" />
       <workItem from="1490364387207" duration="188000" />
       <workItem from="1490380520967" duration="11671000" />
-      <workItem from="1490458447816" duration="19600000" />
+      <workItem from="1490458447816" duration="19618000" />
+      <workItem from="1490921719488" duration="3567000" />
+      <workItem from="1491143625190" duration="9090000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108649000" />
+    <option name="totallyTimeSpent" value="121324000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24307036" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24840085" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -456,28 +519,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="46" lean-forward="false" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/tareq1988/wordpress-settings-api-class/plugin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file-renaming-on-upload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../core/wp-includes/taxonomy.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18326">
@@ -570,14 +611,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/Core.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="750" column="9" lean-forward="false" selection-start-line="750" selection-start-column="9" selection-end-line="750" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/Core.php" />
     <entry file="file://$PROJECT_DIR$/libs/wp-plugin/classes.php" />
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -597,94 +631,14 @@
     <entry file="file://$PROJECT_DIR$/classes/Admin_Pages/Sections/class-general-section.php" />
     <entry file="file://$PROJECT_DIR$/classes/Admin_Pages/Sections/class-convert-section.php" />
     <entry file="file://$PROJECT_DIR$/classes/Admin_Pages/Sections/class-add-section.php" />
-    <entry file="file://$PROJECT_DIR$/classes/Options/class-add-option.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Options/Add/class-site-url-option.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="60" column="8" lean-forward="true" selection-start-line="60" selection-start-column="8" selection-end-line="67" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Options/Remove/class-characters-option.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="41" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Options/Convert/class-lowercase-option.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="38" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Options/Convert/class-accents-option.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="38" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Options/Add/class-datetime-option.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="24" column="48" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/tareq1988/wordpress-settings-api-class/src/class.settings-api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="39" column="47" lean-forward="true" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/WeDevs/class-settings-api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="43" lean-forward="true" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Options/General/class-between-characters-option.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="61" lean-forward="false" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Functions/class-functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="9" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="31" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/WordPress/class-plugin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Options/class-add-option.php" />
+    <entry file="file://$PROJECT_DIR$/classes/Options/Add/class-site-url-option.php" />
+    <entry file="file://$PROJECT_DIR$/classes/Options/Remove/class-characters-option.php" />
+    <entry file="file://$PROJECT_DIR$/classes/Options/Convert/class-lowercase-option.php" />
+    <entry file="file://$PROJECT_DIR$/classes/Options/Convert/class-accents-option.php" />
+    <entry file="file://$PROJECT_DIR$/classes/Options/Add/class-datetime-option.php" />
+    <entry file="file://$PROJECT_DIR$/classes/Options/General/class-between-characters-option.php" />
+    <entry file="file://$PROJECT_DIR$/classes/Functions/class-functions.php" />
     <entry file="file://$PROJECT_DIR$/classes/Admin_Pages/class-settings-page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1683">
@@ -692,14 +646,6 @@
           <folding>
             <marker date="1490501815892" expanded="true" signature="2519:2639" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/class-plugin-core.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -719,57 +665,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Options/General/class-permalink-update-option.php">
+    <entry file="file://$PROJECT_DIR$/classes/Options/Rules/class-post-title" />
+    <entry file="file://$PROJECT_DIR$/classes/Options/class-options.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1202">
-          <caret line="120" column="11" lean-forward="false" selection-start-line="120" selection-start-column="11" selection-end-line="120" selection-end-column="11" />
+        <state relative-caret-position="389">
+          <caret line="80" column="36" lean-forward="true" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
           <folding>
-            <element signature="e#6#135#0#PHP" expanded="true" />
+            <element signature="e#6#119#0#PHP" expanded="false" />
+            <element signature="e#147#186#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Options/General/class-filename-structure-option.php">
+    <entry file="file://$PROJECT_DIR$/classes/Options/class-rule-option.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="77" column="8" lean-forward="true" selection-start-line="77" selection-start-column="8" selection-end-line="87" selection-end-column="11" />
+        <state relative-caret-position="313">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
           <folding>
-            <element signature="e#6#137#0#PHP" expanded="true" />
-            <marker date="1490502372714" expanded="true" signature="1249:1266" ph="..." />
-            <marker date="1490502372714" expanded="true" signature="1267:1277" ph="..." />
-            <marker date="1490502372714" expanded="true" signature="1267:1365" ph="..." />
-            <marker date="1490502372714" expanded="true" signature="1366:1369" ph="..." />
+            <element signature="e#6#134#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/WeDevs/class-settings-api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="71" column="13" lean-forward="true" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Options/General/class-enable-option.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="44" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="54" selection-end-column="11" />
+        <state relative-caret-position="561">
+          <caret line="33" column="10" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="69" selection-end-column="1" />
           <folding>
             <element signature="e#6#125#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Options/Rules/class-filename-option.php">
+    <entry file="file://$PROJECT_DIR$/vendor/tareq1988/wordpress-settings-api-class/src/class.settings-api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-617">
-          <caret line="43" column="8" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="48" selection-end-column="11" />
+        <state relative-caret-position="199">
+          <caret line="154" column="4" lean-forward="true" selection-start-line="154" selection-start-column="4" selection-end-line="167" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Options/Rules/class-datetime-option.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="51" column="8" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="60" selection-end-column="11" />
           <folding>
             <element signature="e#6#127#0#PHP" expanded="true" />
-            <element signature="e#160#184#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Options/Rules/class-siteurl-option.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="67" selection-end-column="11" />
+        <state relative-caret-position="823">
+          <caret line="105" column="25" lean-forward="true" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
           <folding>
             <element signature="e#6#127#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/class-plugin-core.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="127" column="14" lean-forward="true" selection-start-line="127" selection-start-column="14" selection-end-line="127" selection-end-column="14" />
+          <folding>
+            <element signature="e#6#123#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/WordPress/class-plugin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Options/General/class-permalink-update-option.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="126" column="99" lean-forward="false" selection-start-line="126" selection-start-column="99" selection-end-line="126" selection-end-column="99" />
+          <folding>
+            <element signature="e#6#135#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Options/Rules/class-filename-option.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="67" column="24" lean-forward="true" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/WordPress/class-post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding>
+            <element signature="e#6#126#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -778,39 +783,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="31" selection-end-column="11" />
-          <folding>
-            <element signature="e#6#118#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Options/class-options.php">
+    <entry file="file://$PROJECT_DIR$/classes/Options/Rules/class-post-title-option.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="38" column="11" lean-forward="false" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
-          <folding>
-            <element signature="e#6#119#0#PHP" expanded="true" />
-            <element signature="e#147#186#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Options/Rules/class-datetime-option.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="51" column="8" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="60" selection-end-column="11" />
+        <state relative-caret-position="585">
+          <caret line="68" column="68" lean-forward="true" selection-start-line="68" selection-start-column="68" selection-end-line="68" selection-end-column="68" />
           <folding>
             <element signature="e#6#127#0#PHP" expanded="true" />
+            <element signature="e#160#184#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Options/class-rule-option.php">
+    <entry file="file://$PROJECT_DIR$/classes/Options/General/class-filename-structure-option.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="10" lean-forward="true" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+        <state relative-caret-position="619">
+          <caret line="98" column="40" lean-forward="true" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="40" />
           <folding>
-            <element signature="e#6#134#0#PHP" expanded="true" />
+            <element signature="e#6#137#0#PHP" expanded="true" />
+            <marker date="1491145521306" expanded="true" signature="1322:1339" ph="..." />
+            <marker date="1491145521306" expanded="true" signature="1340:1350" ph="..." />
+            <marker date="1491145521306" expanded="true" signature="1340:1438" ph="..." />
+            <marker date="1491145521306" expanded="true" signature="1439:1442" ph="..." />
           </folding>
         </state>
       </provider>

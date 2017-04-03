@@ -45,7 +45,7 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 			parent::init();
 			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename_before' ), 9 );
 			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename_after' ), PHP_INT_MAX );
-			add_action( 'add_attachment', array( $this, 'add_attachment' ) );
+			add_action( 'add_attachment', array( $this, 'add_attachment' ), PHP_INT_MAX );
 		}
 
 		/**
@@ -124,7 +124,7 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 				array(
 					'name'    => $this->option_id,
 					'label'   => __( 'Update permalink', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Updates attachment permalink following filename rules', 'file-renaming-on-upload' ),
+					'desc'    => __( 'Updates attachment permalink following the filename structure', 'file-renaming-on-upload' ),
 					'default' => 'off',
 					'type'    => 'checkbox',
 				),

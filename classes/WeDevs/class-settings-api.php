@@ -17,6 +17,82 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 	class Settings_Api extends \WeDevs_Settings_API {
 
+		function _style_fix() {
+			global $wp_version;
+
+			if (version_compare($wp_version, '3.8', '<=')):
+				?>
+                <style type="text/css">
+                    /** WordPress 3.8 Fix **/
+                    .form-table th { padding: 20px 10px; }
+                    #wpbody-content .metabox-holder { padding-top: 5px; }
+                </style>
+				<?php
+			endif;
+
+			?>
+            <style type="text/css">
+                #frou_filenaming_rules_opt .desc_full{
+                    color:#999;
+                }
+            </style>
+            <?php
+		}
+
+		/**
+		 * Displays a checkbox for a settings field
+		 *
+		 * @param array   $args settings field args
+		 */
+		function callback_checkbox( $args ) {
+
+			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
+
+			$html  = '<fieldset>';
+			$html  .= sprintf( '<label for="wpuf-%1$s[%2$s]">', $args['section'], $args['id'] );
+			$html  .= sprintf( '<input type="hidden" name="%1$s[%2$s]" value="off" />', $args['section'], $args['id'] );
+			$html  .= sprintf( '<input type="checkbox" class="checkbox" id="wpuf-%1$s[%2$s]" name="%1$s[%2$s]" value="on" %3$s />', $args['section'], $args['id'], checked( $value, 'on', false ) );
+			$html  .= sprintf( '%1$s</label>', $args['desc'] );
+			$html  .= sprintf( '%1$s', $this->get_field_description_full($args));
+			$html  .= '</fieldset>';
+
+			echo $html;
+		}
+
+		/**
+		 * Get field description for display
+		 *
+		 * @param array   $args settings field args
+		 */
+		public function get_field_description_full( $args ) {
+			if ( ! empty( $args['desc_full'] ) ) {
+				$desc = sprintf( '<div class="desc_full">%s</div>', $args['desc_full'] );
+			} else {
+				$desc = '';
+			}
+
+			return $desc;
+		}
+
+		/**
+		 * Displays a text field for a settings field
+		 *
+		 * @param array   $args settings field args
+		 */
+		function callback_text( $args ) {
+
+			$value       = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
+			$size        = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
+			$type        = isset( $args['type'] ) ? $args['type'] : 'text';
+			$placeholder = empty( $args['placeholder'] ) ? '' : ' placeholder="' . $args['placeholder'] . '"';
+
+			$html        = sprintf( '<input type="%1$s" class="%2$s-text" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"%6$s/>', $type, $size, $args['section'], $args['id'], $value, $placeholder );
+			$html       .= $this->get_field_description( $args );
+			$html       .= $this->get_field_description_full( $args );
+
+			echo $html;
+		}
+
 	    function callback_separator( $args){
 	        //echo '<hr />';
 		    /*$value       = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
@@ -94,6 +170,7 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 						'class'             => isset( $option['class'] ) ? $option['class'] : $name,
 						'label_for'         => "wpuf-{$section}[{$name}]",
 						'desc'              => isset( $option['desc'] ) ? $option['desc'] : '',
+						'desc_full'         => isset( $option['desc_full'] ) ? $option['desc_full'] : '',
 						'name'              => $label,
 						'section'           => $section,
 						'size'              => isset( $option['size'] ) ? $option['size'] : null,
