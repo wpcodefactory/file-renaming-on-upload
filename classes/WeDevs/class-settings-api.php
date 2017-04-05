@@ -35,6 +35,9 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
                 #frou_filenaming_rules_opt .desc_full{
                     color:#999;
                 }
+                [id*="frou_"] .form-table td fieldset label{
+                    margin:0 !important;
+                }
             </style>
             <?php
 		}
