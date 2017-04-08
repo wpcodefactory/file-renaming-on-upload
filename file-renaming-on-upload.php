@@ -7,6 +7,8 @@ Version: 2.0.0
 Author: Pablo S G Pacheco
 Author URI: https://github.com/pablo-pacheco
 License: GPL2
+Text Domain: file-renaming-on-upload
+Domain Path: /languages
 */
 
 namespace FROU;
