@@ -41,6 +41,9 @@ Rules are options to control how your filename will be. Rules are enabled on the
 = What is filename structure option for? =
 It's the option where you can put your rules or any other characters you want to set how your filename will be
 
+= How can i contribute? =
+Head over to the [File Renaming on Upload plugin GitHub Repository](https://github.com/pablo-pacheco/file-renaming-on-upload) to find out how you can pitch in.
+
 == Installation ==
 
 1. Upload the entire 'file-renaming-on-upload' folder to the '/wp-content/plugins/' directory
