@@ -115,18 +115,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/tareq1988/wordpress-settings-api-class.git",
-            "reference": "d39a9ad738b2e2840aa02eff0e84fc58ade60aee"
+            "reference": "d14035f7c7e10d5433d802ef5cdffb3043bcaa77"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/tareq1988/wordpress-settings-api-class/zipball/d39a9ad738b2e2840aa02eff0e84fc58ade60aee",
-            "reference": "d39a9ad738b2e2840aa02eff0e84fc58ade60aee",
+            "url": "https://api.github.com/repos/tareq1988/wordpress-settings-api-class/zipball/d14035f7c7e10d5433d802ef5cdffb3043bcaa77",
+            "reference": "d14035f7c7e10d5433d802ef5cdffb3043bcaa77",
             "shasum": ""
         },
         "require": {
             "php": ">=5.2.4"
         },
-        "time": "2016-10-31 09:22:05",
+        "time": "2017-03-21 20:58:01",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -161,12 +161,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/pablo-pacheco/wp-namespace-autoloader.git",
-            "reference": "489f07932d23651028a9206cd8c544121f35b4fb"
+            "reference": "44043ba46a837f44979b6667eb046f91417d5a96"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/pablo-pacheco/wp-namespace-autoloader/zipball/489f07932d23651028a9206cd8c544121f35b4fb",
-            "reference": "489f07932d23651028a9206cd8c544121f35b4fb",
+            "url": "https://api.github.com/repos/pablo-pacheco/wp-namespace-autoloader/zipball/44043ba46a837f44979b6667eb046f91417d5a96",
+            "reference": "44043ba46a837f44979b6667eb046f91417d5a96",
             "shasum": ""
         },
         "require": {
@@ -175,7 +175,7 @@
         "require-dev": {
             "phpunit/phpunit": "*"
         },
-        "time": "2017-02-18 20:41:56",
+        "time": "2017-04-10 01:49:25",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
