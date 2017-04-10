@@ -85,5 +85,6 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Upgrade Notice ==
 
-= 2.0.1 =
-* Fix autoloader bug on linux environments
+= 2.0.2 =
+* Improve Portuguese translation
+* Add German translation
