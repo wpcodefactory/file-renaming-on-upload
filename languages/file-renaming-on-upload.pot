@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: File renaming on upload\n"
-"POT-Creation-Date: 2017-03-26 00:46-0300\n"
+"POT-Creation-Date: 2017-04-10 11:34-0300\n"
 "PO-Revision-Date: 2017-01-17 13:05-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,103 +14,122 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: assets\n"
-"X-Poedit-SearchPathExcluded-1: tasks\n"
-"X-Poedit-SearchPathExcluded-2: vendor\n"
+"X-Poedit-SearchPath-0: classes\n"
+"X-Poedit-SearchPath-1: file-renaming-on-upload.php\n"
+"X-Poedit-SearchPath-2: readme.txt\n"
 
-#: classes/Admin_Pages/class-settings-page.php:49
+#: classes/Admin_Pages/class-settings-page.php:55
 msgid "General Settings"
 msgstr ""
 
-#: classes/Admin_Pages/class-settings-page.php:65
+#: classes/Admin_Pages/class-settings-page.php:59
 msgid "Rules"
 msgstr ""
 
-#: classes/Options/General/class-enable-option.php:35
+#: classes/Options/General/class-enable-option.php:60
 msgid "Enable plugin"
 msgstr ""
 
-#: classes/Options/General/class-enable-option.php:36
+#: classes/Options/General/class-enable-option.php:61
 msgid "Enables the plugin"
 msgstr ""
 
-#: classes/Options/General/class-filename-structure-option.php:57
+#: classes/Options/General/class-filename-structure-option.php:96
 msgid "Filename structure"
 msgstr ""
 
-#: classes/Options/General/class-filename-structure-option.php:58
+#: classes/Options/General/class-filename-structure-option.php:97
 msgid ""
 "Manages the filename structure using rules. If you want only the "
-"filename, leave it as <b>{filename}</b>"
+"filename, leave it as <b>{filename}.</b>"
 msgstr ""
 
-#: classes/Options/General/class-filename-structure-option.php:58
+#: classes/Options/General/class-filename-structure-option.php:97
 msgid "Rules available:"
 msgstr ""
 
-#: classes/Options/General/class-permalink-update-option.php:75
+#: classes/Options/General/class-filename-structure-option.php:103
+msgid "Character(s) used to separate rules"
+msgstr ""
+
+#: classes/Options/General/class-permalink-update-option.php:126
 msgid "Update permalink"
 msgstr ""
 
-#: classes/Options/General/class-permalink-update-option.php:76
-msgid "Updates attachment permalink following filename rules"
+#: classes/Options/General/class-permalink-update-option.php:127
+msgid "Updates attachment permalink following the filename structure"
 msgstr ""
 
-#: classes/Options/Rules/class-datetime-option.php:60
+#: classes/Options/Rules/class-datetime-option.php:114
 msgid "Datetime"
 msgstr ""
 
-#: classes/Options/Rules/class-datetime-option.php:61
+#: classes/Options/Rules/class-datetime-option.php:115
 msgid "Enables Datetime rule"
 msgstr ""
 
-#: classes/Options/Rules/class-datetime-option.php:68
-msgid "Datetime format. "
+#: classes/Options/Rules/class-datetime-option.php:122
+msgid "Datetime format "
 msgstr ""
 
-#: classes/Options/Rules/class-datetime-option.php:68
+#: classes/Options/Rules/class-datetime-option.php:122
 #, php-format
 msgid "You can see more formats <a target=\"_blank\" href=\"%s\">here</a>"
 msgstr ""
 
-#: classes/Options/Rules/class-datetime-option.php:68
+#: classes/Options/Rules/class-datetime-option.php:122
 #, php-format
 msgid "Result: <b>%s</b>"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:92
+#: classes/Options/Rules/class-filename-option.php:183
 msgid "Filename"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:93
+#: classes/Options/Rules/class-filename-option.php:184
 msgid "Enables filename rule"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:101
-msgid "Converts all accent characters from filename to ASCII characters"
+#: classes/Options/Rules/class-filename-option.php:192
+msgid "Converts all filename accent characters to ASCII characters"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:108
-msgid "Converts all characters from filename to lowercase"
+#: classes/Options/Rules/class-filename-option.php:199
+msgid "Converts all filename characters to lowercase"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:115
+#: classes/Options/Rules/class-filename-option.php:206
+msgid "Converts filename to post title whenever it is possible"
+msgstr ""
+
+#: classes/Options/Rules/class-filename-option.php:213
 msgid "Removes characters from filename"
 msgstr ""
 
-#: classes/Options/Rules/class-siteurl-option.php:80
+#: classes/Options/Rules/class-post-title-option.php:95
+msgid "Post title"
+msgstr ""
+
+#: classes/Options/Rules/class-post-title-option.php:96
+msgid "Enables post title rule"
+msgstr ""
+
+#: classes/Options/Rules/class-post-title-option.php:97
+msgid "Adds post title whenever it is possible"
+msgstr ""
+
+#: classes/Options/Rules/class-siteurl-option.php:115
 msgid "Site URL"
 msgstr ""
 
-#: classes/Options/Rules/class-siteurl-option.php:81
+#: classes/Options/Rules/class-siteurl-option.php:116
 msgid "Enables site URL rule"
 msgstr ""
 
-#: classes/Options/Rules/class-siteurl-option.php:88
+#: classes/Options/Rules/class-siteurl-option.php:123
 msgid "The site URL (Change it the way you like)"
 msgstr ""
 
-#: file-renaming-on-upload.php:33
+#: file-renaming-on-upload.php:38
 msgid "Settings"
 msgstr ""

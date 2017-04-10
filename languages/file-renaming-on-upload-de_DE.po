@@ -1,0 +1,325 @@
+# Translation of Plugins - File Renaming on upload - Development (trunk) in German
+# This file is distributed under the same license as the Plugins - File Renaming on upload - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-04-10 11:41-0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.8.11\n"
+"Language: de\n"
+"Project-Id-Version: Plugins - File Renaming on upload - Development (trunk)\n"
+"POT-Creation-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+
+#. Author URI of the plugin/theme
+msgid "https://github.com/pablo-pacheco"
+msgstr "https://github.com/pablo-pacheco"
+
+#. Author of the plugin/theme
+msgid "Pablo S G Pacheco"
+msgstr "Pablo S G Pacheco"
+
+#. Description of the plugin/theme
+msgid "Fixes file uploads with accents and special characters by renaming them. It also improves your SEO."
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/extend/plugins/file-renaming-on-upload/"
+msgstr "http://wordpress.org/extend/plugins/file-renaming-on-upload/"
+
+#. Plugin Name of the plugin/theme
+msgid "File Renaming on upload"
+msgstr "File Renaming on upload"
+
+#: vendor/tareq1988/wordpress-settings-api-class/src/class.settings-api.php:368
+msgid "Choose File"
+msgstr "Datei auswählen"
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:28
+msgid "Other Settings"
+msgstr "Weitere Einstellungen"
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:159
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:66
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:142
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:217
+msgid "Multi checkbox description"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:158
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:65
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:141
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:216
+msgid "Multile checkbox"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:152
+msgid "WP_Editor description"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:151
+msgid "Advanced Editor"
+msgstr "Erweiterter Editor"
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:138
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:103
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:179
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:253
+msgid "Color description"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:137
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:102
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:178
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:252
+msgid "Color"
+msgstr "Farbe"
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:126
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:96
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:172
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:246
+msgid "File description"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:125
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:95
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:171
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:245
+msgid "File"
+msgstr "Datei"
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:119
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:145
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:89
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:165
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:239
+msgid "Password description"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:118
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:144
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:88
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:164
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:238
+msgid "Password"
+msgstr "Passwort"
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:108
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:78
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:155
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:229
+msgid "Dropdown description"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:107
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:77
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:154
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:228
+msgid "A Dropdown"
+msgstr "Ein Dropdown"
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:98
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:56
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:131
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:207
+msgid "A radio button"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:97
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:55
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:130
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:206
+msgid "Radio Button"
+msgstr "Radio Button"
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:92
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:50
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:125
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:201
+msgid "Checkbox Label"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:91
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:49
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:124
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:200
+msgid "Checkbox"
+msgstr "Checkbox"
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:86
+msgid "HTML area description. You can use any <strong>bold</strong> or other HTML elements."
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:81
+msgid "Textarea placeholder"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:80
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:44
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:119
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:195
+msgid "Textarea description"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:79
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:43
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:118
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:194
+msgid "Textarea Input"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:69
+msgid "1.99"
+msgstr "1.99"
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:68
+msgid "Number field with validation callback `floatval`"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:67
+msgid "Number Input"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:60
+msgid "Text Input placeholder"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:59
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:37
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:112
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:188
+msgid "Text input description"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:58
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:36
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:111
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:187
+msgid "Text Input"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:42
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:24
+msgid "Advanced Settings"
+msgstr "Erweiterte Einstellungen"
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:38
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:20
+msgid "Basic Settings"
+msgstr "Grundeinstellungen"
+
+#: file-renaming-on-upload.php:38
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: classes/Options/Rules/class-siteurl-option.php:123
+msgid "The site URL (Change it the way you like)"
+msgstr ""
+
+#: classes/Options/Rules/class-siteurl-option.php:116
+msgid "Enables site URL rule"
+msgstr ""
+
+#: classes/Options/Rules/class-siteurl-option.php:115
+msgid "Site URL"
+msgstr ""
+
+#: classes/Options/Rules/class-post-title-option.php:97
+msgid "Adds post title whenever it is possible"
+msgstr ""
+
+#: classes/Options/Rules/class-post-title-option.php:96
+msgid "Enables post title rule"
+msgstr ""
+
+#: classes/Options/Rules/class-post-title-option.php:95
+msgid "Post title"
+msgstr "Beitragstitel"
+
+#: classes/Options/Rules/class-filename-option.php:213
+msgid "Removes characters from filename"
+msgstr "Entfernt Zeichen aus dem Dateinamen"
+
+#: classes/Options/Rules/class-filename-option.php:206
+msgid "Converts filename to post title whenever it is possible"
+msgstr "Konvertiert den Dateinamen in den Beitragstitel, wenn möglich"
+
+#: classes/Options/Rules/class-filename-option.php:199
+msgid "Converts all filename characters to lowercase"
+msgstr "Konvertiert alle Zeichen im Dateinamen in Kleinbuchstaben"
+
+#: classes/Options/Rules/class-filename-option.php:192
+msgid "Converts all filename accent characters to ASCII characters"
+msgstr "Konvertiert alle Akzentbuchstaben im Dateinamen in ASCII-Zeichen"
+
+#: classes/Options/Rules/class-filename-option.php:184
+msgid "Enables filename rule"
+msgstr ""
+
+#: classes/Options/Rules/class-filename-option.php:183
+msgid "Filename"
+msgstr "Dateiname"
+
+#: classes/Options/Rules/class-datetime-option.php:122
+msgid "Result: <b>%s</b>"
+msgstr "Ergebnis: <b>%s</b>"
+
+#: classes/Options/Rules/class-datetime-option.php:122
+msgid "You can see more formats <a target=\"_blank\" href=\"%s\">here</a>"
+msgstr "Weitere Formate kannst du dir <a target=\"_blank\" href=\"%s\">hier anschauen</a>"
+
+#: classes/Options/Rules/class-datetime-option.php:122
+msgid "Datetime format "
+msgstr ""
+
+#: classes/Options/Rules/class-datetime-option.php:115
+msgid "Enables Datetime rule"
+msgstr ""
+
+#: classes/Options/Rules/class-datetime-option.php:114
+msgid "Datetime"
+msgstr "Datum/Zeit"
+
+#: classes/Options/General/class-permalink-update-option.php:127
+msgid "Updates attachment permalink following the filename structure"
+msgstr ""
+
+#: classes/Options/General/class-permalink-update-option.php:126
+msgid "Update permalink"
+msgstr "Permalink aktualisieren"
+
+#: classes/Options/General/class-filename-structure-option.php:103
+msgid "Character(s) used to separate rules"
+msgstr ""
+
+#: classes/Options/General/class-filename-structure-option.php:97
+msgid "Rules available:"
+msgstr ""
+
+#: classes/Options/General/class-filename-structure-option.php:97
+msgid "Manages the filename structure using rules. If you want only the filename, leave it as <b>{filename}.</b>"
+msgstr ""
+
+#: classes/Options/General/class-filename-structure-option.php:96
+msgid "Filename structure"
+msgstr "Dateinamen-Struktur"
+
+#: classes/Options/General/class-enable-option.php:61
+msgid "Enables the plugin"
+msgstr "Aktiviert das Plugin"
+
+#: classes/Options/General/class-enable-option.php:60
+msgid "Enable plugin"
+msgstr "Plugin aktivieren"
+
+#: classes/Admin_Pages/class-settings-page.php:59
+msgid "Rules"
+msgstr "Regeln"
+
+#: classes/Admin_Pages/class-settings-page.php:55
+msgid "General Settings"
+msgstr "Allgemeine Einstellungen"

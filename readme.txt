@@ -4,7 +4,7 @@ Tags: file rename, upload, renaming, file, rename
 Requires at least: 4.0.0
 Tested up to: 4.7.3
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BAC8PT82YMTJL&lc=BR&item_name=File%20Renaming%20on%20Upload&item_number=file%2drenaming%2don%2dupload&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,10 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 2. Setup how the rules will work on your filename
 
 == Changelog ==
+
+= 2.0.2 =
+* Improve Portuguese translation
+* Add German translation
 
 = 2.0.1 =
 * Fix autoloader bug on linux environments
