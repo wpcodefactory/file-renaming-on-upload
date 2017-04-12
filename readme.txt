@@ -58,6 +58,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
+= 2.0.4 =
+* Ignores some basenames ('path', 'scheme', 'host', 'owner', 'repo', 'owner_repo', 'base_uri', 'uri') when there is no extension provided. It solves conflicts with github-updater plugin
+
 = 2.0.3 =
 * Improve description
 * Add option to ignore renaming for some filename extensions
