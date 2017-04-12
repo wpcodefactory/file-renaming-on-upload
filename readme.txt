@@ -95,6 +95,5 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Upgrade Notice ==
 
-= 2.0.3 =
-* Improve description
-* Add option to ignore renaming for some filename extensions
+= 2.0.4 =
+* Solves conflict issues with the github updater plugin
