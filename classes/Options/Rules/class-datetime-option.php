@@ -2,8 +2,8 @@
 /**
  * File renaming on upload - Datetime Option
  *
- * @version 1.0.0
- * @since   1.0.0
+ * @version 2.0.0
+ * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
 
@@ -28,8 +28,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 		/**
 		 * Constructor
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param array $args
 		 */
@@ -41,8 +41,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 		/**
 		 * Initializes
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 */
 		function init() {
 			parent::init();
@@ -52,8 +52,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 		/**
 		 * Turns this rule off as default
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param $structure_rules
 		 *
@@ -71,8 +71,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 		/**
 		 * Inserts datetime on 'frou_sanitize_file_name' filter
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param $filename_infs
 		 *
@@ -96,8 +96,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 		/**
 		 * Adds settings fields
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param $fields
 		 * @param $section

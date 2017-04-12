@@ -44,8 +44,8 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		/**
 		 * Creates settings separated by tabs
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 */
 		function admin_init() {
 			// Sections
@@ -75,8 +75,8 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		/**
 		 * Gets an option inside a setting
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param        $option
 		 * @param        $section
@@ -97,8 +97,8 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		/**
 		 * Creates the menu
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 */
 		function admin_menu() {
 			add_options_page( 'File renaming', 'File renaming', 'delete_posts', 'file-renaming-on-upload', array(
@@ -110,8 +110,8 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		/**
 		 * Shows the admin page
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 */
 		function plugin_page() {
 			echo '<div class="wrap">';

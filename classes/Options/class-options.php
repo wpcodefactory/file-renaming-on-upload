@@ -2,8 +2,8 @@
 /**
  * File renaming on upload - Options
  *
- * @version 1.0.0
- * @since   1.0.0
+ * @version 2.0.0
+ * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
 
@@ -13,6 +13,7 @@ namespace FROU\Options;
 use FROU\Options\General\Enable_Option;
 use FROU\Options\General\Filename_Structure_Option;
 
+use FROU\Options\General\Ignore_Extensions_Option;
 use FROU\Options\General\Permalink_Update_Option;
 use FROU\Options\Rules\Datetime_Option;
 use FROU\Options\Rules\Filename;
@@ -33,8 +34,8 @@ if ( ! class_exists( 'FROU\Options\Options' ) ) {
 		/**
 		 * Constructor
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param array $args
 		 */
@@ -66,9 +67,11 @@ if ( ! class_exists( 'FROU\Options\Options' ) ) {
 			// General options
 			$option = new Enable_Option( array( 'section' => 'frou_general_opt' ) );
 			$option->init();
-			$option = new Permalink_Update_Option(array( 'section' => 'frou_general_opt' ));
+			$option = new Permalink_Update_Option( array( 'section' => 'frou_general_opt' ) );
 			$option->init();
 			$option = new Filename_Structure_Option( array( 'section' => 'frou_general_opt' ) );
+			$option->init();
+			$option = new Ignore_Extensions_Option( array( 'section' => 'frou_general_opt' ) );
 			$option->init();
 
 			// Rules

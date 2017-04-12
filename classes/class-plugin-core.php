@@ -2,8 +2,8 @@
 /**
  * File renaming on upload - Plugin core
  *
- * @version 1.0.0
- * @since   1.0.0
+ * @version 2.0.3
+ * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
 
@@ -14,6 +14,7 @@ use FROU\Admin_Pages\Settings_Page;
 use FROU\Functions\Functions;
 
 use FROU\Options\General\Enable_Option;
+use FROU\Options\General\Ignore_Extensions_Option;
 use FROU\Options\Options;
 use FROU\WeDevs\Settings_Api;
 use FROU\WordPress\Plugin;
@@ -48,8 +49,8 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**
 		 * Initialize
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param array $args
 		 */
@@ -64,6 +65,14 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			//add_action('wp_insert_post',array($this,'insert_post'));
 		}
 
+		/**
+		 * Removes unused rules
+		 *
+		 * @version 2.0.0
+		 * @since   2.0.0
+		 *
+		 * @param array $args
+		 */
 		protected function remove_unused_rules( $filename, $args ) {
 
 			preg_match_all( '/\{.*\}/U', $filename, $filename_rules_arr );
@@ -79,6 +88,14 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			return $filename;
 		}
 
+		/**
+		 * Translates rules
+		 *
+		 * @version 2.0.0
+		 * @since   2.0.0
+		 *
+		 * @param array $args
+		 */
 		protected function translate_rules( $filename, $args ) {
 			foreach ( $args['structure']['translation'] as $key => $translation ) {
 				$filename = str_replace( "{" . $key . "}", $translation, $filename );
@@ -87,6 +104,14 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			return $filename;
 		}
 
+		/**
+		 * Adds separator
+		 *
+		 * @param $filename
+		 * @param $args
+		 *
+		 * @return mixed
+		 */
 		protected function add_separator( $filename, $args ) {
 			$separator = $args['structure']['separator'];
 
@@ -98,23 +123,37 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 *
 		 * It's the main function of this plugin
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.3
+		 * @since   2.0.0
 		 *
 		 * @param $filename
 		 *
 		 * @return mixed|string
 		 */
 		public function sanitize_filename( $filename ) {
+
+			// Does nothing if plugin is not enabled
 			$option = new Enable_Option( array( 'section' => 'frou_general_opt' ) );
 			if ( ! filter_var( $option->get_option( $option->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $filename;
 			}
 
+			// Gets Info about the filename
 			$info              = pathinfo( $filename );
 			$extension         = empty( $info['extension'] ) ? '' : $info['extension'];
 			$filename_original = $info['filename'];
 
+			// Ignores specific filename extensions
+			$option = new Ignore_Extensions_Option( array( 'section' => 'frou_general_opt' ) );
+			if ( filter_var( $option->get_option( $option->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
+				$ignored_extensions_str = $option->get_option( $option->option_extensions_ignored );
+				$ignored_extensions_arr = explode( " ", $ignored_extensions_str );
+				if ( ! empty( $ignored_extensions_str ) && in_array( $extension, $ignored_extensions_arr ) ) {
+					return $filename;
+				}
+			}
+
+			// Gets plugin rules
 			$filename_arr = apply_filters( 'frou_sanitize_file_name',
 				array(
 					'filename_original' => $filename_original,
@@ -127,6 +166,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 				)
 			);
 
+			// Applies plugin's rules
 			$filename = $filename_arr['structure']['rules'];
 			$filename = $this->remove_unused_rules( $filename, $filename_arr );
 			$filename = $this->add_separator( $filename, $filename_arr );
@@ -139,8 +179,8 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**
 		 * Manages the settings page
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 */
 		public function handle_settings_page() {
 			if ( ! is_admin() ) {
@@ -154,14 +194,16 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**
 		 * Creates the options inside settings pages
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 */
 		public function add_options() {
 			$this->set_options( new Options() );
 		}
 
 		/**
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 * @return Options
 		 */
 		public function get_options( $smart = true ) {
@@ -175,6 +217,9 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		}
 
 		/**
+		 * @version 2.0.0
+		 * @since   2.0.0
+		 *
 		 * @param Options $options
 		 */
 		public function set_options( $options ) {

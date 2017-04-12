@@ -32,8 +32,9 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 
 			?>
             <style type="text/css">
-                #frou_filenaming_rules_opt .desc_full{
-                    color:#999;
+                [id*="frou_"] .desc_secondary{
+                    color:#888;
+                    margin-top:5px;
                 }
                 [id*="frou_"] .form-table td fieldset label{
                     margin:0 !important;
@@ -68,8 +69,8 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 		 * @param array   $args settings field args
 		 */
 		public function get_field_description_full( $args ) {
-			if ( ! empty( $args['desc_full'] ) ) {
-				$desc = sprintf( '<div class="desc_full">%s</div>', $args['desc_full'] );
+			if ( ! empty( $args['desc_secondary'] ) ) {
+				$desc = sprintf( '<div class="desc_secondary">%s</div>', $args['desc_secondary'] );
 			} else {
 				$desc = '';
 			}
@@ -173,7 +174,7 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 						'class'             => isset( $option['class'] ) ? $option['class'] : $name,
 						'label_for'         => "wpuf-{$section}[{$name}]",
 						'desc'              => isset( $option['desc'] ) ? $option['desc'] : '',
-						'desc_full'         => isset( $option['desc_full'] ) ? $option['desc_full'] : '',
+						'desc_secondary'         => isset( $option['desc_secondary'] ) ? $option['desc_secondary'] : '',
 						'name'              => $label,
 						'section'           => $section,
 						'size'              => isset( $option['size'] ) ? $option['size'] : null,

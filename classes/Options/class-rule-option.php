@@ -2,8 +2,8 @@
 /**
  * File renaming on upload - Filenaming Rule Option
  *
- * @version 1.0.0
- * @since   1.0.0
+ * @version 2.0.0
+ * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
 
@@ -21,8 +21,8 @@ if ( ! class_exists( 'FROU\Options\Rule_Option' ) ) {
 		/**
 		 * Add option_id as rule as default
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param $structure_rules
 		 *
@@ -40,8 +40,8 @@ if ( ! class_exists( 'FROU\Options\Rule_Option' ) ) {
 		/**
 		 * Initializes
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 */
 		function init() {
 			parent::init();

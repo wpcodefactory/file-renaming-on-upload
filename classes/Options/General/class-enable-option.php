@@ -2,8 +2,8 @@
 /**
  * File renaming on upload - Enable Option
  *
- * @version 1.0.0
- * @since   1.0.0
+ * @version 2.0.0
+ * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
 
@@ -22,8 +22,8 @@ if ( ! class_exists( 'FROU\Options\General\Enable_Option' ) ) {
 		/**
 		 * Initializes
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 */
 		function init() {
 			parent::init();
@@ -32,8 +32,8 @@ if ( ! class_exists( 'FROU\Options\General\Enable_Option' ) ) {
 		/**
 		 * Constructor
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param array $args
 		 */
@@ -45,8 +45,8 @@ if ( ! class_exists( 'FROU\Options\General\Enable_Option' ) ) {
 		/**
 		 * Adds settings fields
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param $fields
 		 * @param $section

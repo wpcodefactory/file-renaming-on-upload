@@ -2,8 +2,8 @@
 /**
  * File renaming on upload - Option
  *
- * @version 1.0.0
- * @since   1.0.0
+ * @version 2.0.0
+ * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
 
@@ -25,8 +25,8 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 		/**
 		 * Constructor
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param array $args
 		 */
@@ -36,13 +36,14 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 			) );
 
 			$this->section = $args['section'];
+			$this->add_fields(array(),$this->section);
 		}
 
 		/**
 		 * Initializes
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 */
 		function init() {
 			add_filter( "frou_fields_{$this->section}", array( $this, 'add_fields' ), 10, 2 );
@@ -51,8 +52,8 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 		/**
 		 * Gets option from this option section
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param        $option
 		 * @param string $default
@@ -84,8 +85,8 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 		/**
 		 * Add settings fields
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 */
 		public function add_fields( $fields, $section ) {
 			$this->fields = $fields;

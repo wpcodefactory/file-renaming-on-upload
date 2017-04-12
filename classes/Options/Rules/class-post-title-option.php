@@ -2,8 +2,8 @@
 /**
  * File renaming on upload - Filename Option
  *
- * @version 1.0.0
- * @since   1.0.0
+ * @version 2.0.0
+ * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
 
@@ -27,8 +27,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 		/**
 		 * Constructor
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param array $args
 		 */
@@ -40,8 +40,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 		/**
 		 * Initializes
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 */
 		function init() {
 			parent::init();
@@ -54,8 +54,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 		/**
 		 * Inserts post title on 'frou_sanitize_file_name' filter
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param $filename_infs
 		 *
@@ -80,8 +80,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 		/**
 		 * Adds settings fields
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param $fields
 		 * @param $section
@@ -94,7 +94,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 					'name'      => $this->option_id,
 					'label'     => __( 'Post title', 'file-renaming-on-upload' ),
 					'desc'      => __( 'Enables post title rule', 'file-renaming-on-upload' ) . ' - ' . '<strong>{' . $this->option_id . '}</strong>',
-					'desc_full' => __( 'Adds post title whenever it is possible', 'file-renaming-on-upload' ),
+					'desc_secondary' => __( 'Adds post title whenever it is possible', 'file-renaming-on-upload' ),
 					'type'      => 'checkbox',
 					'default'   => 'on',
 				),

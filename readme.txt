@@ -33,7 +33,7 @@ This plugin will help you fixing this problem by renaming these files on upload.
 
 == Frequently Asked Questions ==
 = How does this plugin work? =
-It renames files on upload using the available rules
+It renames files on upload using the available rules. More specifically, it uses some filters provided by WordPress to handle file name sanitizing, like **sanitize_file_name**, **sanitize_file_name_chars** or actions like **add_attachment**
 
 = What are rules? =
 Rules are options to control how your filename will be. Rules are enabled on the rules tab and have to be placed on the filename scructure option
@@ -41,7 +41,7 @@ Rules are options to control how your filename will be. Rules are enabled on the
 = What is filename structure option for? =
 It's the option where you can put your rules or any other characters you want to set how your filename will be
 
-= How can i contribute? =
+= How can i contribute with code development? =
 Head over to the [File Renaming on Upload plugin GitHub Repository](https://github.com/pablo-pacheco/file-renaming-on-upload) to find out how you can pitch in.
 
 == Installation ==
@@ -52,10 +52,17 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Screenshots ==
 
-1. On general settings, setup how your filename will be, using the filename structure option where you have some rules at your disposal
-2. Setup how the rules will work on your filename
+1. An exemple of a sanitized filename in Media Library
+2. On general settings, setup how your filename will be, using the filename structure option where you have some rules at your disposal
+3. Setup how the rules will work on your filename
 
 == Changelog ==
+
+= 2.0.3 =
+* Improve description
+* Add option to ignore renaming for some filename extensions
+* Add new screenshot
+* Remove portuguese and german translation packs from languages folder
 
 = 2.0.2 =
 * Improve Portuguese translation
@@ -85,6 +92,6 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Upgrade Notice ==
 
-= 2.0.2 =
-* Improve Portuguese translation
-* Add German translation
+= 2.0.3 =
+* Improve description
+* Add option to ignore renaming for some filename extensions

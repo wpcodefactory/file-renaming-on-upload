@@ -2,8 +2,8 @@
 /**
  * File renaming on upload - Filename structure Option
  *
- * @version 1.0.0
- * @since   1.0.0
+ * @version 2.0.0
+ * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
 
@@ -24,8 +24,8 @@ if ( ! class_exists( 'FROU\Options\General\Filename_Structure_Option' ) ) {
 		/**
 		 * Initializes
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 */
 		function init() {
 			parent::init();
@@ -36,8 +36,8 @@ if ( ! class_exists( 'FROU\Options\General\Filename_Structure_Option' ) ) {
 		/**
 		 * Constructor
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param array $args
 		 */
@@ -49,8 +49,8 @@ if ( ! class_exists( 'FROU\Options\General\Filename_Structure_Option' ) ) {
 		/**
 		 * Creates a list with available filename structure rules
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 * @param $list
 		 *
 		 * @return string
@@ -81,8 +81,8 @@ if ( ! class_exists( 'FROU\Options\General\Filename_Structure_Option' ) ) {
 		/**
 		 * Adds settings fields
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param $fields
 		 * @param $section

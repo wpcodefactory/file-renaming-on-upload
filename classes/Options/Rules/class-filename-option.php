@@ -2,8 +2,8 @@
 /**
  * File renaming on upload - Filename Option
  *
- * @version 1.0.0
- * @since   1.0.0
+ * @version 2.0.0
+ * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
 
@@ -36,8 +36,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Constructor
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param array $args
 		 */
@@ -49,8 +49,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Initializes
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 */
 		function init() {
 			parent::init();
@@ -63,8 +63,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Removes chars from filename
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 * @param $chars
 		 *
 		 * @return array
@@ -87,8 +87,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Converts filename to posttitle
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param $filename_infs
 		 *
@@ -118,8 +118,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Converts filename to lowercase
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param $filename_infs
 		 *
@@ -143,8 +143,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Converts all accent characters from filename to ASCII characters
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param $filename_infs
 		 *
@@ -168,8 +168,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Adds settings fields
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param $fields
 		 * @param $section
@@ -210,7 +210,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 				array(
 					'name'    => $this->option_remove_characters,
 					//'label'   => __( 'Characters', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Removes characters from filename', 'file-renaming-on-upload' ),
+					'desc'    => __( 'Removes characters from filename (space separated)', 'file-renaming-on-upload' ),
 					'type'    => 'checkbox',
 					'default' => 'on',
 				),

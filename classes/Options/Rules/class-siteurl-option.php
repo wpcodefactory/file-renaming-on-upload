@@ -2,8 +2,8 @@
 /**
  * File renaming on upload - Site URL Option
  *
- * @version 1.0.0
- * @since   1.0.0
+ * @version 2.0.0
+ * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
 
@@ -28,8 +28,8 @@ if ( ! class_exists( 'FROU\Options\Rules\SiteURL_Option' ) ) {
 		/**
 		 * Constructor
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param array $args
 		 */
@@ -41,8 +41,8 @@ if ( ! class_exists( 'FROU\Options\Rules\SiteURL_Option' ) ) {
 		/**
 		 * Gets site url
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 * @return mixed|string
 		 */
 		function get_site_url() {
@@ -63,8 +63,8 @@ if ( ! class_exists( 'FROU\Options\Rules\SiteURL_Option' ) ) {
 		/**
 		 * Initializes
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 */
 		function init() {
 			parent::init();
@@ -74,8 +74,8 @@ if ( ! class_exists( 'FROU\Options\Rules\SiteURL_Option' ) ) {
 		/**
 		 * Inserts site url on 'frou_sanitize_file_name' filter
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param $filename_infs
 		 *
@@ -100,8 +100,8 @@ if ( ! class_exists( 'FROU\Options\Rules\SiteURL_Option' ) ) {
 		/**
 		 * Adds settings fields
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version 2.0.0
+		 * @since   2.0.0
 		 *
 		 * @param $fields
 		 * @param $section

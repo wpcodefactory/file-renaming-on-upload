@@ -2,8 +2,8 @@
 /**
  * File renaming on upload - Singleton Design Pattern
  *
- * @version 1.0.0
- * @since   1.0.0
+ * @version 2.0.0
+ * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
 
