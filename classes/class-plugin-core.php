@@ -158,7 +158,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 					'action',
 					'wpnonce',
 					'wp_http_referer',
-					'github-updater'
+					'github-updater',
 					'github_updater_install_repo',
 					'github_updater_repo',
 					'github_updater_branch',
