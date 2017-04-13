@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core
  *
- * @version 2.0.4
+ * @version 2.0.5
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -123,7 +123,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 *
 		 * It's the main function of this plugin
 		 *
-		 * @version 2.0.4
+		 * @version 2.0.5
 		 * @since   2.0.0
 		 *
 		 * @param $filename
@@ -143,7 +143,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			$extension         = empty( $info['extension'] ) ? '' : $info['extension'];
 			$filename_original = $info['filename'];
 
-			// Cancels in case of weird basename and no extensions (this happens using the plugin github-updater
+			// Cancels in case of weird basename and no extensions (this happens using the plugin github-updater)
 			if ( empty( $extension ) && !empty( $info['basename'] ) ) {
 				$ignored_basenames_arr = array(
 					'path',
@@ -154,6 +154,20 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 					'owner_repo',
 					'base_uri',
 					'uri',
+					'option_page',
+					'action',
+					'wpnonce',
+					'wp_http_referer',
+					'github_updater_repo',
+					'github_updater_branch',
+					'github_updater_api',
+					'github_access_token',
+					'bitbucket_username',
+					'bitbucket_password',
+					'gitlab_access_token',
+					'submit',
+					'db_version',
+					'github_updater_install_repo'
 				);
 				if ( in_array( $info['basename'], $ignored_basenames_arr ) ) {
 					return $filename;

@@ -58,6 +58,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
+= 2.0.5 =
+* Ignores more basenames ('option_page', 'action', 'wpnonce', 'wp_http_referer', 'github_updater_repo', 'github_updater_branch', 'github_updater_api', 'github_access_token', 'bitbucket_username', 'bitbucket_password', 'gitlab_access_token', 'submit', 'db_version', 'github_updater_install_repo') when there is no extension provided to solve more conflicts with github-updater plugin
+
 = 2.0.4 =
 * Ignores some basenames ('path', 'scheme', 'host', 'owner', 'repo', 'owner_repo', 'base_uri', 'uri') when there is no extension provided. It solves conflicts with github-updater plugin
 
@@ -95,5 +98,5 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Upgrade Notice ==
 
-= 2.0.4 =
-* Solves conflict issues with the github updater plugin
+= 2.0.5 =
+* Solves more conflict issues with the github updater plugin
