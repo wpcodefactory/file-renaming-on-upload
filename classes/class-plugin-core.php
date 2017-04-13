@@ -143,8 +143,6 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			$extension         = empty( $info['extension'] ) ? '' : $info['extension'];
 			$filename_original = $info['filename'];
 
-			error_log( '$info :'.  print_r($info , true ) );
-
 			// Cancels in case of weird basename and no extensions (this happens using the plugin github-updater)
 			if ( empty( $extension ) && !empty( $info['basename'] ) ) {
 				$ignored_basenames_arr = array(
