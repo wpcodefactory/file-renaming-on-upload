@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== File Renaming on Upload ===
 Contributors: karzin
 Tags: file rename, upload, renaming, file, rename
 Requires at least: 4.0.0
