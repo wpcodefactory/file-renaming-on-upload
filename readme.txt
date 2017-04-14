@@ -60,7 +60,6 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 = 2.0.7 =
 * Fix datetime option fatal error on update() boolean
-* Solves more conflicts with github updater plugin
 
 = 2.0.6 =
 * Solves more conflicts with github updater plugin
