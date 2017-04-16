@@ -144,6 +144,9 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			$filename_original = $info['filename'];
 
 			// Cancels in case of using github-updater option_page
+			if(isset($_GET['page']) && $_GET['page']=='github_updater'){
+				return $filename;
+			}
 			if(isset($_POST['option_page']) && $_POST['option_page']=='github_updater'){
 				return $filename;
 			}
