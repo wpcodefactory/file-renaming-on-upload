@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core
  *
- * @version 2.0.6
+ * @version 2.0.8
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -58,7 +58,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			parent::init( $args );
 			add_action( 'init', array( $this, 'handle_settings_page' ) );
 			add_action( 'init', array( $this, 'add_options' ) );
-			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename' ) );
+			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename' ),10,2 );
 
 			//add_action( 'add_attachment', array( $this, 'add_attachment' ) );
 			//add_filter('wp_insert_attachment_data',array($this,'insert_attachment_data'),10,2);
@@ -123,14 +123,14 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 *
 		 * It's the main function of this plugin
 		 *
-		 * @version 2.0.6
+		 * @version 2.0.8
 		 * @since   2.0.0
 		 *
 		 * @param $filename
 		 *
 		 * @return mixed|string
 		 */
-		public function sanitize_filename( $filename ) {
+		public function sanitize_filename( $filename, $filename_raw ) {
 
 			// Does nothing if plugin is not enabled
 			$option = new Enable_Option( array( 'section' => 'frou_general_opt' ) );
@@ -142,6 +142,11 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			$info              = pathinfo( $filename );
 			$extension         = empty( $info['extension'] ) ? '' : $info['extension'];
 			$filename_original = $info['filename'];
+
+			// Cancels in case of using github-updater option_page
+			if(isset($_POST['option_page']) && $_POST['option_page']=='github_updater'){
+				return $filename;
+			}
 
 			// Cancels in case of weird basename and no extensions (this happens using the plugin github-updater)
 			if ( empty( $extension ) && !empty( $info['basename'] ) ) {
@@ -172,6 +177,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 					'db_version',
 					'branch_switch',
 				);
+
 				if ( in_array( $info['basename'], $ignored_basenames_arr ) ) {
 					return $filename;
 				}
