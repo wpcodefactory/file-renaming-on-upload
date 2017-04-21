@@ -32,12 +32,27 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 
 			?>
             <style type="text/css">
+                .frou-title-field{
+                    font-weight:bold;
+                    margin-top:10px;
+                    margin-bottom:-9px;
+                    color:#888;
+                }
                 [id*="frou_"] .desc_secondary{
                     color:#888;
                     margin-top:5px;
                 }
+                [id*="frou_"] h2{
+                    font-weight:bold;
+                    display:none;
+                }
                 [id*="frou_"] .form-table td fieldset label{
                     margin:0 !important;
+                }
+                [id*="frou_"] .form-table th label{
+                    font-weight:bold;
+                    color:#333;
+                    font-size:14px;
                 }
             </style>
             <?php
@@ -91,6 +106,27 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 			$placeholder = empty( $args['placeholder'] ) ? '' : ' placeholder="' . $args['placeholder'] . '"';
 
 			$html        = sprintf( '<input type="%1$s" class="%2$s-text" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"%6$s/>', $type, $size, $args['section'], $args['id'], $value, $placeholder );
+			$html       .= $this->get_field_description( $args );
+			$html       .= $this->get_field_description_full( $args );
+
+			echo $html;
+		}
+
+		/**
+		 * Displays a title field for a settings field
+		 *
+		 * @param array   $args settings field args
+		 */
+		function callback_title( $args ) {
+
+			$value       = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
+			$size        = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
+			$type        = isset( $args['type'] ) ? $args['type'] : 'text';
+			$placeholder = empty( $args['placeholder'] ) ? '' : ' placeholder="' . $args['placeholder'] . '"';
+			$std         = isset( $args['std'] ) ? $args['std'] : '';
+
+			//$html        = sprintf( '<input type="%1$s" class="%2$s-text" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"%6$s/>', $type, $size, $args['section'], $args['id'], $value, $placeholder );
+			$html        = '<div class="frou-title-field">'.$std.'</div>';
 			$html       .= $this->get_field_description( $args );
 			$html       .= $this->get_field_description_full( $args );
 
