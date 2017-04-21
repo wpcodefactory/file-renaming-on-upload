@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Filename Option
  *
- * @version 2.0.0
+ * @version 2.0.9
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -52,7 +52,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Initializes
 		 *
-		 * @version 2.0.0
+		 * @version 2.0.9
 		 * @since   2.0.0
 		 */
 		function init() {
@@ -67,7 +67,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Removes non english chars from filename
 		 *
-		 * @version 2.0.0
+		 * @version 2.0.9
 		 * @since   2.0.0
 		 *
 		 * @param $chars
@@ -98,7 +98,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Removes specific chars from filename
 		 *
-		 * @version 2.0.0
+		 * @version 2.0.9
 		 * @since   2.0.0
 		 *
 		 * @param $chars
@@ -128,7 +128,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Converts filename to posttitle
 		 *
-		 * @version 2.0.0
+		 * @version 2.0.9
 		 * @since   2.0.0
 		 *
 		 * @param $filename_infs
@@ -158,7 +158,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Converts filename to lowercase
 		 *
-		 * @version 2.0.0
+		 * @version 2.0.9
 		 * @since   2.0.0
 		 *
 		 * @param $filename_infs
@@ -184,7 +184,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Converts all accent characters from filename to ASCII characters
 		 *
-		 * @version 2.0.0
+		 * @version 2.0.9
 		 * @since   2.0.0
 		 *
 		 * @param $filename_infs
@@ -211,7 +211,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Adds settings fields
 		 *
-		 * @version 2.0.0
+		 * @version 2.0.9
 		 * @since   2.0.0
 		 *
 		 * @param $fields
@@ -246,27 +246,6 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 						$this->option_convert_posttitle => '<strong>' . __( 'Post title', 'file-renaming-on-upload' ) . '</strong>' . ' - ' . __( 'Converts filename to post title whenever it is possible', 'file-renaming-on-upload' ),
 					),
 				),
-				/*array(
-					'name'    => $this->option_convert_accents,
-					//'label'   => __( 'Accents', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Converts all filename accent characters to ASCII characters', 'file-renaming-on-upload' ),
-					'type'    => 'checkbox',
-					'default' => 'on',
-				),
-				array(
-					'name'    => $this->option_convert_lowercase,
-					//'label'   => __( 'Lowercase', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Converts all filename characters to lowercase', 'file-renaming-on-upload' ),
-					'type'    => 'checkbox',
-					'default' => 'on',
-				),
-				array(
-					'name'    => $this->option_convert_posttitle,
-					//'label'   => __( 'Lowercase', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Converts filename to post title whenever it is possible', 'file-renaming-on-upload' ),
-					'type'    => 'checkbox',
-					'default' => 'off',
-				),*/
 				array(
 					'name'    => 'remove_chars_title',
 					'type'    => 'title',
@@ -281,16 +260,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 						$this->option_remove_specific_characters  => __( 'Specific characters', 'file-renaming-on-upload' ),
 					),
 				),
-				/*array(
-					'name'    => $this->option_remove_characters,
-					//'label'   => __( 'Characters', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Removes characters from filename (space separated)', 'file-renaming-on-upload' ),
-					'type'    => 'checkbox',
-					'default' => 'on',
-				),*/
 				array(
 					'name'    => $this->option_remove_specific_characters_text,
-					//'desc'    => __( 'Characters to be removed (space separated)', 'file-renaming-on-upload' ),
 					'type'    => 'textarea',
 					'default' => '? + [ ] / \ = < > : ; , \' " & $ # * ( ) | ~ ` ! { } ¨ % @ ^',
 				),
