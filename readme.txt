@@ -13,6 +13,7 @@ Fixes file uploads with accents and special characters by renaming them. It also
 == Description ==
 
 Have you ever had any problems uploading files with accents and some special characters to WordPress? Probably the answer is yes.
+
 This plugin will help you fixing this problem by renaming these files on upload. Besides that, you can improve your SEO and have a better control of your filenames.
 
 = For now, you can choose these options: =
