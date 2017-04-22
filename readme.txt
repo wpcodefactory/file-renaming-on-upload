@@ -41,6 +41,18 @@ Rules are options to control how your filename will be. Rules are enabled on the
 = What is filename structure option for? =
 It's the option where you can put your rules or any other characters you want to set how your filename will be
 
+= Can i create a custom rule?
+Yes. It's easy.
+
+First, you have to create a custom rule in the **filename structure** option using curly braces, like **{my_custom_rule}**. You just have to write it, in any position you want.
+
+Now you can use the filter **frou_sanitize_file_name** to create a custom function. For example, if you want to put the user id it would be something like this:
+
+`add_filter( 'frou_sanitize_file_name', function($filename_infs){
+	$filename_infs['structure']['translation']['my_custom_rule'] = get_current_user_id();
+	return $filename_infs;
+}, 20 );`
+
 = How can i contribute with code development? =
 Head over to the [File Renaming on Upload plugin GitHub Repository](https://github.com/pablo-pacheco/file-renaming-on-upload) to find out how you can pitch in.
 
