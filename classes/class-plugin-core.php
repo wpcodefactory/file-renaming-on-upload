@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core
  *
- * @version 2.0.8
+ * @version 2.1.1
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -14,7 +14,8 @@ use FROU\Admin_Pages\Settings_Page;
 use FROU\Functions\Functions;
 
 use FROU\Options\General\Enable_Option;
-use FROU\Options\General\Ignore_Extensions_Option;
+use FROU\Options\Advanced\Ignore_Extensions_Option;
+use FROU\Options\Advanced\Ignore_Filenames_Option;
 use FROU\Options\Options;
 use FROU\WeDevs\Settings_Api;
 use FROU\WordPress\Plugin;
@@ -58,7 +59,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			parent::init( $args );
 			add_action( 'init', array( $this, 'handle_settings_page' ) );
 			add_action( 'init', array( $this, 'add_options' ) );
-			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename' ),10,2 );
+			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename' ), 10, 2 );
 
 			//add_action( 'add_attachment', array( $this, 'add_attachment' ) );
 			//add_filter('wp_insert_attachment_data',array($this,'insert_attachment_data'),10,2);
@@ -114,8 +115,70 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 */
 		protected function add_separator( $filename, $args ) {
 			$separator = $args['structure']['separator'];
-
 			return preg_replace( '/\}\{/U', "}{$separator}{", $filename );
+		}
+
+		/**
+		 * Checks if extension is allowed for renaming
+		 *
+		 * @version 2.1.1
+		 * @since   2.1.1
+		 *
+		 * @param $extension
+		 *
+		 * @return bool
+		 */
+		protected function is_extension_allowed( $extension ) {
+			$option = new Ignore_Extensions_Option( array( 'section' => 'frou_advanced_opt' ) );
+			if ( filter_var( $option->get_option( $option->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
+				$ignored_extensions_str = $option->get_option( $option->option_extensions_ignored );
+				$ignored_extensions_arr = explode( ",", $ignored_extensions_str );
+				$ignored_extensions_arr = array_map( 'trim', $ignored_extensions_arr );
+				$ignored_extensions_arr = array_map( 'sanitize_text_field', $ignored_extensions_arr );
+				if ( ! empty( $ignored_extensions_str ) && in_array( $extension, $ignored_extensions_arr ) ) {
+					return false;
+				}
+			}
+			return true;
+		}
+
+		/**
+		 * Checks if filename is allowed for renaming
+		 *
+		 * @version 2.1.1
+		 * @since   2.1.1
+		 *
+		 * @param $filename
+		 *
+		 * @return bool
+		 */
+		protected function is_filename_allowed( $info ) {
+			$option = new Ignore_Filenames_Option( array( 'section' => 'frou_advanced_opt' ) );
+			if ( ! filter_var( $option->get_option( $option->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
+				return true;
+			}
+
+			$ignore_without_extension = filter_var( $option->get_option( $option->option_ignore_without_extension ), FILTER_VALIDATE_BOOLEAN );
+
+			// Gets extension
+			$extension = empty( $info['extension'] ) ? '' : $info['extension'];
+
+			if ( $ignore_without_extension ) {
+				if ( ! empty( $extension ) ) {
+					return true;
+				}
+			}
+
+			if ( ! empty( $info['filename'] ) ) {
+				$ignored_filenames_str = $option->get_option( $option->option_filenames_ignored );
+				$ignored_filenames_arr = explode( ",", $ignored_filenames_str );
+				$ignored_filenames_arr = array_map( 'trim', $ignored_filenames_arr );
+				$ignored_filenames_arr = array_map( 'sanitize_text_field', $ignored_filenames_arr );
+				if ( in_array( $info['filename'], $ignored_filenames_arr ) ) {
+					return false;
+				}
+			}
+			return true;
 		}
 
 		/**
@@ -144,56 +207,21 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			$filename_original = $info['filename'];
 
 			// Cancels in case of using github-updater option_page
-			if(isset($_GET['page']) && $_GET['page']=='github_updater'){
+			if ( isset( $_GET['page'] ) && $_GET['page'] == 'github_updater' ) {
 				return $filename;
 			}
-			if(isset($_POST['option_page']) && $_POST['option_page']=='github_updater'){
+			if ( isset( $_POST['option_page'] ) && $_POST['option_page'] == 'github_updater' ) {
 				return $filename;
 			}
 
-			// Cancels in case of weird basename and no extensions (this happens using the plugin github-updater)
-			if ( empty( $extension ) && !empty( $info['basename'] ) ) {
-				$ignored_basenames_arr = array(
-					'path',
-					'scheme',
-					'host',
-					'owner',
-					'repo',
-					'owner_repo',
-					'base_uri',
-					'uri',
-					'option_page',
-					'action',
-					'wpnonce',
-					'wp_http_referer',
-					'github-updater',
-					'github_updater_install_repo',
-					'github_updater_repo',
-					'github_updater_branch',
-					'github_updater_api',
-					'github_access_token',
-					'bitbucket_username',
-					'bitbucket_password',
-					'gitlab_enterprise_token',
-					'gitlab_access_token',
-					'submit',
-					'db_version',
-					'branch_switch',
-				);
-
-				if ( in_array( $info['basename'], $ignored_basenames_arr ) ) {
-					return $filename;
-				}
+			// Cancels in case of specific filenames (this happens using some plugins like github-updater or All in one SEO PACK for example)
+			if ( ! empty( $info ) && ! $this->is_filename_allowed( $info ) ) {
+				return $filename;
 			}
 
 			// Ignores specific filename extensions
-			$option = new Ignore_Extensions_Option( array( 'section' => 'frou_general_opt' ) );
-			if ( filter_var( $option->get_option( $option->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
-				$ignored_extensions_str = $option->get_option( $option->option_extensions_ignored );
-				$ignored_extensions_arr = explode( " ", $ignored_extensions_str );
-				if ( ! empty( $ignored_extensions_str ) && in_array( $extension, $ignored_extensions_arr ) ) {
-					return $filename;
-				}
+			if ( ! empty( $extension ) && ! $this->is_extension_allowed( $extension ) ) {
+				return $filename;
 			}
 
 			// Gets plugin rules

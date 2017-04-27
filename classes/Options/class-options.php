@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Options
  *
- * @version 2.0.0
+ * @version 2.1.1
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -13,7 +13,8 @@ namespace FROU\Options;
 use FROU\Options\General\Enable_Option;
 use FROU\Options\General\Filename_Structure_Option;
 
-use FROU\Options\General\Ignore_Extensions_Option;
+use FROU\Options\Advanced\Ignore_Extensions_Option;
+use FROU\Options\Advanced\Ignore_Filenames_Option;
 use FROU\Options\General\Permalink_Update_Option;
 use FROU\Options\Rules\Datetime_Option;
 use FROU\Options\Rules\Filename;
@@ -34,44 +35,18 @@ if ( ! class_exists( 'FROU\Options\Options' ) ) {
 		/**
 		 * Constructor
 		 *
-		 * @version 2.0.0
+		 * @version 2.1.1
 		 * @since   2.0.0
 		 *
 		 * @param array $args
 		 */
 		function __construct() {
-
-
-			// Remove options
-			/*$option = new Characters_Option( array( 'section' => 'frou_remove_opt' ) );
-			$option->init();
-
-			// General options
-			$option = new Enable_Option( array( 'section' => 'frou_general_opt' ) );
-			$option->init();
-			$option = new Filename_Structure_Option( array( 'section' => 'frou_general_opt' ) );
-			$option->init();
-
-			// Add options
-			$option = new Site_URL_Option( array( 'section' => 'frou_add_opt', 'structure_rule' => 'siteurl' ) );
-			$option->init();
-			$option = new Datetime_Option( array( 'section' => 'frou_add_opt', 'structure_rule' => 'datetime' ) );
-			$option->init();
-
-			// Convert options
-			$option = new Accents_Option( array( 'section' => 'frou_convert_opt' ) );
-			$option->init();
-			$option = new Lowercase_Option( array( 'section' => 'frou_convert_opt' ) );
-			$option->init();*/
-
 			// General options
 			$option = new Enable_Option( array( 'section' => 'frou_general_opt' ) );
 			$option->init();
 			$option = new Permalink_Update_Option( array( 'section' => 'frou_general_opt' ) );
 			$option->init();
 			$option = new Filename_Structure_Option( array( 'section' => 'frou_general_opt' ) );
-			$option->init();
-			$option = new Ignore_Extensions_Option( array( 'section' => 'frou_general_opt' ) );
 			$option->init();
 
 			// Rules
@@ -84,22 +59,11 @@ if ( ! class_exists( 'FROU\Options\Options' ) ) {
 			$option = new Post_Title_Option( array( 'section' => 'frou_filenaming_rules_opt' ) );
 			$option->init();
 
-			/*$option = new Characters_Option( array( 'section' => 'frou_filenaming_rules_opt' ) );
+			// Advanced
+			$option = new Ignore_Extensions_Option( array( 'section' => 'frou_advanced_opt' ) );
 			$option->init();
-
-
-
-			// Add options
-			$option = new Site_URL_Option( array( 'section' => 'frou_filenaming_rules_opt', 'structure_rule' => 'siteurl' ) );
+			$option = new Ignore_Filenames_Option( array( 'section' => 'frou_advanced_opt' ) );
 			$option->init();
-			$option = new Datetime_Option( array( 'section' => 'frou_filenaming_rules_opt', 'structure_rule' => 'datetime' ) );
-			$option->init();
-
-			// Convert options
-			$option = new Accents_Option( array( 'section' => 'frou_filenaming_rules_opt' ) );
-			$option->init();
-			$option = new Lowercase_Option( array( 'section' => 'frou_filenaming_rules_opt' ) );
-			$option->init();*/
 		}
 
 

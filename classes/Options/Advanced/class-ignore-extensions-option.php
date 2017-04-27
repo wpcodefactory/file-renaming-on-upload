@@ -2,12 +2,12 @@
 /**
  * File renaming on upload - Ignore Extensions Option
  *
- * @version 2.0.3
+ * @version 2.1.1
  * @since   2.0.3
  * @author  Pablo S G Pacheco
  */
 
-namespace FROU\Options\General;
+namespace FROU\Options\Advanced;
 
 use FROU\Options\Option;
 
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 } // Exit if accessed directly
 
 
-if ( ! class_exists( 'FROU\Options\General\Ignore_Extensions_Option' ) ) {
+if ( ! class_exists( 'FROU\Options\Advanced\Ignore_Extensions_Option' ) ) {
 	class Ignore_Extensions_Option extends Option {
 
 		public $option_extensions_ignored = 'extensions_ignored';
@@ -47,7 +47,7 @@ if ( ! class_exists( 'FROU\Options\General\Ignore_Extensions_Option' ) ) {
 		/**
 		 * Adds settings fields
 		 *
-		 * @version 2.0.3
+		 * @version 2.1.1
 		 * @since   2.0.3
 		 *
 		 * @param $fields
@@ -60,16 +60,19 @@ if ( ! class_exists( 'FROU\Options\General\Ignore_Extensions_Option' ) ) {
 				array(
 					'name'    => $this->option_id,
 					'label'   => __( 'Ignore file extensions', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Does not rename filenames with these extensions (space separated)', 'file-renaming-on-upload' ),
+					'desc'    => __( 'Does not rename filenames with these extensions', 'file-renaming-on-upload' ) . ' (' . __( 'comma separated', 'file-renaming-on-upload' ) . ')',
 					'default' => 'on',
 					'type'    => 'checkbox',
 				),
 				array(
 					'name'        => $this->option_extensions_ignored,
-					'desc_secondary' => __( 'tmp is the extension of plugins installed from wordpress.org repository', 'file-renaming-on-upload' ),
-					'placeholder' => 'Space separated extensions',
+					'placeholder' => 'Comma separated extensions',
 					'default'     => 'tmp',
 					'type'        => 'text',
+				),
+				array(
+					'name' => 'extension_separator',
+					'type' => 'separator',
 				),
 			);
 

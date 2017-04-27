@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - General Settings Page
  *
- * @version 2.0.0
+ * @version 2.1.1
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -44,7 +44,7 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		/**
 		 * Creates settings separated by tabs
 		 *
-		 * @version 2.0.0
+		 * @version 2.1.1
 		 * @since   2.0.0
 		 */
 		function admin_init() {
@@ -57,6 +57,10 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 				array(
 					'id'    => 'frou_filenaming_rules_opt',
 					'title' => __( 'Rules', 'file-renaming-on-upload' ),
+				),
+				array(
+					'id'    => 'frou_advanced_opt',
+					'title' => __( 'Advanced', 'file-renaming-on-upload' ),
 				),
 			);
 			$this->settings_api->set_sections( $sections );

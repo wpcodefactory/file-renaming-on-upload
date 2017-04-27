@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: File renaming on upload\n"
-"POT-Creation-Date: 2017-04-10 11:34-0300\n"
+"POT-Creation-Date: 2017-04-27 12:40-0300\n"
 "PO-Revision-Date: 2017-01-17 13:05-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -24,6 +24,41 @@ msgstr ""
 
 #: classes/Admin_Pages/class-settings-page.php:59
 msgid "Rules"
+msgstr ""
+
+#: classes/Admin_Pages/class-settings-page.php:63
+msgid "Advanced"
+msgstr ""
+
+#: classes/Options/Advanced/class-ignore-extensions-option.php:62
+msgid "Ignore file extensions"
+msgstr ""
+
+#: classes/Options/Advanced/class-ignore-extensions-option.php:63
+msgid "Does not rename filenames with these extensions"
+msgstr ""
+
+#: classes/Options/Advanced/class-ignore-extensions-option.php:63
+#: classes/Options/Advanced/class-ignore-filenames-option.php:64
+msgid "comma separated"
+msgstr ""
+
+#: classes/Options/Advanced/class-ignore-filenames-option.php:63
+msgid "Ignore filenames"
+msgstr ""
+
+#: classes/Options/Advanced/class-ignore-filenames-option.php:64
+msgid "Does not rename these filenames"
+msgstr ""
+
+#: classes/Options/Advanced/class-ignore-filenames-option.php:76
+msgid "Ignores filename only when extension cannot be found"
+msgstr ""
+
+#: classes/Options/Advanced/class-ignore-filenames-option.php:77
+msgid ""
+"If you are having conflict troubles with some other plugins try to "
+"unmark this option"
 msgstr ""
 
 #: classes/Options/General/class-enable-option.php:60
@@ -82,32 +117,45 @@ msgstr ""
 msgid "Result: <b>%s</b>"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:183
+#: classes/Options/Rules/class-filename-option.php:226
 msgid "Filename"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:184
+#: classes/Options/Rules/class-filename-option.php:227
 msgid "Enables filename rule"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:192
+#: classes/Options/Rules/class-filename-option.php:244
+msgid "Accents"
+msgstr ""
+
+#: classes/Options/Rules/class-filename-option.php:244
 msgid "Converts all filename accent characters to ASCII characters"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:199
+#: classes/Options/Rules/class-filename-option.php:245
+msgid "Lowercase"
+msgstr ""
+
+#: classes/Options/Rules/class-filename-option.php:245
 msgid "Converts all filename characters to lowercase"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:206
+#: classes/Options/Rules/class-filename-option.php:246
+#: classes/Options/Rules/class-post-title-option.php:95
+msgid "Post title"
+msgstr ""
+
+#: classes/Options/Rules/class-filename-option.php:246
 msgid "Converts filename to post title whenever it is possible"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:213
-msgid "Removes characters from filename"
+#: classes/Options/Rules/class-filename-option.php:259
+msgid "All non ASCII characters"
 msgstr ""
 
-#: classes/Options/Rules/class-post-title-option.php:95
-msgid "Post title"
+#: classes/Options/Rules/class-filename-option.php:260
+msgid "Specific characters"
 msgstr ""
 
 #: classes/Options/Rules/class-post-title-option.php:96

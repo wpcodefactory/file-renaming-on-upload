@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Filename Option
  *
- * @version 2.0.9
+ * @version 2.1.1
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -60,21 +60,21 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_posttitle' ), 11 );
 			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_accents' ), 12 );
 			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_lowercase' ), 12 );
-			add_filter( 'frou_sanitize_file_name', array( $this, 'remove_non_english_chars' ), 13 );
+			add_filter( 'frou_sanitize_file_name', array( $this, 'remove_non_ascii_chars' ), 13 );
 			add_action( 'sanitize_file_name_chars', array( $this, 'remove_specific_chars' ) );
 		}
 
 		/**
 		 * Removes non english chars from filename
 		 *
-		 * @version 2.0.9
+		 * @version 2.1.1
 		 * @since   2.0.0
 		 *
 		 * @param $chars
 		 *
 		 * @return array
 		 */
-		public function remove_non_english_chars( $filename_infs ) {
+		public function remove_non_ascii_chars( $filename_infs ) {
 			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $filename_infs;
 			}
