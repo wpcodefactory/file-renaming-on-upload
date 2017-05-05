@@ -59,7 +59,7 @@ Now you can use the filter **frou_sanitize_file_name** to create a custom functi
 }, 20 );`
 
 = How can i contribute with code development? =
-Head over to the [File Renaming on Upload plugin GitHub Repository](https://github.com/pablo-sg-pacheco/file-renaming-on-upload) to find out how you can pitch in.
+Head over to the [File Renaming on Upload plugin GitHub Repository](https://github.com/pablo-sg-pacheco/file-renaming-on-upload) to find out how you can pitch in
 
 == Installation ==
 
