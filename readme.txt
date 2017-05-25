@@ -19,7 +19,7 @@ This plugin will help you fixing this problem by renaming these files on upload.
 == Frequently Asked Questions ==
 = What are the available options provided by this plugin? =
 
-** For now, you can choose these options: **
+**For now, you can choose these options:**
 
 * **Add Site url:** Inserts "yoursite.com" at the beggining of the file name. Ex: yoursite.com_filename.jpg. It is good for your SEO
 
