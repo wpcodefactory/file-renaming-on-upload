@@ -20,7 +20,7 @@ class ComposerStaticInit899afcbf99c41bc2b42ca936f40efdf1
     public static $prefixDirsPsr4 = array (
         'Pablo_Pacheco\\WP_Namespace_Autoloader\\' => 
         array (
-            0 => __DIR__ . '/..' . '/pablo-pacheco/wp-namespace-autoloader/src',
+            0 => __DIR__ . '/..' . '/pablo-sg-pacheco/wp-namespace-autoloader/src',
         ),
         'Composer\\Installers\\' => 
         array (
