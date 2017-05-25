@@ -127,12 +127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pablo-sg-pacheco/wp-namespace-autoloader.git",
-                "reference": "1d4e843d6b45e758346baa5bac69572fe41cbef8"
+                "reference": "d0cb33de4e01704bc341e4301e93aa9c20f1cd1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pablo-sg-pacheco/wp-namespace-autoloader/zipball/1d4e843d6b45e758346baa5bac69572fe41cbef8",
-                "reference": "1d4e843d6b45e758346baa5bac69572fe41cbef8",
+                "url": "https://api.github.com/repos/pablo-sg-pacheco/wp-namespace-autoloader/zipball/d0cb33de4e01704bc341e4301e93aa9c20f1cd1d",
+                "reference": "d0cb33de4e01704bc341e4301e93aa9c20f1cd1d",
                 "shasum": ""
             },
             "require": {
@@ -165,7 +165,7 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2017-05-05 20:00:28"
+            "time": "2017-05-25 01:51:18"
         },
         {
             "name": "tareq1988/wordpress-settings-api-class",
