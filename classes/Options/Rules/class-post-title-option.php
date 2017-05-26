@@ -99,7 +99,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 					'default'   => 'on',
 				),
 				array(
-					'name' => 'siteurl_separator',
+					'name' => 'posttitle_separator',
 					'type' => 'separator',
 				),
 
