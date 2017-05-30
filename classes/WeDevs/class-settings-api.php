@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 } // Exit if accessed directly
 
 if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
-	class Settings_Api extends \WeDevs_Settings_API {
+	class Settings_Api extends \FROU\WeDevs\WeDevs_Settings_API_Original {
 
 		/**
 		 * settings sections array
