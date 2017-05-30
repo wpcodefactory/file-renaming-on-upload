@@ -17,6 +17,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 	class Settings_Api extends \WeDevs_Settings_API {
 
+		/**
+		 * settings sections array
+		 *
+		 * @var array
+		 */
+		protected $settings_sections = array();
+
+		/**
+		 * Settings fields array
+		 *
+		 * @var array
+		 */
+		protected $settings_fields = array();
+
 		function _style_fix() {
 			global $wp_version;
 
