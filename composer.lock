@@ -173,12 +173,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tareq1988/wordpress-settings-api-class.git",
-                "reference": "d14035f7c7e10d5433d802ef5cdffb3043bcaa77"
+                "reference": "2f74376423b46923b2af107a353980931900d497"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tareq1988/wordpress-settings-api-class/zipball/d14035f7c7e10d5433d802ef5cdffb3043bcaa77",
-                "reference": "d14035f7c7e10d5433d802ef5cdffb3043bcaa77",
+                "url": "https://api.github.com/repos/tareq1988/wordpress-settings-api-class/zipball/2f74376423b46923b2af107a353980931900d497",
+                "reference": "2f74376423b46923b2af107a353980931900d497",
                 "shasum": ""
             },
             "require": {
@@ -209,7 +209,7 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2017-03-21 20:58:01"
+            "time": "2017-05-28 06:11:55"
         }
     ],
     "packages-dev": [],
