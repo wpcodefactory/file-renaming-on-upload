@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core
  *
- * @version 2.1.1
+ * @version 2.1.5
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -186,7 +186,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 *
 		 * It's the main function of this plugin
 		 *
-		 * @version 2.0.8
+		 * @version 2.1.5
 		 * @since   2.0.0
 		 *
 		 * @param $filename
@@ -242,7 +242,12 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			$filename = $this->remove_unused_rules( $filename, $filename_arr );
 			$filename = $this->add_separator( $filename, $filename_arr );
 			$filename = $this->translate_rules( $filename, $filename_arr );
-			$filename = $filename . '.' . $extension;
+
+			if ( ! empty( $info['extension'] ) ) {
+				$filename = $filename . '.' . $extension;
+			}else{
+				$filename = $filename;
+			}
 
 			return $filename;
 		}

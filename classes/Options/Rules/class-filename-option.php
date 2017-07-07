@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Filename Option
  *
- * @version 2.1.1
+ * @version 2.1.5
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -26,6 +26,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		public $option_convert_accents = 'accents';
 		public $option_convert_lowercase = 'lowercase';
 		public $option_convert_posttitle = 'posttitle';
+		public $option_convert_to_dash_chars = 'converttodash_chars';
 
 		// Remove
 		public $option_remove = 'remove';
@@ -60,8 +61,36 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_posttitle' ), 11 );
 			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_accents' ), 12 );
 			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_lowercase' ), 12 );
+			add_filter( 'wp_handle_upload_prefilter', array( $this, 'convert_to_dash' ) );
 			add_filter( 'frou_sanitize_file_name', array( $this, 'remove_non_ascii_chars' ), 13 );
 			add_action( 'sanitize_file_name_chars', array( $this, 'remove_specific_chars' ) );
+		}
+
+		/**
+		 * Convert characters to dash
+		 *
+		 * @version 2.1.5
+		 * @since   2.0.0
+		 * @param $file
+		 *
+		 * @return mixed
+		 */
+		public function convert_to_dash( $file ) {
+			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
+				return $file;
+			}
+
+			$option    = $this->get_option( $this->option_convert_to_dash_chars );
+			$chars     = sanitize_text_field( $option );
+			$chars_arr = explode( " ", $chars );
+
+			if ( ! is_array( $chars_arr ) || count( $chars_arr ) == 0 ) {
+				return $file;
+			}
+
+			$file['name'] = str_replace( $chars_arr, '-', $file['name'] );
+
+			return $file;
 		}
 
 		/**
@@ -211,7 +240,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Adds settings fields
 		 *
-		 * @version 2.0.9
+		 * @version 2.1.5
 		 * @since   2.0.0
 		 *
 		 * @param $fields
@@ -231,7 +260,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 				array(
 					'name'    => 'convert_chars_title',
 					'type'    => 'title',
-					'default' => 'Convert Characters',
+					'default' => 'Convert',
 				),
 				array(
 					'name'    => $this->option_convert,
@@ -247,9 +276,15 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 					),
 				),
 				array(
+					'name'    => $this->option_convert_to_dash_chars,
+					'desc'    => __( 'Besides whitespaces, converts the following characters to dash.', 'file-renaming-on-upload' ).' '.__( 'Space separated', 'file-renaming-on-upload' ),
+					'type'    => 'text',
+					'default' => '_',
+				),
+				array(
 					'name'    => 'remove_chars_title',
 					'type'    => 'title',
-					'default' => 'Remove Characters',
+					'default' => 'Remove',
 				),
 				array(
 					'name'    => $this->option_remove,
