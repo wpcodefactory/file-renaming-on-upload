@@ -147,5 +147,5 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Upgrade Notice ==
 
-= 2.1.3 =
-* Update Settings API class
+= 2.1.5 =
+* Add new option to convert characters to dash
