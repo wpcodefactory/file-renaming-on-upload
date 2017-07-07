@@ -277,7 +277,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 				),
 				array(
 					'name'    => $this->option_convert_to_dash_chars,
-					'desc'    => __( 'Besides whitespaces, converts the following characters to dash.', 'file-renaming-on-upload' ).' '.__( 'Space separated', 'file-renaming-on-upload' ),
+					'desc'    => __( 'Besides whitespaces, converts the following characters to a dash.', 'file-renaming-on-upload' ).' '.__( '(Space separated)', 'file-renaming-on-upload' ),
 					'type'    => 'text',
 					'default' => '_',
 				),
