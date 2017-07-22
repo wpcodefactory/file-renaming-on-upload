@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - General Settings Page
  *
- * @version 2.1.1
+ * @version 2.1.6
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -44,7 +44,7 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		/**
 		 * Creates settings separated by tabs
 		 *
-		 * @version 2.1.1
+		 * @version 2.1.6
 		 * @since   2.0.0
 		 */
 		function admin_init() {
@@ -63,6 +63,7 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 					'title' => __( 'Advanced', 'file-renaming-on-upload' ),
 				),
 			);
+			apply_filters('frou_admin_sections',$sections);
 			$this->settings_api->set_sections( $sections );
 
 			// Fields
