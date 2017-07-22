@@ -63,7 +63,7 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 					'title' => __( 'Advanced', 'file-renaming-on-upload' ),
 				),
 			);
-			apply_filters('frou_admin_sections',$sections);
+			$sections = apply_filters('frou_admin_sections',$sections);
 			$this->settings_api->set_sections( $sections );
 
 			// Fields
