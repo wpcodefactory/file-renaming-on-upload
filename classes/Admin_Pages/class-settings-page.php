@@ -102,11 +102,11 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		/**
 		 * Creates the menu
 		 *
-		 * @version 2.0.0
+		 * @version 2.1.6
 		 * @since   2.0.0
 		 */
 		function admin_menu() {
-			add_options_page( 'File renaming', 'File renaming', 'delete_posts', 'file-renaming-on-upload', array(
+			add_options_page( 'File renaming', 'File renaming', 'install_plugins', 'file-renaming-on-upload', array(
 				$this,
 				'plugin_page',
 			) );

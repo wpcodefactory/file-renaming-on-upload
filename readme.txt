@@ -81,6 +81,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 * Add new filter 'frou_admin_sections' to filter admin sections
 * Improve settings api
 * Update tested up to
+* Restrict settings to administrators only
 
 = 2.1.5 =
 * Add new option to convert characters to dash
@@ -155,3 +156,5 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 = 2.1.6 =
 * Add new filter 'frou_admin_sections' to filter admin sections
 * Improve settings api
+* Update tested up to
+* Restrict settings to administrators only
