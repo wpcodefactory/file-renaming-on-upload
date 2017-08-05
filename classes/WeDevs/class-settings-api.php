@@ -17,6 +17,115 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 	class Settings_Api extends \FROU\WeDevs\WeDevs_Settings_API_Original {
 
+	    public $ajax_action_progress_bar='frou_progress_ajax_action';
+
+	    /*public function __construct() {
+	        parent::__
+	    }*/
+
+	    public function __construct() {
+	        parent::__construct();
+
+	        $action=$this->ajax_action_progress_bar;
+		    add_action( "wp_ajax_{$action}", array( $this, 'ajax_callback_progress_bar' ) );
+		    add_action( "wp_ajax_nopriv_{$action}", array( $this, 'ajax_callback_progress_bar' ) );
+	    }
+
+		/**
+		 * Displays a title field for a settings field
+		 *
+		 * @param array   $args settings field args
+		 */
+		function callback_progress_bar( $args ) {
+			$args = wp_parse_args($args,array(
+				'option_queue_count'=>'',
+				'option_total_count'=>'',
+			));
+
+			$total                = sanitize_text_field( $args['option_total_count'] );
+			$queue                = sanitize_text_field( $args['option_queue_count'] );
+			$id = $args['id'];
+
+			echo '
+			<div id="'.$id.'" class="progress_bar_field">
+			    <div class="bar">
+                    <span class="percent-value"></span>
+                    <div class="percent"></div>
+			    </div>
+			</div>';
+
+            ?>
+            <script>
+                jQuery(document).ready(function($){
+	                var interval;
+	                var percent=0;
+	                var count=0;
+	                var no_queue=false;
+	                function call_ajax(){
+		                var ajax_url = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
+		                var data = {
+			                'action': '<?php echo $this->ajax_action_progress_bar; ?>',
+			                'option_queue_count': '<?php echo $queue; ?>',
+			                'option_total_count': '<?php echo $total; ?>'
+		                };
+		                // We can also pass the url value separately from ajaxurl for front end AJAX implementations
+		                jQuery.post(ajax_url, data, function(response) {
+			                count++;
+                            percent = response.data.percent;
+			                if(response.data.no_queue==true){
+				                no_queue=true;
+				                if(count>1){
+					                percent=100;
+				                }else{
+				                	percent=0;
+                                }
+			                }
+			                $('.progress_bar_field#<?php echo $id?> .percent').css('width',percent+'%');
+			                $('.progress_bar_field#<?php echo $id?> .percent-value').html(percent+'%');
+		                });
+                    }
+	                interval = setInterval(handle_interval, 1500);
+	                function handle_interval(){
+	                	if(percent<100 && !no_queue){
+	                		call_ajax();
+                        }else{
+			                clearInterval(interval);
+                        }
+                    }
+                })
+            </script>
+            <?php
+		}
+
+		public function ajax_callback_progress_bar(){
+			$args = wp_parse_args($_REQUEST,array(
+				'option_queue_count'=>'',
+				'option_total_count'=>'',
+			));
+
+			$total              = sanitize_text_field( $args['option_total_count'] );
+			$queue              = sanitize_text_field( $args['option_queue_count'] );
+			$option_total       = get_option( $total );
+			$option_queue       = get_option( $queue );
+			$option_total_count = is_array( $option_total ) ? count( $option_total ) : 0;
+			$option_queue_count = is_array( $option_queue ) ? count( $option_queue ) : 0;
+			$no_queue=false;
+
+			if ( $option_total_count != 0 && $option_queue_count != 0  ) {
+			    if($option_total_count != $option_queue_count){
+				    $final_percent = round( ( ( $option_total_count - $option_queue_count ) / $option_total_count ) * 100 );
+                }else{
+				    $final_percent=0;
+                }
+			} else {
+				$final_percent = 0;
+				$no_queue      = true;
+			}
+
+			wp_send_json_success(array('no_queue'=>$no_queue, 'total_count'=>$option_total_count,'queue_count'=>$option_queue_count,'percent'=>$final_percent));
+			wp_die();
+        }
+
 		/**
 		 * settings sections array
 		 *
@@ -48,9 +157,42 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
             <style type="text/css">
                 .frou-title-field{
                     font-weight:bold;
-                    margin-top:10px;
-                    margin-bottom:-9px;
+                    /*margin-bottom:-15px;*/
+                    /*margin-top:10px;
+                    margin-bottom:-9px;*/
                     color:#888;
+                }
+                [id*="frou_"] .progress_bar_field .bar {
+                    background:#ccc;
+                    width:100%;
+                    height:35px;
+                    position:relative;
+                }
+                [id*="frou_"] .progress_bar_field .percent {
+                    content:' ';
+                    position:absolute;
+                    left:0;
+                    top:0;
+                    width:0;
+                    height:100%;
+                    background: #00cb00;
+                    z-index:2;
+                    transition:all 1s ease-in-out;
+                }
+                [id*="frou_"] .progress_bar_field .percent-value{
+                    position:absolute;
+                    z-index:3;
+                    display:block;
+                    left:0;
+                    top:0;
+                    font-weight:bold;
+                    line-height:32px;
+                    font-size:19px;
+                    color:#fff;
+                    width:100%;
+                    text-align:center;
+                    height:100%;
+                    transition:all 1s ease-in-out;
                 }
                 [id*="frou_"] .desc_secondary{
                     color:#888;
@@ -220,22 +362,24 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 					);
 
 					$args = array(
-						'id'                => $name,
-						'class'             => isset( $option['class'] ) ? $option['class'] : $name,
-						'label_for'         => "wpuf-{$section}[{$name}]",
-						'desc'              => isset( $option['desc'] ) ? $option['desc'] : '',
-						'desc_secondary'         => isset( $option['desc_secondary'] ) ? $option['desc_secondary'] : '',
-						'name'              => $label,
-						'section'           => $section,
-						'size'              => isset( $option['size'] ) ? $option['size'] : null,
-						'options'           => isset( $option['options'] ) ? $option['options'] : '',
-						'std'               => isset( $option['default'] ) ? $option['default'] : '',
-						'sanitize_callback' => isset( $option['sanitize_callback'] ) ? $option['sanitize_callback'] : '',
-						'type'              => $type,
-						'placeholder'       => isset( $option['placeholder'] ) ? $option['placeholder'] : '',
-						'min'               => isset( $option['min'] ) ? $option['min'] : '',
-						'max'               => isset( $option['max'] ) ? $option['max'] : '',
-						'step'              => isset( $option['step'] ) ? $option['step'] : '',
+						'id'                 => $name,
+						'class'              => isset( $option['class'] ) ? $option['class'] : $name,
+						'label_for'          => "wpuf-{$section}[{$name}]",
+						'desc'               => isset( $option['desc'] ) ? $option['desc'] : '',
+						'desc_secondary'     => isset( $option['desc_secondary'] ) ? $option['desc_secondary'] : '',
+						'option_queue_count' => isset( $option['option_queue_count'] ) ? $option['option_queue_count'] : '',
+						'option_total_count' => isset( $option['option_total_count'] ) ? $option['option_total_count'] : '',
+						'name'               => $label,
+						'section'            => $section,
+						'size'               => isset( $option['size'] ) ? $option['size'] : null,
+						'options'            => isset( $option['options'] ) ? $option['options'] : '',
+						'std'                => isset( $option['default'] ) ? $option['default'] : '',
+						'sanitize_callback'  => isset( $option['sanitize_callback'] ) ? $option['sanitize_callback'] : '',
+						'type'               => $type,
+						'placeholder'        => isset( $option['placeholder'] ) ? $option['placeholder'] : '',
+						'min'                => isset( $option['min'] ) ? $option['min'] : '',
+						'max'                => isset( $option['max'] ) ? $option['max'] : '',
+						'step'               => isset( $option['step'] ) ? $option['step'] : '',
 					);
 
 					add_settings_field( "{$section}[{$name}]", $label, $callback, $section, $section, $args );
