@@ -34,6 +34,8 @@ if ( ! class_exists( 'FROU\WordPress\Post' ) ) {
 		public static function get_post() {
 			if ( isset( $_REQUEST['post_id'] ) ) {
 				$post_id = $_REQUEST['post_id'];
+			} else if ( isset( $_REQUEST['post_ID'] ) ) {
+				$post_id = $_REQUEST['post_ID'];
 			} else {
 				$post_id = false;
 			}
