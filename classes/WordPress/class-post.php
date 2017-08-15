@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Wordpress Post
  *
- * @version 2.0.0
+ * @version 2.1.7
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -17,20 +17,44 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'FROU\WordPress\Post' ) ) {
 	class Post {
-		public static function get_post_slug( $postObj = null ) {
-			if ( $postObj == null ) {
-				$postObj = self::get_post();
+
+		/**
+		 * Get post slug
+		 *
+		 * @version 2.1.7
+		 * @since   2.0.0
+		 *
+		 * @param null $post_obj
+		 *
+		 * @return string
+		 */
+		public static function get_post_slug( $post_obj = null ) {
+			if ( $post_obj == null ) {
+				$post_obj = self::get_post();
 			}
 
 			$postSlug = '';
 
-			if ( $postObj != null ) {
-				$postSlug = $postObj->post_name;
+			if ( $post_obj != null ) {
+
+				if ( $post_obj->post_name ) {
+					$postSlug = $post_obj->post_name;
+				} else {
+					$postSlug = sanitize_title( $post_obj->post_title );
+				}
 			}
 
 			return $postSlug;
 		}
 
+		/**
+		 * Get post
+		 *
+		 * @version 2.1.7
+		 * @since   2.0.0
+		 *
+		 * @return null|\WP_Post
+		 */
 		public static function get_post() {
 			if ( isset( $_REQUEST['post_id'] ) ) {
 				$post_id = $_REQUEST['post_id'];
@@ -40,12 +64,21 @@ if ( ! class_exists( 'FROU\WordPress\Post' ) ) {
 				$post_id = false;
 			}
 
-			$postObj = null;
+			$post_obj = null;
 			if ( $post_id && is_numeric( $post_id ) ) {
-				$postObj = get_post( $post_id );
+				$posts = get_posts( array(
+					'include'     => $post_id,
+					'post_type'   => get_post_type( $post_id ),
+					'post_status' => 'any'
+				) );
+				foreach ( $posts as $post ) {
+					setup_postdata( $post );
+					$post_obj = $post;
+				}
+				wp_reset_postdata();
 			}
 
-			return $postObj;
+			return $post_obj;
 		}
 	}
 }

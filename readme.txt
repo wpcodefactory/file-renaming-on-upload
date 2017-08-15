@@ -78,7 +78,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 == Changelog ==
 
 = 2.1.7 =
-* Improve function to get post title
+* Improve function to get post title, even with unsaved posts
 
 = 2.1.6 =
 * Add new filter 'frou_admin_sections' to filter admin sections
@@ -157,4 +157,4 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 == Upgrade Notice ==
 
 = 2.1.7 =
-* Improve function to get post title
+* Improve function to get post title, even with unsaved posts
