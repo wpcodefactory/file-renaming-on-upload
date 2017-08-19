@@ -4,7 +4,7 @@ Tags: file rename, upload, renaming, file, rename
 Requires at least: 4.0.0
 Tested up to: 4.8
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BAC8PT82YMTJL&lc=US&item_name=File%20Renaming%20on%20Upload&item_number=file%2drenaming%2don%2dupload&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Stable tag: 2.1.7
+Stable tag: 2.1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,11 @@ Fixes file uploads with accents and special characters by renaming them. It also
 
 Have you ever had any problems uploading files with accents and some special characters to WordPress? Probably the answer is yes.
 
-This plugin will help you fixing this problem by renaming these files on upload. Besides that, you can improve your SEO and have a better control of your filenames.
+This plugin will help you fix this problem by renaming these files on upload. It will either convert these problematic characters or remove them.
+
+Besides that, it can improve your SEO adding some relevant info to your filename, like your domain name or the post title your file is attached on.
+
+Increase your control over your file names
 
 == Frequently Asked Questions ==
 = What are the available options provided by this plugin? =
@@ -45,15 +49,28 @@ Rules are options to control how your filename will be. Rules are enabled on the
 It's the option where you can put your rules or any other characters you want to set how your filename will be
 
 = Are there any hooks available?
-Yes, you can use the filter **frou_sanitize_file_name** to create custom rules. See the next item below
+* **frou_sanitize_file_name** Creates custom rules. Take a look on (Can I create a custom rule?)
+* **frou_ignored_extensions** Ignores extensions. Take a look on (How to ignore extensions programmatically?)
 
-= Can i create a custom rule?
+= How to ignore extensions programmatically?
+You can use the **'frou_ignored_extensions'** filter to ignore extensions programmatically.
+For example, if you'd like to ignore txt, js and zip extensions:
+
+`add_filter( 'frou_ignored_extensions', function ( $extensions ) {
+	$extensions = array_merge( $extensions, array(
+		'txt',
+		'js',
+		'zip',
+	) );
+	return $extensions;
+} );`
+
+= Can I create a custom rule?
 Yes. It's easy.
 
 First, you have to create a custom rule in the **filename structure** option using curly braces, like **{my_custom_rule}**. You just have to write it, in any position you want.
 
 Now you can use the filter **frou_sanitize_file_name** to create a custom function. For example, if you want to put the user id it would be something like this:
-
 
 `add_filter( 'frou_sanitize_file_name', function($filename_infs){
 	$filename_infs['structure']['translation']['my_custom_rule'] = get_current_user_id();
@@ -76,6 +93,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 3. Setup how the rules will work on your filename
 
 == Changelog ==
+
+= 2.1.8 =
+* Create a filter to ignore filename extensions (frou_ignored_extensions)
 
 = 2.1.7 =
 * Improve function to get post title, even with unsaved posts
@@ -156,5 +176,5 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Upgrade Notice ==
 
-= 2.1.7 =
-* Improve function to get post title, even with unsaved posts
+= 2.1.8 =
+* Create a filter to ignore filename extensions (frou_ignored_extensions)

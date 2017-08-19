@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core
  *
- * @version 2.1.5
+ * @version 2.1.8
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -121,7 +121,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**
 		 * Checks if extension is allowed for renaming
 		 *
-		 * @version 2.1.1
+		 * @version 2.1.8
 		 * @since   2.1.1
 		 *
 		 * @param $extension
@@ -133,8 +133,10 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			if ( filter_var( $option->get_option( $option->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				$ignored_extensions_str = $option->get_option( $option->option_extensions_ignored );
 				$ignored_extensions_arr = explode( ",", $ignored_extensions_str );
+				$ignored_extensions_arr = apply_filters( 'frou_ignored_extensions', $ignored_extensions_arr );
 				$ignored_extensions_arr = array_map( 'trim', $ignored_extensions_arr );
 				$ignored_extensions_arr = array_map( 'sanitize_text_field', $ignored_extensions_arr );
+				$ignored_extensions_arr = array_unique( $ignored_extensions_arr );
 				if ( ! empty( $ignored_extensions_str ) && in_array( $extension, $ignored_extensions_arr ) ) {
 					return false;
 				}

@@ -74,7 +74,7 @@ if ( ! class_exists( 'FROU\Options\Advanced\Ignore_Filenames_Option' ) ) {
 				array(
 					'name'           => $this->option_ignore_without_extension,
 					'desc'           => __( 'Ignores filename only when extension cannot be found', 'file-renaming-on-upload' ),
-					'desc_secondary' => __( 'If you are having conflict troubles with some other plugins try to unmark this option', 'file-renaming-on-upload' ),
+					'desc_secondary' => __( 'If you have issues with some other plugins try to unmark this option', 'file-renaming-on-upload' ),
 					'default'        => 'on',
 					'type'           => 'checkbox',
 				),
