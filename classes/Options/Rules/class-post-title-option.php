@@ -68,7 +68,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 
 			$structure_rules = $filename_infs['structure']['rules'];
 			if ( strpos( $structure_rules, '{' . $this->option_id . '}' ) !== false ) {
-				$post_slug = Post::get_post_slug();
+				$post_slug = Post::get_parent_post_slug();
 				if ( ! empty( $post_slug ) ) {
 					$filename_infs['structure']['translation'][ $this->option_id ] = $post_slug;
 				}

@@ -4,7 +4,7 @@ Tags: file rename, upload, renaming, file, rename
 Requires at least: 4.0.0
 Tested up to: 4.8
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BAC8PT82YMTJL&lc=US&item_name=File%20Renaming%20on%20Upload&item_number=file%2drenaming%2don%2dupload&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Stable tag: 2.1.8
+Stable tag: 2.1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
+= 2.1.9 =
+* Create a filter to get the parent post id (frou_parent_post_id)
+
 = 2.1.8 =
 * Create a filter to ignore filename extensions (frou_ignored_extensions)
 
@@ -176,5 +179,5 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Upgrade Notice ==
 
-= 2.1.8 =
-* Create a filter to ignore filename extensions (frou_ignored_extensions)
+= 2.1.9 =
+* Create a filter to get the parent post id (frou_parent_post_id)

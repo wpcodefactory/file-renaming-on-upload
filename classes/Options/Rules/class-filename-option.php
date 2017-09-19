@@ -174,7 +174,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 				return $filename_infs;
 			}
 
-			$post_slug = Post::get_post_slug();
+			$post_slug = Post::get_parent_post_slug();
 			if ( empty( $post_slug ) ) {
 				return $filename_infs;
 			}
