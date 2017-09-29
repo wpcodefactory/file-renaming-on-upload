@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Settings APi
  *
- * @version 2.0.0
+ * @version 2.1.10
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -211,6 +211,17 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
                     font-size:14px;
                 }
             </style>
+            <script>
+                // Activate correct tab
+                jQuery(document).ready(function($){
+	                if(window.location.hash) {
+                        var tab = $('a[href="'+window.location.hash+'"]');
+                        if(tab.length){
+	                        tab.click();
+                        }
+	                }
+                })
+            </script>
             <?php
 		}
 
