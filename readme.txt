@@ -96,6 +96,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 = 2.1.10 =
 * Open tab if hash is present
+* Improve settings api
 
 = 2.1.9 =
 * Create a filter to get the parent post id (frou_parent_post_id)
@@ -184,3 +185,4 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 = 2.1.10 =
 * Open tab if hash is present
+* Improve settings api

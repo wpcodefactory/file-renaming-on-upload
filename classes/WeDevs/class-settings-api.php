@@ -37,14 +37,17 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 		 * @param array   $args settings field args
 		 */
 		function callback_progress_bar( $args ) {
-			$args = wp_parse_args($args,array(
-				'option_queue_count'=>'',
-				'option_total_count'=>'',
-			));
+			$args = wp_parse_args( $args, array(
+				'option_queue_count' => '',
+				'option_total_count' => '',
+				'option_action'      => ''
+			) );
 
-			$total                = sanitize_text_field( $args['option_total_count'] );
-			$queue                = sanitize_text_field( $args['option_queue_count'] );
-			$id = $args['id'];
+			$total      = sanitize_text_field( $args['option_total_count'] );
+			$queue      = sanitize_text_field( $args['option_queue_count'] );
+			$action     = sanitize_text_field( $args['option_action'] );
+			$action_get = isset( $_GET['action'] ) ? $_GET['action'] : '';
+			$id         = $args['id'];
 
 			echo '
 			<div id="'.$id.'" class="progress_bar_field">
@@ -58,8 +61,9 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
             <script>
                 jQuery(document).ready(function($){
 	                var interval;
-	                var percent=0;
-	                var count=0;
+	                var action_called = <?php echo $action_get == $action ? 'true' : 'false'; ?>;
+	                var percent = 0;
+	                var count = 0;
 	                var no_queue=false;
 	                function call_ajax(){
 		                var ajax_url = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
@@ -74,7 +78,7 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
                             percent = response.data.percent;
 			                if(response.data.no_queue==true){
 				                no_queue=true;
-				                if(count>1){
+				                if(count>1 || action_called){
 					                percent=100;
 				                }else{
 				                	percent=0;
@@ -92,6 +96,7 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 			                clearInterval(interval);
                         }
                     }
+                    call_ajax();
                 })
             </script>
             <?php
@@ -380,6 +385,7 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 						'desc_secondary'     => isset( $option['desc_secondary'] ) ? $option['desc_secondary'] : '',
 						'option_queue_count' => isset( $option['option_queue_count'] ) ? $option['option_queue_count'] : '',
 						'option_total_count' => isset( $option['option_total_count'] ) ? $option['option_total_count'] : '',
+						'option_action'      => isset( $option['option_action'] ) ? $option['option_action'] : '',
 						'name'               => $label,
 						'section'            => $section,
 						'size'               => isset( $option['size'] ) ? $option['size'] : null,
