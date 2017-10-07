@@ -1,8 +1,9 @@
 === File Renaming on Upload ===
 Contributors: karzin
-Tags: file rename, upload, renaming, file, rename
+Tags: file rename, upload, renaming, file, rename, characters, accents
 Requires at least: 4.0.0
 Tested up to: 4.8
+Requires PHP: 5.3
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BAC8PT82YMTJL&lc=US&item_name=File%20Renaming%20on%20Upload&item_number=file%2drenaming%2don%2dupload&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Stable tag: 2.2.0
 License: GPLv2 or later
@@ -19,6 +20,19 @@ This plugin will help you fix this problem by renaming these files on upload. It
 Besides that, it can improve your SEO adding some relevant info to your filename, like your domain name or the post title your file is attached on.
 
 Increase your control over your file names
+
+== Premium version ==
+Do you like the free version of this plugin? Imagine what the <strong>Premium</strong> version can do for you!
+
+Check it out [here](https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/ "File Renaming on Upload - Premium") or on this link: [https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/](https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/ "File Renaming on Upload - Premium")
+
+**Take a look at some of its features:**
+
+*Edit filenames and permalinks manually</li>
+*Update old media</li>
+*Autofill ALT tag</li>
+*Custom field rule</li>
+*New rules</li>
 
 == Frequently Asked Questions ==
 = What are the available options provided by this plugin? =

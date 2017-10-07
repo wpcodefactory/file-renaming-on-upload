@@ -15,16 +15,6 @@ namespace FROU;
 
 use Pablo_Pacheco\WP_Namespace_Autoloader\WP_Namespace_Autoloader;
 
-if ( function_exists( 'file_renaming_on_upload_pro' ) ) {	
-	if ( is_plugin_active( plugin_basename( __FILE__ ) ) ) {
-		deactivate_plugins( plugin_basename( __FILE__ ) );
-		//add_action( 'admin_notices', array( $this, 'disabled_notice' ) );
-		if ( isset( $_GET['activate'] ) ) {
-			unset( $_GET['activate'] );
-		}
-	}
-}
-
 if ( ! function_exists( 'file_renaming_on_upload_autoload' ) ) {
 
 	/**
