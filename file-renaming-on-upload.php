@@ -74,7 +74,7 @@ add_action( 'upgrader_process_complete', function($upgrader_object, $options){
 	$current_plugin_path_name = plugin_basename( __FILE__ );
 
 	if ($options['action'] == 'update' && $options['type'] == 'plugin' ){
-		foreach($options['packages'] as $each_plugin){
+		foreach($options['plugins'] as $each_plugin){
 			if ($each_plugin==$current_plugin_path_name){             
 				set_transient( 'frou_activated_or_updated', true, 30 );
 			}
