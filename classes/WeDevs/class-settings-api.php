@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Settings APi
  *
- * @version 2.1.10
+ * @version 2.2.0
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */

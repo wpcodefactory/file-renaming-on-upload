@@ -60,10 +60,111 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			add_action( 'init', array( $this, 'handle_settings_page' ) );
 			add_action( 'init', array( $this, 'add_options' ) );
 			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename' ), 10, 2 );
-
+			add_action( 'admin_notices', array( $this, 'create_premium_notice' ) );
+			add_action( 'admin_notices', array( $this, 'create_notice' ) );
 			//add_action( 'add_attachment', array( $this, 'add_attachment' ) );
 			//add_filter('wp_insert_attachment_data',array($this,'insert_attachment_data'),10,2);
 			//add_action('wp_insert_post',array($this,'insert_post'));
+		}
+
+		public function create_notice(){
+			$current_screen = get_current_screen();
+			if (
+				function_exists( 'file_renaming_on_upload_pro' ) ||
+				$current_screen->id != 'plugins' ||
+                ! get_transient( 'frou_just_activated' )
+			) {
+				return;
+			}
+			delete_transient( 'frou_just_activated' );
+			?>
+            <div class="notice notice-warning frou-notice is-dismissible">
+                <h3 class="title">File Renaming on Upload</h3>
+                <p>
+                    Do you like this plugin and find it useful? Help me! <a href="https://wordpress.org/support/plugin/file-renaming-on-upload/reviews/#new-post" target="_blank">Write a review</a> telling how it's useful for you.<br />
+                    That will help spread the word making other people know about it too.<br />
+                    <a target="_blank" class="button-secondary frou-call-to-action" style="margin-top:20px !important; margin-bottom:5px !important" href="https://wordpress.org/support/plugin/file-renaming-on-upload/reviews/#new-post">Write a review</a>
+                </p>
+                <p>
+                    <hr style="margin-top:10px;margin-bottom:10px" />
+                </p>
+
+                <h3 class="title" style="margin-top:4px !important">Premium version</h3>
+                <p>
+                    Did you know this plugin has a premium version?<br />
+                    <strong>Check some of its features:</strong>
+                </p>
+
+                <ul class="frou-notice-ul">
+                    <li>Edit filenames and permalinks manually</li>
+                    <li>Update old media</li>
+                    <li>Autofill ALT tag</li>
+                    <li>Custom field rule</li>
+                    <li>New rules</li>
+                </ul>
+                <p>
+                    <a target="_blank" class="button-primary frou-call-to-action" href="https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/">Upgrade to premium version</a>
+                </p>
+            </div>
+
+			<?php
+            $this->create_notice_style();
+        }
+
+        public function create_notice_style(){
+		    ?>
+            <style>
+                .frou-notice h3{
+                    margin: 18px 0 15px 2px;
+                }
+                .frou-notice{
+                    margin-top:13px !important;
+                    padding-left:20px ;
+                }
+                .frou-notice-ul{
+                    margin-top:18px !important;
+                    margin-left:3px;
+                    list-style: disc inside;
+                }
+                .frou-call-to-action{
+                    display:inline-block;
+                    margin-bottom:14px !important;
+                    margin-top:8px !important;
+                    border:1px solid red;
+                }
+            </style>
+            <?php
+        }
+
+		public function create_premium_notice() {
+			$current_screen = get_current_screen();
+			if (
+				function_exists( 'file_renaming_on_upload_pro' ) ||
+				$current_screen->id != 'settings_page_file-renaming-on-upload'
+			) {
+				return;
+			}
+			?>
+			<div class="notice notice-warning frou-notice">
+				<h3 class="title">Premium version</h3>
+				<p>
+					Do you like the free version of this plugin? Imagine what the <strong>Premium</strong> version can do for you!<br/>
+					Check it out <a target="_blank" href="https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/">here</a> or on this link: <a target="_blank" href="https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/">https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/</a>
+				</p>
+				<p  style="margin:12px 0 10px"><strong>Take a look at some of its features:</strong></p>
+				<ul class="frou-notice-ul">
+					<li>Edit filenames and permalinks manually</li>
+					<li>Update old media</li>
+					<li>Autofill ALT tag</li>
+					<li>Custom field rule</li>
+					<li>New rules</li>
+				</ul>
+				<p>
+					<a target="_blank" class="button-primary frou-call-to-action" href="https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/">Upgrade to Premium version</a>
+				</p>
+			</div>
+			<?php
+			$this->create_notice_style();
 		}
 
 		/**
