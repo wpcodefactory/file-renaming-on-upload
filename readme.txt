@@ -22,7 +22,7 @@ Besides that, it can improve your SEO adding some relevant info to your filename
 Increase your control over your file names
 
 == Premium version ==
-Do you like the free version of this plugin? Imagine what the <strong>Premium</strong> version can do for you!
+Do you like the free version of this plugin? Imagine what the <strong>[Premium](https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/ "File Renaming on Upload - Premium")</strong> version can do for you!
 
 [Check it out](https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/ "File Renaming on Upload - Premium")
 
