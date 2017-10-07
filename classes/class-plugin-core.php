@@ -72,11 +72,11 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			if (
 				function_exists( '\FROUP\file_renaming_on_upload_pro' ) ||
 				$current_screen->id != 'plugins' ||
-                ! get_transient( 'frou_just_activated' )
+                ! get_transient( 'frou_activated_or_updated' )
 			) {
 				return;
 			}
-			delete_transient( 'frou_just_activated' );
+			delete_transient( 'frou_activated_or_updated' );
 			?>
             <div class="notice notice-warning frou-notice is-dismissible">
                 <h3 class="title">File Renaming on Upload</h3>
