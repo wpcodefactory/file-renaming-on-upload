@@ -71,7 +71,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			$current_screen = get_current_screen();
 			if (
 				function_exists( '\FROUP\file_renaming_on_upload_pro' ) ||
-				$current_screen->id != 'plugins' ||
+				//$current_screen->id != 'plugins' ||
                 ! get_transient( 'frou_activated_or_updated' )
 			) {
 				return;
