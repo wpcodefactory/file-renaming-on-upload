@@ -24,15 +24,15 @@ Increase your control over your file names
 == Premium version ==
 Do you like the free version of this plugin? Imagine what the <strong>Premium</strong> version can do for you!
 
-Check it out [here](https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/ "File Renaming on Upload - Premium") or on this link: [https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/](https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/ "File Renaming on Upload - Premium")
+[Check it out](https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/ "File Renaming on Upload - Premium")
 
 **Take a look at some of its features:**
 
-*Edit filenames and permalinks manually</li>
-*Update old media</li>
-*Autofill ALT tag</li>
-*Custom field rule</li>
-*New rules</li>
+* Edit filenames and permalinks manually
+* Update old media
+* Autofill ALT tag
+* Custom field rule
+* New rules
 
 == Frequently Asked Questions ==
 = What are the available options provided by this plugin? =
