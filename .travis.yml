@@ -19,7 +19,7 @@ before_deploy:
 deploy:
   - provider: wordpress-plugin
     edge:
-      source: TypistTech/dpl
+      source: pablo-sg-pacheco/dpl
       branch: add-wordpress-plugin-deployment
     on:
       php: 7.0
