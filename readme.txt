@@ -109,7 +109,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 == Changelog ==
 
 = 2.2.2 =
-* Setup Travis for auto deployment
+* Update translation
 
 = 2.2.1 =
 * Set transient on update

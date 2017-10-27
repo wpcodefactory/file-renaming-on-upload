@@ -81,29 +81,29 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
             <div class="notice notice-warning frou-notice is-dismissible">
                 <h3 class="title">File Renaming on Upload</h3>
                 <p>
-                    Do you like this plugin and find it useful? Help me! <a href="https://wordpress.org/support/plugin/file-renaming-on-upload/reviews/#new-post" target="_blank">Write a review</a> telling how it's useful for you.<br />
-                    That will help spread the word making other people know about it too.<br />
-                    <a target="_blank" class="button-secondary frou-call-to-action" style="margin-top:20px !important; margin-bottom:5px !important" href="https://wordpress.org/support/plugin/file-renaming-on-upload/reviews/#new-post">Write a review</a>
+                    <?php echo __('Do you like this plugin and find it useful? Help me!','file-renaming-on-upload'); ?> <?php echo sprintf(__('<a href="%s" target="_blank">Write a review</a> telling how it is useful for you.','file-renaming-on-upload'),'https://wordpress.org/support/plugin/file-renaming-on-upload/reviews/#new-post'); ?><br />
+                    <?php echo __('That will help spread the word making other people know about it too.','file-renaming-on-upload'); ?><br />
+                    <a target="_blank" class="button-secondary frou-call-to-action" style="margin-top:20px !important; margin-bottom:5px !important" href="https://wordpress.org/support/plugin/file-renaming-on-upload/reviews/#new-post"><?php echo __('Write a review','file-renaming-on-upload'); ?></a>
                 </p>
                 <p>
                     <hr style="margin-top:10px;margin-bottom:10px" />
                 </p>
 
-                <h3 class="title" style="margin-top:4px !important">Premium version</h3>
+                <h3 class="title" style="margin-top:4px !important"><?php echo __('Premium version','file-renaming-on-upload'); ?></h3>
                 <p>
-                    Did you know this plugin has a premium version?<br />
-                    <strong>Check some of its features:</strong>
+                    <?php echo __('Did you know this plugin has a premium version?','file-renaming-on-upload'); ?><br />
+                    <strong><?php echo __('Take a look at some of its features:','file-renaming-on-upload'); ?></strong>
                 </p>
 
                 <ul class="frou-notice-ul">
-                    <li>Edit filenames and permalinks manually</li>
-                    <li>Update old media</li>
-                    <li>Autofill ALT tag</li>
-                    <li>Custom field rule</li>
-                    <li>New rules</li>
+                    <li><?php echo __('Edit filenames and permalinks manually','file-renaming-on-upload'); ?></li>
+                    <li><?php echo __('Update old media','file-renaming-on-upload'); ?></li>
+                    <li><?php echo __('Autofill ALT tag','file-renaming-on-upload'); ?></li>
+                    <li><?php echo __('Custom field rule','file-renaming-on-upload'); ?></li>
+                    <li><?php echo __('New rules','file-renaming-on-upload'); ?></li>
                 </ul>
                 <p>
-                    <a target="_blank" class="button-primary frou-call-to-action" href="https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/">Upgrade to premium version</a>
+                    <a target="_blank" class="button-primary frou-call-to-action" href="https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/"><?php echo __('Upgrade to premium version','file-renaming-on-upload'); ?></a>
                 </p>
             </div>
 
@@ -146,18 +146,17 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			}
 			?>
 			<div class="notice notice-warning frou-notice">
-				<h3 class="title">Premium version</h3>
-				<p>
-					Do you like the free version of this plugin? Imagine what the <strong>Premium</strong> version can do for you!<br/>
-					Check it out <a target="_blank" href="https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/">here</a> or on this link: <a target="_blank" href="https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/">https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/</a>
+				<h3 class="title"><?php echo __('Premium version','file-renaming-on-upload'); ?></h3>
+				<p><?php echo __('Do you like the free version of this plugin? Imagine what the <strong>Premium</strong> version can do for you!','file-renaming-on-upload'); ?>
+					<br/><?php echo sprintf(__('Check it out <a target="_blank" href="%1$s">here</a> or on this link: <a target="_blank" href="%1$s">%1$s</a>','file-renaming-on-upload'),'https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/'); ?>					
 				</p>
-				<p  style="margin:12px 0 10px"><strong>Take a look at some of its features:</strong></p>
+				<p  style="margin:12px 0 10px"><strong><?php echo __('Take a look at some of its features:','file-renaming-on-upload'); ?></strong></p>
 				<ul class="frou-notice-ul">
-					<li>Edit filenames and permalinks manually</li>
-					<li>Update old media</li>
-					<li>Autofill ALT tag</li>
-					<li>Custom field rule</li>
-					<li>New rules</li>
+					<li><?php echo __('Edit filenames and permalinks manually','file-renaming-on-upload'); ?></li>
+                    <li><?php echo __('Update old media','file-renaming-on-upload'); ?></li>
+                    <li><?php echo __('Autofill ALT tag','file-renaming-on-upload'); ?></li>
+                    <li><?php echo __('Custom field rule','file-renaming-on-upload'); ?></li>
+                    <li><?php echo __('New rules','file-renaming-on-upload'); ?></li>
 				</ul>
 				<p>
 					<a target="_blank" class="button-primary frou-call-to-action" href="https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/">Upgrade to Premium version</a>

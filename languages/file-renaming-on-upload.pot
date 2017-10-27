@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: File renaming on upload\n"
-"POT-Creation-Date: 2017-04-27 12:40-0300\n"
+"POT-Creation-Date: 2017-10-26 23:15-0200\n"
 "PO-Revision-Date: 2017-01-17 13:05-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e\n"
@@ -57,8 +57,7 @@ msgstr ""
 
 #: classes/Options/Advanced/class-ignore-filenames-option.php:77
 msgid ""
-"If you are having conflict troubles with some other plugins try to "
-"unmark this option"
+"If you have issues with some other plugins try to unmark this option"
 msgstr ""
 
 #: classes/Options/General/class-enable-option.php:60
@@ -117,44 +116,52 @@ msgstr ""
 msgid "Result: <b>%s</b>"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:226
+#: classes/Options/Rules/class-filename-option.php:255
 msgid "Filename"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:227
+#: classes/Options/Rules/class-filename-option.php:256
 msgid "Enables filename rule"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:244
+#: classes/Options/Rules/class-filename-option.php:273
 msgid "Accents"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:244
+#: classes/Options/Rules/class-filename-option.php:273
 msgid "Converts all filename accent characters to ASCII characters"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:245
+#: classes/Options/Rules/class-filename-option.php:274
 msgid "Lowercase"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:245
+#: classes/Options/Rules/class-filename-option.php:274
 msgid "Converts all filename characters to lowercase"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:246
+#: classes/Options/Rules/class-filename-option.php:275
 #: classes/Options/Rules/class-post-title-option.php:95
 msgid "Post title"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:246
+#: classes/Options/Rules/class-filename-option.php:275
 msgid "Converts filename to post title whenever it is possible"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:259
+#: classes/Options/Rules/class-filename-option.php:280
+msgid "Besides whitespaces, converts the following characters to a dash."
+msgstr ""
+
+#: classes/Options/Rules/class-filename-option.php:280
+msgid "(Space separated)"
+msgstr ""
+
+#: classes/Options/Rules/class-filename-option.php:294
 msgid "All non ASCII characters"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:260
+#: classes/Options/Rules/class-filename-option.php:295
 msgid "Specific characters"
 msgstr ""
 
@@ -178,6 +185,79 @@ msgstr ""
 msgid "The site URL (Change it the way you like)"
 msgstr ""
 
-#: file-renaming-on-upload.php:38
+#: classes/WeDevs/class-wedevs-settings-api-original.php:379
+msgid "Choose File"
+msgstr ""
+
+#: classes/class-plugin-core.php:84
+msgid "Do you like this plugin and find it useful? Help me!"
+msgstr ""
+
+#: classes/class-plugin-core.php:84
+#, php-format
+msgid ""
+"<a href=\"%s\" target=\"_blank\">Write a review</a> telling how it is "
+"useful for you."
+msgstr ""
+
+#: classes/class-plugin-core.php:85
+msgid ""
+"That will help spread the word making other people know about it too."
+msgstr ""
+
+#: classes/class-plugin-core.php:86
+msgid "Write a review"
+msgstr ""
+
+#: classes/class-plugin-core.php:92 classes/class-plugin-core.php:149
+msgid "Premium version"
+msgstr ""
+
+#: classes/class-plugin-core.php:94
+msgid "Did you know this plugin has a premium version?"
+msgstr ""
+
+#: classes/class-plugin-core.php:95 classes/class-plugin-core.php:153
+msgid "Take a look at some of its features:"
+msgstr ""
+
+#: classes/class-plugin-core.php:99 classes/class-plugin-core.php:155
+msgid "Edit filenames and permalinks manually"
+msgstr ""
+
+#: classes/class-plugin-core.php:100 classes/class-plugin-core.php:156
+msgid "Update old media"
+msgstr ""
+
+#: classes/class-plugin-core.php:101 classes/class-plugin-core.php:157
+msgid "Autofill ALT tag"
+msgstr ""
+
+#: classes/class-plugin-core.php:102 classes/class-plugin-core.php:158
+msgid "Custom field rule"
+msgstr ""
+
+#: classes/class-plugin-core.php:103 classes/class-plugin-core.php:159
+msgid "New rules"
+msgstr ""
+
+#: classes/class-plugin-core.php:106
+msgid "Upgrade to premium version"
+msgstr ""
+
+#: classes/class-plugin-core.php:150
+msgid ""
+"Do you like the free version of this plugin? Imagine what the "
+"<strong>Premium</strong> version can do for you!"
+msgstr ""
+
+#: classes/class-plugin-core.php:151
+#, php-format
+msgid ""
+"Check it out <a target=\"_blank\" href=\"%1$s\">here</a> or on this "
+"link: <a target=\"_blank\" href=\"%1$s\">%1$s</a>"
+msgstr ""
+
+#: file-renaming-on-upload.php:53
 msgid "Settings"
 msgstr ""
