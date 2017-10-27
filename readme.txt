@@ -109,7 +109,8 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 == Changelog ==
 
 = 2.2.2 =
-* Update translation
+* Update pot file
+* Add strings to translation
 
 = 2.2.1 =
 * Set transient on update
@@ -207,4 +208,5 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 == Upgrade Notice ==
 
 = 2.2.2 =
-* Setup Travis for auto deployment
+* Update pot file
+* Add strings to translation
