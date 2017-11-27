@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - General Settings Page
  *
- * @version 2.1.6
+ * @version 2.2.3
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -102,11 +102,11 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		/**
 		 * Creates the menu
 		 *
-		 * @version 2.1.6
+		 * @version 2.2.3
 		 * @since   2.0.0
 		 */
 		function admin_menu() {
-			add_options_page( 'File renaming', 'File renaming', 'install_plugins', 'file-renaming-on-upload', array(
+			add_options_page( 'File renaming', 'File renaming', 'edit_users', 'file-renaming-on-upload', array(
 				$this,
 				'plugin_page',
 			) );

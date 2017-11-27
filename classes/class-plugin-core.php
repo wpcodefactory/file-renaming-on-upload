@@ -70,7 +70,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		public function create_notice(){
 			$current_screen = get_current_screen();
 			if (
-				function_exists( '\FROUP\file_renaming_on_upload_pro' ) ||
+				function_exists( 'FROUP\file_renaming_on_upload_pro' ) ||
 				//$current_screen->id != 'plugins' ||
                 ! get_transient( 'frou_activated_or_updated' )
 			) {
@@ -139,7 +139,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		public function create_premium_notice() {
 			$current_screen = get_current_screen();
 			if (
-				function_exists( '\FROUP\file_renaming_on_upload_pro' ) ||
+				function_exists( 'FROUP\file_renaming_on_upload_pro' ) ||
 				$current_screen->id != 'settings_page_file-renaming-on-upload'
 			) {
 				return;
