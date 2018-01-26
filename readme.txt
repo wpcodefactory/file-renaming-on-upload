@@ -108,6 +108,10 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
+= 2.2.4 - 2018/01/26 =
+* Add translation to some missing strings
+* Add option to truncate filename
+
 = 2.2.3 - 2017/11/27 =
 * Fix notice checking
 * Replace "install_plugins" permission by "edit_users"
@@ -212,5 +216,6 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Upgrade Notice ==
 
-= 2.2.3 =
-* Fix notice checking
+= 2.2.4 - 2018/01/26 =
+* Add translation to some missing strings
+* Add option to truncate filename

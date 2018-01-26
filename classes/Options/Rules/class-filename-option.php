@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Filename Option
  *
- * @version 2.1.5
+ * @version 2.2.4
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -34,6 +34,9 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		public $option_remove_specific_characters_text = 'specific_chars_text';
 		public $option_remove_non_ascii_characters = 'non_ascii_chars';
 
+		// Truncate
+		public $option_truncate = 'truncate';
+
 		//public $current_filename_modified;
 		//public $current_filename_original;
 
@@ -53,7 +56,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Initializes
 		 *
-		 * @version 2.0.9
+		 * @version 2.2.4
 		 * @since   2.0.0
 		 */
 		function init() {
@@ -61,9 +64,30 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_posttitle' ), 11 );
 			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_accents' ), 12 );
 			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_lowercase' ), 12 );
+			add_filter( 'frou_sanitize_file_name', array( $this, 'truncate_filename' ), 9 );
 			add_filter( 'wp_handle_upload_prefilter', array( $this, 'convert_to_dash' ) );
 			add_filter( 'frou_sanitize_file_name', array( $this, 'remove_non_ascii_chars' ), 13 );
 			add_action( 'sanitize_file_name_chars', array( $this, 'remove_specific_chars' ) );
+		}
+
+		/**
+		 * Truncates filename
+		 *
+		 * @version 2.2.4
+		 * @since   2.2.4
+		 */
+		public function truncate_filename( $filename_infs ) {
+			if ( empty( $this->get_option( $this->option_truncate ) ) ) {
+				return $filename_infs;
+			}
+
+			$max_length = $this->get_option( $this->option_truncate );
+
+			$filename                                              = $filename_infs['structure']['translation']['filename'];
+			$filename_shortened                                    = substr( $filename, 0, $max_length );
+			$filename_infs['structure']['translation']['filename'] = $filename_shortened;
+
+			return $filename_infs;
 		}
 
 		/**
@@ -260,7 +284,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 				array(
 					'name'    => 'convert_chars_title',
 					'type'    => 'title',
-					'default' => 'Convert',
+					'default' => __('Convert','file-renaming-on-upload'),
 				),
 				array(
 					'name'    => $this->option_convert,
@@ -284,7 +308,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 				array(
 					'name'    => 'remove_chars_title',
 					'type'    => 'title',
-					'default' => 'Remove',
+					'default' => __('Remove','file-renaming-on-upload'),
 				),
 				array(
 					'name'    => $this->option_remove,
@@ -300,6 +324,22 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 					'type'    => 'textarea',
 					'default' => '? + [ ] / \ = < > : ; , \' " & $ # * ( ) | ~ ` ! { } ¨ % @ ^',
 				),
+				array(
+					'name'    => 'truncate_title',
+					'type'    => 'title',
+					'default' => __('Truncate','file-renaming-on-upload'),
+				),
+				array(
+					'name'    => $this->option_truncate,
+					//'label'   => __( 'Truncate filename', 'file-renaming-on-upload' ),
+					'desc'    => __( 'Max lenght of a filename. Leave it empty if you do not want to use this feature', 'file-renaming-on-upload' ),
+					'default' => '',
+					'min'     => 0,
+					'max'     => 5,
+					'step'    => '1',
+					'type'    => 'number',
+				),
+
 				array(
 					'name' => 'filename_separator',
 					'type' => 'separator',

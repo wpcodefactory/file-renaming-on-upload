@@ -16,6 +16,7 @@ use FROU\Options\General\Filename_Structure_Option;
 use FROU\Options\Advanced\Ignore_Extensions_Option;
 use FROU\Options\Advanced\Ignore_Filenames_Option;
 use FROU\Options\General\Permalink_Update_Option;
+use FROU\Options\General\Truncate_Option;
 use FROU\Options\Rules\Datetime_Option;
 use FROU\Options\Rules\Filename;
 use FROU\Options\Rules\Filename_Option;
@@ -48,6 +49,9 @@ if ( ! class_exists( 'FROU\Options\Options' ) ) {
 			$option->init();
 			$option = new Filename_Structure_Option( array( 'section' => 'frou_general_opt' ) );
 			$option->init();
+
+			/*$option = new Truncate_Option( array( 'section' => 'frou_general_opt' ) );
+			$option->init();*/
 
 			// Rules
 			$option = new Filename_Option( array( 'section' => 'frou_filenaming_rules_opt' ) );
