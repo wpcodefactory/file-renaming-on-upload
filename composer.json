@@ -8,7 +8,7 @@
 		"rename",
 		"upload"
 	],
-	"license": "GPL2",
+	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
 			"name": "Pablo dos Santos Gonçalves Pacheco",
