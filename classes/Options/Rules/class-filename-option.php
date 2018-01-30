@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Filename Option
  *
- * @version 2.2.4
+ * @version 2.2.5
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -73,11 +73,12 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Truncates filename
 		 *
-		 * @version 2.2.4
+		 * @version 2.2.5
 		 * @since   2.2.4
 		 */
 		public function truncate_filename( $filename_infs ) {
-			if ( empty( $this->get_option( $this->option_truncate ) ) ) {
+			$truncate_option = $this->get_option( $this->option_truncate );
+			if ( empty( $truncate_option ) ) {
 				return $filename_infs;
 			}
 
