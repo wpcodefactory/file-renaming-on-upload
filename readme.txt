@@ -112,6 +112,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 * Update translation file
 * Add persian translation
 * Config auto deploy with travis
+* Add wp.org assets on github
 
 = 2.2.5 - 2018/01/30 =
 * Fix empty function
@@ -227,3 +228,5 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 = 2.2.6 =
 * Update translation file
 * Add persian translation
+* Config auto deploy with travis
+* Add wp.org assets on github
