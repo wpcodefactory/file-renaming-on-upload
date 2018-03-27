@@ -106,7 +106,7 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		 * @since   2.0.0
 		 */
 		function admin_menu() {
-			add_options_page( 'File renaming', 'File renaming', 'edit_users', 'file-renaming-on-upload', array(
+			add_options_page( __('File renaming','file-renaming-on-upload'), __('File renaming','file-renaming-on-upload'), 'edit_users', 'file-renaming-on-upload', array(
 				$this,
 				'plugin_page',
 			) );
@@ -120,30 +120,12 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		 */
 		function plugin_page() {
 			echo '<div class="wrap">';
-			echo '<h2>File Renaming on upload</h2>';
+			echo '<h2>'.__('File Renaming on upload','file-renaming-on-upload').'</h2>';
 
 			$this->settings_api->show_navigation();
 			$this->settings_api->show_forms();
 			echo '</div>';
 		}
-
-		/*function handle_pro_ad(){
-			?>
-			<did id="poststuff">
-			<div id="alg_wc_wl_cmb_pro" class="postbox">
-				<h2 class="hndle"><span>Pro version</span></h2>
-				<div class="inside">
-					<p>
-						asdasdasdasd
-					</p>
-					<p>
-						asdasdasdasd
-					</p>
-				</div>
-			</div>
-			</did>
-			<?php
-		}*/
 
 		/**
 		 * Get all the pages

@@ -4,28 +4,19 @@ php:
   - 7.0
 
 script:
-  # Run your tests here.
-  - echo 'Tested'
+# Override default Travis script action [phpunit]
+- php -l *.php
 
-before_deploy:
-  - mkdir build  
-  - cp readme.txt build
-  - cp file-renaming-on-upload.php build
-  - cp readme.txt build
-  - cp -R classes build
-  - cp -R languages build
-  - cp -R vendor build
+branches:
+  only:
+  # Enable Travis hook on tags (there is regular expression for semver tag)*
+  - "/\\d\\.\\d\\.\\d/"
 
+# Enable Travis deployment
 deploy:
-  - provider: wordpress-plugin
-    edge:
-      source: TypistTech/dpl
-      branch: add-wordpress-plugin-deployment
-    on:
-      php: 7.0
-      tags: true
-      repo: pablo-sg-pacheco/file-renaming-on-upload
-    slug: file-renaming-on-upload
-    username: karzin
-    password: $WORDPRESS_ORG_PASSWORD
-    build_dir: build
+  # Use script as a deployment tool
+  provider: script
+  script: sh $TRAVIS_BUILD_DIR/travis-deploy.sh
+  # Restrict deployment only for tags
+  on:
+    tags: true
