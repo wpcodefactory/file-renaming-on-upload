@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core
  *
- * @version 2.1.8
+ * @version 2.2.7
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -50,7 +50,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**
 		 * Initialize
 		 *
-		 * @version 2.0.0
+		 * @version 2.2.7
 		 * @since   2.0.0
 		 *
 		 * @param array $args
@@ -58,7 +58,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		public function init( $args = array() ) {
 			parent::init( $args );
 			add_action( 'init', array( $this, 'handle_settings_page' ) );
-			add_action( 'init', array( $this, 'add_options' ) );
+			add_action( 'init', array( $this, 'add_options' ), 1 );
 			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename' ), 10, 2 );
 			add_action( 'admin_notices', array( $this, 'create_premium_notice' ) );
 			add_action( 'admin_notices', array( $this, 'create_notice' ) );
