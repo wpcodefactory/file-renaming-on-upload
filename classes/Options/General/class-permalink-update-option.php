@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Permalink update Option
  *
- * @version 2.0.0
+ * @version 2.2.8
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -93,12 +93,15 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 		/**
 		 * After a file is uploaded, make its name unique
 		 *
-		 * @version 2.0.0
+		 * @version 2.2.8
 		 * @since   2.0.0
 		 *
 		 * @param $post_id
 		 */
 		public function add_attachment( $post_id ) {
+			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
+				return;
+			}
 			$post = get_post( $post_id );
 			if ( $post->post_type != 'attachment' ) {
 				return;
