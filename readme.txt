@@ -5,7 +5,7 @@ Requires at least: 4.0.0
 Tested up to: 4.9
 Requires PHP: 5.3
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BAC8PT82YMTJL&lc=US&item_name=File%20Renaming%20on%20Upload&item_number=file%2drenaming%2don%2dupload&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Stable tag: 2.2.8
+Stable tag: 2.2.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -107,6 +107,10 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 3. Setup how the rules will work on your filename
 
 == Changelog ==
+
+= 2.2.9 - 2018/07/27 =
+* Check if rules exist before convert filename
+* Add more names to ignore filenames option regarding visual composer
 
 = 2.2.8 - 2018/04/20 =
 * Check if permalink option is enabled on add_attachment function
@@ -231,5 +235,6 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Upgrade Notice ==
 
-= 2.2.8 =
-* Check if permalink option is enabled on add_attachment function
+= 2.2.9 =
+* Check if rules exist before convert filename
+* Add more names to ignore filenames option regarding visual composer

@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core
  *
- * @version 2.2.7
+ * @version 2.2.9
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -288,7 +288,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 *
 		 * It's the main function of this plugin
 		 *
-		 * @version 2.1.5
+		 * @version 2.2.9
 		 * @since   2.0.0
 		 *
 		 * @param $filename
@@ -296,7 +296,9 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 * @return mixed|string
 		 */
 		public function sanitize_filename( $filename, $filename_raw ) {
-
+			//error_log('---');
+			//error_log(print_r($_REQUEST,true));
+			//error_log(print_r($filename,true));
 			// Does nothing if plugin is not enabled
 			$option = new Enable_Option( array( 'section' => 'frou_general_opt' ) );
 			if ( ! filter_var( $option->get_option( $option->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
@@ -339,6 +341,11 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 				)
 			);
 
+			$filename_arr_rules = $filename_arr['structure']['rules']; 
+			if( empty( $filename_arr_rules ) ){
+				return $filename;
+			}
+
 			// Applies plugin's rules
 			$filename = $filename_arr['structure']['rules'];
 			$filename = $this->remove_unused_rules( $filename, $filename_arr );
@@ -350,7 +357,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			}else{
 				$filename = $filename;
 			}
-
+			//error_log(print_r($filename,true));
 			return $filename;
 		}
 
