@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Ignore Pages Option
  *
- * @version 2.2.9
+ * @version 2.3.0
  * @since   2.1.1
  * @author  Pablo S G Pacheco
  */
@@ -48,7 +48,7 @@ if ( ! class_exists( 'FROU\Options\Advanced\Ignore_Filenames_Option' ) ) {
 		/**
 		 * Adds settings fields
 		 *
-		 * @version 2.2.9
+		 * @version 2.3.0
 		 * @since   2.1.1
 		 *
 		 * @param $fields
@@ -68,8 +68,8 @@ if ( ! class_exists( 'FROU\Options\Advanced\Ignore_Filenames_Option' ) ) {
 				array(
 					'name'    => $this->option_filenames_ignored,
 					'placeholder' => 'Comma separated values',
-					'default' => 'robots, sitemap, path, scheme, host, owner, repo, owner_repo, base_uri, uri, option_page, action, wpnonce, wp_http_referer, github-updater, github_updater_install_repo, github_updater_repo, github_updater_branch, github_updater_api, github_access_token, bitbucket_username, bitbucket_password, gitlab_enterprise_token, gitlab_access_token, submit, db_version, branch_switch, grid, grid-tall, page-options', 
-					'type'    => 'textarea',
+					'default' => 'robots, sitemap, path, scheme, host, owner, repo, owner_repo, base_uri, uri, option_page, action, wpnonce, wp_http_referer, github-updater, github_updater_install_repo, github_updater_repo, github_updater_branch, github_updater_api, github_access_token, bitbucket_username, bitbucket_password, gitlab_enterprise_token, gitlab_access_token, submit, db_version, branch_switch, grid, grid-tall, page-options, large-b', 
+					 'type'    => 'textarea',
 				),
 				array(
 					'name'           => $this->option_ignore_without_extension,
