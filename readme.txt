@@ -108,7 +108,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
-= 2.3.0 - 2018/07/30 =
+= 2.3.0 - 2018/08/01 =
 * Add more names to ignore filenames option regarding visual composer
 
 = 2.2.9 - 2018/07/27 =
