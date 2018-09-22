@@ -108,8 +108,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
-= 2.3.0 - 2018/08/01 =
+= 2.3.0 - 2018/09/22 =
 * Add more names to ignore filenames option regarding visual composer
+* Add 'frou_after_sanitize_file_name' filter
 
 = 2.2.9 - 2018/07/27 =
 * Check if rules exist before convert filename
@@ -240,3 +241,4 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 = 2.3.0 =
 * Add more names to ignore filenames option regarding visual composer
+* Add 'frou_after_sanitize_file_name' filter
