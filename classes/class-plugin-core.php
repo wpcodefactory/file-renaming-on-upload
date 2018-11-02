@@ -13,6 +13,7 @@ use FROU\Admin_Pages\Sections\Remove_Section;
 use FROU\Admin_Pages\Settings_Page;
 use FROU\Functions\Functions;
 
+use FROU\Options\Advanced\Ignore_Empty_Extensions_Option;
 use FROU\Options\General\Enable_Option;
 use FROU\Options\Advanced\Ignore_Extensions_Option;
 use FROU\Options\Advanced\Ignore_Filenames_Option;
@@ -299,7 +300,8 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			//error_log('---');
 			//error_log(print_r($_REQUEST,true));
 			//error_log(print_r($filename,true));
-			// Does nothing if plugin is not enabled
+
+			//Does nothing if plugin is not enabled
 			$option = new Enable_Option( array( 'section' => 'frou_general_opt' ) );
 			if ( ! filter_var( $option->get_option( $option->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $filename;
@@ -309,6 +311,14 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			$info              = pathinfo( $filename );
 			$extension         = empty( $info['extension'] ) ? '' : $info['extension'];
 			$filename_original = $info['filename'];
+
+			$ignore_empty_ext_opt = new Ignore_Empty_Extensions_Option( array( 'section' => 'frou_advanced_opt' ) );
+			if (
+				'on' === $ignore_empty_ext_opt->get_option( $ignore_empty_ext_opt->option_id, 'on' ) &&
+				empty( $extension )
+			) {
+				return $filename;
+			}
 
 			// Cancels in case of using github-updater option_page
 			if ( isset( $_GET['page'] ) && $_GET['page'] == 'github_updater' ) {
@@ -341,7 +351,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 				)
 			);
 
-			$filename_arr_rules = $filename_arr['structure']['rules']; 
+			$filename_arr_rules = $filename_arr['structure']['rules'];
 			if( empty( $filename_arr_rules ) ){
 				return $filename;
 			}
@@ -357,7 +367,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			if ( ! empty( $info['extension'] ) ) {
 				$filename = $filename . '.' . $extension;
 			}
-			//error_log(print_r($filename,true));
+			//error_log('FINAL: '.print_r($filename,true));
 			return $filename;
 		}
 

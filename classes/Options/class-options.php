@@ -10,6 +10,7 @@
 namespace FROU\Options;
 
 
+use FROU\Options\Advanced\Ignore_Empty_Extensions_Option;
 use FROU\Options\General\Enable_Option;
 use FROU\Options\General\Filename_Structure_Option;
 
@@ -64,6 +65,8 @@ if ( ! class_exists( 'FROU\Options\Options' ) ) {
 			$option->init();
 
 			// Advanced
+			$option = new Ignore_Empty_Extensions_Option( array( 'section' => 'frou_advanced_opt' ) );
+			$option->init();
 			$option = new Ignore_Extensions_Option( array( 'section' => 'frou_advanced_opt' ) );
 			$option->init();
 			$option = new Ignore_Filenames_Option( array( 'section' => 'frou_advanced_opt' ) );
