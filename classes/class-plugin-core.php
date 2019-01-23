@@ -372,16 +372,6 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 				return $filename;
 			}
 
-			// Cancels in case of specific filenames (this happens using some plugins like github-updater or All in one SEO PACK for example)
-			/*if ( ! empty( $info ) && ! $this->is_filename_allowed( $info ) ) {
-				return $filename;
-			}
-
-			// Ignores specific filename extensions
-			if ( ! empty( $extension ) && ! $this->is_extension_allowed( $extension ) ) {
-				return $filename;
-			}*/
-
 			// Gets plugin rules
 			$filename_arr = apply_filters( 'frou_sanitize_file_name',
 				array(
