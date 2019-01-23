@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core
  *
- * @version 2.3.0
+ * @version 2.3.1
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -51,7 +51,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**
 		 * Initialize
 		 *
-		 * @version 2.2.7
+		 * @version 2.3.1
 		 * @since   2.0.0
 		 *
 		 * @param array $args
@@ -63,9 +63,48 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename' ), 10, 2 );
 			add_action( 'admin_notices', array( $this, 'create_premium_notice' ) );
 			add_action( 'admin_notices', array( $this, 'create_notice' ) );
+			add_filter( 'frou_filename_allowed', array( $this, 'block_ignored_filenames' ), 10, 3 );
+			add_filter( 'frou_filename_allowed', array( $this, 'block_renaming_by_extension' ), 10, 3 );
 			//add_action( 'add_attachment', array( $this, 'add_attachment' ) );
 			//add_filter('wp_insert_attachment_data',array($this,'insert_attachment_data'),10,2);
 			//add_action('wp_insert_post',array($this,'insert_post'));
+		}
+
+		/**
+         * Blocks renaming by extension
+         *
+		 * @version 2.3.1
+		 * @since   2.3.1
+         *
+		 * @param $allowed
+		 * @param $filename
+		 * @param $infs
+		 *
+		 * @return mixed
+		 */
+		public function block_renaming_by_extension( $allowed, $filename, $infs ) {
+			$extension = isset( $infs['extension'] ) ? $infs['extension'] : '';
+			if ( ! empty( $extension ) && ! $this->is_extension_allowed( $extension ) ) {
+				return $filename;
+			}
+			return $allowed;
+		}
+
+		/**
+         * Blocks renaming by filename
+         *
+		 * @param $allowed
+		 * @param $filename
+		 * @param $infs
+		 *
+		 * @return bool
+		 */
+		public function block_ignored_filenames( $allowed, $filename, $infs ) {
+			$info = isset( $infs['info'] ) ? $infs['info'] : '';
+			if ( ! empty( $info ) && ! $this->is_filename_allowed( $info ) ) {
+				$allowed = false;
+			}
+			return $allowed;
 		}
 
 		public function create_notice(){
@@ -312,6 +351,11 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			$extension         = empty( $info['extension'] ) ? '' : $info['extension'];
 			$filename_original = $info['filename'];
 
+			$allowed = apply_filters( 'frou_filename_allowed', true, $filename, array( 'info' => $info, 'extension' => $extension ) );
+			if ( ! $allowed ) {
+				return $filename;
+			}
+
 			$ignore_empty_ext_opt = new Ignore_Empty_Extensions_Option( array( 'section' => 'frou_advanced_opt' ) );
 			if (
 				'on' === $ignore_empty_ext_opt->get_option( $ignore_empty_ext_opt->option_id, 'on' ) &&
@@ -329,14 +373,14 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			}
 
 			// Cancels in case of specific filenames (this happens using some plugins like github-updater or All in one SEO PACK for example)
-			if ( ! empty( $info ) && ! $this->is_filename_allowed( $info ) ) {
+			/*if ( ! empty( $info ) && ! $this->is_filename_allowed( $info ) ) {
 				return $filename;
 			}
 
 			// Ignores specific filename extensions
 			if ( ! empty( $extension ) && ! $this->is_extension_allowed( $extension ) ) {
 				return $filename;
-			}
+			}*/
 
 			// Gets plugin rules
 			$filename_arr = apply_filters( 'frou_sanitize_file_name',
