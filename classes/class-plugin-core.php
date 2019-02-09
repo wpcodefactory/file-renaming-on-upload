@@ -143,7 +143,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
                     <li><?php echo __('New rules','file-renaming-on-upload'); ?></li>
                 </ul>
                 <p>
-                    <a target="_blank" class="button-primary frou-call-to-action" href="https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/"><?php echo __('Upgrade to premium version','file-renaming-on-upload'); ?></a>
+                    <a target="_blank" class="button-primary frou-call-to-action" href="https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/"><?php echo __('Upgrade to premium version','file-renaming-on-upload'); ?></a>
                 </p>
             </div>
 
@@ -199,7 +199,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
                     <li><?php echo __('New rules','file-renaming-on-upload'); ?></li>
 				</ul>
 				<p>
-					<a target="_blank" class="button-primary frou-call-to-action" href="https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/">Upgrade to Premium version</a>
+					<a target="_blank" class="button-primary frou-call-to-action" href="https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/">Upgrade to Premium version</a>
 				</p>
 			</div>
 			<?php

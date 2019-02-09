@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Wordpress Post
  *
- * @version 2.1.9
+ * @version 2.3.2
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -21,29 +21,21 @@ if ( ! class_exists( 'FROU\WordPress\Post' ) ) {
 		/**
 		 * Get post slug
 		 *
-		 * @version 2.1.7
+		 * @version 2.3.2
 		 * @since   2.0.0
 		 *
 		 * @param null $post_obj
 		 *
 		 * @return string
 		 */
-		public static function get_parent_post_slug( $post_obj = null ) {
+		public static function get_parent_post_title( $post_obj = null ) {
 			if ( $post_obj == null ) {
 				$post_obj = self::get_parent_post();
 			}
-
 			$postSlug = '';
-
 			if ( $post_obj != null ) {
-
-				if ( $post_obj->post_name ) {
-					$postSlug = $post_obj->post_name;
-				} else {
-					$postSlug = sanitize_title( $post_obj->post_title );
-				}
+				$postSlug = sanitize_title( $post_obj->post_title );
 			}
-
 			return $postSlug;
 		}
 

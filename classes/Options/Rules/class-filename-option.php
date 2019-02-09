@@ -61,7 +61,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		 */
 		function init() {
 			parent::init();
-			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_posttitle' ), 11 );
+			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_post_title' ), 11 );
 			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_accents' ), 12 );
 			add_filter( 'frou_sanitize_file_name', array( $this, 'convert_lowercase' ), 12 );
 			add_filter( 'frou_sanitize_file_name', array( $this, 'truncate_filename' ), 9 );
@@ -189,7 +189,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		 *
 		 * @return mixed
 		 */
-		public function convert_posttitle( $filename_infs ) {
+		public function convert_post_title( $filename_infs ) {
 			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $filename_infs;
 			}
@@ -199,7 +199,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 				return $filename_infs;
 			}
 
-			$post_slug = Post::get_parent_post_slug();
+			$post_slug = Post::get_parent_post_title();
 			if ( empty( $post_slug ) ) {
 				return $filename_infs;
 			}
