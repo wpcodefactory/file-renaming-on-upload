@@ -2,10 +2,10 @@
 Contributors: karzin
 Tags: file rename, upload, renaming, file, rename, characters, accents
 Requires at least: 4.0.0
-Tested up to: 5.0
+Tested up to: 5.1
 Requires PHP: 5.3
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BAC8PT82YMTJL&lc=US&item_name=File%20Renaming%20on%20Upload&item_number=file%2drenaming%2don%2dupload&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Stable tag: 2.3.2
+Stable tag: 2.3.3
 License: GPLv2 or later	
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,8 +108,15 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
-= 2.3.2 - 2019/02/09 =
-* Fix post title getting slug instead of title
+= 2.3.3 - 2019/04/11 =
+* Tested up to: 5.1
+
+= 2.3.2 - 2019/02/10 =
+* Improve Ignored Messages field
+* Add sounds section on settings
+* Improve premium notices on admin
+* Add default ignored messages preventing empty popups
+* Improve readme
 
 = 2.3.1 - 2019/01/23 =
 * Add filter 'frou_filename_allowed'
@@ -247,5 +254,5 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Upgrade Notice ==
 
-= 2.3.2 =
-* Fix post title getting slug instead of title
+= 2.3.3 =
+* Tested up to: 5.1
