@@ -1,0 +1,295 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: File renaming on upload\n"
+"POT-Creation-Date: 2018-03-26 23:11-0300\n"
+"PO-Revision-Date: 2017-01-17 13:05-0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.5\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: \n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;eschtml_e;esc_html_x:1,2c;esc_html_e\n"
+"X-Poedit-SearchPath-0: classes\n"
+"X-Poedit-SearchPath-1: file-renaming-on-upload.php\n"
+"X-Poedit-SearchPath-2: readme.txt\n"
+
+#: classes/Admin_Pages/class-settings-page.php:55
+msgid "General Settings"
+msgstr "常规选项"
+
+#: classes/Admin_Pages/class-settings-page.php:59
+msgid "Rules"
+msgstr "规则"
+
+#: classes/Admin_Pages/class-settings-page.php:63
+msgid "Advanced"
+msgstr "高级"
+
+#: classes/Admin_Pages/class-settings-page.php:109
+msgid "File renaming"
+msgstr "文件重命名"
+
+#: classes/Admin_Pages/class-settings-page.php:123
+msgid "File Renaming on upload"
+msgstr "上传文件重命名"
+
+#: classes/Options/Advanced/class-ignore-extensions-option.php:62
+msgid "Ignore file extensions"
+msgstr "忽略文件扩展名"
+
+#: classes/Options/Advanced/class-ignore-extensions-option.php:63
+msgid "Does not rename filenames with these extensions"
+msgstr "不要重命名使用这些扩展名的文件名"
+
+#: classes/Options/Advanced/class-ignore-extensions-option.php:63
+#: classes/Options/Advanced/class-ignore-filenames-option.php:64
+msgid "comma separated"
+msgstr "逗号分隔"
+
+#: classes/Options/Advanced/class-ignore-filenames-option.php:63
+msgid "Ignore filenames"
+msgstr "忽略文件名"
+
+#: classes/Options/Advanced/class-ignore-filenames-option.php:64
+msgid "Does not rename these filenames"
+msgstr "不重命名这些文件名"
+
+#: classes/Options/Advanced/class-ignore-filenames-option.php:76
+msgid "Ignores filename only when extension cannot be found"
+msgstr "仅当无法找到扩展名时, 才会忽略文件名"
+
+#: classes/Options/Advanced/class-ignore-filenames-option.php:77
+msgid ""
+"If you have issues with some other plugins try to unmark this option"
+msgstr "如果您遇到其他一些插件问题, 请尝试取消选中此选项"
+
+#: classes/Options/General/class-enable-option.php:60
+msgid "Enable plugin"
+msgstr "启用插件"
+
+#: classes/Options/General/class-enable-option.php:61
+msgid "Enables the plugin"
+msgstr "启用插件"
+
+#: classes/Options/General/class-filename-structure-option.php:96
+msgid "Filename structure"
+msgstr "文件名结构"
+
+#: classes/Options/General/class-filename-structure-option.php:97
+msgid ""
+"Manages the filename structure using rules. If you want only the "
+"filename, leave it as <b>{filename}.</b>"
+msgstr "使用规则管理文件名结构。如果您只想要文件名, 请将其保留为 <b>{filename}.</b>"
+
+#: classes/Options/General/class-filename-structure-option.php:97
+msgid "Rules available:"
+msgstr "规则可用:"
+
+#: classes/Options/General/class-filename-structure-option.php:103
+msgid "Character(s) used to separate rules"
+msgstr "用于分隔规则的字符"
+
+#: classes/Options/General/class-permalink-update-option.php:126
+msgid "Update permalink"
+msgstr "更新固定链接"
+
+#: classes/Options/General/class-permalink-update-option.php:127
+msgid "Updates attachment permalink following the filename structure"
+msgstr "更新附件固定链接在文件名结构之后"
+
+#: classes/Options/Rules/class-datetime-option.php:114
+msgid "Datetime"
+msgstr "日期时间"
+
+#: classes/Options/Rules/class-datetime-option.php:115
+msgid "Enables Datetime rule"
+msgstr "启用日期时间规则"
+
+#: classes/Options/Rules/class-datetime-option.php:122
+msgid "Datetime format "
+msgstr "日期时间格式 "
+
+#: classes/Options/Rules/class-datetime-option.php:122
+#, php-format
+msgid "You can see more formats <a target=\"_blank\" href=\"%s\">here</a>"
+msgstr "您可以查看更多格式<a target=\"_blank\" href=\"%s\">此处</a>"
+
+#: classes/Options/Rules/class-datetime-option.php:122
+#, php-format
+msgid "Result: <b>%s</b>"
+msgstr "结果: <b>%s</b>"
+
+#: classes/Options/Rules/class-filename-option.php:280
+msgid "Filename"
+msgstr "文件名"
+
+#: classes/Options/Rules/class-filename-option.php:281
+msgid "Enables filename rule"
+msgstr "启用文件名规则"
+
+#: classes/Options/Rules/class-filename-option.php:288
+msgid "Convert"
+msgstr "转换"
+
+#: classes/Options/Rules/class-filename-option.php:298
+msgid "Accents"
+msgstr "强调"
+
+#: classes/Options/Rules/class-filename-option.php:298
+msgid "Converts all filename accent characters to ASCII characters"
+msgstr "将所有文件名重音字符转换为 ASCII 字符"
+
+#: classes/Options/Rules/class-filename-option.php:299
+msgid "Lowercase"
+msgstr "小写"
+
+#: classes/Options/Rules/class-filename-option.php:299
+msgid "Converts all filename characters to lowercase"
+msgstr "将所有文件名字符转换为小写"
+
+#: classes/Options/Rules/class-filename-option.php:300
+#: classes/Options/Rules/class-post-title-option.php:95
+msgid "Post title"
+msgstr "文章标题"
+
+#: classes/Options/Rules/class-filename-option.php:300
+msgid "Converts filename to post title whenever it is possible"
+msgstr "只要有可能将文件名转换为标题"
+
+#: classes/Options/Rules/class-filename-option.php:305
+msgid "Besides whitespaces, converts the following characters to a dash."
+msgstr "除了空格之外, 将下列字符转换为短划线。"
+
+#: classes/Options/Rules/class-filename-option.php:305
+msgid "(Space separated)"
+msgstr "(空格分隔)"
+
+#: classes/Options/Rules/class-filename-option.php:312
+msgid "Remove"
+msgstr "移除"
+
+#: classes/Options/Rules/class-filename-option.php:319
+msgid "All non ASCII characters"
+msgstr "所有非 ASCII 字符"
+
+#: classes/Options/Rules/class-filename-option.php:320
+msgid "Specific characters"
+msgstr "具体字符"
+
+#: classes/Options/Rules/class-filename-option.php:331
+msgid "Truncate"
+msgstr "截短"
+
+#: classes/Options/Rules/class-filename-option.php:336
+msgid ""
+"Max lenght of a filename. Leave it empty if you do not want to use this "
+"feature"
+msgstr "最大长度的文件名。如果您不想使用此功能，请将其留空"
+
+#: classes/Options/Rules/class-post-title-option.php:96
+msgid "Enables post title rule"
+msgstr "启用文章标题规则"
+
+#: classes/Options/Rules/class-post-title-option.php:97
+msgid "Adds post title whenever it is possible"
+msgstr "只要有可能添加标题"
+
+#: classes/Options/Rules/class-siteurl-option.php:115
+msgid "Site URL"
+msgstr "站点 URL"
+
+#: classes/Options/Rules/class-siteurl-option.php:116
+msgid "Enables site URL rule"
+msgstr "启用站点URL规则"
+
+#: classes/Options/Rules/class-siteurl-option.php:123
+msgid "The site URL (Change it the way you like)"
+msgstr "网站网址(按您喜欢的方式更改)"
+
+#: classes/WeDevs/class-wedevs-settings-api-original.php:379
+msgid "Choose File"
+msgstr "选择文件"
+
+#: classes/class-plugin-core.php:84
+msgid "Do you like this plugin and find it useful? Help me!"
+msgstr "你喜欢这个插件, 发现它有用吗? 请帮我!"
+
+#: classes/class-plugin-core.php:84
+#, php-format
+msgid ""
+"<a href=\"%s\" target=\"_blank\">Write a review</a> telling how it is "
+"useful for you."
+msgstr "<a href=\"%s\" target=\"_blank\">撰写评论</a>, 告诉您如何对您有用。"
+
+#: classes/class-plugin-core.php:85
+msgid ""
+"That will help spread the word making other people know about it too."
+msgstr "这将有助于传播让别人知道这个词。"
+
+#: classes/class-plugin-core.php:86
+msgid "Write a review"
+msgstr "发表评论"
+
+#: classes/class-plugin-core.php:92 classes/class-plugin-core.php:149
+msgid "Premium version"
+msgstr "收费版"
+
+#: classes/class-plugin-core.php:94
+msgid "Did you know this plugin has a premium version?"
+msgstr "你知道此插件还有收费版吗?"
+
+#: classes/class-plugin-core.php:95 classes/class-plugin-core.php:153
+msgid "Take a look at some of its features:"
+msgstr "看看它的一些功能:"
+
+#: classes/class-plugin-core.php:99 classes/class-plugin-core.php:155
+msgid "Edit filenames and permalinks manually"
+msgstr "手动编辑文件名和固定链接"
+
+#: classes/class-plugin-core.php:100 classes/class-plugin-core.php:156
+msgid "Update old media"
+msgstr "更新旧媒体"
+
+#: classes/class-plugin-core.php:101 classes/class-plugin-core.php:157
+msgid "Autofill ALT tag"
+msgstr "自动填充ALT标签"
+
+#: classes/class-plugin-core.php:102 classes/class-plugin-core.php:158
+msgid "Custom field rule"
+msgstr "自定义字段规则"
+
+#: classes/class-plugin-core.php:103 classes/class-plugin-core.php:159
+msgid "New rules"
+msgstr "新的规则"
+
+#: classes/class-plugin-core.php:106
+msgid "Upgrade to premium version"
+msgstr "升级到高级版本"
+
+#: classes/class-plugin-core.php:150
+msgid ""
+"Do you like the free version of this plugin? Imagine what the "
+"<strong>Premium</strong> version can do for you!"
+msgstr "你喜欢这个插件的免费版本吗?想象一下<strong>收费版</strong>能为您做些什么!"
+
+#: classes/class-plugin-core.php:151
+#, php-format
+msgid ""
+"Check it out <a target=\"_blank\" href=\"%1$s\">here</a> or on this "
+"link: <a target=\"_blank\" href=\"%1$s\">%1$s</a>"
+msgstr "查看<a target=\"_blank\" href=\"%1$s\">此处</a>或此链接: <a target=\"_blank\" href=\"%1$s\">%1$s </a>"
+
+#: file-renaming-on-upload.php:16
+msgid ""
+"Fixes file uploads with accents and special characters by renaming "
+"them. It also improves your SEO."
+msgstr "通过重命名修复带有重音符和特殊字符的文件上载。它还可以提高你的SEO。"
+
+#: file-renaming-on-upload.php:55
+msgid "Settings"
+msgstr "设置"
