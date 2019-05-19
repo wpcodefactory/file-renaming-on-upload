@@ -36,7 +36,7 @@ msgstr "文件重命名"
 
 #: classes/Admin_Pages/class-settings-page.php:123
 msgid "File Renaming on upload"
-msgstr "上传文件重命名"
+msgstr "File Renaming on upload"
 
 #: classes/Options/Advanced/class-ignore-extensions-option.php:62
 msgid "Ignore file extensions"
@@ -217,7 +217,7 @@ msgstr "选择文件"
 
 #: classes/class-plugin-core.php:84
 msgid "Do you like this plugin and find it useful? Help me!"
-msgstr "你喜欢这个插件, 发现它有用吗? 请帮我!"
+msgstr "你喜欢这个插件, 发现它有用吗? 可以帮我一下!"
 
 #: classes/class-plugin-core.php:84
 #, php-format
@@ -275,7 +275,7 @@ msgstr "升级到高级版本"
 msgid ""
 "Do you like the free version of this plugin? Imagine what the "
 "<strong>Premium</strong> version can do for you!"
-msgstr "你喜欢这个插件的免费版本吗?想象一下<strong>收费版</strong>能为您做些什么!"
+msgstr "你喜欢这个插件的免费版本吗? 想象一下<strong>付费版</strong>能为您做些什么!"
 
 #: classes/class-plugin-core.php:151
 #, php-format
