@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Settings APi
  *
- * @version 2.0.0
+ * @version 2.3.5
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -506,14 +506,16 @@ if ( ! class_exists( 'FROU\WeDevs\WeDevs_Settings_API_Original' ) ) {
 			}
 
 			/**
-			 * Show navigations as tab
+			 * Show navigations as tab.
 			 *
+			 * @version 2.3.5
+			 * 
 			 * Shows all the settings section labels as tab
 			 */
 			function show_navigation() {
 			    $html = '<h2 class="nav-tab-wrapper">';
 
-			    $count = count( $this->settings_sections );
+			    $count = is_array($this->settings_sections) ? count( $this->settings_sections ) : 1;
 
 			    // don't show the navigation if only one section exists
 			    if ( $count === 1 ) {
