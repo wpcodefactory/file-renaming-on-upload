@@ -49,8 +49,6 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 			add_filter( 'frou_sanitize_file_name', array( $this, 'frou_sanitize_file_name' ), 11 );
 		}
 
-
-
 		/**
 		 * Inserts post title on 'frou_sanitize_file_name' filter
 		 *
