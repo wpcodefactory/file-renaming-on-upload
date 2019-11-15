@@ -108,7 +108,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
-= 2.3.6 - 2019/11/13 =
+= 2.3.6 - 2019/11/15 =
 * Fix 'posttitle' rule after WordPress 5.3
 
 = 2.3.5 - 2019/11/13 =
