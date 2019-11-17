@@ -32,11 +32,14 @@ if ( ! class_exists( 'FROU\WordPress\Post' ) ) {
 			if ( $post_obj == null ) {
 				$post_obj = self::get_parent_post();
 			}
-			$postSlug = '';
+			$post_title = '';
 			if ( $post_obj != null ) {
-				$postSlug = sanitize_title( $post_obj->post_title );
+				$url_decoded   = urldecode( $post_obj->post_title );
+				$new_post_name = remove_accents( $url_decoded );
+				$new_post_name = preg_replace( "/[^a-zA-Z0-9-_.]/", "", $new_post_name );
+				$post_title    = sanitize_title( $new_post_name );
 			}
-			return $postSlug;
+			return $post_title;
 		}
 
 		/**

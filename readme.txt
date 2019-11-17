@@ -108,6 +108,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
+= 2.3.7 - 2019/11/17 =
+* Fix 'posttitle' rule when title is formed with non latin characters.
+
 = 2.3.6 - 2019/11/15 =
 * Fix 'posttitle' rule after WordPress 5.3
 
@@ -264,5 +267,5 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Upgrade Notice ==
 
-= 2.3.6 =
-* Fix "posttitle" rule after WordPress 5.3
+= 2.3.7 =
+* Fix 'posttitle' rule when title is formed with non latin characters.
