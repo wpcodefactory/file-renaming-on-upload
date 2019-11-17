@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Wordpress Post
  *
- * @version 2.3.6
+ * @version 2.3.7
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -21,7 +21,7 @@ if ( ! class_exists( 'FROU\WordPress\Post' ) ) {
 		/**
 		 * Get post slug
 		 *
-		 * @version 2.3.2
+		 * @version 2.3.7
 		 * @since   2.0.0
 		 *
 		 * @param null $post_obj
