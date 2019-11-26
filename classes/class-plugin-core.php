@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core
  *
- * @version 2.3.1
+ * @version 2.3.9
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -51,7 +51,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**
 		 * Initialize
 		 *
-		 * @version 2.3.1
+		 * @version 2.3.9
 		 * @since   2.0.0
 		 *
 		 * @param array $args
@@ -65,9 +65,38 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			add_action( 'admin_notices', array( $this, 'create_notice' ) );
 			add_filter( 'frou_filename_allowed', array( $this, 'block_ignored_filenames' ), 10, 3 );
 			add_filter( 'frou_filename_allowed', array( $this, 'block_renaming_by_extension' ), 10, 3 );
+			add_filter( 'frou_renaming_validation', array( $this, 'disable_renaming_on_wc_export' ),10,2 );
 			//add_action( 'add_attachment', array( $this, 'add_attachment' ) );
 			//add_filter('wp_insert_attachment_data',array($this,'insert_attachment_data'),10,2);
 			//add_action('wp_insert_post',array($this,'insert_post'));
+		}
+
+		/**
+		 * Disables renaming when using WooCommerce Export Products.
+		 *
+		 * @version 2.3.9
+		 * @since   2.3.9
+		 *
+		 * @param $validation
+		 * @param $info
+		 *
+		 * @return mixed
+		 */
+		function disable_renaming_on_wc_export( $validation, $info ) {
+			if (
+				! isset( $info['request'] ) ||
+				! isset( $info['request']['action'] ) ||
+				empty( $info['request']['action'] )
+			) {
+				return $validation;
+			}
+			if (
+				'woocommerce_do_ajax_product_export' == $info['request']['action'] ||
+				'download_product_csv' == $info['request']['action']
+			) {
+				$validation = false;
+			}
+			return $validation;
 		}
 
 		/**
@@ -328,7 +357,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 *
 		 * It's the main function of this plugin
 		 *
-		 * @version 2.3.0
+		 * @version 2.3.9
 		 * @since   2.0.0
 		 *
 		 * @param $filename
@@ -352,7 +381,8 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			$filename_original = $info['filename'];
 
 			$allowed = apply_filters( 'frou_filename_allowed', true, $filename, array( 'info' => $info, 'extension' => $extension ) );
-			if ( ! $allowed ) {
+			$allowed_to_rename = apply_filters( 'frou_renaming_validation', true, array( 'request' => $_REQUEST, 'info' => $info, 'extension' => $extension, 'filename' => $filename, 'filename_raw' => $filename_raw ) );
+			if ( ! $allowed || ! $allowed_to_rename ) {
 				return $filename;
 			}
 

@@ -108,6 +108,10 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
+= 2.3.9 - 2019/11/26 =
+* Disable renaming when using WooCommerce Export Products.
+* Create 'frou_renaming_validation' filter.
+
 = 2.3.8 - 2019/11/26 =
 * Fix posttitle rule removing spaces from titles
 
@@ -270,5 +274,6 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Upgrade Notice ==
 
-= 2.3.8 =
-* Fix posttitle rule removing spaces from titles
+= 2.3.9 =
+* Disable renaming when using WooCommerce Export Products.
+* Create 'frou_renaming_validation' filter.
