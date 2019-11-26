@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Wordpress Post
  *
- * @version 2.3.7
+ * @version 2.3.8
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -21,7 +21,7 @@ if ( ! class_exists( 'FROU\WordPress\Post' ) ) {
 		/**
 		 * Get post slug
 		 *
-		 * @version 2.3.7
+		 * @version 2.3.8
 		 * @since   2.0.0
 		 *
 		 * @param null $post_obj
@@ -36,7 +36,7 @@ if ( ! class_exists( 'FROU\WordPress\Post' ) ) {
 			if ( $post_obj != null ) {
 				$url_decoded   = urldecode( $post_obj->post_title );
 				$new_post_name = remove_accents( $url_decoded );
-				$new_post_name = preg_replace( "/[^a-zA-Z0-9-_.]/", "", $new_post_name );
+				$new_post_name = preg_replace( "/[^a-zA-Z0-9-_.\s]/", "", $new_post_name );
 				$post_title    = sanitize_title( $new_post_name );
 			}
 			return $post_title;
