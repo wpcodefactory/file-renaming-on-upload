@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core
  *
- * @version 2.3.9
+ * @version 2.3.9-dev
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -102,7 +102,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**
          * Blocks renaming by extension
          *
-		 * @version 2.3.1
+		 * @version 2.3.9
 		 * @since   2.3.1
          *
 		 * @param $allowed
@@ -114,7 +114,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		public function block_renaming_by_extension( $allowed, $filename, $infs ) {
 			$extension = isset( $infs['extension'] ) ? $infs['extension'] : '';
 			if ( ! empty( $extension ) && ! $this->is_extension_allowed( $extension ) ) {
-				return $filename;
+				$allowed = false;
 			}
 			return $allowed;
 		}
@@ -150,7 +150,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
             <div class="notice notice-warning frou-notice is-dismissible">
                 <h3 class="title">File Renaming on Upload</h3>
                 <p>
-                    <?php echo __('Do you like this plugin and find it useful? Help me!','file-renaming-on-upload'); ?> <?php echo sprintf(__('<a href="%s" target="_blank">Write a review</a> telling how it is useful for you.','file-renaming-on-upload'),'https://wordpress.org/support/plugin/file-renaming-on-upload/reviews/#new-post'); ?><br />
+                    <?php echo __('Do you like this plugin and find it useful? Please consider ','file-renaming-on-upload'); ?> <?php echo sprintf(__('<a href="%s" target="_blank">writing a review</a> telling how it is useful for you.','file-renaming-on-upload'),'https://wordpress.org/support/plugin/file-renaming-on-upload/reviews/#new-post'); ?><br />
                     <?php echo __('That will help spread the word making other people know about it too.','file-renaming-on-upload'); ?><br />
                     <a target="_blank" class="button-secondary frou-call-to-action" style="margin-top:20px !important; margin-bottom:5px !important" href="https://wordpress.org/support/plugin/file-renaming-on-upload/reviews/#new-post"><?php echo __('Write a review','file-renaming-on-upload'); ?></a>
                 </p>
