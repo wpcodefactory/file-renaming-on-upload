@@ -265,7 +265,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Adds settings fields
 		 *
-		 * @version 2.1.5
+		 * @version 2.3.9
 		 * @since   2.0.0
 		 *
 		 * @param $fields
@@ -333,7 +333,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 				array(
 					'name'    => $this->option_truncate,
 					//'label'   => __( 'Truncate filename', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Max lenght of a filename. Leave it empty if you do not want to use this feature', 'file-renaming-on-upload' ),
+					'desc'    => __( 'Max length of a filename. Leave it empty if you do not want to use this feature', 'file-renaming-on-upload' ),
 					'default' => '',
 					'min'     => 0,
 					'max'     => 5,
