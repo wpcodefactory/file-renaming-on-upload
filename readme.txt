@@ -2,10 +2,10 @@
 Contributors: karzin
 Tags: file rename, upload, renaming, file, rename, characters, accents
 Requires at least: 4.0.0
-Tested up to: 5.3
+Tested up to: 5.4
 Requires PHP: 5.3
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BAC8PT82YMTJL&lc=US&item_name=File%20Renaming%20on%20Upload&item_number=file%2drenaming%2don%2dupload&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Stable tag: 2.3.9-dev
+Stable tag: 2.3.9
 License: GPLv2 or later	
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,11 +108,13 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
-= 2.3.9 - 2020/01/29 =
+= 2.3.9 - 2020/06/18 =
 * Disable renaming when using WooCommerce Export Products.
 * Create 'frou_renaming_validation' filter.
 * Fix blocking by extension.
 * Fix wrong string
+* Improve datetime option
+* Tested up to: 5.4
 
 = 2.3.8 - 2019/11/26 =
 * Fix posttitle rule removing spaces from titles
@@ -281,3 +283,5 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 * Create 'frou_renaming_validation' filter.
 * Fix blocking by extension.
 * Fix wrong string
+* Improve datetime option
+* Tested up to: 5.4
