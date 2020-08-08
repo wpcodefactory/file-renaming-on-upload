@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core
  *
- * @version 2.3.9-dev
+ * @version 2.4.0
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -357,7 +357,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 *
 		 * It's the main function of this plugin
 		 *
-		 * @version 2.3.9
+		 * @version 2.4.0
 		 * @since   2.0.0
 		 *
 		 * @param $filename
@@ -407,6 +407,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 				array(
 					'filename_original' => $filename_original,
 					'extension'         => $extension,
+					'new_extension'     => '',
 					'structure'         => array(
 						'rules'       => '',
 						'separator'   => '-',
@@ -429,7 +430,8 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			$filename = apply_filters( 'frou_after_sanitize_file_name', $filename, $info );
 
 			if ( ! empty( $info['extension'] ) ) {
-				$filename = $filename . '.' . $extension;
+				$extension = ! empty( $filename_arr['new_extension'] ) ? $filename_arr['new_extension'] : $extension;
+				$filename  = $filename . '.' . $extension;
 			}
 			//error_log('FINAL: '.print_r($filename,true));
 			return $filename;
