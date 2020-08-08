@@ -31,8 +31,11 @@ Do you like the free version of this plugin? Imagine what the <strong>[Premium](
 * Edit filenames and permalinks manually
 * Update old media
 * Autofill ALT tag
-* Custom field rule
 * New rules
+* Custom field rule
+* Taxonomy rule
+* Rename filename extension from jpeg to jpg
+* Update media on post update
 
 == Frequently Asked Questions ==
 = What are the available options provided by this plugin? =
