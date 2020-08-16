@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 } // Exit if accessed directly
 
 if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
-	class Settings_Api extends \FROU\WeDevs\WeDevs_Settings_API_Original {
+	class Settings_Api extends \WeDevs_Settings_API {
 
 	    public $ajax_action_progress_bar='frou_progress_ajax_action';
 
