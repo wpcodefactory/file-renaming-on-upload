@@ -67,7 +67,7 @@ if ( ! class_exists( 'FROU\Options\Advanced\Ignore_Extensions_Option' ) ) {
 				array(
 					'name'        => $this->option_extensions_ignored,
 					'placeholder' => 'Comma separated extensions',
-					'default'     => 'tmp',
+					'default'     => 'tmp,log',
 					'type'        => 'text',
 				),
 				array(

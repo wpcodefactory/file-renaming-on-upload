@@ -115,6 +115,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 * Add `new_extension` parameter on `frou_sanitize_file_name` hook.
 * Add multiselect field on admin.
 * Tested up to: 5.5.
+* Add log to ignored file extensions.
 
 = 2.3.9 - 2020/06/18 =
 * Disable renaming when using WooCommerce Export Products.
@@ -290,3 +291,4 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 * Add `new_extension` parameter on `frou_sanitize_file_name` hook.
 * Add multiselect field on admin.
 * Tested up to: 5.5.
+* Add log to ignored file extensions.
