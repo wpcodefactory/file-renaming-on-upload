@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: File renaming on upload\n"
-"POT-Creation-Date: 2018-03-26 23:11-0300\n"
+"POT-Creation-Date: 2020-12-07 10:15-0300\n"
 "PO-Revision-Date: 2017-01-17 13:05-0200\n"
 "Last-Translator: \n"
 "Language-Team: Pablo S G Pacheco\n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
@@ -39,6 +39,21 @@ msgstr ""
 
 #: classes/Admin_Pages/class-settings-page.php:123
 msgid "File Renaming on upload"
+msgstr ""
+
+#: classes/Options/Advanced/class-ignore-empty-extensions-option.php:62
+msgid "Ignore files with no extension"
+msgstr ""
+
+#: classes/Options/Advanced/class-ignore-empty-extensions-option.php:63
+msgid "Does not rename files without extension"
+msgstr ""
+
+#: classes/Options/Advanced/class-ignore-empty-extensions-option.php:64
+msgid ""
+"If you have to upload files without extensions uncheck this option, but "
+"it may create unpredictable incompatibility issues with third party "
+"plugins and themes\n"
 msgstr ""
 
 #: classes/Options/Advanced/class-ignore-extensions-option.php:62
@@ -97,108 +112,108 @@ msgstr ""
 msgid "Character(s) used to separate rules"
 msgstr ""
 
-#: classes/Options/General/class-permalink-update-option.php:126
+#: classes/Options/General/class-permalink-update-option.php:129
 msgid "Update permalink"
 msgstr ""
 
-#: classes/Options/General/class-permalink-update-option.php:127
+#: classes/Options/General/class-permalink-update-option.php:130
 msgid "Updates attachment permalink following the filename structure"
 msgstr ""
 
-#: classes/Options/Rules/class-datetime-option.php:114
+#: classes/Options/Rules/class-datetime-option.php:115
 msgid "Datetime"
 msgstr ""
 
-#: classes/Options/Rules/class-datetime-option.php:115
+#: classes/Options/Rules/class-datetime-option.php:116
 msgid "Enables Datetime rule"
 msgstr ""
 
-#: classes/Options/Rules/class-datetime-option.php:122
+#: classes/Options/Rules/class-datetime-option.php:123
 msgid "Datetime format "
 msgstr ""
 
-#: classes/Options/Rules/class-datetime-option.php:122
+#: classes/Options/Rules/class-datetime-option.php:123
 #, php-format
 msgid "You can see more formats <a target=\"_blank\" href=\"%s\">here</a>"
 msgstr ""
 
-#: classes/Options/Rules/class-datetime-option.php:122
+#: classes/Options/Rules/class-datetime-option.php:123
 #, php-format
 msgid "Result: <b>%s</b>"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:280
+#: classes/Options/Rules/class-filename-option.php:287
 msgid "Filename"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:281
+#: classes/Options/Rules/class-filename-option.php:288
 msgid "Enables filename rule"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:288
+#: classes/Options/Rules/class-filename-option.php:295
 msgid "Convert"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:298
+#: classes/Options/Rules/class-filename-option.php:305
 msgid "Accents"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:298
+#: classes/Options/Rules/class-filename-option.php:305
 msgid "Converts all filename accent characters to ASCII characters"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:299
+#: classes/Options/Rules/class-filename-option.php:306
 msgid "Lowercase"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:299
+#: classes/Options/Rules/class-filename-option.php:306
 msgid "Converts all filename characters to lowercase"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:300
-#: classes/Options/Rules/class-post-title-option.php:95
+#: classes/Options/Rules/class-filename-option.php:307
+#: classes/Options/Rules/class-post-title-option.php:93
 msgid "Post title"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:300
+#: classes/Options/Rules/class-filename-option.php:307
 msgid "Converts filename to post title whenever it is possible"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:305
+#: classes/Options/Rules/class-filename-option.php:312
 msgid "Besides whitespaces, converts the following characters to a dash."
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:305
+#: classes/Options/Rules/class-filename-option.php:312
 msgid "(Space separated)"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:312
+#: classes/Options/Rules/class-filename-option.php:319
 msgid "Remove"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:319
+#: classes/Options/Rules/class-filename-option.php:326
 msgid "All non ASCII characters"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:320
+#: classes/Options/Rules/class-filename-option.php:327
 msgid "Specific characters"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:331
+#: classes/Options/Rules/class-filename-option.php:338
 msgid "Truncate"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:336
+#: classes/Options/Rules/class-filename-option.php:343
 msgid ""
-"Max lenght of a filename. Leave it empty if you do not want to use this "
+"Max length of a filename. Leave it empty if you do not want to use this "
 "feature"
 msgstr ""
 
-#: classes/Options/Rules/class-post-title-option.php:96
+#: classes/Options/Rules/class-post-title-option.php:94
 msgid "Enables post title rule"
 msgstr ""
 
-#: classes/Options/Rules/class-post-title-option.php:97
+#: classes/Options/Rules/class-post-title-option.php:95
 msgid "Adds post title whenever it is possible"
 msgstr ""
 
@@ -218,69 +233,69 @@ msgstr ""
 msgid "Choose File"
 msgstr ""
 
-#: classes/class-plugin-core.php:84
-msgid "Do you like this plugin and find it useful? Help me!"
+#: classes/class-plugin-core.php:153
+msgid "Do you like this plugin and find it useful? Please consider "
 msgstr ""
 
-#: classes/class-plugin-core.php:84
+#: classes/class-plugin-core.php:153
 #, php-format
 msgid ""
-"<a href=\"%s\" target=\"_blank\">Write a review</a> telling how it is "
+"<a href=\"%s\" target=\"_blank\">writing a review</a> telling how it is "
 "useful for you."
 msgstr ""
 
-#: classes/class-plugin-core.php:85
+#: classes/class-plugin-core.php:154
 msgid ""
 "That will help spread the word making other people know about it too."
 msgstr ""
 
-#: classes/class-plugin-core.php:86
+#: classes/class-plugin-core.php:155
 msgid "Write a review"
 msgstr ""
 
-#: classes/class-plugin-core.php:92 classes/class-plugin-core.php:149
+#: classes/class-plugin-core.php:161 classes/class-plugin-core.php:218
 msgid "Premium version"
 msgstr ""
 
-#: classes/class-plugin-core.php:94
+#: classes/class-plugin-core.php:163
 msgid "Did you know this plugin has a premium version?"
 msgstr ""
 
-#: classes/class-plugin-core.php:95 classes/class-plugin-core.php:153
+#: classes/class-plugin-core.php:164 classes/class-plugin-core.php:222
 msgid "Take a look at some of its features:"
 msgstr ""
 
-#: classes/class-plugin-core.php:99 classes/class-plugin-core.php:155
+#: classes/class-plugin-core.php:168 classes/class-plugin-core.php:224
 msgid "Edit filenames and permalinks manually"
 msgstr ""
 
-#: classes/class-plugin-core.php:100 classes/class-plugin-core.php:156
+#: classes/class-plugin-core.php:169 classes/class-plugin-core.php:225
 msgid "Update old media"
 msgstr ""
 
-#: classes/class-plugin-core.php:101 classes/class-plugin-core.php:157
+#: classes/class-plugin-core.php:170 classes/class-plugin-core.php:226
 msgid "Autofill ALT tag"
 msgstr ""
 
-#: classes/class-plugin-core.php:102 classes/class-plugin-core.php:158
+#: classes/class-plugin-core.php:171 classes/class-plugin-core.php:227
 msgid "Custom field rule"
 msgstr ""
 
-#: classes/class-plugin-core.php:103 classes/class-plugin-core.php:159
+#: classes/class-plugin-core.php:172 classes/class-plugin-core.php:228
 msgid "New rules"
 msgstr ""
 
-#: classes/class-plugin-core.php:106
+#: classes/class-plugin-core.php:175
 msgid "Upgrade to premium version"
 msgstr ""
 
-#: classes/class-plugin-core.php:150
+#: classes/class-plugin-core.php:219
 msgid ""
 "Do you like the free version of this plugin? Imagine what the "
 "<strong>Premium</strong> version can do for you!"
 msgstr ""
 
-#: classes/class-plugin-core.php:151
+#: classes/class-plugin-core.php:220
 #, php-format
 msgid ""
 "Check it out <a target=\"_blank\" href=\"%1$s\">here</a> or on this "
