@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Filename Option
  *
- * @version 2.2.5
+ * @version 2.4.0
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -94,7 +94,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Convert characters to dash
 		 *
-		 * @version 2.1.5
+		 * @version 2.4.0
 		 * @since   2.0.0
 		 * @param $file
 		 *
@@ -104,17 +104,24 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $file;
 			}
-
 			$option    = $this->get_option( $this->option_convert_to_dash_chars );
 			$chars     = sanitize_text_field( $option );
 			$chars_arr = explode( " ", $chars );
-
 			if ( ! is_array( $chars_arr ) || count( $chars_arr ) == 0 ) {
 				return $file;
 			}
-
-			$file['name'] = str_replace( $chars_arr, '-', $file['name'] );
-
+			$replace_content = $file['name'];
+			if (
+				isset( $file['name'] )
+				&& is_array( $filetype = wp_check_filetype( $file['name'] ) )
+				&& is_string( $ext = $filetype['ext'] )
+			) {
+				$replace_content = str_replace( '.' . $ext, '', $file['name'] );
+				$file['name']    = str_replace( $chars_arr, '-', $replace_content );
+				$file['name']    .= '.' . $ext;
+			} else {
+				$file['name'] = str_replace( $chars_arr, '-', $replace_content );
+			}
 			return $file;
 		}
 

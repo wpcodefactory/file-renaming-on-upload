@@ -111,7 +111,8 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
-= 2.4.0 - 2020/09/08 =
+= 2.4.0 - 2020/12/07 =
+* Prevent dots from extension being converted to dash in "Rules > Filename > Convert".
 * Add `new_extension` parameter on `frou_sanitize_file_name` hook.
 * Add multiselect field on admin.
 * Tested up to: 5.5.
@@ -287,8 +288,5 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Upgrade Notice ==
 
-= 2.4.0 =
-* Add `new_extension` parameter on `frou_sanitize_file_name` hook.
-* Add multiselect field on admin.
-* Tested up to: 5.5.
-* Add log to ignored file extensions.
+= 1.0 =
+* Initial release
