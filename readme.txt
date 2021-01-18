@@ -2,7 +2,7 @@
 Contributors: karzin
 Tags: file rename, upload, renaming, file, rename, characters, accents
 Requires at least: 4.0.0
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 5.3
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BAC8PT82YMTJL&lc=US&item_name=File%20Renaming%20on%20Upload&item_number=file%2drenaming%2don%2dupload&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Stable tag: 2.4.0
@@ -110,6 +110,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 3. Setup how the rules will work on your filename
 
 == Changelog ==
+
+= 2.4.1 - 2021/01/18 =
+* Tested up to: 5.6.
 
 = 2.4.0 - 2020/12/07 =
 * Prevent dots from extension being converted to dash in "Rules > Filename > Convert".
