@@ -66,7 +66,7 @@ if ( ! function_exists( 'file_renaming_on_upload' ) ) {
 
 // Set transient on activation
 register_activation_hook( __FILE__, function(){
-	require __DIR__ . '/vendor/autoload.php';
+	require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 	file_renaming_on_upload_autoload();
 	set_transient( 'frou_activated_or_updated', true, 30 );
 });

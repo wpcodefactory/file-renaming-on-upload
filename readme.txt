@@ -114,6 +114,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 = 2.4.1 - 2021/02/19 =
 * Tested up to: 5.6.
 * Add Gutenberg title fix option.
+* Fix composer autoload call.
 
 = 2.4.0 - 2020/12/07 =
 * Prevent dots from extension being converted to dash in "Rules > Filename > Convert".
