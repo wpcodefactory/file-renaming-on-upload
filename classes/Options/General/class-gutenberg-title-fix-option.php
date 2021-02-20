@@ -90,8 +90,8 @@ if ( ! class_exists( 'FROU\Options\General\Gutenberg_Title_Fix_Option' ) ) {
 				array(
 					'name'                 => $this->option_id,
 					'label'                => __( 'Gutenberg title fix', 'file-renaming-on-upload' ),
-					'desc'                 => __( 'Fix empty title on Gutenberg attachment upload', 'file-renaming-on-upload' ) .
-					 'desc_desc_secondary' => __( 'The attachment uploaded from Gutenberg editor will have the post title set from the original filename.', 'file-renaming-on-upload' ),
+					'desc'                 => __( 'Fix empty title on Gutenberg attachment upload', 'file-renaming-on-upload' ), 
+					'desc_desc_secondary'  => __( 'The attachment uploaded from Gutenberg editor will have the post title set from the original filename.', 'file-renaming-on-upload' ),
 					'default'              => 'off',
 					'type'                 => 'checkbox',
 				),
