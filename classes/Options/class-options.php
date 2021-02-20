@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Options
  *
- * @version 2.1.1
+ * @version 2.4.1
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -16,6 +16,7 @@ use FROU\Options\General\Filename_Structure_Option;
 
 use FROU\Options\Advanced\Ignore_Extensions_Option;
 use FROU\Options\Advanced\Ignore_Filenames_Option;
+use FROU\Options\General\Gutenberg_Title_Fix_Option;
 use FROU\Options\General\Permalink_Update_Option;
 use FROU\Options\General\Truncate_Option;
 use FROU\Options\Rules\Datetime_Option;
@@ -37,7 +38,7 @@ if ( ! class_exists( 'FROU\Options\Options' ) ) {
 		/**
 		 * Constructor
 		 *
-		 * @version 2.1.1
+		 * @version 2.4.1
 		 * @since   2.0.0
 		 *
 		 * @param array $args
@@ -45,6 +46,8 @@ if ( ! class_exists( 'FROU\Options\Options' ) ) {
 		function __construct() {
 			// General options
 			$option = new Enable_Option( array( 'section' => 'frou_general_opt' ) );
+			$option->init();
+			$option = new Gutenberg_Title_Fix_Option( array( 'section' => 'frou_general_opt' ) );
 			$option->init();
 			$option = new Permalink_Update_Option( array( 'section' => 'frou_general_opt' ) );
 			$option->init();
