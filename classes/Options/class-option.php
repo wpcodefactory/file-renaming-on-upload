@@ -89,7 +89,7 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 		 * @since   2.0.0
 		 */
 		public function add_fields( $fields, $section ) {
-			$this->fields = apply_filters( 'frou_get_settings_' . $this->option_id . '_' . $section, $fields, $section );
+			$this->fields = apply_filters( 'frou_get_settings_' . $section, $fields, $section );
 			return $fields;
 		}
 	}
