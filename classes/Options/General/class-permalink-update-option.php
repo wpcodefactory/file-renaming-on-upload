@@ -108,7 +108,9 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 			}
 			$unique_slug     = wp_unique_post_slug( $this->current_filename_modified, $post->ID, $post->post_status, $post->post_type, $post->post_parent );
 			$post->post_name = $unique_slug;
+			//do_action('frou_update_post_before', $post_id);
 			wp_update_post( $post );
+			//do_action('frou_update_post_after', $post_id);
 		}
 
 		/**
@@ -127,7 +129,7 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 				array(
 					'name'    => $this->option_id,
 					'label'   => __( 'Update permalink', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Updates attachment permalink following the filename structure', 'file-renaming-on-upload' ),
+					'desc'    => __( 'Added attachment will have the permalink following the filename structure', 'file-renaming-on-upload' ),
 					'default' => 'off',
 					'type'    => 'checkbox',
 				),
