@@ -129,7 +129,7 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 				array(
 					'name'    => $this->option_id,
 					'label'   => __( 'Update permalink', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Added attachment will have the permalink the same as the filename', 'file-renaming-on-upload' ),
+					'desc'    => __( 'Added attachment will have the permalink as the filename', 'file-renaming-on-upload' ),
 					'default' => 'off',
 					'type'    => 'checkbox',
 				),
