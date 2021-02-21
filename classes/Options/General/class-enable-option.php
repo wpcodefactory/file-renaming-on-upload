@@ -58,7 +58,7 @@ if ( ! class_exists( 'FROU\Options\General\Enable_Option' ) ) {
 				array(
 					'name'    => $this->option_id,
 					'label'   => __( 'Enable plugin', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Enables the plugin', 'file-renaming-on-upload' ),
+					'desc'    => __( 'Enable the plugin', 'file-renaming-on-upload' ),
 					'default' => 'on',
 					'type'    => 'checkbox',
 				),
