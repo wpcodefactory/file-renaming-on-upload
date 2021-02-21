@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: File renaming on upload\n"
-"POT-Creation-Date: 2020-12-07 10:15-0300\n"
+"POT-Creation-Date: 2021-02-21 00:18-0300\n"
 "PO-Revision-Date: 2017-01-17 13:05-0200\n"
 "Last-Translator: \n"
 "Language-Team: Pablo S G Pacheco\n"
@@ -91,7 +91,7 @@ msgid "Enable plugin"
 msgstr ""
 
 #: classes/Options/General/class-enable-option.php:61
-msgid "Enables the plugin"
+msgid "Enable the plugin"
 msgstr ""
 
 #: classes/Options/General/class-filename-structure-option.php:96
@@ -112,12 +112,28 @@ msgstr ""
 msgid "Character(s) used to separate rules"
 msgstr ""
 
-#: classes/Options/General/class-permalink-update-option.php:129
+#: classes/Options/General/class-gutenberg-title-fix-option.php:92
+msgid "Gutenberg title fix"
+msgstr ""
+
+#: classes/Options/General/class-gutenberg-title-fix-option.php:93
+msgid "Fix empty title on Gutenberg attachment upload"
+msgstr ""
+
+#: classes/Options/General/class-gutenberg-title-fix-option.php:94
+msgid ""
+"The attachment uploaded from Gutenberg editor will have the post title "
+"set from the original filename."
+msgstr ""
+
+#: classes/Options/General/class-permalink-update-option.php:131
 msgid "Update permalink"
 msgstr ""
 
-#: classes/Options/General/class-permalink-update-option.php:130
-msgid "Updates attachment permalink following the filename structure"
+#: classes/Options/General/class-permalink-update-option.php:132
+msgid ""
+"Update permalinks from new added attachment based on the filename "
+"structure"
 msgstr ""
 
 #: classes/Options/Rules/class-datetime-option.php:115
@@ -233,69 +249,69 @@ msgstr ""
 msgid "Choose File"
 msgstr ""
 
-#: classes/class-plugin-core.php:153
+#: classes/class-plugin-core.php:154
 msgid "Do you like this plugin and find it useful? Please consider "
 msgstr ""
 
-#: classes/class-plugin-core.php:153
+#: classes/class-plugin-core.php:154
 #, php-format
 msgid ""
 "<a href=\"%s\" target=\"_blank\">writing a review</a> telling how it is "
 "useful for you."
 msgstr ""
 
-#: classes/class-plugin-core.php:154
+#: classes/class-plugin-core.php:155
 msgid ""
 "That will help spread the word making other people know about it too."
 msgstr ""
 
-#: classes/class-plugin-core.php:155
+#: classes/class-plugin-core.php:156
 msgid "Write a review"
 msgstr ""
 
-#: classes/class-plugin-core.php:161 classes/class-plugin-core.php:218
+#: classes/class-plugin-core.php:162 classes/class-plugin-core.php:219
 msgid "Premium version"
 msgstr ""
 
-#: classes/class-plugin-core.php:163
+#: classes/class-plugin-core.php:164
 msgid "Did you know this plugin has a premium version?"
 msgstr ""
 
-#: classes/class-plugin-core.php:164 classes/class-plugin-core.php:222
+#: classes/class-plugin-core.php:165 classes/class-plugin-core.php:223
 msgid "Take a look at some of its features:"
 msgstr ""
 
-#: classes/class-plugin-core.php:168 classes/class-plugin-core.php:224
+#: classes/class-plugin-core.php:169 classes/class-plugin-core.php:225
 msgid "Edit filenames and permalinks manually"
 msgstr ""
 
-#: classes/class-plugin-core.php:169 classes/class-plugin-core.php:225
+#: classes/class-plugin-core.php:170 classes/class-plugin-core.php:226
 msgid "Update old media"
 msgstr ""
 
-#: classes/class-plugin-core.php:170 classes/class-plugin-core.php:226
+#: classes/class-plugin-core.php:171 classes/class-plugin-core.php:227
 msgid "Autofill ALT tag"
 msgstr ""
 
-#: classes/class-plugin-core.php:171 classes/class-plugin-core.php:227
+#: classes/class-plugin-core.php:172 classes/class-plugin-core.php:228
 msgid "Custom field rule"
 msgstr ""
 
-#: classes/class-plugin-core.php:172 classes/class-plugin-core.php:228
+#: classes/class-plugin-core.php:173 classes/class-plugin-core.php:229
 msgid "New rules"
 msgstr ""
 
-#: classes/class-plugin-core.php:175
+#: classes/class-plugin-core.php:176
 msgid "Upgrade to premium version"
 msgstr ""
 
-#: classes/class-plugin-core.php:219
+#: classes/class-plugin-core.php:220
 msgid ""
 "Do you like the free version of this plugin? Imagine what the "
 "<strong>Premium</strong> version can do for you!"
 msgstr ""
 
-#: classes/class-plugin-core.php:220
+#: classes/class-plugin-core.php:221
 #, php-format
 msgid ""
 "Check it out <a target=\"_blank\" href=\"%1$s\">here</a> or on this "

@@ -127,11 +127,11 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 		public function add_fields( $fields, $section ) {
 			$new_options = array(
 				array(
-					'name'    => $this->option_id,
-					'label'   => __( 'Update permalink', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Update permalinks from new added attachment based on the filename structure', 'file-renaming-on-upload' ),
-					'default' => 'off',
-					'type'    => 'checkbox',
+					'name'            => $this->option_id,
+					'label'           => __( 'Update permalink', 'file-renaming-on-upload' ),
+					'desc'            => __( 'Update permalinks from new added attachment based on the filename structure', 'file-renaming-on-upload' ),					
+					'default'         => 'off',
+					'type'            => 'checkbox',
 				),
 			);
 
