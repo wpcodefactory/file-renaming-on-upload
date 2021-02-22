@@ -62,7 +62,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			add_action( 'init', array( $this, 'add_options' ), 1 );
 			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename' ), 10, 2 );
 			add_action( 'admin_notices', array( $this, 'create_premium_notice' ) );
-			add_action( 'admin_notices', array( $this, 'create_notice' ) );
+			//add_action( 'admin_notices', array( $this, 'create_notice' ) );
 			add_filter( 'frou_filename_allowed', array( $this, 'block_ignored_filenames' ), 10, 3 );
 			add_filter( 'frou_filename_allowed', array( $this, 'block_renaming_by_extension' ), 10, 3 );
 			add_filter( 'frou_renaming_validation', array( $this, 'disable_renaming_on_wc_export' ),10,2 );
@@ -137,7 +137,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			return $allowed;
 		}
 
-		public function create_notice(){
+		/*public function create_notice(){
 			$current_screen = get_current_screen();
 			if (
 				function_exists( 'FROUP\file_renaming_on_upload_pro' ) ||
@@ -166,11 +166,15 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
                 </p>
 
                 <ul class="frou-notice-ul">
-                    <li><?php echo __('Edit filenames and permalinks manually','file-renaming-on-upload'); ?></li>
-                    <li><?php echo __('Update old media','file-renaming-on-upload'); ?></li>
-                    <li><?php echo __('Autofill ALT tag','file-renaming-on-upload'); ?></li>
-                    <li><?php echo __('Custom field rule','file-renaming-on-upload'); ?></li>
-                    <li><?php echo __('New rules','file-renaming-on-upload'); ?></li>
+	                <li><?php echo __('Edit filenames and permalinks manually','file-renaming-on-upload'); ?></li>
+	                <li><?php echo __('Update old media','file-renaming-on-upload'); ?></li>
+	                <li><?php echo __('Update old media reference on post content when filename changes.','file-renaming-on-upload'); ?></li>
+	                <li><?php echo __('Autofill ALT tag','file-renaming-on-upload'); ?></li>
+	                <li><?php echo __('New file renaming rules like custom field and taxonomy','file-renaming-on-upload'); ?></li>
+	                <li><?php echo __('Rename filename extension from jpeg to jpg','file-renaming-on-upload'); ?></li>
+	                <li><?php echo __('Update filename on post update','file-renaming-on-upload'); ?></li>
+	                <li><?php echo __('Restrict file renaming by user role','file-renaming-on-upload'); ?></li>
+	                <li><?php echo __('Restrict file renaming by custom post type','file-renaming-on-upload'); ?></li>
                 </ul>
                 <p>
                     <a target="_blank" class="button-primary frou-call-to-action" href="https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/"><?php echo __('Upgrade to premium version','file-renaming-on-upload'); ?></a>
@@ -179,7 +183,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 
 			<?php
             $this->create_notice_style();
-        }
+        }*/
 
         public function create_notice_style(){
 		    ?>
@@ -224,9 +228,13 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 				<ul class="frou-notice-ul">
 					<li><?php echo __('Edit filenames and permalinks manually','file-renaming-on-upload'); ?></li>
                     <li><?php echo __('Update old media','file-renaming-on-upload'); ?></li>
+					<li><?php echo __('Update old media reference on post content when filename changes.','file-renaming-on-upload'); ?></li>
                     <li><?php echo __('Autofill ALT tag','file-renaming-on-upload'); ?></li>
-                    <li><?php echo __('Custom field rule','file-renaming-on-upload'); ?></li>
-                    <li><?php echo __('New rules','file-renaming-on-upload'); ?></li>
+					<li><?php echo __('New file renaming rules like custom field and taxonomy','file-renaming-on-upload'); ?></li>
+					<li><?php echo __('Rename filename extension from jpeg to jpg','file-renaming-on-upload'); ?></li>
+                    <li><?php echo __('Update filename on post update','file-renaming-on-upload'); ?></li>
+					<li><?php echo __('Restrict file renaming by user role','file-renaming-on-upload'); ?></li>
+					<li><?php echo __('Restrict file renaming by custom post type','file-renaming-on-upload'); ?></li>
 				</ul>
 				<p>
 					<a target="_blank" class="button-primary frou-call-to-action" href="https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/">Upgrade to Premium version</a>

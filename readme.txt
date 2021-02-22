@@ -30,12 +30,13 @@ Do you like the free version of this plugin? Imagine what the <strong>[Premium](
 
 * Edit filenames and permalinks manually
 * Update old media
+* Update old media reference on post content when filename changes.
 * Autofill ALT tag
-* New rules
-* Custom field rule
-* Taxonomy rule
+* New file renaming rules like custom field and taxonomy
 * Rename filename extension from jpeg to jpg
-* Update media on post update
+* Update filename on post update
+* Restrict file renaming by user role
+* Restrict file renaming by custom post type
 
 == Frequently Asked Questions ==
 = What are the available options provided by this plugin? =
@@ -111,10 +112,11 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
-= 2.4.1 - 2021/02/19 =
+= 2.4.1 - 2021/02/21 =
 * Tested up to: 5.6.
 * Add Gutenberg title fix option.
 * Fix composer autoload call.
+* Update readme.
 
 = 2.4.0 - 2020/12/07 =
 * Prevent dots from extension being converted to dash in "Rules > Filename > Convert".
