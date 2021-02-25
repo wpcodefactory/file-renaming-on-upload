@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Filename Option
  *
- * @version 2.4.0
+ * @version 2.4.2
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -27,6 +27,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		public $option_convert_lowercase = 'lowercase';
 		public $option_convert_posttitle = 'posttitle';
 		public $option_convert_to_dash_chars = 'converttodash_chars';
+		public $option_accent_conversion_method = 'accent_conversion_method';
 
 		// Remove
 		public $option_remove = 'remove';
@@ -245,7 +246,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Converts all accent characters from filename to ASCII characters
 		 *
-		 * @version 2.0.9
+		 * @version 2.4.2
 		 * @since   2.0.0
 		 *
 		 * @param $filename_infs
@@ -256,23 +257,27 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $filename_infs;
 			}
-
 			$convert = $this->get_option( $this->option_convert );
 			if ( ! is_array( $convert ) || ! in_array( $this->option_convert_accents, $convert ) ) {
 				return $filename_infs;
 			}
-
-			$filename                                              = $filename_infs['structure']['translation']['filename'];
-			$filename                                              = remove_accents( $filename );
+			$filename = $filename_infs['structure']['translation']['filename'];
+			$function = $this->get_option( $this->option_accent_conversion_method, 'remove_accents' );
+			if ( function_exists( $function ) ) {
+				$function_info = array(
+					'remove_accents'               => array( 'params' => array( $filename ) ),
+					'transliterator_transliterate' => array( 'params' => array( 'Any-Latin; Latin-ASCII;', $filename ) ),
+				);
+				$filename      = call_user_func_array( $this->get_option( $this->option_accent_conversion_method, 'remove_accents' ), $function_info[ $function ]['params'] );
+			}
 			$filename_infs['structure']['translation']['filename'] = $filename;
-
 			return $filename_infs;
 		}
 
 		/**
 		 * Adds settings fields
 		 *
-		 * @version 2.3.9
+		 * @version 2.4.2
 		 * @since   2.0.0
 		 *
 		 * @param $fields
@@ -302,16 +307,26 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 						$this->option_convert_lowercase => $this->option_convert_lowercase,
 					),
 					'options' => array(
-						$this->option_convert_accents   => '<strong>' . __( 'Accents', 'file-renaming-on-upload' ) . '</strong>' . ' - ' . __( 'Converts all filename accent characters to ASCII characters', 'file-renaming-on-upload' ),
+						$this->option_convert_accents   => '<strong>' . __( 'Characters', 'file-renaming-on-upload' ) . '</strong>' . ' - ' . __( 'Converts special characters by their ASCII replacement, fixing accents and some other special characters', 'file-renaming-on-upload' ),
 						$this->option_convert_lowercase => '<strong>' . __( 'Lowercase', 'file-renaming-on-upload' ) . '</strong>' . ' - ' . __( 'Converts all filename characters to lowercase', 'file-renaming-on-upload' ),
 						$this->option_convert_posttitle => '<strong>' . __( 'Post title', 'file-renaming-on-upload' ) . '</strong>' . ' - ' . __( 'Converts filename to post title whenever it is possible', 'file-renaming-on-upload' ),
 					),
 				),
 				array(
 					'name'    => $this->option_convert_to_dash_chars,
-					'desc'    => __( 'Besides whitespaces, converts the following characters to a dash.', 'file-renaming-on-upload' ).' '.__( '(Space separated)', 'file-renaming-on-upload' ),
+					'desc'    => __( 'Besides whitespaces, converts the following characters to a dash.', 'file-renaming-on-upload' ).' '.__( '(Space separated).', 'file-renaming-on-upload' ),
 					'type'    => 'text',
 					'default' => '_',
+				),
+				array(
+					'name'    => $this->option_accent_conversion_method,
+					'desc'    => __( 'Character conversion method.', 'file-renaming-on-upload' ),
+					'default' => 'remove_accents',
+					'options' => array(
+						'remove_accents'               => __( 'Remove Accents: remove_accents()', 'file-renaming-on-upload' ),
+						'transliterator_transliterate' => sprintf( __( 'Transliterator: transliterate()%s', 'file-renaming-on-upload' ), ! function_exists( 'transliterator_transliterate' ) ? ' - ' . __( 'Disabled on the server', 'file-renaming-on-upload' ) : '' )
+					),
+					'type'    => 'select',
 				),
 				array(
 					'name'    => 'remove_chars_title',
@@ -340,7 +355,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 				array(
 					'name'    => $this->option_truncate,
 					//'label'   => __( 'Truncate filename', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Max length of a filename. Leave it empty if you do not want to use this feature', 'file-renaming-on-upload' ),
+					'desc'    => __( 'Max length of a filename. Leave it empty if you do not want to use this feature.', 'file-renaming-on-upload' ),
 					'default' => '',
 					'min'     => 0,
 					'max'     => 5,

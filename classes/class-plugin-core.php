@@ -224,6 +224,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 				<p><?php echo __('Do you like the free version of this plugin? Imagine what the <strong>Premium</strong> version can do for you!','file-renaming-on-upload'); ?>
 					<br/><?php echo sprintf(__('Check it out <a target="_blank" href="%1$s">here</a> or on this link: <a target="_blank" href="%1$s">%1$s</a>','file-renaming-on-upload'),'https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/'); ?>					
 				</p>
+				<!--
 				<p  style="margin:12px 0 10px"><strong><?php echo __('Take a look at some of its features:','file-renaming-on-upload'); ?></strong></p>
 				<ul class="frou-notice-ul">
 					<li><?php echo __('Edit filenames and permalinks manually','file-renaming-on-upload'); ?></li>
@@ -236,8 +237,9 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 					<li><?php echo __('Restrict file renaming by user role','file-renaming-on-upload'); ?></li>
 					<li><?php echo __('Restrict file renaming by custom post type','file-renaming-on-upload'); ?></li>
 				</ul>
+				-->
 				<p>
-					<a target="_blank" class="button-primary frou-call-to-action" href="https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/">Upgrade to Premium version</a>
+					<a target="_blank" class="button-primary frou-call-to-action" href="https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/"><span style="vertical-align:middle;position:relative;top:2px;left:-2px;" class="dashicons-before dashicons-unlock"></span>Upgrade to Premium version</a>
 				</p>
 			</div>
 			<?php
