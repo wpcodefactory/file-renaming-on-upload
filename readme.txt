@@ -114,6 +114,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 = 2.4.4 - 2021/05/24 =
 * Fix truncate option when used along with post title conversion.
+* Change deploy script.
 
 = 2.4.3 - 2021/03/15 =
 * Fix truncate option by removing max limit.
