@@ -1,150 +1,44 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "189b9b7d61cbdc85d96ac049e11128e1",
-    "content-hash": "0c8899aaa818d90bfa052bb72f535f6b",
+    "content-hash": "4f2a715a49ec17fb0a2b4d57e854a49b",
     "packages": [
-        {
-            "name": "composer/installers",
-            "version": "v1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/installers.git",
-                "reference": "9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b",
-                "reference": "9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0"
-            },
-            "replace": {
-                "roundcube/plugin-installer": "*",
-                "shama/baton": "*"
-            },
-            "require-dev": {
-                "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "4.1.*"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Composer\\Installers\\Plugin",
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\Installers\\": "src/Composer/Installers"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kyle Robinson Young",
-                    "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama"
-                }
-            ],
-            "description": "A multi-framework Composer library installer",
-            "homepage": "https://composer.github.io/installers/",
-            "keywords": [
-                "Craft",
-                "Dolibarr",
-                "Eliasis",
-                "Hurad",
-                "ImageCMS",
-                "Kanboard",
-                "Lan Management System",
-                "MODX Evo",
-                "Mautic",
-                "Maya",
-                "OXID",
-                "Plentymarkets",
-                "Porto",
-                "RadPHP",
-                "SMF",
-                "Thelia",
-                "WolfCMS",
-                "agl",
-                "aimeos",
-                "annotatecms",
-                "attogram",
-                "bitrix",
-                "cakephp",
-                "chef",
-                "cockpit",
-                "codeigniter",
-                "concrete5",
-                "croogo",
-                "dokuwiki",
-                "drupal",
-                "eZ Platform",
-                "elgg",
-                "expressionengine",
-                "fuelphp",
-                "grav",
-                "installer",
-                "itop",
-                "joomla",
-                "kohana",
-                "laravel",
-                "lavalite",
-                "lithium",
-                "magento",
-                "mako",
-                "mediawiki",
-                "modulework",
-                "moodle",
-                "osclass",
-                "phpbb",
-                "piwik",
-                "ppi",
-                "puppet",
-                "reindex",
-                "roundcube",
-                "shopware",
-                "silverstripe",
-                "sydes",
-                "symfony",
-                "typo3",
-                "wordpress",
-                "yawik",
-                "zend",
-                "zikula"
-            ],
-            "time": "2017-08-09 07:53:48"
-        },
         {
             "name": "pablo-sg-pacheco/wp-namespace-autoloader",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pablo-sg-pacheco/wp-namespace-autoloader.git",
-                "reference": "d0cb33de4e01704bc341e4301e93aa9c20f1cd1d"
+                "reference": "015c9654459fd267cf12fa7846d3bf36b11c3bd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pablo-sg-pacheco/wp-namespace-autoloader/zipball/d0cb33de4e01704bc341e4301e93aa9c20f1cd1d",
-                "reference": "d0cb33de4e01704bc341e4301e93aa9c20f1cd1d",
+                "url": "https://api.github.com/repos/pablo-sg-pacheco/wp-namespace-autoloader/zipball/015c9654459fd267cf12fa7846d3bf36b11c3bd7",
+                "reference": "015c9654459fd267cf12fa7846d3bf36b11c3bd7",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "*"
+                "cweagans/composer-patches": "^1.0",
+                "dealerdirect/phpcodesniffer-composer-installer": "0.7.0",
+                "phpunit/phpunit": "^7",
+                "squizlabs/php_codesniffer": "dev-master",
+                "wp-coding-standards/wpcs": "^2.3"
             },
+            "default-branch": true,
             "type": "library",
+            "extra": {
+                "patches": {
+                    "squizlabs/php_codesniffer": {
+                        "Add GitHub Actions Annotations report type": "https://github.com/squizlabs/PHP_CodeSniffer/pull/2918.patch"
+                    }
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Pablo_Pacheco\\WP_Namespace_Autoloader\\": "src"
@@ -168,7 +62,11 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2017-05-25 01:51:18"
+            "support": {
+                "issues": "https://github.com/pablo-sg-pacheco/wp-namespace-autoloader/issues",
+                "source": "https://github.com/pablo-sg-pacheco/wp-namespace-autoloader/tree/master"
+            },
+            "time": "2021-02-27T19:04:16+00:00"
         },
         {
             "name": "tareq1988/wordpress-settings-api-class",
@@ -176,17 +74,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tareq1988/wordpress-settings-api-class.git",
-                "reference": "11a1685a3dd1b0451674c18288e5bd129dcbebe6"
+                "reference": "243544eeb83be10e629dd89eb487b96e4170ed57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tareq1988/wordpress-settings-api-class/zipball/11a1685a3dd1b0451674c18288e5bd129dcbebe6",
-                "reference": "11a1685a3dd1b0451674c18288e5bd129dcbebe6",
+                "url": "https://api.github.com/repos/tareq1988/wordpress-settings-api-class/zipball/243544eeb83be10e629dd89eb487b96e4170ed57",
+                "reference": "243544eeb83be10e629dd89eb487b96e4170ed57",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -212,7 +111,11 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2017-07-02 14:15:10"
+            "support": {
+                "issues": "https://github.com/tareq1988/wordpress-settings-api-class/issues",
+                "source": "https://github.com/tareq1988/wordpress-settings-api-class/tree/master"
+            },
+            "time": "2018-05-01T19:33:47+00:00"
         }
     ],
     "packages-dev": [],
@@ -224,8 +127,7 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {
-        "php": ">=5.3.2"
-    },
-    "platform-dev": []
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }

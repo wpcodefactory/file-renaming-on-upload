@@ -8,20 +8,16 @@
 		"rename",
 		"upload"
 	],
-	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
 			"name": "Pablo dos Santos Gonçalves Pacheco",
 			"email": "pablo.sg.pacheco@gmail.com"
 		}
 	],
-	"type": "wordpress-plugin",
 	"config": {
 		"preferred-install": "dist"
 	},
 	"require": {
-		"php": ">=7.0.0",
-		"composer/installers": ">=v1.2.0",
 		"tareq1988/wordpress-settings-api-class": "dev-master",
 		"pablo-sg-pacheco/wp-namespace-autoloader": "dev-master"
 	}

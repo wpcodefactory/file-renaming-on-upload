@@ -11,10 +11,6 @@ class ComposerStaticInit899afcbf99c41bc2b42ca936f40efdf1
         array (
             'Pablo_Pacheco\\WP_Namespace_Autoloader\\' => 38,
         ),
-        'C' => 
-        array (
-            'Composer\\Installers\\' => 20,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -22,13 +18,10 @@ class ComposerStaticInit899afcbf99c41bc2b42ca936f40efdf1
         array (
             0 => __DIR__ . '/..' . '/pablo-sg-pacheco/wp-namespace-autoloader/src',
         ),
-        'Composer\\Installers\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
-        ),
     );
 
     public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'WeDevs_Settings_API' => __DIR__ . '/..' . '/tareq1988/wordpress-settings-api-class/src/class.settings-api.php',
     );
 
