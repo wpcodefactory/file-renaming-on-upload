@@ -192,7 +192,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 					'page_filename' => 'options-general.php',
 					'params'        => array( 'page' => 'file-renaming-on-upload' ),
 				),
-				'enable'                        => true === apply_filters( 'frou_settings', true, 'is_free_version' ),
+				'enable'                        => true === apply_filters( 'frou_is_free_version', true ),
 				'optimize_plugin_icon_contrast' => true,
 				'template_variables'            => array(
 					'%notice_class%'       => 'wpfactory-promoting-notice notice notice-info',
