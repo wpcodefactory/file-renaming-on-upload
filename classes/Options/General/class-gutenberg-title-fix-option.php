@@ -1,6 +1,6 @@
 <?php
 /**
- * File renaming on upload - Gutenberg Title Fix Option
+ * File renaming on upload - Gutenberg Title Fix Option.
  *
  * @version 2.4.1
  * @since   2.4.1
@@ -20,7 +20,7 @@ if ( ! class_exists( 'FROU\Options\General\Gutenberg_Title_Fix_Option' ) ) {
 	class Gutenberg_Title_Fix_Option extends Option {
 
 		/**
-		 * Initializes
+		 * Initializes.
 		 *
 		 * @version 2.4.1
 		 * @since   2.4.1
@@ -62,7 +62,7 @@ if ( ! class_exists( 'FROU\Options\General\Gutenberg_Title_Fix_Option' ) ) {
 		}
 
 		/**
-		 * Constructor
+		 * Constructor.
 		 *
 		 * @version 2.4.1
 		 * @since   2.4.1
@@ -75,7 +75,7 @@ if ( ! class_exists( 'FROU\Options\General\Gutenberg_Title_Fix_Option' ) ) {
 		}
 
 		/**
-		 * Adds settings fields
+		 * Adds settings fields.
 		 *
 		 * @version 2.4.1
 		 * @since   2.4.1

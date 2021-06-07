@@ -1,6 +1,6 @@
 <?php
 /**
- * File renaming on upload - Permalink update Option
+ * File renaming on upload - Permalink update Option.
  *
  * @version 2.2.8
  * @since   2.0.0
@@ -19,11 +19,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 	class Permalink_Update_Option extends Option {
 
+		/**
+		 * current_filename_modified.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var
+		 */
 		public $current_filename_modified;
+
+		/**
+		 * current_filename_original.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var
+		 */
 		public $current_filename_original;
 
 		/**
-		 * Constructor
+		 * Constructor.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -36,7 +51,7 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 		}
 
 		/**
-		 * Initializes
+		 * Initializes.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -49,7 +64,7 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 		}
 
 		/**
-		 * Gets original filename when a file is uploaded
+		 * Gets original filename when a file is uploaded.
 		 *
 		 * @param $filename
 		 *
@@ -70,7 +85,7 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 		}
 
 		/**
-		 * Gets the modified filename when a file is uploaded and the plugin has done its work
+		 * Gets the modified filename when a file is uploaded and the plugin has done its work.
 		 *
 		 * @param $filename
 		 *
@@ -91,7 +106,7 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 		}
 
 		/**
-		 * After a file is uploaded, make its name unique
+		 * After a file is uploaded, make its name unique.
 		 *
 		 * @version 2.2.8
 		 * @since   2.0.0
@@ -114,7 +129,7 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 		}
 
 		/**
-		 * Adds settings fields
+		 * Adds settings fields.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0

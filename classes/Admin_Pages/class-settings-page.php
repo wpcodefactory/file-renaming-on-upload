@@ -1,6 +1,6 @@
 <?php
 /**
- * File renaming on upload - General Settings Page
+ * File renaming on upload - General Settings Page.
  *
  * @version 2.2.3
  * @since   2.0.0
@@ -25,15 +25,31 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 	class Settings_Page {
 
 		/**
+		 * settings api.
+		 *
+		 * @since 1.0.0
+		 *
 		 * @var \WeDevs_Settings_API
 		 */
 		private $settings_api;
 
 		/**
+		 * Core.
+		 *
+		 * @since 1.0.0
+		 *
 		 * @var Plugin_Core
 		 */
 		private $core;
 
+		/**
+		 * Settings_Page constructor.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param Plugin_Core $core
+		 */
 		function __construct( Plugin_Core $core ) {
 			$this->core         = $core;
 			$this->settings_api = $core->settings_api;
@@ -42,7 +58,7 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		}
 
 		/**
-		 * Creates settings separated by tabs
+		 * Creates settings separated by tabs.
 		 *
 		 * @version 2.1.6
 		 * @since   2.0.0
@@ -78,7 +94,7 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		}
 
 		/**
-		 * Gets an option inside a setting
+		 * Gets an option inside a setting.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -100,7 +116,7 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		}
 
 		/**
-		 * Creates the menu
+		 * Creates the menu.
 		 *
 		 * @version 2.2.3
 		 * @since   2.0.0
@@ -113,7 +129,7 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		}
 
 		/**
-		 * Shows the admin page
+		 * Shows the admin page.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -121,14 +137,14 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		function plugin_page() {
 			echo '<div class="wrap">';
 			echo '<h2>'.__('File Renaming on upload','file-renaming-on-upload').'</h2>';
-
 			$this->settings_api->show_navigation();
+			do_action('frou_admin_notices');
 			$this->settings_api->show_forms();
 			echo '</div>';
 		}
 
 		/**
-		 * Get all the pages
+		 * Get all the pages.
 		 *
 		 * @return array page names with key value pairs
 		 */

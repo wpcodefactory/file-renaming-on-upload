@@ -1,6 +1,6 @@
 <?php
 /**
- * File renaming on upload - Ignore Pages Option
+ * File renaming on upload - Ignore Pages Option.
  *
  * @version 2.3.0
  * @since   2.1.1
@@ -19,11 +19,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\Options\Advanced\Ignore_Filenames_Option' ) ) {
 	class Ignore_Filenames_Option extends Option {
 
+		/**
+		 * option_filenames_ignored.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var string
+		 */
 		public $option_filenames_ignored = 'filenames_ignored';
+
+		/**
+		 * option_ignore_without_extension.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var string
+		 */
 		public $option_ignore_without_extension = 'ignore_without_extension';
 
 		/**
-		 * Initializes
+		 * Initializes.
 		 *
 		 * @version 2.1.1
 		 * @since   2.1.1
@@ -33,7 +48,7 @@ if ( ! class_exists( 'FROU\Options\Advanced\Ignore_Filenames_Option' ) ) {
 		}
 
 		/**
-		 * Constructor
+		 * Constructor.
 		 *
 		 * @version 2.1.1
 		 * @since   2.1.1
@@ -46,7 +61,7 @@ if ( ! class_exists( 'FROU\Options\Advanced\Ignore_Filenames_Option' ) ) {
 		}
 
 		/**
-		 * Adds settings fields
+		 * Adds settings fields.
 		 *
 		 * @version 2.3.0
 		 * @since   2.1.1

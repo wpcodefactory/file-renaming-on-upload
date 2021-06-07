@@ -1,6 +1,6 @@
 <?php
 /**
- * File renaming on upload - Ignore empty Extensions Option
+ * File renaming on upload - Ignore empty Extensions Option.
  *
  * @version 2.3.0
  * @since   2.3.0
@@ -19,10 +19,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\Options\Advanced\Ignore_Empty_Extensions_Option' ) ) {
 	class Ignore_Empty_Extensions_Option extends Option {
 
+		/**
+		 * option_extensions_ignored.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var string
+		 */
 		public $option_extensions_ignored = 'extensions_ignored';
 
 		/**
-		 * Initializes
+		 * Initializes.
 		 *
 		 * @version 2.3.0
 		 * @since   2.3.0
@@ -32,7 +39,7 @@ if ( ! class_exists( 'FROU\Options\Advanced\Ignore_Empty_Extensions_Option' ) ) 
 		}
 
 		/**
-		 * Constructor
+		 * Constructor.
 		 *
 		 * @version 2.3.0
 		 * @since   2.3.0
@@ -45,7 +52,7 @@ if ( ! class_exists( 'FROU\Options\Advanced\Ignore_Empty_Extensions_Option' ) ) 
 		}
 
 		/**
-		 * Adds settings fields
+		 * Adds settings fields.
 		 *
 		 * @version 2.3.0
 		 * @since   2.3.0

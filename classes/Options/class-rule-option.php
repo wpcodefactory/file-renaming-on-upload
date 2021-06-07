@@ -1,6 +1,6 @@
 <?php
 /**
- * File renaming on upload - Filenaming Rule Option
+ * File renaming on upload - Filenaming Rule Option.
  *
  * @version 2.0.0
  * @since   2.0.0
@@ -19,7 +19,7 @@ if ( ! class_exists( 'FROU\Options\Rule_Option' ) ) {
 	class Rule_Option extends Option {
 
 		/**
-		 * Add option_id as rule as default
+		 * Add option_id as rule as default.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -38,7 +38,7 @@ if ( ! class_exists( 'FROU\Options\Rule_Option' ) ) {
 		}
 
 		/**
-		 * Initializes
+		 * Initializes.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0

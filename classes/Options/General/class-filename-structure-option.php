@@ -1,6 +1,6 @@
 <?php
 /**
- * File renaming on upload - Filename structure Option
+ * File renaming on upload - Filename structure Option.
  *
  * @version 2.3.6
  * @since   2.0.0
@@ -22,7 +22,7 @@ if ( ! class_exists( 'FROU\Options\General\Filename_Structure_Option' ) ) {
 		public $option_characters_between = 'filename_structure_chars_between';
 
 		/**
-		 * Initializes
+		 * Initializes.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -34,7 +34,7 @@ if ( ! class_exists( 'FROU\Options\General\Filename_Structure_Option' ) ) {
 		}
 
 		/**
-		 * Constructor
+		 * Constructor.
 		 *
 		 * @version 2.3.6
 		 * @since   2.0.0
@@ -47,7 +47,7 @@ if ( ! class_exists( 'FROU\Options\General\Filename_Structure_Option' ) ) {
 		}
 
 		/**
-		 * Creates a list with available filename structure rules
+		 * Creates a list with available filename structure rules.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -68,7 +68,11 @@ if ( ! class_exists( 'FROU\Options\General\Filename_Structure_Option' ) ) {
 		}
 
 		/**
-		 * Puts what the user wants as rules inside the filter "frou_structure_rules_list"
+		 * Puts what the user wants as rules inside the filter "frou_structure_rules_list".
+		 *
+		 * @version 2.0.0
+		 * @since   2.0.0
+		 *
 		 *
 		 * @return mixed
 		 */
@@ -79,7 +83,7 @@ if ( ! class_exists( 'FROU\Options\General\Filename_Structure_Option' ) ) {
 		}
 
 		/**
-		 * Adds settings fields
+		 * Adds settings fields.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0

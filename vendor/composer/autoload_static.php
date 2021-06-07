@@ -6,6 +6,10 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit899afcbf99c41bc2b42ca936f40efdf1
 {
+    public static $files = array (
+        '20872bbaff0e3115cc7db5ab4a7d607e' => __DIR__ . '/..' . '/wpfactory/wpfactory-promoting-notice/src/php/functions.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'P' => 
         array (
@@ -22,6 +26,7 @@ class ComposerStaticInit899afcbf99c41bc2b42ca936f40efdf1
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'WPFactory\\Promoting_Notice\\Core' => __DIR__ . '/..' . '/wpfactory/wpfactory-promoting-notice/src/php/class-core.php',
         'WeDevs_Settings_API' => __DIR__ . '/..' . '/tareq1988/wordpress-settings-api-class/src/class.settings-api.php',
     );
 

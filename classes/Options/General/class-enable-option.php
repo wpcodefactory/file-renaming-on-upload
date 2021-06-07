@@ -1,6 +1,6 @@
 <?php
 /**
- * File renaming on upload - Enable Option
+ * File renaming on upload - Enable Option.
  *
  * @version 2.0.0
  * @since   2.0.0
@@ -20,7 +20,7 @@ if ( ! class_exists( 'FROU\Options\General\Enable_Option' ) ) {
 	class Enable_Option extends Option {
 
 		/**
-		 * Initializes
+		 * Initializes.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -30,7 +30,7 @@ if ( ! class_exists( 'FROU\Options\General\Enable_Option' ) ) {
 		}
 
 		/**
-		 * Constructor
+		 * Constructor.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -43,7 +43,7 @@ if ( ! class_exists( 'FROU\Options\General\Enable_Option' ) ) {
 		}
 
 		/**
-		 * Adds settings fields
+		 * Adds settings fields.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0

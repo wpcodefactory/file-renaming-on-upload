@@ -1,6 +1,6 @@
 <?php
 /**
- * File renaming on upload - Option
+ * File renaming on upload - Option.
  *
  * @version 2.0.0
  * @since   2.0.0
@@ -18,12 +18,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\Options\Option' ) ) {
 	class Option {
 
+		/**
+		 * fields.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var array
+		 */
 		public $fields = array();
+
+		/**
+		 * section.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var
+		 */
 		protected $section;
+
+		/**
+		 * option_id.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var
+		 */
 		public $option_id;
 
 		/**
-		 * Constructor
+		 * Constructor.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -40,7 +63,7 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 		}
 
 		/**
-		 * Initializes
+		 * Initializes.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -50,7 +73,7 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 		}
 
 		/**
-		 * Gets option from this option section
+		 * Gets option from this option section.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -83,7 +106,7 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 		}
 
 		/**
-		 * Add settings fields
+		 * Add settings fields.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0

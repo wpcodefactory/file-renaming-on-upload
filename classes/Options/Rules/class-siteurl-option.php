@@ -1,6 +1,6 @@
 <?php
 /**
- * File renaming on upload - Site URL Option
+ * File renaming on upload - Site URL Option.
  *
  * @version 2.0.0
  * @since   2.0.0
@@ -23,10 +23,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\Options\Rules\SiteURL_Option' ) ) {
 	class SiteURL_Option extends Rule_Option {
 
+		/**
+		 * option_siteurl_text.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var string
+		 */
 		public $option_siteurl_text = 'siteurl_text';
 
 		/**
-		 * Constructor
+		 * Constructor.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -39,7 +46,7 @@ if ( ! class_exists( 'FROU\Options\Rules\SiteURL_Option' ) ) {
 		}
 
 		/**
-		 * Gets site url
+		 * Gets site url.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -61,7 +68,7 @@ if ( ! class_exists( 'FROU\Options\Rules\SiteURL_Option' ) ) {
 		}
 
 		/**
-		 * Initializes
+		 * Initializes.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -72,7 +79,7 @@ if ( ! class_exists( 'FROU\Options\Rules\SiteURL_Option' ) ) {
 		}
 
 		/**
-		 * Inserts site url on 'frou_sanitize_file_name' filter
+		 * Inserts site url on 'frou_sanitize_file_name' filter.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0

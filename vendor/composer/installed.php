@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '0d41dc5e37833ba8a915a0c3b87037e23a148a73',
+    'reference' => 'c7981dd4c22af058ed06471fbd5f3c1ad4acb9f7',
     'name' => 'pablo-sg-pacheco/file-renaming-on-upload',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '0d41dc5e37833ba8a915a0c3b87037e23a148a73',
+      'reference' => 'c7981dd4c22af058ed06471fbd5f3c1ad4acb9f7',
     ),
     'pablo-sg-pacheco/wp-namespace-autoloader' => 
     array (
@@ -39,6 +39,15 @@
         0 => '9999999-dev',
       ),
       'reference' => '243544eeb83be10e629dd89eb487b96e4170ed57',
+    ),
+    'wpfactory/wpfactory-promoting-notice' => 
+    array (
+      'pretty_version' => '1.0.5',
+      'version' => '1.0.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4d248f9ec4755fe6a8fc5ac0e67a098ac6e01f37',
     ),
   ),
 );

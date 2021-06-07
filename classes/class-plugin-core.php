@@ -1,6 +1,6 @@
 <?php
 /**
- * File renaming on upload - Plugin core
+ * File renaming on upload - Plugin core.
  *
  * @version 2.4.5
  * @since   2.0.0
@@ -29,19 +29,47 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 	class Plugin_Core extends Plugin {
 		/**
+		 * settings_api.
+		 *
+		 * @since 1.0.0
+		 *
 		 * @var \WeDevs_Settings_API
 		 */
 		public $settings_api;
 
+		/**
+		 * current_filename_modified.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var
+		 */
 		public $current_filename_modified;
+
+		/**
+		 * current_filename_original.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var
+		 */
 		public $current_filename_original;
 
 		/**
+		 * options.
+		 *
+		 * @since 1.0.0
+		 *
 		 * @var Options
 		 */
 		protected $options;
 
 		/**
+		 * instance.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
 		 * @return Plugin_Core
 		 */
 		public static function getInstance() {
@@ -49,7 +77,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		}
 
 		/**
-		 * Initialize
+		 * Initializes.
 		 *
 		 * @version 2.4.5
 		 * @since   2.0.0
@@ -61,7 +89,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			add_action( 'init', array( $this, 'handle_settings_page' ) );
 			add_action( 'init', array( $this, 'add_options' ), 1 );
 			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename' ), 10, 2 );
-			add_action( 'admin_notices', array( $this, 'create_premium_notice' ) );
+			add_action( 'admin_init', array( $this, 'add_promoting_notice' ) );
 			//add_action( 'admin_notices', array( $this, 'create_notice' ) );
 			add_filter( 'frou_filename_allowed', array( $this, 'block_ignored_filenames' ), 10, 3 );
 			add_filter( 'frou_filename_allowed', array( $this, 'block_renaming_by_extension' ), 10, 3 );
@@ -151,122 +179,43 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			return $allowed;
 		}
 
-		/*public function create_notice(){
-			$current_screen = get_current_screen();
-			if (
-				function_exists( 'FROUP\file_renaming_on_upload_pro' ) ||
-				//$current_screen->id != 'plugins' ||
-                ! get_transient( 'frou_activated_or_updated' )
-			) {
-				return;
-			}
-			delete_transient( 'frou_activated_or_updated' );
-			?>
-            <div class="notice notice-warning frou-notice is-dismissible">
-                <h3 class="title">File Renaming on Upload</h3>
-                <p>
-                    <?php echo __('Do you like this plugin and find it useful? Please consider ','file-renaming-on-upload'); ?> <?php echo sprintf(__('<a href="%s" target="_blank">writing a review</a> telling how it is useful for you.','file-renaming-on-upload'),'https://wordpress.org/support/plugin/file-renaming-on-upload/reviews/#new-post'); ?><br />
-                    <?php echo __('That will help spread the word making other people know about it too.','file-renaming-on-upload'); ?><br />
-                    <a target="_blank" class="button-secondary frou-call-to-action" style="margin-top:20px !important; margin-bottom:5px !important" href="https://wordpress.org/support/plugin/file-renaming-on-upload/reviews/#new-post"><?php echo __('Write a review','file-renaming-on-upload'); ?></a>
-                </p>
-                <p>
-                    <hr style="margin-top:10px;margin-bottom:10px" />
-                </p>
-
-                <h3 class="title" style="margin-top:4px !important"><?php echo __('Premium version','file-renaming-on-upload'); ?></h3>
-                <p>
-                    <?php echo __('Did you know this plugin has a premium version?','file-renaming-on-upload'); ?><br />
-                    <strong><?php echo __('Take a look at some of its features:','file-renaming-on-upload'); ?></strong>
-                </p>
-
-                <ul class="frou-notice-ul">
-	                <li><?php echo __('Edit filenames and permalinks manually','file-renaming-on-upload'); ?></li>
-	                <li><?php echo __('Update old media','file-renaming-on-upload'); ?></li>
-	                <li><?php echo __('Update old media reference on post content when filename changes.','file-renaming-on-upload'); ?></li>
-	                <li><?php echo __('Autofill ALT tag','file-renaming-on-upload'); ?></li>
-	                <li><?php echo __('New file renaming rules like custom field and taxonomy','file-renaming-on-upload'); ?></li>
-	                <li><?php echo __('Rename filename extension from jpeg to jpg','file-renaming-on-upload'); ?></li>
-	                <li><?php echo __('Update filename on post update','file-renaming-on-upload'); ?></li>
-	                <li><?php echo __('Restrict file renaming by user role','file-renaming-on-upload'); ?></li>
-	                <li><?php echo __('Restrict file renaming by custom post type','file-renaming-on-upload'); ?></li>
-                </ul>
-                <p>
-                    <a target="_blank" class="button-primary frou-call-to-action" href="https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/"><?php echo __('Upgrade to premium version','file-renaming-on-upload'); ?></a>
-                </p>
-            </div>
-
-			<?php
-            $this->create_notice_style();
-        }*/
-
-        public function create_notice_style(){
-		    ?>
-            <style>
-                .frou-notice h3{
-                    margin: 18px 0 15px 2px;
-                }
-                .frou-notice{
-                    margin-top:13px !important;
-                    padding-left:20px ;
-                }
-                .frou-notice-ul{
-                    margin-top:18px !important;
-                    margin-left:3px;
-                    list-style: disc inside;
-                }
-                .frou-call-to-action{
-                    display:inline-block;
-                    margin-bottom:14px !important;
-                    margin-top:8px !important;
-                    border:1px solid red;
-                }
-            </style>
-            <?php
-        }
-
-		public function create_premium_notice() {
-			$current_screen = get_current_screen();
-			if (
-				function_exists( 'FROUP\file_renaming_on_upload_pro' ) ||
-				$current_screen->id != 'settings_page_file-renaming-on-upload'
-			) {
-				return;
-			}
-			?>
-			<div class="notice notice-warning frou-notice">
-				<h3 class="title"><?php echo __('Premium version','file-renaming-on-upload'); ?></h3>
-				<p><?php echo __('Do you like the free version of this plugin? Imagine what the <strong>Premium</strong> version can do for you!','file-renaming-on-upload'); ?>
-					<br/><?php echo sprintf(__('Check it out <a target="_blank" href="%1$s">here</a> or on this link: <a target="_blank" href="%1$s">%1$s</a>','file-renaming-on-upload'),'https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/'); ?>					
-				</p>
-				<!--
-				<p  style="margin:12px 0 10px"><strong><?php echo __('Take a look at some of its features:','file-renaming-on-upload'); ?></strong></p>
-				<ul class="frou-notice-ul">
-					<li><?php echo __('Edit filenames and permalinks manually','file-renaming-on-upload'); ?></li>
-                    <li><?php echo __('Update old media','file-renaming-on-upload'); ?></li>
-					<li><?php echo __('Update old media reference on post content when filename changes.','file-renaming-on-upload'); ?></li>
-                    <li><?php echo __('Autofill ALT tag','file-renaming-on-upload'); ?></li>
-					<li><?php echo __('New file renaming rules like custom field and taxonomy','file-renaming-on-upload'); ?></li>
-					<li><?php echo __('Rename filename extension from jpeg to jpg','file-renaming-on-upload'); ?></li>
-                    <li><?php echo __('Update filename on post update','file-renaming-on-upload'); ?></li>
-					<li><?php echo __('Restrict file renaming by user role','file-renaming-on-upload'); ?></li>
-					<li><?php echo __('Restrict file renaming by custom post type','file-renaming-on-upload'); ?></li>
-				</ul>
-				-->
-				<p>
-					<a target="_blank" class="button-primary frou-call-to-action" href="https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/"><span style="vertical-align:middle;position:relative;top:2px;left:-2px;" class="dashicons-before dashicons-unlock"></span>Upgrade to Premium version</a>
-				</p>
-			</div>
-			<?php
-			$this->create_notice_style();
+		/**
+		 * add_promoting_notice.
+		 *
+		 * @version 2.4.5
+		 * @since   2.4.5
+		 */
+		public function add_promoting_notice() {
+			$promoting_notice = wpfactory_promoting_notice();
+			$promoting_notice->set_args( array(
+				'url_requirements'              => array(
+					'page_filename' => 'options-general.php',
+					'params'        => array( 'page' => 'file-renaming-on-upload' ),
+				),
+				'enable'                        => true === apply_filters( 'frou_settings', true, 'is_free_version' ),
+				'optimize_plugin_icon_contrast' => true,
+				'template_variables'            => array(
+					'%notice_class%'       => 'wpfactory-promoting-notice notice notice-info',
+					'%pro_version_url%'    => 'https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/',
+					'%plugin_icon_url%'    => 'https://ps.w.org/file-renaming-on-upload/assets/icon-128x128.png',
+					'%pro_version_title%'  => __( 'File Renaming on upload Pro', 'file-renaming-on-upload' ),
+					'%main_text%'          => __( 'Unlock more options with <a href="%pro_version_url%" target="_blank"><strong>%pro_version_title%</strong></a>', 'file-renaming-on-upload' ),
+					'%btn_call_to_action%' => __( 'Upgrade to Pro version', 'file-renaming-on-upload' ),
+				),
+			) );
+			$promoting_notice->init();
 		}
 
 		/**
-		 * Removes unused rules
+		 * Removes unused rules.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
 		 *
+		 * @param $filename
 		 * @param array $args
+		 *
+		 * @return mixed
 		 */
 		protected function remove_unused_rules( $filename, $args ) {
 
@@ -284,12 +233,15 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		}
 
 		/**
-		 * Translates rules
+		 * Translates rules.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
 		 *
+		 * @param $filename
 		 * @param array $args
+		 *
+		 * @return mixed
 		 */
 		protected function translate_rules( $filename, $args ) {
 			foreach ( $args['structure']['translation'] as $key => $translation ) {
@@ -300,7 +252,10 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		}
 
 		/**
-		 * Adds separator
+		 * Adds separator.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
 		 *
 		 * @param $filename
 		 * @param $args
@@ -312,8 +267,8 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			return preg_replace( '/\}\{/U', "}{$separator}{", $filename );
 		}
 
-		/**
-		 * Checks if extension is allowed for renaming
+		/**.
+		 * Checks if extension is allowed for renaming.
 		 *
 		 * @version 2.1.8
 		 * @since   2.1.1
@@ -339,7 +294,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		}
 
 		/**
-		 * Checks if filename is allowed for renaming
+		 * Checks if filename is allowed for renaming.
 		 *
 		 * @version 2.1.1
 		 * @since   2.1.1
@@ -380,7 +335,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**
 		 * Sanitizes filename.
 		 *
-		 * It's the main function of this plugin
+		 * It's the main function of this plugin.
 		 *
 		 * @version 2.4.0
 		 * @since   2.0.0
@@ -463,7 +418,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		}
 
 		/**
-		 * Manages the settings page
+		 * Manages the settings page.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -478,7 +433,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		}
 
 		/**
-		 * Creates the options inside settings pages
+		 * Creates the options inside settings pages.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -488,8 +443,11 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		}
 
 		/**
+		 * get options.
+		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
+		 *
 		 * @return Options
 		 */
 		public function get_options( $smart = true ) {
@@ -503,6 +461,8 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		}
 
 		/**
+		 * set options.
+		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
 		 *

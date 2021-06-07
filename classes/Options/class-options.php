@@ -1,6 +1,6 @@
 <?php
 /**
- * File renaming on upload - Options
+ * File renaming on upload - Options.
  *
  * @version 2.4.1
  * @since   2.0.0
@@ -34,9 +34,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\Options\Options' ) ) {
 	class Options {
 
-
 		/**
-		 * Constructor
+		 * Constructor.
 		 *
 		 * @version 2.4.1
 		 * @since   2.0.0

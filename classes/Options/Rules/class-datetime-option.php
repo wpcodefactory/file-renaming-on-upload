@@ -1,6 +1,6 @@
 <?php
 /**
- * File renaming on upload - Datetime Option
+ * File renaming on upload - Datetime Option.
  *
  * @version 2.3.9
  * @since   2.0.0
@@ -23,10 +23,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 	class Datetime_Option extends Rule_Option {
 
+		/**
+		 * option_datetime_format.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var string
+		 */
 		public $option_datetime_format = 'datetime_format';
 
 		/**
-		 * Constructor
+		 * Constructor.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -39,7 +46,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 		}
 
 		/**
-		 * Initializes
+		 * Initializes.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -50,7 +57,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 		}
 
 		/**
-		 * Turns this rule off as default
+		 * Turns this rule off as default.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -69,7 +76,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 		}
 
 		/**
-		 * Inserts datetime on 'frou_sanitize_file_name' filter
+		 * Inserts datetime on 'frou_sanitize_file_name' filter.
 		 *
 		 * @version 2.3.9
 		 * @since   2.0.0
@@ -95,7 +102,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 		}
 
 		/**
-		 * Adds settings fields
+		 * Adds settings fields.
 		 *
 		 * @version 2.0.7
 		 * @since   2.0.0

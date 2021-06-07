@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f2a715a49ec17fb0a2b4d57e854a49b",
+    "content-hash": "43119ecc8e56d8c45d5b861e65e73452",
     "packages": [
         {
             "name": "pablo-sg-pacheco/wp-namespace-autoloader",
@@ -116,6 +116,35 @@
                 "source": "https://github.com/tareq1988/wordpress-settings-api-class/tree/master"
             },
             "time": "2018-05-01T19:33:47+00:00"
+        },
+        {
+            "name": "wpfactory/wpfactory-promoting-notice",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wpcodefactory/wpfactory-promoting-notice.git",
+                "reference": "4d248f9ec4755fe6a8fc5ac0e67a098ac6e01f37"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wpcodefactory/wpfactory-promoting-notice/zipball/4d248f9ec4755fe6a8fc5ac0e67a098ac6e01f37",
+                "reference": "4d248f9ec4755fe6a8fc5ac0e67a098ac6e01f37",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/php/"
+                ],
+                "files": [
+                    "src/php/functions.php"
+                ]
+            },
+            "support": {
+                "source": "https://github.com/wpcodefactory/wpfactory-promoting-notice/tree/1.0.5",
+                "issues": "https://github.com/wpcodefactory/wpfactory-promoting-notice/issues"
+            },
+            "time": "2021-06-07T20:53:39+00:00"
         }
     ],
     "packages-dev": [],

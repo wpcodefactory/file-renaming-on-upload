@@ -1,6 +1,6 @@
 <?php
 /**
- * File renaming on upload - Filename Option
+ * File renaming on upload - Filename Option.
  *
  * @version 2.4.4
  * @since   2.0.0
@@ -22,17 +22,94 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 	class Filename_Option extends Rule_Option {
 
 		// Convert
+		/**
+		 * option_convert.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var string
+		 */
 		public $option_convert = 'convert';
+
+		/**
+		 * option_convert_accents.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var string
+		 */
 		public $option_convert_accents = 'accents';
+
+		/**
+		 * option_convert_lowercase.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var string
+		 */
 		public $option_convert_lowercase = 'lowercase';
+
+		/**
+		 * option_convert_posttitle.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var string
+		 */
 		public $option_convert_posttitle = 'posttitle';
+
+		/**
+		 * option_convert_to_dash_chars.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var string
+		 */
 		public $option_convert_to_dash_chars = 'converttodash_chars';
+
+		/**
+		 * option_accent_conversion_method.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var string
+		 */
 		public $option_accent_conversion_method = 'accent_conversion_method';
 
-		// Remove
+		/**
+		 * option_remove.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var string
+		 */
 		public $option_remove = 'remove';
+
+		/**
+		 * option_remove_specific_characters.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var string
+		 */
 		public $option_remove_specific_characters = 'specific_chars';
+
+		/**
+		 * option_remove_specific_characters_text.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var string
+		 */
 		public $option_remove_specific_characters_text = 'specific_chars_text';
+
+		/**
+		 * option_remove_non_ascii_characters.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var string
+		 */
 		public $option_remove_non_ascii_characters = 'non_ascii_chars';
 
 		// Truncate
@@ -42,7 +119,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		//public $current_filename_original;
 
 		/**
-		 * Constructor
+		 * Constructor.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -55,7 +132,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		}
 
 		/**
-		 * Initializes
+		 * Initializes.
 		 *
 		 * @version 2.4.4
 		 * @since   2.0.0
@@ -72,7 +149,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		}
 
 		/**
-		 * Truncates filename
+		 * Truncates filename.
 		 *
 		 * @version 2.2.5
 		 * @since   2.2.4
@@ -93,7 +170,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		}
 
 		/**
-		 * Convert characters to dash
+		 * Convert characters to dash.
 		 *
 		 * @version 2.4.0
 		 * @since   2.0.0
@@ -127,7 +204,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		}
 
 		/**
-		 * Removes non english chars from filename
+		 * Removes non english chars from filename.
 		 *
 		 * @version 2.1.1
 		 * @since   2.0.0
@@ -158,7 +235,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		}
 
 		/**
-		 * Removes specific chars from filename
+		 * Removes specific chars from filename.
 		 *
 		 * @version 2.0.9
 		 * @since   2.0.0
@@ -188,7 +265,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		}
 
 		/**
-		 * Converts filename to posttitle
+		 * Converts filename to posttitle.
 		 *
 		 * @version 2.0.9
 		 * @since   2.0.0
@@ -218,7 +295,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		}
 
 		/**
-		 * Converts filename to lowercase
+		 * Converts filename to lowercase.
 		 *
 		 * @version 2.0.9
 		 * @since   2.0.0
@@ -244,7 +321,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		}
 
 		/**
-		 * Converts all accent characters from filename to ASCII characters
+		 * Converts all accent characters from filename to ASCII characters.
 		 *
 		 * @version 2.4.2
 		 * @since   2.0.0
@@ -275,7 +352,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		}
 
 		/**
-		 * Adds settings fields
+		 * Adds settings fields.
 		 *
 		 * @version 2.4.3
 		 * @since   2.0.0
