@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core
  *
- * @version 2.4.1
+ * @version 2.4.5
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -51,7 +51,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**
 		 * Initialize
 		 *
-		 * @version 2.4.1
+		 * @version 2.4.5
 		 * @since   2.0.0
 		 *
 		 * @param array $args
@@ -66,10 +66,24 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			add_filter( 'frou_filename_allowed', array( $this, 'block_ignored_filenames' ), 10, 3 );
 			add_filter( 'frou_filename_allowed', array( $this, 'block_renaming_by_extension' ), 10, 3 );
 			add_filter( 'frou_renaming_validation', array( $this, 'disable_renaming_on_wc_export' ),10,2 );
+			add_action( 'add_attachment', array( $this, 'save_original_file_name' ) );
 			//add_action( 'add_attachment', array( $this, 'add_attachment' ) );
 			//add_filter('wp_insert_attachment_data',array($this,'insert_attachment_data'),10,2);
 			//add_action('wp_insert_post',array($this,'insert_post'));
 			//add_filter('wp_insert_attachment_data',array($this,'wp_insert_attachment_data'),10,3);
+		}
+
+		/**
+		 * save_original_file_name.
+		 *
+		 * @version 2.4.5
+		 * @since   2.4.5
+		 *
+		 * @param $post_id
+		 */
+		function save_original_file_name( $post_id ) {
+			$post = get_post( $post_id );
+			update_post_meta( $post_id, '_frou_original_filename', $post->post_name );
 		}
 
 		/**

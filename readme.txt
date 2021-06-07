@@ -112,6 +112,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
+= 2.4.5 - 2021/06/07 =
+* Save original filename on new attachment.
+
 = 2.4.4 - 2021/05/24 =
 * Fix truncate option when used along with post title conversion.
 * Change deploy script.

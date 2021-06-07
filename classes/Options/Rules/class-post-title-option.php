@@ -1,8 +1,8 @@
 <?php
 /**
- * File renaming on upload - Filename Option
+ * File renaming on upload - Filename Option.
  *
- * @version 2.0.0
+ * @version 2.4.5
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -25,7 +25,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 		//public $current_filename_original;
 
 		/**
-		 * Constructor
+		 * Constructor.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -38,19 +38,18 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 		}
 
 		/**
-		 * Initializes
+		 * Initializes.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
 		 */
 		function init() {
 			parent::init();
-			//add_action( 'add_attachment', array( $this, 'add_attachment' ) );
 			add_filter( 'frou_sanitize_file_name', array( $this, 'frou_sanitize_file_name' ), 11 );
 		}
 
 		/**
-		 * Inserts post title on 'frou_sanitize_file_name' filter
+		 * Inserts post title on 'frou_sanitize_file_name' filter.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
@@ -76,7 +75,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 		}
 
 		/**
-		 * Adds settings fields
+		 * Adds settings fields.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
