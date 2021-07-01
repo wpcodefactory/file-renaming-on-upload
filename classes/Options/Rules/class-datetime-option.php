@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Datetime Option.
  *
- * @version 2.3.9
+ * @version 2.4.6
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -78,7 +78,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 		/**
 		 * Inserts datetime on 'frou_sanitize_file_name' filter.
 		 *
-		 * @version 2.3.9
+		 * @version 2.4.6
 		 * @since   2.0.0
 		 *
 		 * @param $filename_infs
@@ -93,7 +93,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 			$structure_rules = $filename_infs['structure']['rules'];
 			if ( strpos( $structure_rules, '{' . $this->option_id . '}' ) !== false ) {
 				$datetime = \DateTime::createFromFormat( 'U.u', number_format( microtime( true ), 6, '.', '' ) );
-				date_timezone_set( $datetime, timezone_open( get_option( 'timezone_string' ) ) );
+				date_timezone_set( $datetime, wp_timezone() );
 				$format = $datetime->format( $this->get_option( $this->option_datetime_format, 'Y-m-d_H-i-s_u' ) );
 				$filename_infs['structure']['translation'][ $this->option_id ] = $format;
 			}

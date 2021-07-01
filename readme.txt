@@ -112,6 +112,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
+= 2.4.6 - 2021/07/01 =
+* Fix timezone warning from datetime rule.
+
 = 2.4.5 - 2021/06/07 =
 * Save original filename on new attachment.
 * Update promoting notice.
