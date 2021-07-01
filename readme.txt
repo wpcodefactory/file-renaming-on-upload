@@ -114,6 +114,8 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 = 2.4.6 - 2021/07/01 =
 * Fix timezone warning from datetime rule.
+* Add `frou_current_media_id` filter.
+* Add `get_current_media_id()` function.
 
 = 2.4.5 - 2021/06/07 =
 * Save original filename on new attachment.
