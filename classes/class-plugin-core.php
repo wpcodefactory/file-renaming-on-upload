@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core.
  *
- * @version 2.4.5
+ * @version 2.4.6
  * @since   2.0.0
  * @author  Pablo S G Pacheco
  */
@@ -99,6 +99,18 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			//add_filter('wp_insert_attachment_data',array($this,'insert_attachment_data'),10,2);
 			//add_action('wp_insert_post',array($this,'insert_post'));
 			//add_filter('wp_insert_attachment_data',array($this,'wp_insert_attachment_data'),10,3);
+		}
+
+		/**
+		 * get_current_media_id.
+		 *
+		 * @version 2.4.6
+		 * @since   2.4.6
+		 *
+		 * @return int|null
+		 */
+		static function get_current_media_id() {
+			return apply_filters( 'frou_current_media_id', null );
 		}
 
 		/**
