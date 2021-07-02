@@ -104,7 +104,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 		/**
 		 * Adds settings fields.
 		 *
-		 * @version 2.0.7
+		 * @version 2.4.6
 		 * @since   2.0.0
 		 *
 		 * @param $fields
@@ -113,16 +113,17 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 		 * @return mixed
 		 */
 		public function add_fields( $fields, $section ) {
-			$datetime = \DateTime::createFromFormat( 'U.u', number_format(microtime(true), 6, '.', '') );
+			$datetime = \DateTime::createFromFormat( 'U.u', number_format( microtime( true ), 6, '.', '' ) );
 			$format   = $datetime->format( $this->get_option( $this->option_datetime_format, 'Y-m-d_H-i-s_u' ) );
 
 			$new_options = array(
 				array(
-					'name'    => $this->option_id,
-					'label'   => __( 'Datetime', 'file-renaming-on-upload' ),
-					'desc'    => __( 'Enables Datetime rule', 'file-renaming-on-upload' ) . ' - ' . '<strong>{' . $this->option_id . '}</strong>',
-					'type'    => 'checkbox',
-					'default' => 'no',
+					'name'           => $this->option_id,
+					'label'          => __( 'Datetime', 'file-renaming-on-upload' ),
+					'desc'           => __( 'Enables Datetime rule', 'file-renaming-on-upload' ) . ' - ' . '<strong>{' . $this->option_id . '}</strong>',
+					'desc_secondary' => __( "Gets the current date and time.", 'file-renaming-on-upload' ),
+					'type'           => 'checkbox',
+					'default'        => 'no',
 				),
 
 				array(
