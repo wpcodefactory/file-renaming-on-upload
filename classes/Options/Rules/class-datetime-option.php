@@ -115,7 +115,6 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 		public function add_fields( $fields, $section ) {
 			$datetime = \DateTime::createFromFormat( 'U.u', number_format( microtime( true ), 6, '.', '' ) );
 			$format   = $datetime->format( $this->get_option( $this->option_datetime_format, 'Y-m-d_H-i-s_u' ) );
-
 			$new_options = array(
 				array(
 					'name'           => $this->option_id,
@@ -125,7 +124,6 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 					'type'           => 'checkbox',
 					'default'        => 'no',
 				),
-
 				array(
 					'name'        => $this->option_datetime_format,
 					'desc'        => __( 'Datetime format ', 'file-renaming-on-upload' ) . sprintf( __( 'You can see more formats <a target="_blank" href="%s">here</a>', 'file-renaming-on-upload' ), 'http://php.net/manual/function.date.php' ) . '<br />' . sprintf( __( 'Result: <b>%s</b>', 'file-renaming-on-upload' ), $format ),
@@ -137,7 +135,6 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 					'name' => 'datetime_separator',
 					'type' => 'separator',
 				),
-
 			);
 
 			return parent::add_fields( array_merge( $fields, $new_options ), $section );

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: File renaming on upload\n"
-"POT-Creation-Date: 2021-02-21 00:18-0300\n"
+"POT-Creation-Date: 2021-07-02 12:37-0300\n"
 "PO-Revision-Date: 2017-01-17 13:05-0200\n"
 "Last-Translator: \n"
 "Language-Team: Pablo S G Pacheco\n"
@@ -21,67 +21,67 @@ msgstr ""
 "X-Poedit-SearchPath-1: file-renaming-on-upload.php\n"
 "X-Poedit-SearchPath-2: readme.txt\n"
 
-#: classes/Admin_Pages/class-settings-page.php:55
+#: classes/Admin_Pages/class-settings-page.php:71
 msgid "General Settings"
 msgstr ""
 
-#: classes/Admin_Pages/class-settings-page.php:59
+#: classes/Admin_Pages/class-settings-page.php:75
 msgid "Rules"
 msgstr ""
 
-#: classes/Admin_Pages/class-settings-page.php:63
+#: classes/Admin_Pages/class-settings-page.php:79
 msgid "Advanced"
 msgstr ""
 
-#: classes/Admin_Pages/class-settings-page.php:109
+#: classes/Admin_Pages/class-settings-page.php:125
 msgid "File renaming"
 msgstr ""
 
-#: classes/Admin_Pages/class-settings-page.php:123
+#: classes/Admin_Pages/class-settings-page.php:139
 msgid "File Renaming on upload"
 msgstr ""
 
-#: classes/Options/Advanced/class-ignore-empty-extensions-option.php:62
+#: classes/Options/Advanced/class-ignore-empty-extensions-option.php:69
 msgid "Ignore files with no extension"
 msgstr ""
 
-#: classes/Options/Advanced/class-ignore-empty-extensions-option.php:63
+#: classes/Options/Advanced/class-ignore-empty-extensions-option.php:70
 msgid "Does not rename files without extension"
 msgstr ""
 
-#: classes/Options/Advanced/class-ignore-empty-extensions-option.php:64
+#: classes/Options/Advanced/class-ignore-empty-extensions-option.php:71
 msgid ""
 "If you have to upload files without extensions uncheck this option, but "
 "it may create unpredictable incompatibility issues with third party "
 "plugins and themes\n"
 msgstr ""
 
-#: classes/Options/Advanced/class-ignore-extensions-option.php:62
+#: classes/Options/Advanced/class-ignore-extensions-option.php:69
 msgid "Ignore file extensions"
 msgstr ""
 
-#: classes/Options/Advanced/class-ignore-extensions-option.php:63
+#: classes/Options/Advanced/class-ignore-extensions-option.php:70
 msgid "Does not rename filenames with these extensions"
 msgstr ""
 
-#: classes/Options/Advanced/class-ignore-extensions-option.php:63
-#: classes/Options/Advanced/class-ignore-filenames-option.php:64
+#: classes/Options/Advanced/class-ignore-extensions-option.php:70
+#: classes/Options/Advanced/class-ignore-filenames-option.php:79
 msgid "comma separated"
 msgstr ""
 
-#: classes/Options/Advanced/class-ignore-filenames-option.php:63
+#: classes/Options/Advanced/class-ignore-filenames-option.php:78
 msgid "Ignore filenames"
 msgstr ""
 
-#: classes/Options/Advanced/class-ignore-filenames-option.php:64
+#: classes/Options/Advanced/class-ignore-filenames-option.php:79
 msgid "Does not rename these filenames"
 msgstr ""
 
-#: classes/Options/Advanced/class-ignore-filenames-option.php:76
+#: classes/Options/Advanced/class-ignore-filenames-option.php:91
 msgid "Ignores filename only when extension cannot be found"
 msgstr ""
 
-#: classes/Options/Advanced/class-ignore-filenames-option.php:77
+#: classes/Options/Advanced/class-ignore-filenames-option.php:92
 msgid ""
 "If you have issues with some other plugins try to unmark this option"
 msgstr ""
@@ -94,21 +94,21 @@ msgstr ""
 msgid "Enable the plugin"
 msgstr ""
 
-#: classes/Options/General/class-filename-structure-option.php:96
+#: classes/Options/General/class-filename-structure-option.php:100
 msgid "Filename structure"
 msgstr ""
 
-#: classes/Options/General/class-filename-structure-option.php:97
+#: classes/Options/General/class-filename-structure-option.php:101
 msgid ""
 "Manages the filename structure using rules. If you want only the "
 "filename, leave it as <b>{filename}.</b>"
 msgstr ""
 
-#: classes/Options/General/class-filename-structure-option.php:97
+#: classes/Options/General/class-filename-structure-option.php:101
 msgid "Rules available:"
 msgstr ""
 
-#: classes/Options/General/class-filename-structure-option.php:103
+#: classes/Options/General/class-filename-structure-option.php:107
 msgid "Character(s) used to separate rules"
 msgstr ""
 
@@ -126,196 +126,160 @@ msgid ""
 "set from the original filename."
 msgstr ""
 
-#: classes/Options/General/class-permalink-update-option.php:131
+#: classes/Options/General/class-permalink-update-option.php:146
 msgid "Update permalink"
 msgstr ""
 
-#: classes/Options/General/class-permalink-update-option.php:132
+#: classes/Options/General/class-permalink-update-option.php:147
 msgid ""
 "Update permalinks from new added attachment based on the filename "
 "structure"
 msgstr ""
 
-#: classes/Options/Rules/class-datetime-option.php:115
+#: classes/Options/Rules/class-datetime-option.php:121
 msgid "Datetime"
 msgstr ""
 
-#: classes/Options/Rules/class-datetime-option.php:116
+#: classes/Options/Rules/class-datetime-option.php:122
 msgid "Enables Datetime rule"
 msgstr ""
 
 #: classes/Options/Rules/class-datetime-option.php:123
+msgid "Gets the current date and time."
+msgstr ""
+
+#: classes/Options/Rules/class-datetime-option.php:129
 msgid "Datetime format "
 msgstr ""
 
-#: classes/Options/Rules/class-datetime-option.php:123
+#: classes/Options/Rules/class-datetime-option.php:129
 #, php-format
 msgid "You can see more formats <a target=\"_blank\" href=\"%s\">here</a>"
 msgstr ""
 
-#: classes/Options/Rules/class-datetime-option.php:123
+#: classes/Options/Rules/class-datetime-option.php:129
 #, php-format
 msgid "Result: <b>%s</b>"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:287
+#: classes/Options/Rules/class-filename-option.php:369
 msgid "Filename"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:288
+#: classes/Options/Rules/class-filename-option.php:370
 msgid "Enables filename rule"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:295
+#: classes/Options/Rules/class-filename-option.php:377
 msgid "Convert"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:305
-msgid "Accents"
+#: classes/Options/Rules/class-filename-option.php:387
+msgid "Characters"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:305
-msgid "Converts all filename accent characters to ASCII characters"
+#: classes/Options/Rules/class-filename-option.php:387
+msgid ""
+"Converts special characters by their ASCII replacement, fixing accents "
+"and some other special characters"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:306
+#: classes/Options/Rules/class-filename-option.php:388
 msgid "Lowercase"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:306
+#: classes/Options/Rules/class-filename-option.php:388
 msgid "Converts all filename characters to lowercase"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:307
-#: classes/Options/Rules/class-post-title-option.php:93
+#: classes/Options/Rules/class-filename-option.php:389
+#: classes/Options/Rules/class-post-title-option.php:92
 msgid "Post title"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:307
+#: classes/Options/Rules/class-filename-option.php:389
 msgid "Converts filename to post title whenever it is possible"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:312
+#: classes/Options/Rules/class-filename-option.php:394
 msgid "Besides whitespaces, converts the following characters to a dash."
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:312
-msgid "(Space separated)"
+#: classes/Options/Rules/class-filename-option.php:394
+msgid "(Space separated)."
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:319
+#: classes/Options/Rules/class-filename-option.php:400
+msgid "Character conversion method."
+msgstr ""
+
+#: classes/Options/Rules/class-filename-option.php:403
+msgid "Remove Accents: remove_accents()"
+msgstr ""
+
+#: classes/Options/Rules/class-filename-option.php:404
+#, php-format
+msgid "Transliterator: transliterate()%s"
+msgstr ""
+
+#: classes/Options/Rules/class-filename-option.php:404
+msgid "Disabled on the server"
+msgstr ""
+
+#: classes/Options/Rules/class-filename-option.php:411
 msgid "Remove"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:326
+#: classes/Options/Rules/class-filename-option.php:418
 msgid "All non ASCII characters"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:327
+#: classes/Options/Rules/class-filename-option.php:419
 msgid "Specific characters"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:338
+#: classes/Options/Rules/class-filename-option.php:430
 msgid "Truncate"
 msgstr ""
 
-#: classes/Options/Rules/class-filename-option.php:343
+#: classes/Options/Rules/class-filename-option.php:434
 msgid ""
 "Max length of a filename. Leave it empty if you do not want to use this "
-"feature"
+"feature."
 msgstr ""
 
-#: classes/Options/Rules/class-post-title-option.php:94
+#: classes/Options/Rules/class-post-title-option.php:93
 msgid "Enables post title rule"
 msgstr ""
 
-#: classes/Options/Rules/class-post-title-option.php:95
+#: classes/Options/Rules/class-post-title-option.php:94
 msgid "Adds post title whenever it is possible"
 msgstr ""
 
-#: classes/Options/Rules/class-siteurl-option.php:115
+#: classes/Options/Rules/class-siteurl-option.php:122
 msgid "Site URL"
 msgstr ""
 
-#: classes/Options/Rules/class-siteurl-option.php:116
+#: classes/Options/Rules/class-siteurl-option.php:123
 msgid "Enables site URL rule"
 msgstr ""
 
-#: classes/Options/Rules/class-siteurl-option.php:123
+#: classes/Options/Rules/class-siteurl-option.php:130
 msgid "The site URL (Change it the way you like)"
 msgstr ""
 
-#: classes/WeDevs/class-wedevs-settings-api-original.php:379
-msgid "Choose File"
+#: classes/class-plugin-core.php:213
+msgid "File Renaming on upload Pro"
 msgstr ""
 
-#: classes/class-plugin-core.php:154
-msgid "Do you like this plugin and find it useful? Please consider "
-msgstr ""
-
-#: classes/class-plugin-core.php:154
-#, php-format
+#: classes/class-plugin-core.php:214
 msgid ""
-"<a href=\"%s\" target=\"_blank\">writing a review</a> telling how it is "
-"useful for you."
+"Unlock more options with <a href=\"%pro_version_url%\" target=\"_blank"
+"\"><strong>%pro_version_title%</strong></a>"
 msgstr ""
 
-#: classes/class-plugin-core.php:155
-msgid ""
-"That will help spread the word making other people know about it too."
-msgstr ""
-
-#: classes/class-plugin-core.php:156
-msgid "Write a review"
-msgstr ""
-
-#: classes/class-plugin-core.php:162 classes/class-plugin-core.php:219
-msgid "Premium version"
-msgstr ""
-
-#: classes/class-plugin-core.php:164
-msgid "Did you know this plugin has a premium version?"
-msgstr ""
-
-#: classes/class-plugin-core.php:165 classes/class-plugin-core.php:223
-msgid "Take a look at some of its features:"
-msgstr ""
-
-#: classes/class-plugin-core.php:169 classes/class-plugin-core.php:225
-msgid "Edit filenames and permalinks manually"
-msgstr ""
-
-#: classes/class-plugin-core.php:170 classes/class-plugin-core.php:226
-msgid "Update old media"
-msgstr ""
-
-#: classes/class-plugin-core.php:171 classes/class-plugin-core.php:227
-msgid "Autofill ALT tag"
-msgstr ""
-
-#: classes/class-plugin-core.php:172 classes/class-plugin-core.php:228
-msgid "Custom field rule"
-msgstr ""
-
-#: classes/class-plugin-core.php:173 classes/class-plugin-core.php:229
-msgid "New rules"
-msgstr ""
-
-#: classes/class-plugin-core.php:176
-msgid "Upgrade to premium version"
-msgstr ""
-
-#: classes/class-plugin-core.php:220
-msgid ""
-"Do you like the free version of this plugin? Imagine what the "
-"<strong>Premium</strong> version can do for you!"
-msgstr ""
-
-#: classes/class-plugin-core.php:221
-#, php-format
-msgid ""
-"Check it out <a target=\"_blank\" href=\"%1$s\">here</a> or on this "
-"link: <a target=\"_blank\" href=\"%1$s\">%1$s</a>"
+#: classes/class-plugin-core.php:215
+msgid "Upgrade to Pro version"
 msgstr ""
 
 #: file-renaming-on-upload.php:16
