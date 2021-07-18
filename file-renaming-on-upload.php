@@ -3,7 +3,7 @@
 Plugin Name: File Renaming on upload
 Plugin URI: https://wordpress.org/plugins/file-renaming-on-upload/
 Description: Fixes file uploads with accents and special characters by renaming them. It also improves your SEO.
-Version: 2.4.6
+Version: 2.4.7-dev
 Author: Pablo S G Pacheco
 Author URI: https://github.com/pablo-sg-pacheco
 License: GPL2
@@ -17,7 +17,11 @@ __('Fixes file uploads with accents and special characters by renaming them. It 
 
 use Pablo_Pacheco\WP_Namespace_Autoloader\WP_Namespace_Autoloader;
 
-if ( ! function_exists( 'file_renaming_on_upload_autoload' ) ) {
+if ( ! function_exists( '\FROU\file_renaming_on_upload_autoload' ) ) {
+	require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+}
+
+if ( ! function_exists( '\FROU\file_renaming_on_upload_autoload' ) ) {
 
 	/**
 	 * Setups autoloader
@@ -36,7 +40,7 @@ if ( ! function_exists( 'file_renaming_on_upload_autoload' ) ) {
 	}
 }
 
-if ( ! function_exists( 'file_renaming_on_upload' ) ) {
+if ( ! function_exists( '\FROU\file_renaming_on_upload' ) ) {
 
 	/**
 	 * Returns the main instance of Plugin_Core
@@ -66,7 +70,6 @@ if ( ! function_exists( 'file_renaming_on_upload' ) ) {
 
 // Set transient on activation
 register_activation_hook( __FILE__, function(){
-	require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 	file_renaming_on_upload_autoload();
 	set_transient( 'frou_activated_or_updated', true, 30 );
 });
@@ -86,7 +89,6 @@ add_action( 'upgrader_process_complete', function($upgrader_object, $options){
 },10, 2);
 
 add_action( 'plugins_loaded', function () {
-	require __DIR__ . '/vendor/autoload.php';
 	file_renaming_on_upload_autoload();
 	$frou = file_renaming_on_upload();
 	$frou->init();

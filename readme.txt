@@ -112,6 +112,10 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
+= 2.4.7 - 2021/07/18 =
+* Fix - Both plugins can't be active at the same time.
+* Improve composer setup.
+
 = 2.4.6 - 2021/07/02 =
 * Fix timezone warning from datetime rule.
 * Add `frou_current_media_id` filter.
