@@ -13,6 +13,8 @@ Domain Path: /languages
 
 namespace FROU;
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 __('Fixes file uploads with accents and special characters by renaming them. It also improves your SEO.','file-renaming-on-upload');
 
 use Pablo_Pacheco\WP_Namespace_Autoloader\WP_Namespace_Autoloader;
