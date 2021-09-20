@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: File renaming on upload\n"
-"POT-Creation-Date: 2021-07-02 12:37-0300\n"
+"POT-Creation-Date: 2021-09-20 14:07-0300\n"
 "PO-Revision-Date: 2017-01-17 13:05-0200\n"
 "Last-Translator: \n"
 "Language-Team: Pablo S G Pacheco\n"
@@ -282,12 +282,12 @@ msgstr ""
 msgid "Upgrade to Pro version"
 msgstr ""
 
-#: file-renaming-on-upload.php:16
+#: file-renaming-on-upload.php:18
 msgid ""
 "Fixes file uploads with accents and special characters by renaming "
 "them. It also improves your SEO."
 msgstr ""
 
-#: file-renaming-on-upload.php:55
+#: file-renaming-on-upload.php:61
 msgid "Settings"
 msgstr ""
