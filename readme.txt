@@ -2,7 +2,7 @@
 Contributors: karzin
 Tags: file rename, upload, renaming, file, rename, characters, accents
 Requires at least: 4.0.0
-Tested up to: 5.7
+Tested up to: 5.8
 Requires PHP: 5.3
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BAC8PT82YMTJL&lc=US&item_name=File%20Renaming%20on%20Upload&item_number=file%2drenaming%2don%2dupload&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Stable tag: 2.4.6
@@ -21,22 +21,40 @@ Besides that, it can improve your SEO adding some relevant info to your filename
 
 Increase your control over your file names
 
-== Premium version ==
-Do you like the free version of this plugin? Imagine what the <strong>[Premium](https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/ "File Renaming on Upload - Premium")</strong> version can do for you!
+### &#9989; Main Features ###
 
-[Check it out](https://wpcodefactory.com/item/file-renaming-on-upload-wordpress-plugin/ "File Renaming on Upload - Premium")
+* Remove accents and special characters from filenames on upload.
+* Rename files on upload based on post title.
+* Rename files on upload based on the Site URL.
+* Rename files on upload based on the current date.
+* Update file permalink based on file renaming.
 
-**Take a look at some of its features:**
+### &#127942; Pro Version ###
+Do you like the free version of this plugin? Imagine what the <strong>[Premium version](https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/ "File Renaming on Upload - Premium")</strong> can do for you. Take a look at some of its features:
 
-* Edit filenames and permalinks manually
-* Update old media
-* Update old media reference on post content when filename changes.
-* Autofill ALT tag
-* New file renaming rules like custom field and taxonomy
-* Rename filename extension from jpeg to jpg
-* Update filename on post update
-* Restrict file renaming by user role
-* Restrict file renaming by custom post type
+* Edit filenames and permalinks manually.
+* Update old media.
+* Update media reference in post content on file renaming.
+* Rename filename extension from **jpeg to jpg**.
+* Update filename on **post update**.
+* Restrict file renaming by **user role**.
+* Restrict file renaming by **custom post type**.
+* Auto-fill file title based on **filename structure** option.
+* Auto-fill **ALT tag**.
+  * Update alt based on the **original filename**.
+  * Update alt based on the filename structure option.
+  * Update alt on filename update.
+  * Update alt on new attachment upload.
+* More **filename rules**:
+  * **Custom field:** Rename files based on **custom fields/post meta**.
+  * **Taxonomy:** Rename files based on taxonomy.
+  * **User ID**: Rename files based on current user id.
+  * **User Role**: Rename files based on current user role.
+  * **User Name**: Rename files based on user name.
+  * **Product SKU**: Rename files based on product SKU.
+  * **Post slug**: Rename files based on Post slug.
+  * **Post ID**: Rename files based on post ID.
+  * **Custom String**: Rename files based on a custom string.
 
 == Frequently Asked Questions ==
 = What are the available options provided by this plugin? =
@@ -112,9 +130,11 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
-= 2.4.7 - 2021/07/18 =
+= 2.4.7 - 2021/09/20 =
 * Fix - Both plugins can't be active at the same time.
 * Improve composer setup.
+* Improve readme.
+* Tested up to: 5.8.
 
 = 2.4.6 - 2021/07/02 =
 * Fix timezone warning from datetime rule.
