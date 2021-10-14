@@ -130,6 +130,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
+= 2.4.8 - 2021/10/14 =
+* Add "Max length" option for "Filename structure".
+
 = 2.4.7 - 2021/09/20 =
 * Fix - Both plugins can't be active at the same time.
 * Improve composer setup.
