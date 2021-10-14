@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: File renaming on upload\n"
-"POT-Creation-Date: 2021-09-20 14:07-0300\n"
+"POT-Creation-Date: 2021-10-14 19:34-0300\n"
 "PO-Revision-Date: 2017-01-17 13:05-0200\n"
 "Last-Translator: \n"
 "Language-Team: Pablo S G Pacheco\n"
@@ -94,22 +94,26 @@ msgstr ""
 msgid "Enable the plugin"
 msgstr ""
 
-#: classes/Options/General/class-filename-structure-option.php:100
+#: classes/Options/General/class-filename-structure-option.php:119
 msgid "Filename structure"
 msgstr ""
 
-#: classes/Options/General/class-filename-structure-option.php:101
+#: classes/Options/General/class-filename-structure-option.php:120
 msgid ""
 "Manages the filename structure using rules. If you want only the "
-"filename, leave it as <b>{filename}.</b>"
+"original filename, leave it as <b>{filename}.</b>"
 msgstr ""
 
-#: classes/Options/General/class-filename-structure-option.php:101
+#: classes/Options/General/class-filename-structure-option.php:120
 msgid "Rules available:"
 msgstr ""
 
-#: classes/Options/General/class-filename-structure-option.php:107
+#: classes/Options/General/class-filename-structure-option.php:126
 msgid "Character(s) used to separate rules"
+msgstr ""
+
+#: classes/Options/General/class-filename-structure-option.php:133
+msgid "Max length"
 msgstr ""
 
 #: classes/Options/General/class-gutenberg-title-fix-option.php:92
@@ -202,11 +206,11 @@ msgid "Converts filename to post title whenever it is possible"
 msgstr ""
 
 #: classes/Options/Rules/class-filename-option.php:394
-msgid "Besides whitespaces, converts the following characters to a dash."
+msgid "Besides whitespaces, converts the following characters to a dash"
 msgstr ""
 
 #: classes/Options/Rules/class-filename-option.php:394
-msgid "(Space separated)."
+msgid "(space separated)."
 msgstr ""
 
 #: classes/Options/Rules/class-filename-option.php:400

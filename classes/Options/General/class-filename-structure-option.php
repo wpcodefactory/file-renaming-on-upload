@@ -25,7 +25,7 @@ if ( ! class_exists( 'FROU\Options\General\Filename_Structure_Option' ) ) {
 		/**
 		 * Initializes.
 		 *
-		 * @version 2.0.0
+		 * @version 2.4.8
 		 * @since   2.0.0
 		 */
 		function init() {
