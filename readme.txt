@@ -2,10 +2,10 @@
 Contributors: karzin
 Tags: file rename, upload, renaming, file, rename, characters, accents
 Requires at least: 4.0.0
-Tested up to: 5.8
+Tested up to: 5.9
 Requires PHP: 5.3
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BAC8PT82YMTJL&lc=US&item_name=File%20Renaming%20on%20Upload&item_number=file%2drenaming%2don%2dupload&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Stable tag: 2.4.8
+Stable tag: 2.4.9
 License: GPLv2 or later	
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,7 +19,7 @@ This plugin will help you fix this problem by renaming these files on upload. It
 
 Besides that, it can improve your SEO adding some relevant info to your filename, like your domain name or the post title your file is attached on.
 
-Increase your control over your file names
+Increase your control over your file names.
 
 ### &#9989; Main Features ###
 
@@ -129,6 +129,10 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 3. Setup how the rules will work on your filename
 
 == Changelog ==
+
+= 2.4.9 - 2022/02/12 =
+* Improve "Convert characters to dash" option.
+* Tested up to: 5.9.
 
 = 2.4.8 - 2021/10/14 =
 * Add "Max length" option for "Filename structure".
