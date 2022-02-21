@@ -130,7 +130,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
-= 2.4.9 - 2022/02/12 =
+= 2.4.9 - 2022/02/21 =
 * Improve "Convert characters to dash" option.
 * Tested up to: 5.9.
 
