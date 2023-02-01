@@ -1,5 +1,5 @@
 === File Renaming on Upload ===
-Contributors: karzin
+Contributors: wpcodefactory, karzin
 Tags: file rename, upload, renaming, file, rename, characters, accents
 Requires at least: 4.0.0
 Tested up to: 6.1
