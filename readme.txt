@@ -2,12 +2,11 @@
 Contributors: karzin
 Tags: file rename, upload, renaming, file, rename, characters, accents
 Requires at least: 4.0.0
-Tested up to: 6.0
+Tested up to: 6.1
 Requires PHP: 5.3
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BAC8PT82YMTJL&lc=US&item_name=File%20Renaming%20on%20Upload&item_number=file%2drenaming%2don%2dupload&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Stable tag: 2.5.0
-License: GPLv2 or later	
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Stable tag: 2.5.1
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Fixes file uploads with accents and special characters by renaming them. It also improves your SEO.
 
@@ -129,6 +128,10 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 3. Setup how the rules will work on your filename
 
 == Changelog ==
+
+= 2.5.1 - 2023/02/01 =
+* Tested up to: 6.1.
+* Move to WPFactory.
 
 = 2.5.0 - 2022/08/12 =
 * Tested up to: 6.0.

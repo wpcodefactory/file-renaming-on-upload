@@ -4,7 +4,7 @@
  *
  * @version 2.3.0
  * @since   2.1.1
- * @author  Pablo S G Pacheco
+ * @author  WPFactory
  */
 
 namespace FROU\Options\Advanced;

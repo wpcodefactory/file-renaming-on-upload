@@ -4,7 +4,7 @@
  *
  * @version 2.2.3
  * @since   2.0.0
- * @author  Pablo S G Pacheco
+ * @author  WPFactory
  */
 
 namespace FROU\Admin_Pages;
