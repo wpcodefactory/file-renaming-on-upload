@@ -2,7 +2,7 @@
 Contributors: wpcodefactory, karzin
 Tags: file rename, upload, renaming, file, rename, characters, accents
 Requires at least: 4.0.0
-Tested up to: 6.1
+Tested up to: 6.2
 Requires PHP: 5.3
 Stable tag: 2.5.1
 License: GNU General Public License v3.0
@@ -128,6 +128,10 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 3. Setup how the rules will work on your filename
 
 == Changelog ==
+
+= 2.5.2 - 2023/05/18 =
+* Dev - Improve separator logic.
+* Tested up to: 6.2.
 
 = 2.5.1 - 2023/02/01 =
 * Tested up to: 6.1.

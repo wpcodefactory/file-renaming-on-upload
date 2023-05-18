@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core.
  *
- * @version 2.4.6
+ * @version 2.5.2
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -349,7 +349,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 *
 		 * It's the main function of this plugin.
 		 *
-		 * @version 2.4.0
+		 * @version 2.5.2
 		 * @since   2.0.0
 		 *
 		 * @param $filename
@@ -416,6 +416,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			// Applies plugin's rules
 			$filename = $filename_arr['structure']['rules'];
 			$filename = $this->remove_unused_rules( $filename, $filename_arr );
+			$filename = $this->remove_empty_rules( $filename, $filename_arr );
 			$filename = $this->add_separator( $filename, $filename_arr );
 			$filename = $this->translate_rules( $filename, $filename_arr );
 
@@ -427,6 +428,51 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			}
 			//error_log('FINAL: '.print_r($filename,true));
 			return $filename;
+		}
+
+		/**
+		 * Translates rules.
+		 *
+		 * @version 2.5.2
+		 * @since   2.5.2
+		 *
+		 * @param $filename
+		 * @param array $args
+		 *
+		 * @return mixed
+		 */
+		protected function remove_empty_rules( $filename, $args ) {
+			foreach ( $args['structure']['translation'] as $key => $translation ) {
+				if ( empty( $translation ) ) {
+					$filename = str_replace( "{" . $key . "}", $translation, $filename );
+				}
+			}
+			return $filename;
+		}
+
+		/**
+		 * try_to_get_natural_string.
+		 *
+		 * @version 2.5.2
+		 * @since   2.5.2
+		 *
+		 * @param $string
+		 * @param $info
+		 *
+		 * @return string
+		 */
+		public function try_to_get_natural_string( $string, $info ) {
+			if ( isset( $info['raw_string'] ) && ! empty( $info['raw_string'] ) ) {
+				$string = $info['raw_string'];
+			} elseif (
+				isset( $info['object'] ) &&
+				! empty( $object = $info['object'] )
+			) {
+				if ( is_a( $object, 'WP_Post' ) ) {
+					$string = $object->post_title;
+				}
+			}
+			return $string;
 		}
 
 		/**
