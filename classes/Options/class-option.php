@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Option.
  *
- * @version 2.5.2
+ * @version 2.5.3
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -108,14 +108,14 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 		/**
 		 * Add settings fields.
 		 *
-		 * @version 2.5.2
+		 * @version 2.5.3
 		 * @since   2.0.0
 		 */
 		public function add_fields( $fields, $section ) {
 			$this->fields = $fields;
 			foreach ( $this->fields as $k => $v ) {
 				if ( ! isset( $v['sanitize_callback'] ) ) {
-					switch ( $k['type'] ) {
+					switch ( $v['type'] ) {
 						case '':
 							$this->fields[ $k ]['sanitize_callback'] = 'sanitize_textarea_field';
 							break;
