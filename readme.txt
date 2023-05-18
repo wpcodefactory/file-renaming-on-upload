@@ -130,6 +130,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 == Changelog ==
 
 = 2.5.2 - 2023/05/18 =
+* Fix - Fields are not getting sanitized properly.
 * Dev - Improve separator logic.
 * Tested up to: 6.2.
 

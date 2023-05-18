@@ -342,24 +342,16 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 		/**
 		 * Displays a title field for a settings field.
 		 *
-		 * @version 1.0.0
+		 * @version 2.5.2
 		 * @since   1.0.0
 		 *
 		 * @param array $args settings field args
 		 */
 		function callback_title( $args ) {
-
-			$value       = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
-			$size        = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
-			$type        = isset( $args['type'] ) ? $args['type'] : 'text';
-			$placeholder = empty( $args['placeholder'] ) ? '' : ' placeholder="' . $args['placeholder'] . '"';
-			$std         = isset( $args['std'] ) ? $args['std'] : '';
-
-			//$html        = sprintf( '<input type="%1$s" class="%2$s-text" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"%6$s/>', $type, $size, $args['section'], $args['id'], $value, $placeholder );
+			$std  = isset( $args['std'] ) ? esc_html( $args['std'] ) : '';
 			$html = '<div class="frou-title-field">' . $std . '</div>';
 			$html .= $this->get_field_description( $args );
 			$html .= $this->get_field_description_full( $args );
-
 			echo $html;
 		}
 
