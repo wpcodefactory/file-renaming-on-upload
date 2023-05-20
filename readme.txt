@@ -129,6 +129,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
+= 2.5.4 - 2023/05/19 =
+* Dev - New filter: `frou_get_parent_post_title`.
+
 = 2.5.3 - 2023/05/18 =
 * Fix - PHP warning: Trying to access array offset on value of type int.
 

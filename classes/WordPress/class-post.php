@@ -1,8 +1,8 @@
 <?php
 /**
- * File renaming on upload - Wordpress Post
+ * File renaming on upload - WordPress Post.
  *
- * @version 2.3.8
+ * @version 2.5.4
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -21,7 +21,7 @@ if ( ! class_exists( 'FROU\WordPress\Post' ) ) {
 		/**
 		 * Get post slug
 		 *
-		 * @version 2.3.8
+		 * @version 2.5.4
 		 * @since   2.0.0
 		 *
 		 * @param null $post_obj
@@ -33,13 +33,16 @@ if ( ! class_exists( 'FROU\WordPress\Post' ) ) {
 				$post_obj = self::get_parent_post();
 			}
 			$post_title = '';
+			$info = array();
 			if ( $post_obj != null ) {
-				$url_decoded   = urldecode( $post_obj->post_title );
-				$new_post_name = remove_accents( $url_decoded );
-				$new_post_name = preg_replace( "/[^a-zA-Z0-9-_.\s]/", "", $new_post_name );
-				$post_title    = sanitize_title( $new_post_name );
+				$url_decoded        = urldecode( $post_obj->post_title );
+				$new_post_name      = remove_accents( $url_decoded );
+				$new_post_name      = preg_replace( "/[^a-zA-Z0-9-_.\s]/", "", $new_post_name );
+				$post_title         = sanitize_title( $new_post_name );
+				$info['raw_string'] = $post_obj->post_title;
+				$info['object']     = $post_obj;
 			}
-			return $post_title;
+			return apply_filters( 'frou_get_parent_post_title', $post_title, $info );
 		}
 
 		/**
