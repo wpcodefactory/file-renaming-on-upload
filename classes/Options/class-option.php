@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Option.
  *
- * @version 2.5.3
+ * @version 2.5.5
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -51,7 +51,7 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 		 * @version 2.0.0
 		 * @since   2.0.0
 		 *
-		 * @param array $args
+		 * @param   array  $args
 		 */
 		function __construct( $args = array() ) {
 			$args = wp_parse_args( $args, array(
@@ -59,7 +59,7 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 			) );
 
 			$this->section = $args['section'];
-			$this->add_fields(array(),$this->section);
+			$this->add_fields( array(), $this->section );
 		}
 
 		/**
@@ -78,9 +78,9 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 		 * @version 2.0.0
 		 * @since   2.0.0
 		 *
-		 * @param        $option
-		 * @param string $default
-		 * @param null   $section
+		 * @param           $option
+		 * @param   string  $default
+		 * @param   null    $section
 		 *
 		 * @return string
 		 */
@@ -108,7 +108,7 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 		/**
 		 * Add settings fields.
 		 *
-		 * @version 2.5.3
+		 * @version 2.5.5
 		 * @since   2.0.0
 		 */
 		public function add_fields( $fields, $section ) {
@@ -119,13 +119,36 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 						case '':
 							$this->fields[ $k ]['sanitize_callback'] = 'sanitize_textarea_field';
 							break;
+						case 'text':
+							$this->fields[ $k ]['sanitize_callback'] = 'sanitize_text_field';
+							break;
+						case 'multiselect':
+							$this->fields[ $k ]['sanitize_callback'] = array( $this, 'sanitize_multiselect' );
+							break;
 						default:
 							$this->fields[ $k ]['sanitize_callback'] = 'sanitize_text_field';
 					}
 
 				}
 			}
+
 			return $this->fields;
+		}
+
+		/**
+		 * sanitize_multiselect.
+		 *
+		 * @version 2.5.5
+		 * @since   2.0.0
+		 *
+		 * @param $value
+		 *
+		 * @return array
+		 */
+		function sanitize_multiselect( $value ) {
+			$value = array_map( 'sanitize_text_field', $value );
+
+			return $value;
 		}
 	}
 }
