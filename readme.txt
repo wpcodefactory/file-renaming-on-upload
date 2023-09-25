@@ -1,10 +1,10 @@
 === File Renaming on Upload ===
-Contributors: wpcodefactory, karzin, algoritmika, anbinder, omardabbas, kousikmukherjeeli
+Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
 Tags: file rename, upload, renaming, file, rename, characters, accents
 Requires at least: 4.0.0
-Tested up to: 6.2
+Tested up to: 6.3
 Requires PHP: 5.3
-Stable tag: 2.5.5
+Stable tag: 2.5.6
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -128,6 +128,10 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 3. Setup how the rules will work on your filename
 
 == Changelog ==
+
+= 2.5.6 - 2023/09/26 =
+* Tested up to: 6.3.
+* Update plugin icon, banner.
 
 = 2.5.5 - 2023/06/30 =
 * Fix - Sanitize multiselect fields properly.
