@@ -1,59 +1,187 @@
-=== File Renaming on Upload ===
+=== Rename Media Files: Improve Your WordPress SEO ===
 Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
-Tags: file rename, upload, renaming, file, rename, characters, accents
+Tags: rename, seo, media, renaming, characters
 Requires at least: 4.0.0
-Tested up to: 6.3
+Tested up to: 6.5
 Requires PHP: 5.3
-Stable tag: 2.5.6
+Stable tag: 2.5.7
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Fixes file uploads with accents and special characters by renaming them. It also improves your SEO.
+Enhance SEO and organize media effortlessly with Rename Media Files WordPress Plugin. Fix upload issues, santize & optimize filenames, and improve SEO seamlessly.
 
 == Description ==
 
-Have you ever had any problems uploading files with accents and some special characters to WordPress? Probably the answer is yes.
+> “One of the most important plugins on our site: Perfect plugin for our free stock photo website picjumbo. We’re using it for years to automatically rename our P001120.jpg photos to SEO-focused names like business-woman-using-a-computer-free-photo.jpg. This plugin really works! Thanks!” – ⭐⭐⭐⭐⭐  [viktorhanacek](https://wordpress.org/support/topic/one-of-the-most-important-plugins-on-our-site/)
 
-This plugin will help you fix this problem by renaming these files on upload. It will either convert these problematic characters or remove them.
+[Main Page](https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme?utm_source=wporg&utm_medium=organic&utm_campaign=readme?utm_source=wporg&utm_medium=organic&utm_campaign=readme "Main Page") | [Support Forum](https://wpfactory.com/support/item/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme?utm_source=wporg&utm_medium=organic&utm_campaign=readme?utm_source=wporg&utm_medium=organic&utm_campaign=readme "Support Forum") | [Documentation & How to](https://wpfactory.com/docs/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme?utm_source=wporg&utm_medium=organic&utm_campaign=readme?utm_source=wporg&utm_medium=organic&utm_campaign=readme "Documentation & How to")
 
-Besides that, it can improve your SEO adding some relevant info to your filename, like your domain name or the post title your file is attached on.
+The "Rename Media Files: Improve Your WordPress SEO" plugin will simplify the process of managing media file names (images, PDFs, etc) and metadata, ensuring a tidy and search engine-friendly media repository.
 
-Increase your control over your file names.
+If you're an SEO guru and would like to make a better website for search engines by focusing on Image SEO, or someone who enjoys their files to be perfectly organized, this plugin will turn your dreams into reality.
 
-### &#9989; Main Features ###
+The plugin comes with several features, like the ability to remove accents and special characters from filenames upon upload, rename files based on post titles, Site URL, or current date, and update file permalinks accordingly.
 
-* Remove accents and special characters from filenames on upload.
-* Rename files on upload based on post title.
-* Rename files on upload based on the Site URL.
-* Rename files on upload based on the current date.
-* Update file permalink based on file renaming.
+The Pro version goes much further, with features like manual filename and permalink editing, updating old media references in post content, and automatic alt tag generation, the possibilities for optimizing your media library are endless
 
-### &#127942; Pro Version ###
-Do you like the free version of this plugin? Imagine what the <strong>[Premium version](https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/ "File Renaming on Upload - Premium")</strong> can do for you. Take a look at some of its features:
+## 🚀 Main Features: FREE Version##
 
-* Edit filenames and permalinks manually.
-* Update old media.
-* Update media reference in post content on file renaming.
-* Rename filename extension from **jpeg to jpg**.
-* Update filename on **post update**.
-* Restrict file renaming by **user role**.
-* Restrict file renaming by **custom post type**.
-* Auto-fill file title based on **filename structure** option.
-* Auto-fill **ALT tag**.
-  * Update alt based on the **original filename**.
-  * Update alt based on the filename structure option.
-  * Update alt on filename update.
-  * Update alt on new attachment upload.
-* More **filename rules**:
-  * **Custom field:** Rename files based on **custom fields/post meta**.
-  * **Taxonomy:** Rename files based on taxonomy.
-  * **User ID**: Rename files based on current user id.
-  * **User Role**: Rename files based on current user role.
-  * **User Name**: Rename files based on user name.
-  * **Product SKU**: Rename files based on product SKU.
-  * **Post slug**: Rename files based on Post slug.
-  * **Post ID**: Rename files based on post ID.
-  * **Custom String**: Rename files based on a custom string.
+### 🚀 Remove Accents & Special Characters from Filenames on Upload ###
+
+Ensure clean and SEO-friendly filenames by automatically removing accents and special characters upon upload, this is very useful when you share these files on social media, so you have standard URL without non-friendly characters.
+
+**Example 1:**
+A file named "café.jpg" would be renamed to "cafe.jpg".
+
+**Example 2:**
+A file named "résumé.pdf" would be renamed to "resume.pdf".
+
+### 🚀 Rename Media on Upload Based on The Site URL ###
+
+Automatically rename uploaded files based on your site URL (domain name) to maintain consistency and relevance between your domain name, content, and media.
+
+**Example 1:**
+If your site URL is "example.com," and you uploaded an image named camera.jpg, you can automatically rename it to "example-com-camera.jpg".
+
+**Example 2:**
+You can append the site URL to other variables, like post name and/or file name, so for a site URL like "mywebsite.com" uploaded to a post named "how to create a site", a file might be renamed to "mywebsite-com-how-to-create-a-site.jpg".
+
+### 🚀 Rename Media on Upload Based on Post Title ###
+
+Automatically rename uploaded files based on the post title it was uploaded to, this helps in keeping your media & content aligned & consistent.
+
+**Example 1:**
+If you upload an image for a post titled "Exploring the Great Outdoors," the file could be renamed to "exploring-the-great-outdoors.jpg".
+
+**Example 2:**
+When images with identical names are uploaded to the same post, media name will be appended by a number, so in example 1 it will become "exploring-the-great-outdoors-1.jpg", and this can be customized as well.
+
+### 🚀 Rename Media on Upload Based on The Current Date ###
+
+Instead of the default categorization of media by WordPress (year & month), you can fully control what part of the date you want to include in your media names.
+
+**Example 1:**
+An image named "laptop-at-night.webp" uploaded on April 15, 2024, could be renamed to "laptop-at-night-2024-04-15.jpg".
+
+**Example 2:**
+You can go further and utilize other rules as well, so you can include site name, post title, file name, and finish it with a date, so you can have a file named "dog.jpg", uploaded to a post title "Nice Dogs", on a website named "Dogs for Life" and uploaded on May 28, 2024, the result file name could be "dogs-for-life-com-nice-dogs-dog-2024-05-28.jpg".
+
+### 🚀 Update Media Permalink Based on Media Rename ###
+
+Media file names might change, but permalinks don't (probably that's why they called so?), with this plugin you can maintain consistency between filenames and permalinks by automatically updating file permalinks based on media renaming actions.
+
+### 🚀 Convert Filename Characters to Lowercase ###
+
+Standardize all media & files characters on your website to lowercase for consistency, to ensure uniformity across your media library & reduce the risk of errors (if redirects weren't properly handled).
+
+### 🚀 Advanced File Filtering Options ###
+
+Customize file renaming behavior with advanced filtering options. Choose to ignore files with no extensions, specific file extensions, or filenames containing certain strings.
+
+> “Does the trick!: We needed a plugin to change the file name of images being uploaded to our site to a 100% predicable URL based on post slug and custom fields. This super simple plugin does the trick! The developer is super responsive and helpful too. We’re glad to have got the pro version.” – ⭐⭐⭐⭐⭐ [russs95](https://wordpress.org/support/topic/does-the-trick-86/)
+
+> “Very handy: Install the plugin, check some simple settings, forget about it because the job will now be done. Thank you very much! 🙂” – ⭐⭐⭐⭐⭐ [wpguillaume](https://wordpress.org/support/topic/very-handy-210/)
+
+## 🏆 Do More: PRO Version##
+
+For those who would like to go further and beyond, we have a premium version of [Rename Media Files: Improve Your WordPress SEO](https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme) plugin.
+
+### 🏆 Rename Media on Upload Based on ANYTHING ###
+
+Other than the above options, the plugin allows you to include any of these values in media file renaming rules:
+
+* Datetime
+* Upload date
+* Custom string
+* Post Slug
+* User ID
+* User Role
+* Username
+* Product SKU
+* Post ID
+
+### 🏆 Edit Media Filenames & Permalinks Manually ###
+
+Take full control over your media library by manually editing filenames and permalinks to match your specific requirements.
+
+### 🏆 Update Old/Previously Uploaded Media ###
+
+You liked how the plugin works and want to apply it for all previous files? Easily update all your media library by updating outdated media files with new filenames and permalinks.
+
+### 🏆 Update Media Reference in post content on file renaming ###
+
+Ensure a seamless integration between media files and post content with this option, so when a media file is renamed, this feature automatically updates all references to that file within post content and  prevents broken links or missing media elements in your website.
+
+### 🏆 Rename (convert) Media Images Extension from JPEG to JPG ###
+
+As "jpg" is the standard file extension for JPEG images, this feature automates converting images with  JPEG extension to the more widely recognized JPG format.
+ 
+### 🏆 Update Filename on Post Update ###
+
+Automatically synchronize media file names with post updates, so that you ensure media files remain aligned with their corresponding content.
+
+### 🏆 Restrict Media File Renaming by User Role ###
+
+Control access to media file renaming options & rules based on user roles of your website, so you guarantee that only authorized users have access to modification tools.
+
+### 🏆 Restrict Media File Renaming by Custom Post Type ###
+
+For those who want to have more control on media update based on the post type, the plugin allows media file renaming options to specific custom post types, such as: post, page, attachment, revision, nav_menu_item, product, product_variation, shop_order, shop_refund, and more!
+
+### 🏆 Images SEO: ALT Texts & Media Titles Naming Automation ###
+
+Take your Image SEO optimization to new levels by automatically generating ALT texts & images titles for images. 
+
+When uploading media files, the plugin offers options to auto-fill both ALT text and image title based on predefined settings or the original filename. For example, if you upload an image named "sunset.jpg," the ALT tag and media title can be auto-filled with "Sunset Image," ensuring that both are descriptive and optimized for accessibility and search engine visibility. 
+
+### 🏆 Compatibility with 3rd Party Plugins ###
+
+* [**Buddyboss**](https://www.buddyboss.com/platform/ "Buddyboss"): Disables profile upload renaming
+* [**Gravity forms**](https://www.buddyboss.com/platform/ "Gravity forms"): Handles issues with Gravity Forms entry exports
+* [**WPForms**](https://wpforms.com/ "WPForms"): Handles issues with WPForms file upload
+
+___
+## ❤️ User Testimonials: See What Others Are Saying!##
+
+> “Perfect plugin for our free stock photo website picjumbo. We're using it for years to automatically rename our P001120.jpg photos to SEO-focused names like business-woman-using-a-computer-free-photo.jpg. This plugin really works! Thanks!” – ⭐⭐⭐⭐⭐ [viktorhanacek](https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme)
+
+> “This is really well done. No more telling clients to sanitize file names upfront.
+It also creates the correct two-letter form of the German umlauts äöüß -> ae oe ue ss.
+Perfect!” – ⭐⭐⭐⭐⭐ [DuchschererM](https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme)
+
+> “superb plugin, fantastic support.” – ⭐⭐⭐⭐⭐ [amanrajveer](https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme)
+
+> “Must have plugin!: As WP-Expert i can tell you that this became one of my must have plugins! Wish i discovered this great plugin earlier! Perfect for converting customers weird filenames and improving search engine results.” – ⭐⭐⭐⭐⭐ [nicmare](https://wordpress.org/support/topic/must-have-plugin-231/)
+
+___
+## 💯 Why WPFactory?##
+
+* **Experience You Can Trust:** Over a decade in the business
+* **Wide Plugin Selection:** Offering 65+ unique and powerful plugins
+* **Highly-Rated Support:** Backed by hundreds of 5-star reviews
+* **Expert Team:** Dedicated developers and technical support at your service
+
+## What's Next? Discover More Plugins by WPFactory ##
+
+WPFactory has a diverse range of plugins tailored to enhance your experience:
+
+* [**EAN, UPC, ISBN Generator: Product Barcode Inventory for WooCommerce**](https://wpfactory.com/item/ean-barcodes-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**EAN, UPC, ISBN Generator: Product Barcode Inventory for WooCommerce***"): Manage GTINs (EAN, UPC, ISBN, etc.) effortlessly in WooCommerce! Create, save, search, and display EANs easily, with admin tools for bulk actions.
+ (**[Free version](https://wordpress.org/plugins/ean-for-woocommerce/ "Free version")**)
+
+* [**Wishlist for WooCommerce: Multi Wishlists per Customer**](https://wpfactory.com/item/wish-list-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Wishlist for WooCommerce: Multi Wishlists per Customer**"): Increase loyality & sales by allowing customers to add products to wishlist, create multiple wishlists, save them, share them with friends & family on your WooCommerce store (**[Free version](https://wordpress.org/plugins/wish-list-for-woocommerce/ "Free version")**)
+
+* [**Name Your Price: Make a Price Offer for WooCommerce**](https://wpfactory.com/item/price-offers-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "*Name Your Price: Make a Price Offer for WooCommerce**"): Allow customers to propose their own prices for your products, open a negotiation-driven shopping experience with options to accept, reject, or counter-offer. (**[Free version](https://wordpress.org/plugins/price-offerings-for-woocommerce/ "Free version")**)
+
+* [**Additional Custom Emails for WooCommerce**](https://wpfactory.com/item/custom-emails-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Additional Custom Emails for WooCommerce**"): Define & customize more emails based on triggers, choose from multiple recipient options, personalize content, and send emails manually.(**[Free version](https://wordpress.org/plugins/custom-emails-for-woocommerce/ "Free version")**)
+
+* [**Automated Order Status Controller for WooCommerce**](https://wpfactory.com/item/order-status-rules-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Automated Order Status Controller for WooCommerce**"): Change order statuses programmatically based on a wide range of conditions, like time intervals, user roles and more! (**[Free version](https://wordpress.org/plugins/order-status-rules-for-woocommerce/ "Free version")**)
+
+* [**Custom Order Status for WooCommerce**](https://wpfactory.com/item/order-status-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Custom Order Status for WooCommerce**"): Create & manage unlimited number of custom statuses, to reflect your business desires & needs. (**[Free version](https://wordpress.org/plugins/order-status-for-woocommerce/ "Free version")**)
+
+* [**Free Shipping Over Amount for WooCommerce**](https://wpfactory.com/item/amount-left-free-shipping-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Free Shipping Over Amount for WooCommerce**"): Encourage higher spending by offering free shipping based on amount, with a progress bar for customers (**[Free version](https://wordpress.org/plugins/amount-left-free-shipping-woocommerce/ "Free version")**)
+
+* [**Dynamic Pricing & Bulk Quantity Discounts**](https://wpfactory.com/item/product-price-by-quantity-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Dynamic Pricing & Bulk Quantity Discounts**"): Advanced dynamic pricing and discount rules for WooCommerce, encouraging bulk purchases and driving more sales (**[Free version](https://wordpress.org/plugins/wholesale-pricing-woocommerce/ "Free version")**)
+
 
 == Frequently Asked Questions ==
 = What are the available options provided by this plugin? =
@@ -128,6 +256,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 3. Setup how the rules will work on your filename
 
 == Changelog ==
+
+= 2.5.7 - 2024/04/25 =
+* Tested up to: 6.5.
 
 = 2.5.6 - 2023/09/26 =
 * Tested up to: 6.3.
