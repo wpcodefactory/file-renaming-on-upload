@@ -4,7 +4,7 @@ Tags: rename, seo, media, renaming, characters
 Requires at least: 4.0.0
 Tested up to: 6.5
 Requires PHP: 5.3
-Stable tag: 2.5.7
+Stable tag: 2.5.8
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,7 +14,7 @@ Enhance SEO and organize media effortlessly with Rename Media Files WordPress Pl
 
 > “One of the most important plugins on our site: Perfect plugin for our free stock photo website picjumbo. We’re using it for years to automatically rename our P001120.jpg photos to SEO-focused names like business-woman-using-a-computer-free-photo.jpg. This plugin really works! Thanks!” – ⭐⭐⭐⭐⭐  [viktorhanacek](https://wordpress.org/support/topic/one-of-the-most-important-plugins-on-our-site/)
 
-[Main Page](https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme?utm_source=wporg&utm_medium=organic&utm_campaign=readme?utm_source=wporg&utm_medium=organic&utm_campaign=readme "Main Page") | [Support Forum](https://wpfactory.com/support/item/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme?utm_source=wporg&utm_medium=organic&utm_campaign=readme?utm_source=wporg&utm_medium=organic&utm_campaign=readme "Support Forum") | [Documentation & How to](https://wpfactory.com/docs/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme?utm_source=wporg&utm_medium=organic&utm_campaign=readme?utm_source=wporg&utm_medium=organic&utm_campaign=readme "Documentation & How to")
+[Main Page](https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "Main Page") | [Support Forum](https://wpfactory.com/support/item/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "Support Forum") | [Documentation & How to](https://wpfactory.com/docs/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "Documentation & How to")
 
 The "Rename Media Files: Improve Your WordPress SEO" plugin will simplify the process of managing media file names (images, PDFs, etc) and metadata, ensuring a tidy and search engine-friendly media repository.
 
@@ -165,14 +165,11 @@ ___
 
 WPFactory has a diverse range of plugins tailored to enhance your experience:
 
-* [**EAN, UPC, ISBN Generator: Product Barcode Inventory for WooCommerce**](https://wpfactory.com/item/ean-barcodes-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**EAN, UPC, ISBN Generator: Product Barcode Inventory for WooCommerce***"): Manage GTINs (EAN, UPC, ISBN, etc.) effortlessly in WooCommerce! Create, save, search, and display EANs easily, with admin tools for bulk actions.
- (**[Free version](https://wordpress.org/plugins/ean-for-woocommerce/ "Free version")**)
+* [**Download Plugins and Themes from WordPress**](https://wpfactory.com/item/download-plugins-and-themes-from-dashboard-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Download Plugins and Themes from WordPress**"): Download installed plugins and themes in ZIP files directly from your WordPress admin dashboard, download any or all plugins & themes without FTP or cPanel access (**[Free version](https://wordpress.org/plugins/download-plugins-dashboard/ "Free version")**)
 
-* [**Wishlist for WooCommerce: Multi Wishlists per Customer**](https://wpfactory.com/item/wish-list-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Wishlist for WooCommerce: Multi Wishlists per Customer**"): Increase loyality & sales by allowing customers to add products to wishlist, create multiple wishlists, save them, share them with friends & family on your WooCommerce store (**[Free version](https://wordpress.org/plugins/wish-list-for-woocommerce/ "Free version")**)
+* [**Slugs Manager: Delete Old Permalinks from WordPress Database**](https://wpfactory.com/item/slugs-manager-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Slugs Manager: Delete Old Permalinks from WordPress Database**"): Scan & remove old or outdated slugs (permalinks) in Wordpress, keep your database optimized & your URLs SEO-friendly (**[Free version](https://wordpress.org/plugins/remove-old-slugspermalinks/ "Free version")**)
 
-* [**Name Your Price: Make a Price Offer for WooCommerce**](https://wpfactory.com/item/price-offers-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "*Name Your Price: Make a Price Offer for WooCommerce**"): Allow customers to propose their own prices for your products, open a negotiation-driven shopping experience with options to accept, reject, or counter-offer. (**[Free version](https://wordpress.org/plugins/price-offerings-for-woocommerce/ "Free version")**)
-
-* [**Additional Custom Emails for WooCommerce**](https://wpfactory.com/item/custom-emails-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Additional Custom Emails for WooCommerce**"): Define & customize more emails based on triggers, choose from multiple recipient options, personalize content, and send emails manually.(**[Free version](https://wordpress.org/plugins/custom-emails-for-woocommerce/ "Free version")**)
+* [**Back Button Widget**](https://wpfactory.com/item/back-button-widget-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "** Back Button Widget**"): A simple & customizable back button, add it to any WordPress page using shortcode or widget for enhanced user navigation experience and site accessibility. (**[Free version](https://wordpress.org/plugins/back-button-widget/ "Free version")**)
 
 * [**Automated Order Status Controller for WooCommerce**](https://wpfactory.com/item/order-status-rules-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Automated Order Status Controller for WooCommerce**"): Change order statuses programmatically based on a wide range of conditions, like time intervals, user roles and more! (**[Free version](https://wordpress.org/plugins/order-status-rules-for-woocommerce/ "Free version")**)
 
@@ -256,6 +253,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 3. Setup how the rules will work on your filename
 
 == Changelog ==
+
+= 2.5.8 - 2024/05/16 =
+* readme.txt content update.
 
 = 2.5.7 - 2024/04/25 =
 * Tested up to: 6.5.
