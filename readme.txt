@@ -254,6 +254,10 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
+= 2.5.9 - 2024/08/07 =
+* Fix - Fixed slow query on admin pages.
+* Fix - Fixed multicheck settings.
+
 = 2.5.8 - 2024/05/16 =
 * readme.txt content update.
 

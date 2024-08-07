@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Option.
  *
- * @version 2.5.5
+ * @version 2.5.9
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -124,6 +124,8 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 							break;
 						case 'multiselect':
 							$this->fields[ $k ]['sanitize_callback'] = array( $this, 'sanitize_multiselect' );
+						case 'multicheck':
+							$this->fields[ $k ]['sanitize_callback'] = array( $this, 'sanitize_multicheck' );
 							break;
 						default:
 							$this->fields[ $k ]['sanitize_callback'] = 'sanitize_text_field';
@@ -133,6 +135,25 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 			}
 
 			return $this->fields;
+		}
+
+		/**
+		 * sanitize_multicheck.
+		 *
+		 * @version 2.5.9
+		 * @since   2.5.9
+		 *
+		 * @param $value
+		 *
+		 * @return array
+		 */
+		function sanitize_multicheck( $value ) {
+			$result = array();
+			foreach ( $value as $k => $v ) {
+				$result[ sanitize_text_field( $k ) ] = sanitize_text_field( $v );
+			}
+
+			return $result;
 		}
 
 		/**
