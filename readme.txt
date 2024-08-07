@@ -2,9 +2,9 @@
 Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
 Tags: rename, seo, media, renaming, characters
 Requires at least: 4.0.0
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 5.3
-Stable tag: 2.5.8
+Stable tag: 2.5.9
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -257,6 +257,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 = 2.5.9 - 2024/08/07 =
 * Fix - Fixed slow query on admin pages.
 * Fix - Fixed multicheck settings.
+* Tested up to: 6.6.
 
 = 2.5.8 - 2024/05/16 =
 * readme.txt content update.
