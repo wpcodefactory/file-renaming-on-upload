@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Filename Option.
  *
- * @version 2.4.5
+ * @version 2.6.0
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -21,16 +21,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 	class Post_Title_Option extends Rule_Option {
 
-		//public $current_filename_modified;
-		//public $current_filename_original;
-
 		/**
 		 * Constructor.
 		 *
 		 * @version 2.0.0
 		 * @since   2.0.0
 		 *
-		 * @param array $args
+		 * @param   array  $args
 		 */
 		function __construct( array $args = array() ) {
 			parent::__construct( $args );
@@ -45,13 +42,13 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 		 */
 		function init() {
 			parent::init();
-			add_filter( 'frou_sanitize_file_name', array( $this, 'frou_sanitize_file_name' ), 11 );
+			add_filter( 'frou_sanitize_file_name', array( $this, 'frou_sanitize_file_name' ), 50 );
 		}
 
 		/**
 		 * Inserts post title on 'frou_sanitize_file_name' filter.
 		 *
-		 * @version 2.0.0
+		 * @version 2.6.0
 		 * @since   2.0.0
 		 *
 		 * @param $filename_infs
@@ -68,6 +65,13 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 				$post_slug = Post::get_parent_post_title();
 				if ( ! empty( $post_slug ) ) {
 					$filename_infs['structure']['translation'][ $this->option_id ] = $post_slug;
+				} else {
+					if (
+						filter_var( $this->get_option( 'use_filename_on_empty_title', 'on' ), FILTER_VALIDATE_BOOLEAN ) &&
+						! empty( $filename = $filename_infs['structure']['translation']['filename'] ?? null )
+					) {
+						$filename_infs['structure']['translation'][ $this->option_id ] = $filename;
+					}
 				}
 			}
 
@@ -77,7 +81,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 		/**
 		 * Adds settings fields.
 		 *
-		 * @version 2.0.0
+		 * @version 2.6.0
 		 * @since   2.0.0
 		 *
 		 * @param $fields
@@ -88,12 +92,19 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 		public function add_fields( $fields, $section ) {
 			$new_options = array(
 				array(
-					'name'      => $this->option_id,
-					'label'     => __( 'Post title', 'file-renaming-on-upload' ),
-					'desc'      => __( 'Enables post title rule', 'file-renaming-on-upload' ) . ' - ' . '<strong>{' . $this->option_id . '}</strong>',
+					'name'           => $this->option_id,
+					'label'          => __( 'Post title', 'file-renaming-on-upload' ),
+					'desc'           => __( 'Enables post title rule', 'file-renaming-on-upload' ) . ' - ' . '<strong>{' . $this->option_id . '}</strong>',
 					'desc_secondary' => __( 'Adds post title whenever it is possible', 'file-renaming-on-upload' ),
-					'type'      => 'checkbox',
-					'default'   => 'on',
+					'type'           => 'checkbox',
+					'default'        => 'on',
+				),
+				array(
+					'name'           => 'use_filename_on_empty_title',
+					'desc'           => __( 'Use filename on empty title', 'file-renaming-on-upload' ),
+					'desc_secondary' => sprintf( __( 'If the post title is empty, it uses the same value from the %s rule.', 'file-renaming-on-upload' ), '<code>{filename}</code>' ),
+					'type'           => 'checkbox',
+					'default'        => 'on',
 				),
 				array(
 					'name' => 'posttitle_separator',

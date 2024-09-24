@@ -3,7 +3,7 @@
 Plugin Name: File Renaming on upload
 Plugin URI: https://wordpress.org/plugins/file-renaming-on-upload/
 Description: Fixes file uploads with accents and special characters by renaming them. It also improves your SEO.
-Version: 2.5.9
+Version: 2.6.0
 Text Domain: file-renaming-on-upload
 Domain Path: /languages
 Author: WPFactory
@@ -79,18 +79,18 @@ register_activation_hook( __FILE__, function(){
 });
 
 // Set transient on update
-add_action( 'upgrader_process_complete', function($upgrader_object, $options){
+add_action( 'upgrader_process_complete', function ( $upgrader_object, $options ) {
 	$current_plugin_path_name = plugin_basename( __FILE__ );
-	if ($options['action'] == 'update' && $options['type'] == 'plugin' ){
-		if (isset($options['plugins']) && is_array($options['plugins'])){
-			foreach($options['plugins'] as $each_plugin){
-				if ($each_plugin==$current_plugin_path_name){             
+	if ( $options['action'] == 'update' && $options['type'] == 'plugin' ) {
+		if ( isset( $options['plugins'] ) && is_array( $options['plugins'] ) ) {
+			foreach ( $options['plugins'] as $each_plugin ) {
+				if ( $each_plugin == $current_plugin_path_name ) {
 					set_transient( 'frou_activated_or_updated', true, 30 );
 				}
 			}
 		}
 	}
-},10, 2);
+}, 10, 2 );
 
 add_action( 'plugins_loaded', function () {
 	file_renaming_on_upload_autoload();
