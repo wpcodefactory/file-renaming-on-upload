@@ -254,6 +254,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
+= 2.6.1 - 2024/10/07 =
+* Fix - Fixed copyright.
+
 = 2.6.0 - 2024/09/24 =
 * Dev - Rules - Post title - New option added to use the `{filename}` if the post title is empty.
 
