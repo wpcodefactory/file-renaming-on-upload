@@ -87,7 +87,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**
 		 * Initializes.
 		 *
-		 * @version 2.4.5
+		 * @version 2.6.1
 		 * @since   2.0.0
 		 *
 		 * @param array $args
