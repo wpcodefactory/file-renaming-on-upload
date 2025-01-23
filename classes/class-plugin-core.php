@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core.
  *
- * @version 2.5.2
+ * @version 2.6.1
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -12,11 +12,10 @@ namespace FROU;
 use FROU\Admin_Pages\Sections\Remove_Section;
 use FROU\Admin_Pages\Settings_Page;
 use FROU\Functions\Functions;
-
 use FROU\Options\Advanced\Ignore_Empty_Extensions_Option;
-use FROU\Options\General\Enable_Option;
 use FROU\Options\Advanced\Ignore_Extensions_Option;
 use FROU\Options\Advanced\Ignore_Filenames_Option;
+use FROU\Options\General\Enable_Option;
 use FROU\Options\Options;
 use FROU\WeDevs\Settings_Api;
 use FROU\WordPress\Plugin;
@@ -65,6 +64,15 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		protected $options;
 
 		/**
+		 * Post Utils.
+		 *
+		 * @since 2.6.1.
+		 *
+		 * @var Post_Utils
+		 */
+		public $post_utils;
+
+		/**
 		 * instance.
 		 *
 		 * @version 1.0.0
@@ -86,6 +94,11 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 */
 		public function init( $args = array() ) {
 			parent::init( $args );
+
+			// Post Utils.
+			$this->post_utils = new Post_Utils();
+			$this->post_utils->init();
+
 			add_action( 'init', array( $this, 'handle_settings_page' ) );
 			add_action( 'init', array( $this, 'add_options' ), 1 );
 			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename' ), 10, 2 );
@@ -357,9 +370,9 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 * @return mixed|string
 		 */
 		public function sanitize_filename( $filename, $filename_raw ) {
-			//error_log('---');
-			//error_log(print_r($_REQUEST,true));
-			//error_log(print_r($filename,true));
+			/*error_log('--- sanitize_filename ---');
+			error_log(print_r($_REQUEST,true));
+			error_log(print_r($filename,true));*/
 
 			//Does nothing if plugin is not enabled
 			$option = new Enable_Option( array( 'section' => 'frou_general_opt' ) );

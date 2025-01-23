@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Filename Option.
  *
- * @version 2.4.9
+ * @version 2.6.1
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -12,6 +12,7 @@ namespace FROU\Options\Rules;
 use FROU\Options\Option;
 use FROU\Options\Rule_Option;
 use FROU\WordPress\Post;
+use function FROU\file_renaming_on_upload;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -256,7 +257,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Converts filename to posttitle.
 		 *
-		 * @version 2.0.9
+		 * @version 2.6.1
 		 * @since   2.0.0
 		 *
 		 * @param $filename_infs
@@ -272,8 +273,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 			if ( ! is_array( $convert ) || ! in_array( $this->option_convert_posttitle, $convert ) ) {
 				return $filename_infs;
 			}
-
-			$post_slug = Post::get_parent_post_title();
+			$post_slug = file_renaming_on_upload()->post_utils->get_media_post_slug();
 			if ( empty( $post_slug ) ) {
 				return $filename_infs;
 			}
