@@ -140,27 +140,6 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		}
 
 		/**
-		 * move_wc_settings_tab_to_wpfactory_submenu.
-		 *
-		 * @version 3.5.3
-		 * @since   3.5.1
-		 *
-		 * @return void
-		 */
-		/*function move_wc_settings_tab_to_wpfactory_menu() {
-			if ( ! is_admin() ) {
-				return;
-			}
-			// WC Settings tab as WPFactory submenu item.
-			$wpf_admin_menu = \WPFactory\WPFactory_Admin_Menu\WPFactory_Admin_Menu::get_instance();
-			$wpf_admin_menu->move_wc_settings_tab_to_wpfactory_menu( array(
-				'wc_settings_tab_id' => 'alg_wc_cost_of_goods',
-				'menu_title'         => __( 'File Renaming', 'cost-of-goods-for-woocommerce' ),
-				'page_title'         => __( 'File Renaming on Upload', 'cost-of-goods-for-woocommerce' ),
-			) );
-		}*/
-
-		/**
 		 * get_current_media_id.
 		 *
 		 * @version 2.4.6

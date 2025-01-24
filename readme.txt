@@ -4,7 +4,7 @@ Tags: rename, seo, media, renaming, characters
 Requires at least: 4.0.0
 Tested up to: 6.7
 Requires PHP: 5.3
-Stable tag: 2.6.0
+Stable tag: 2.6.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -254,7 +254,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
-= 2.6.1 - 2025/01/23 =
+= 2.6.1 - 2025/01/24=
 * Dev - Improved post id detection.
 * Dev - Add Cross-selling library.
 * Dev - Move settings to WPFactory menu.
