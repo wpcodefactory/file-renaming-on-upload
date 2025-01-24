@@ -48,7 +48,7 @@ if ( ! function_exists( '\FROU\file_renaming_on_upload' ) ) {
 	/**
 	 * Returns the main instance of Plugin_Core
 	 *
-	 * @version 2.1.2
+	 * @version 2.6.1
 	 * @since   2.1.2
 	 * @return  Plugin_Core
 	 */
@@ -58,7 +58,7 @@ if ( ! function_exists( '\FROU\file_renaming_on_upload' ) ) {
 			'plugin_file_path' => __FILE__,
 			'action_links'     => array(
 				array(
-					'url'  => admin_url( 'options-general.php?page=file-renaming-on-upload' ),
+					'url'  => admin_url( 'admin.php?page=file-renaming-on-upload' ),
 					'text' => __( 'Settings', 'file-renaming-on-upload' ),
 				),
 			),

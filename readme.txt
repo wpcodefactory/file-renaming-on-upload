@@ -256,6 +256,8 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 = 2.6.1 - 2025/01/23 =
 * Dev - Improved post id detection.
+* Dev - Add Cross-selling library.
+* Dev - Move settings to WPFactory menu.
 * Fix - Fixed copyright.
 
 = 2.6.0 - 2024/09/24 =

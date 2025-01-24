@@ -5,6 +5,14 @@
     {
       "type": "vcs",
       "url": "https://github.com/wpcodefactory/wpfactory-promoting-notice"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/wpcodefactory/wpfactory-cross-selling"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/wpcodefactory/wpfactory-admin-menu"
     }
   ],
   "keywords": [
@@ -26,6 +34,8 @@
   "require": {
     "wpfactory/wpfactory-promoting-notice": "*",
     "tareq1988/wordpress-settings-api-class": "dev-master",
-    "pablo-sg-pacheco/wp-namespace-autoloader": "dev-master"
+    "pablo-sg-pacheco/wp-namespace-autoloader": "dev-master",
+    "wpfactory/wpfactory-cross-selling": "*",
+    "wpfactory/wpfactory-admin-menu": "*"
   }
 }

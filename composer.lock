@@ -1,9 +1,14 @@
 {
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "bde4e4181f3b4c5b4b8746fd6fc31a8f",
     "packages": [
         {
             "name": "pablo-sg-pacheco/wp-namespace-autoloader",
             "version": "dev-master",
-            "version_normalized": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pablo-sg-pacheco/wp-namespace-autoloader.git",
@@ -25,7 +30,6 @@
                 "squizlabs/php_codesniffer": "dev-master",
                 "wp-coding-standards/wpcs": "^2.3"
             },
-            "time": "2022-12-02T14:49:51+00:00",
             "default-branch": true,
             "type": "library",
             "extra": {
@@ -35,7 +39,6 @@
                     }
                 }
             },
-            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Pablo_Pacheco\\WP_Namespace_Autoloader\\": "src"
@@ -63,12 +66,11 @@
                 "issues": "https://github.com/pablo-sg-pacheco/wp-namespace-autoloader/issues",
                 "source": "https://github.com/pablo-sg-pacheco/wp-namespace-autoloader/tree/master"
             },
-            "install-path": "../pablo-sg-pacheco/wp-namespace-autoloader"
+            "time": "2022-12-02T14:49:51+00:00"
         },
         {
             "name": "tareq1988/wordpress-settings-api-class",
             "version": "dev-master",
-            "version_normalized": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tareq1988/wordpress-settings-api-class.git",
@@ -83,10 +85,8 @@
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2018-05-01T19:33:47+00:00",
             "default-branch": true,
             "type": "library",
-            "installation-source": "dist",
             "autoload": {
                 "classmap": [
                     "src/"
@@ -115,12 +115,11 @@
                 "issues": "https://github.com/tareq1988/wordpress-settings-api-class/issues",
                 "source": "https://github.com/tareq1988/wordpress-settings-api-class/tree/master"
             },
-            "install-path": "../tareq1988/wordpress-settings-api-class"
+            "time": "2018-05-01T19:33:47+00:00"
         },
         {
             "name": "wpfactory/wpfactory-admin-menu",
             "version": "v1.0.3",
-            "version_normalized": "1.0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpcodefactory/wpfactory-admin-menu.git",
@@ -135,9 +134,7 @@
             "require-dev": {
                 "wp-cli/wp-cli-bundle": "*"
             },
-            "time": "2024-10-14T14:01:02+00:00",
             "type": "library",
-            "installation-source": "dist",
             "autoload": {
                 "classmap": [
                     "src/php/"
@@ -166,12 +163,11 @@
                 "source": "https://github.com/wpcodefactory/wpfactory-admin-menu/tree/v1.0.3",
                 "issues": "https://github.com/wpcodefactory/wpfactory-admin-menu/issues"
             },
-            "install-path": "../wpfactory/wpfactory-admin-menu"
+            "time": "2024-10-14T14:01:02+00:00"
         },
         {
             "name": "wpfactory/wpfactory-cross-selling",
             "version": "v1.0.3",
-            "version_normalized": "1.0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpcodefactory/wpfactory-cross-selling.git",
@@ -189,9 +185,7 @@
             "require-dev": {
                 "wp-cli/wp-cli-bundle": "*"
             },
-            "time": "2024-10-31T15:55:35+00:00",
             "type": "library",
-            "installation-source": "dist",
             "autoload": {
                 "classmap": [
                     "src/php/"
@@ -220,12 +214,11 @@
                 "source": "https://github.com/wpcodefactory/wpfactory-cross-selling/tree/v1.0.3",
                 "issues": "https://github.com/wpcodefactory/wpfactory-cross-selling/issues"
             },
-            "install-path": "../wpfactory/wpfactory-cross-selling"
+            "time": "2024-10-31T15:55:35+00:00"
         },
         {
             "name": "wpfactory/wpfactory-promoting-notice",
             "version": "v1.0.6",
-            "version_normalized": "1.0.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpcodefactory/wpfactory-promoting-notice.git",
@@ -237,9 +230,7 @@
                 "reference": "9b0dc91c32662ce9040b36a4b40827454e806856",
                 "shasum": ""
             },
-            "time": "2023-03-09T14:03:49+00:00",
             "type": "library",
-            "installation-source": "dist",
             "autoload": {
                 "classmap": [
                     "src/php/"
@@ -252,9 +243,19 @@
                 "source": "https://github.com/wpcodefactory/wpfactory-promoting-notice/tree/v1.0.6",
                 "issues": "https://github.com/wpcodefactory/wpfactory-promoting-notice/issues"
             },
-            "install-path": "../wpfactory/wpfactory-promoting-notice"
+            "time": "2023-03-09T14:03:49+00:00"
         }
     ],
-    "dev": true,
-    "dev-package-names": []
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "tareq1988/wordpress-settings-api-class": 20,
+        "pablo-sg-pacheco/wp-namespace-autoloader": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
 }

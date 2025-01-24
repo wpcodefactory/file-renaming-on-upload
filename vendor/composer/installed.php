@@ -1,53 +1,72 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'name' => 'wpfactory/file-renaming-on-upload',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '425cd083c94841a8808c808ae4106acb30e8977e',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
     ),
-    'reference' => 'c7981dd4c22af058ed06471fbd5f3c1ad4acb9f7',
-    'name' => 'pablo-sg-pacheco/file-renaming-on-upload',
-  ),
-  'versions' => 
-  array (
-    'pablo-sg-pacheco/file-renaming-on-upload' => 
-    array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'c7981dd4c22af058ed06471fbd5f3c1ad4acb9f7',
+    'versions' => array(
+        'pablo-sg-pacheco/wp-namespace-autoloader' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '069163f215743c83381613749ace0c5a642720b4',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../pablo-sg-pacheco/wp-namespace-autoloader',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => false,
+        ),
+        'tareq1988/wordpress-settings-api-class' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '243544eeb83be10e629dd89eb487b96e4170ed57',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tareq1988/wordpress-settings-api-class',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => false,
+        ),
+        'wpfactory/file-renaming-on-upload' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '425cd083c94841a8808c808ae4106acb30e8977e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'wpfactory/wpfactory-admin-menu' => array(
+            'pretty_version' => 'v1.0.3',
+            'version' => '1.0.3.0',
+            'reference' => 'fe48c4100a6b436a3dd39308814887119063c140',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../wpfactory/wpfactory-admin-menu',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'wpfactory/wpfactory-cross-selling' => array(
+            'pretty_version' => 'v1.0.3',
+            'version' => '1.0.3.0',
+            'reference' => 'd37c73013e897d3ce3db05b97046b30fdd2fd403',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../wpfactory/wpfactory-cross-selling',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'wpfactory/wpfactory-promoting-notice' => array(
+            'pretty_version' => 'v1.0.6',
+            'version' => '1.0.6.0',
+            'reference' => '9b0dc91c32662ce9040b36a4b40827454e806856',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../wpfactory/wpfactory-promoting-notice',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
     ),
-    'pablo-sg-pacheco/wp-namespace-autoloader' => 
-    array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
-      'aliases' => 
-      array (
-        0 => '9999999-dev',
-      ),
-      'reference' => '015c9654459fd267cf12fa7846d3bf36b11c3bd7',
-    ),
-    'tareq1988/wordpress-settings-api-class' => 
-    array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
-      'aliases' => 
-      array (
-        0 => '9999999-dev',
-      ),
-      'reference' => '243544eeb83be10e629dd89eb487b96e4170ed57',
-    ),
-    'wpfactory/wpfactory-promoting-notice' => 
-    array (
-      'pretty_version' => '1.0.5',
-      'version' => '1.0.5.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '4d248f9ec4755fe6a8fc5ac0e67a098ac6e01f37',
-    ),
-  ),
 );

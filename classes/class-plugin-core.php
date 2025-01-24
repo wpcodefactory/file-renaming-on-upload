@@ -19,6 +19,7 @@ use FROU\Options\General\Enable_Option;
 use FROU\Options\Options;
 use FROU\WeDevs\Settings_Api;
 use FROU\WordPress\Plugin;
+use WPFactory\WPFactory_Admin_Menu\WPFactory_Admin_Menu;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -99,6 +100,12 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			$this->post_utils = new Post_Utils();
 			$this->post_utils->init();
 
+			// Adds cross-selling library.
+			$this->add_cross_selling_library();
+
+			// WPFactory admin menu.
+			WPFactory_Admin_Menu::get_instance();
+
 			add_action( 'init', array( $this, 'handle_settings_page' ) );
 			add_action( 'init', array( $this, 'add_options' ), 1 );
 			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename' ), 10, 2 );
@@ -113,6 +120,45 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			//add_action('wp_insert_post',array($this,'insert_post'));
 			//add_filter('wp_insert_attachment_data',array($this,'wp_insert_attachment_data'),10,3);
 		}
+
+		/**
+		 * add_cross_selling_library.
+		 *
+		 * @version 3.5.1
+		 * @since   3.5.1
+		 *
+		 * @return void
+		 */
+		function add_cross_selling_library(){
+			if ( ! is_admin() ) {
+				return;
+			}
+			// Cross-selling library.
+			$cross_selling = new \WPFactory\WPFactory_Cross_Selling\WPFactory_Cross_Selling();
+			$cross_selling->setup( array( 'plugin_file_path'   => $this->args['plugin_file_path'] ) );
+			$cross_selling->init();
+		}
+
+		/**
+		 * move_wc_settings_tab_to_wpfactory_submenu.
+		 *
+		 * @version 3.5.3
+		 * @since   3.5.1
+		 *
+		 * @return void
+		 */
+		/*function move_wc_settings_tab_to_wpfactory_menu() {
+			if ( ! is_admin() ) {
+				return;
+			}
+			// WC Settings tab as WPFactory submenu item.
+			$wpf_admin_menu = \WPFactory\WPFactory_Admin_Menu\WPFactory_Admin_Menu::get_instance();
+			$wpf_admin_menu->move_wc_settings_tab_to_wpfactory_menu( array(
+				'wc_settings_tab_id' => 'alg_wc_cost_of_goods',
+				'menu_title'         => __( 'File Renaming', 'cost-of-goods-for-woocommerce' ),
+				'page_title'         => __( 'File Renaming on Upload', 'cost-of-goods-for-woocommerce' ),
+			) );
+		}*/
 
 		/**
 		 * get_current_media_id.

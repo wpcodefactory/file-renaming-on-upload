@@ -122,10 +122,21 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		 * @since   2.0.0
 		 */
 		function admin_menu() {
-			add_options_page( __('File renaming','file-renaming-on-upload'), __('File renaming','file-renaming-on-upload'), 'edit_users', 'file-renaming-on-upload', array(
+			//WPFactory_Admin_Menu::get_instance()->get_menu_slug()
+			/*add_options_page( __('File renaming','file-renaming-on-upload'), __('File renaming','file-renaming-on-upload'), 'edit_users', 'file-renaming-on-upload', array(
 				$this,
 				'plugin_page',
-			) );
+			) );*/
+			$admin_menu = \WPFactory\WPFactory_Admin_Menu\WPFactory_Admin_Menu::get_instance();
+			\add_submenu_page(
+				$admin_menu->get_menu_slug(),
+				__( 'File Renaming', 'file-renaming-on-upload' ),
+				__( 'File Renaming', 'file-renaming-on-upload' ),
+				class_exists( 'WooCommerce' ) ? 'manage_woocommerce' : 'manage_options',
+				'file-renaming-on-upload',
+				array( $this, 'plugin_page' ),
+				30
+			);
 		}
 
 		/**
@@ -136,7 +147,7 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		 */
 		function plugin_page() {
 			echo '<div class="wrap">';
-			echo '<h2>'.__('File Renaming on upload','file-renaming-on-upload').'</h2>';
+			echo '<h2>'.__('File Renaming on Upload','file-renaming-on-upload').'</h2>';
 			$this->settings_api->show_navigation();
 			do_action('frou_admin_notices');
 			$this->settings_api->show_forms();
