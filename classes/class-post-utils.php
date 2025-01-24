@@ -79,14 +79,13 @@ if ( ! class_exists( 'FROU\Post_Utils' ) ) {
 		 * @return int|mixed|null
 		 */
 		function get_current_media_post_id() {
-			if ( null !== $this->current_media_post_id ) {
-				return $this->current_media_post_id;
-			}
-			$this->current_media_post_id = $this->get_post_id_from_query_string();
-			if ( empty( $this->current_media_post_id ) ) {
-				global $post;
-				if ( ! empty( $post ) && is_a( $post, 'WP_Post' ) ) {
-					$this->current_media_post_id = $post->ID;
+			if ( null === $this->current_media_post_id ) {
+				$this->current_media_post_id = $this->get_post_id_from_query_string();
+				if ( empty( $this->current_media_post_id ) ) {
+					global $post;
+					if ( ! empty( $post ) && is_a( $post, 'WP_Post' ) ) {
+						$this->current_media_post_id = $post->ID;
+					}
 				}
 			}
 
@@ -102,16 +101,15 @@ if ( ! class_exists( 'FROU\Post_Utils' ) ) {
 		 * @return array|false|mixed|\WP_Post|null
 		 */
 		function get_current_media_post() {
-			if ( null !== $this->current_media_post ) {
-				return $this->current_media_post;
+			if ( null === $this->current_media_post ) {
+				$current_post_id          = $this->get_current_media_post_id();
+				$this->current_media_post = get_post( $current_post_id );
+				if ( ! is_a( $this->current_media_post, 'WP_Post' ) ) {
+					$this->current_media_post = false;
+				}
 			}
-			$current_post_id          = $this->get_current_media_post_id();
-			$this->current_media_post = get_post( $current_post_id );
-			if ( is_a( $this->current_media_post, 'WP_Post' ) ) {
-				return $this->current_media_post;
-			} else {
-				return false;
-			}
+
+			return $this->current_media_post;
 		}
 
 		/**
@@ -132,7 +130,6 @@ if ( ! class_exists( 'FROU\Post_Utils' ) ) {
 				$new_post_name = remove_accents( $url_decoded );
 				$new_post_name = preg_replace( "/[^a-zA-Z0-9-_.\s]/", "", $new_post_name );
 				$post_slug     = sanitize_title( $new_post_name );
-				//$info['raw_string'] = $the_post->post_title;
 			}
 
 			return apply_filters( 'frou_get_media_post_slug', $post_slug );
