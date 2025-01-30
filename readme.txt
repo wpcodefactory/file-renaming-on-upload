@@ -4,7 +4,7 @@ Tags: rename, seo, media, renaming, characters
 Requires at least: 4.0.0
 Tested up to: 6.7
 Requires PHP: 5.3
-Stable tag: 2.6.2
+Stable tag: 2.6.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -253,6 +253,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 3. Setup how the rules will work on your filename
 
 == Changelog ==
+
+= 2.6.3 - 2025/01/30 =
+* Fix - Fixed current media post detection.
 
 = 2.6.2 - 2025/01/27 =
 * Fix - Fixed empty settings page.

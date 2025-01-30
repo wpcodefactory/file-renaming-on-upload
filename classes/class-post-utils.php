@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - WordPress Post Utils.
  *
- * @version 2.6.1
+ * @version 2.6.3
  * @since   2.6.1
  * @author  WPFactory
  */
@@ -95,18 +95,16 @@ if ( ! class_exists( 'FROU\Post_Utils' ) ) {
 		/**
 		 * get_current_media_post.
 		 *
-		 * @version 2.6.1
+		 * @version 2.6.3
 		 * @since   2.6.1
 		 *
 		 * @return array|false|mixed|\WP_Post|null
 		 */
 		function get_current_media_post() {
-			if ( null === $this->current_media_post ) {
-				$current_post_id          = $this->get_current_media_post_id();
-				$this->current_media_post = get_post( $current_post_id );
-				if ( ! is_a( $this->current_media_post, 'WP_Post' ) ) {
-					$this->current_media_post = false;
-				}
+			$current_post_id          = $this->get_current_media_post_id();
+			$this->current_media_post = get_post( $current_post_id );
+			if ( ! is_a( $this->current_media_post, 'WP_Post' ) ) {
+				$this->current_media_post = false;
 			}
 
 			return $this->current_media_post;
