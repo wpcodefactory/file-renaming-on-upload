@@ -254,7 +254,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
-= 2.6.4 - 2025/02/14 =
+= 2.6.4 - 2025/02/15 =
 * Fix - Improve settings.
 
 = 2.6.3 - 2025/01/30 =
