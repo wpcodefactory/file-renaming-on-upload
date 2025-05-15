@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: File Renaming on upload
+Plugin Name: Rename Media Files: Improve Your WordPress SEO
 Plugin URI: https://wordpress.org/plugins/file-renaming-on-upload/
 Description: Fixes file uploads with accents and special characters by renaming them. It also improves your SEO.
-Version: 2.6.4
+Version: 2.6.5
 Text Domain: file-renaming-on-upload
 Domain Path: /languages
 Author: WPFactory
@@ -15,8 +15,6 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 namespace FROU;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
-__('Fixes file uploads with accents and special characters by renaming them. It also improves your SEO.','file-renaming-on-upload');
 
 use Pablo_Pacheco\WP_Namespace_Autoloader\WP_Namespace_Autoloader;
 
@@ -48,7 +46,7 @@ if ( ! function_exists( '\FROU\file_renaming_on_upload' ) ) {
 	/**
 	 * Returns the main instance of Plugin_Core
 	 *
-	 * @version 2.6.1
+	 * @version 2.6.5
 	 * @since   2.1.2
 	 * @return  Plugin_Core
 	 */
@@ -59,7 +57,7 @@ if ( ! function_exists( '\FROU\file_renaming_on_upload' ) ) {
 			'action_links'     => array(
 				array(
 					'url'  => admin_url( 'admin.php?page=file-renaming-on-upload' ),
-					'text' => __( 'Settings', 'file-renaming-on-upload' ),
+					'text' => 'Settings',
 				),
 			),
 			'translation'      => array(
