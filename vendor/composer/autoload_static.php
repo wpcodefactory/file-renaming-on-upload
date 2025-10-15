@@ -27,13 +27,19 @@ class ComposerStaticInit899afcbf99c41bc2b42ca936f40efdf1
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'WPFactory\\Promoting_Notice\\Core' => __DIR__ . '/..' . '/wpfactory/wpfactory-promoting-notice/src/php/class-core.php',
+        'WPFactory\\WPFactory_Admin_Menu\\Plugin_Icon' => __DIR__ . '/..' . '/wpfactory/wpfactory-admin-menu/src/php/class-plugin-icon.php',
         'WPFactory\\WPFactory_Admin_Menu\\Singleton' => __DIR__ . '/..' . '/wpfactory/wpfactory-admin-menu/src/php/trait-singleton.php',
         'WPFactory\\WPFactory_Admin_Menu\\WC_Settings_Menu_Item_Swapper' => __DIR__ . '/..' . '/wpfactory/wpfactory-admin-menu/src/php/class-wc-settings-menu-item-swapper.php',
         'WPFactory\\WPFactory_Admin_Menu\\WPFactory_Admin_Menu' => __DIR__ . '/..' . '/wpfactory/wpfactory-admin-menu/src/php/class-wpfactory-admin-menu.php',
+        'WPFactory\\WPFactory_Cross_Selling\\Banners' => __DIR__ . '/..' . '/wpfactory/wpfactory-cross-selling/src/php/class-banners.php',
         'WPFactory\\WPFactory_Cross_Selling\\Product_Categories' => __DIR__ . '/..' . '/wpfactory/wpfactory-cross-selling/src/php/class-product-categories.php',
         'WPFactory\\WPFactory_Cross_Selling\\Products' => __DIR__ . '/..' . '/wpfactory/wpfactory-cross-selling/src/php/class-products.php',
+        'WPFactory\\WPFactory_Cross_Selling\\Recommendation_Box_Tags' => __DIR__ . '/..' . '/wpfactory/wpfactory-cross-selling/src/php/class-recommendation-box-tags.php',
+        'WPFactory\\WPFactory_Cross_Selling\\Recommendations_Box' => __DIR__ . '/..' . '/wpfactory/wpfactory-cross-selling/src/php/class-recommendations-box.php',
+        'WPFactory\\WPFactory_Cross_Selling\\Recommendations_Page' => __DIR__ . '/..' . '/wpfactory/wpfactory-cross-selling/src/php/class-recommendations-page.php',
         'WPFactory\\WPFactory_Cross_Selling\\Singleton' => __DIR__ . '/..' . '/wpfactory/wpfactory-cross-selling/src/php/trait-singleton.php',
         'WPFactory\\WPFactory_Cross_Selling\\WPFactory_Cross_Selling' => __DIR__ . '/..' . '/wpfactory/wpfactory-cross-selling/src/php/class-wpfactory-cross-selling.php',
+        'WPFactory\\WPFactory_Cross_Selling\\WPFactory_Cross_Selling_Injector' => __DIR__ . '/..' . '/wpfactory/wpfactory-cross-selling/src/php/trait-wpfactory-cross-selling-injector.php',
         'WeDevs_Settings_API' => __DIR__ . '/..' . '/tareq1988/wordpress-settings-api-class/src/class.settings-api.php',
     );
 
