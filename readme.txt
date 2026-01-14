@@ -255,6 +255,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 == Changelog ==
 
 = 2.6.7 - 2026/01/14 =
+* Updated cross-selling library to version 1.0.9.
 * Updated Key Manager library to version 1.0.8.
 
 = 2.6.6 - 2025/10/15 =
