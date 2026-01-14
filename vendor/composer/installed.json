@@ -170,17 +170,17 @@
         },
         {
             "name": "wpfactory/wpfactory-cross-selling",
-            "version": "v1.0.6",
-            "version_normalized": "1.0.6.0",
+            "version": "v1.0.9",
+            "version_normalized": "1.0.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpcodefactory/wpfactory-cross-selling.git",
-                "reference": "a371556ebb9bdadc8e5aa0f19bf7ecb5c69636c5"
+                "reference": "8bd6caf3de67eeff5164a7a9a8cfd5c01c472a06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpcodefactory/wpfactory-cross-selling/zipball/a371556ebb9bdadc8e5aa0f19bf7ecb5c69636c5",
-                "reference": "a371556ebb9bdadc8e5aa0f19bf7ecb5c69636c5",
+                "url": "https://api.github.com/repos/wpcodefactory/wpfactory-cross-selling/zipball/8bd6caf3de67eeff5164a7a9a8cfd5c01c472a06",
+                "reference": "8bd6caf3de67eeff5164a7a9a8cfd5c01c472a06",
                 "shasum": ""
             },
             "require": {
@@ -189,7 +189,7 @@
             "require-dev": {
                 "wp-cli/wp-cli-bundle": "*"
             },
-            "time": "2025-08-19T04:45:09+00:00",
+            "time": "2025-12-22T19:17:39+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -217,7 +217,7 @@
                 ]
             },
             "support": {
-                "source": "https://github.com/wpcodefactory/wpfactory-cross-selling/tree/v1.0.6",
+                "source": "https://github.com/wpcodefactory/wpfactory-cross-selling/tree/v1.0.9",
                 "issues": "https://github.com/wpcodefactory/wpfactory-cross-selling/issues"
             },
             "install-path": "../wpfactory/wpfactory-cross-selling"
