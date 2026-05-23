@@ -2,9 +2,9 @@
 Contributors: wpcodefactory, omardabbas, karzin, anbinder, kousikmukherjeeli
 Tags: rename, seo, media, renaming, characters
 Requires at least: 4.0.0
-Tested up to: 6.8
+Tested up to: 7.0
 Requires PHP: 5.3
-Stable tag: 2.6.7
+Stable tag: 2.6.8
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -253,6 +253,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 3. Setup how the rules will work on your filename
 
 == Changelog ==
+
+= 2.6.8 - 23/05/2026 =
+* Tested up to: 7.0.
 
 = 2.6.7 - 2026/01/14 =
 * Updated cross-selling library to version 1.0.9.
