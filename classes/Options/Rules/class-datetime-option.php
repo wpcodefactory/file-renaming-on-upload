@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Datetime Option.
  *
- * @version 2.4.6
+ * @version 2.6.9
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -78,7 +78,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 		/**
 		 * Inserts datetime on 'frou_sanitize_file_name' filter.
 		 *
-		 * @version 2.4.6
+		 * @version 2.6.9
 		 * @since   2.0.0
 		 *
 		 * @param $filename_infs
@@ -93,7 +93,11 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 			$structure_rules = $filename_infs['structure']['rules'];
 			if ( strpos( $structure_rules, '{' . $this->option_id . '}' ) !== false ) {
 				$datetime = \DateTime::createFromFormat( 'U.u', number_format( microtime( true ), 6, '.', '' ) );
-				date_timezone_set( $datetime, wp_timezone() );
+				if ( function_exists( 'wp_timezone' ) ) {
+					date_timezone_set( $datetime, wp_timezone() );
+				} else {
+					date_timezone_set( $datetime, new \DateTimeZone( get_option( 'timezone_string' ) ?: 'UTC' ) );
+				}
 				$format = $datetime->format( $this->get_option( $this->option_datetime_format, 'Y-m-d_H-i-s_u' ) );
 				$filename_infs['structure']['translation'][ $this->option_id ] = $format;
 			}
@@ -104,7 +108,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 		/**
 		 * Adds settings fields.
 		 *
-		 * @version 2.4.6
+		 * @version 2.6.9
 		 * @since   2.0.0
 		 *
 		 * @param $fields
@@ -126,7 +130,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Datetime_Option' ) ) {
 				),
 				array(
 					'name'        => $this->option_datetime_format,
-					'desc'        => __( 'Datetime format ', 'file-renaming-on-upload' ) . sprintf( __( 'You can see more formats <a target="_blank" href="%s">here</a>', 'file-renaming-on-upload' ), 'http://php.net/manual/function.date.php' ) . '<br />' . sprintf( __( 'Result: <b>%s</b>', 'file-renaming-on-upload' ), $format ),
+				/* translators: %s is a URL to the PHP date format documentation. */
+				'desc'        => __( 'Datetime format ', 'file-renaming-on-upload' ) . sprintf( __( 'You can see more formats <a target="_blank" href="%s">here</a>', 'file-renaming-on-upload' ), 'http://php.net/manual/function.date.php' ) . '<br />' . /* translators: %s is the formatted date/time result. */ sprintf( __( 'Result: <b>%s</b>', 'file-renaming-on-upload' ), $format ),
 					'type'        => 'text',
 					'default'     => 'Y-m-d_H-i-s_u',
 					'placeholder' => 'Y-m-d_H-i-s_u',

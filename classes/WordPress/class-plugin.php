@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Wordpress Plugin
  *
- * @version 2.0.0
+ * @version 2.6.9
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -58,7 +58,7 @@ if ( ! class_exists( 'FROU\WordPress\Plugin' ) ) {
 		/**
 		 * Setups the plugin (translation, action links, etc)
 		 *
-		 * @version 1.0.0
+		 * @version 2.6.9
 		 * @since   1.0.0
 		 */
 		protected function setup() {
@@ -67,7 +67,6 @@ if ( ! class_exists( 'FROU\WordPress\Plugin' ) ) {
 			$this->dir_url = plugin_dir_url( $plugin_file_path );
 			$this->dir = untrailingslashit( plugin_dir_path( $plugin_file_path ) ) . DIRECTORY_SEPARATOR;
 			add_filter( 'plugin_action_links_' . $this->basename, array( $this, 'action_links' ) );
-			add_action( 'init', array( $this, 'handle_localization' ) );
 		}
 
 		/**
@@ -97,20 +96,6 @@ if ( ! class_exists( 'FROU\WordPress\Plugin' ) ) {
 		 */
 		public static function on_plugin_activation() {
 
-		}
-
-		/**
-		 * Handles plugin localization
-		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
-		 */
-		public function handle_localization() {
-			$args        = $this->args;
-			$text_domain = sanitize_text_field( $args['translation']['text_domain'] );
-			$locale      = apply_filters( 'plugin_locale', get_locale(), $text_domain );
-			load_textdomain( $text_domain, WP_LANG_DIR . dirname( $this->basename ) . $text_domain . '-' . $locale . '.mo' );
-			load_plugin_textdomain( $text_domain, false, dirname( $this->basename ) . '/' . $args['translation']['folder'] . '/' );
 		}
 
 		/**

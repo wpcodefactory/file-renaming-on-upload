@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Filename Option.
  *
- * @version 2.6.1
+ * @version 2.6.9
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -82,7 +82,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 		/**
 		 * Adds settings fields.
 		 *
-		 * @version 2.6.0
+		 * @version 2.6.9
 		 * @since   2.0.0
 		 *
 		 * @param $fields
@@ -103,7 +103,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Post_Title_Option' ) ) {
 				array(
 					'name'           => 'use_filename_on_empty_title',
 					'desc'           => __( 'Use filename on empty title', 'file-renaming-on-upload' ),
-					'desc_secondary' => sprintf( __( 'If the post title is empty, it uses the same value from the %s rule.', 'file-renaming-on-upload' ), '<code>{filename}</code>' ),
+					/* translators: %s is replaced with the {filename} rule placeholder. */
+				'desc_secondary' => sprintf( __( 'If the post title is empty, it uses the same value from the %s rule.', 'file-renaming-on-upload' ), '<code>{filename}</code>' ),
 					'type'           => 'checkbox',
 					'default'        => 'on',
 				),

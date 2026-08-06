@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - General Settings Page.
  *
- * @version 2.2.3
+ * @version 2.6.9
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -147,7 +147,7 @@ if ( ! class_exists( 'FROU\Admin_Pages\Settings_Page' ) ) {
 		 */
 		function plugin_page() {
 			echo '<div class="wrap">';
-			echo '<h2>'.__('File Renaming on Upload','file-renaming-on-upload').'</h2>';
+			echo '<h2>' . esc_html__( 'File Renaming on Upload', 'file-renaming-on-upload' ) . '</h2>';
 			$this->settings_api->show_navigation();
 			do_action('frou_admin_notices');
 			$this->settings_api->show_forms();
