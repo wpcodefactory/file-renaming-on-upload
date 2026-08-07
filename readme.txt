@@ -4,7 +4,7 @@ Tags: rename, seo, media, renaming, characters
 Requires at least: 4.0.0
 Tested up to: 7.0
 Requires PHP: 5.3
-Stable tag: 2.6.8
+Stable tag: 2.6.9
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
