@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - WordPress Post Utils.
  *
- * @version 2.6.3
+ * @version 2.6.9
  * @since   2.6.1
  * @author  WPFactory
  */
@@ -164,7 +164,7 @@ if ( ! class_exists( 'FROU\Post_Utils' ) ) {
 		/**
 		 * get_post_id_from_query_string.
 		 *
-		 * @version 2.6.1
+		 * @version 2.6.9
 		 * @since   2.6.1
 		 *
 		 * @return mixed
@@ -173,8 +173,9 @@ if ( ! class_exists( 'FROU\Post_Utils' ) ) {
 			$post_id_possibilities = apply_filters( 'frou_post_id_query_string_params', array( 'post_id', 'post_ID', 'post', 'product_id', 'frou_query_string_post_id' ) );
 			$post_id               = null;
 			foreach ( $post_id_possibilities as $key ) {
+				// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Utility reading URL params for post ID context, not processing form data.
 				if ( isset( $_REQUEST[ $key ] ) ) {
-					$post_id = $_REQUEST[ $key ];
+					$post_id = sanitize_text_field( wp_unslash( $_REQUEST[ $key ] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 					break;
 				}
 			}

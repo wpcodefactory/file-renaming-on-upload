@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Filename Option.
  *
- * @version 2.6.1
+ * @version 2.6.9
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -390,7 +390,8 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 					'default' => 'remove_accents',
 					'options' => array(
 						'remove_accents'               => __( 'Remove Accents: remove_accents()', 'file-renaming-on-upload' ),
-						'transliterator_transliterate' => sprintf( __( 'Transliterator: transliterate()%s', 'file-renaming-on-upload' ), ! function_exists( 'transliterator_transliterate' ) ? ' - ' . __( 'Disabled on the server', 'file-renaming-on-upload' ) : '' )
+						/* translators: %s is an optional "Disabled on the server" notice appended when the Transliterator extension is unavailable. */
+					'transliterator_transliterate' => sprintf( __( 'Transliterator: transliterate()%s', 'file-renaming-on-upload' ), ! function_exists( 'transliterator_transliterate' ) ? ' - ' . __( 'Disabled on the server', 'file-renaming-on-upload' ) : '' )
 					),
 					'type'    => 'select',
 				),

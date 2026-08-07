@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core.
  *
- * @version 2.6.1
+ * @version 2.6.9
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -91,7 +91,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 * @version 2.6.1
 		 * @since   2.0.0
 		 *
-		 * @param array $args
+		 * @param   array  $args
 		 */
 		public function init( $args = array() ) {
 			parent::init( $args );
@@ -113,7 +113,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			//add_action( 'admin_notices', array( $this, 'create_notice' ) );
 			add_filter( 'frou_filename_allowed', array( $this, 'block_ignored_filenames' ), 10, 3 );
 			add_filter( 'frou_filename_allowed', array( $this, 'block_renaming_by_extension' ), 10, 3 );
-			add_filter( 'frou_renaming_validation', array( $this, 'disable_renaming_on_wc_export' ),10,2 );
+			add_filter( 'frou_renaming_validation', array( $this, 'disable_renaming_on_wc_export' ), 10, 2 );
 			add_action( 'add_attachment', array( $this, 'save_original_file_name' ) );
 			//add_action( 'add_attachment', array( $this, 'add_attachment' ) );
 			//add_filter('wp_insert_attachment_data',array($this,'insert_attachment_data'),10,2);
@@ -129,13 +129,13 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 *
 		 * @return void
 		 */
-		function add_cross_selling_library(){
+		function add_cross_selling_library() {
 			if ( ! is_admin() ) {
 				return;
 			}
 			// Cross-selling library.
 			$cross_selling = new \WPFactory\WPFactory_Cross_Selling\WPFactory_Cross_Selling();
-			$cross_selling->setup( array( 'plugin_file_path'   => $this->args['plugin_file_path'] ) );
+			$cross_selling->setup( array( 'plugin_file_path' => $this->args['plugin_file_path'] ) );
 			$cross_selling->init();
 		}
 
@@ -189,15 +189,16 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			) {
 				$validation = false;
 			}
+
 			return $validation;
 		}
 
 		/**
-         * Blocks renaming by extension
-         *
+		 * Blocks renaming by extension
+		 *
 		 * @version 2.3.9
 		 * @since   2.3.1
-         *
+		 *
 		 * @param $allowed
 		 * @param $filename
 		 * @param $infs
@@ -209,12 +210,13 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			if ( ! empty( $extension ) && ! $this->is_extension_allowed( $extension ) ) {
 				$allowed = false;
 			}
+
 			return $allowed;
 		}
 
 		/**
-         * Blocks renaming by filename
-         *
+		 * Blocks renaming by filename
+		 *
 		 * @param $allowed
 		 * @param $filename
 		 * @param $infs
@@ -226,6 +228,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			if ( ! empty( $info ) && ! $this->is_filename_allowed( $info ) ) {
 				$allowed = false;
 			}
+
 			return $allowed;
 		}
 
@@ -262,8 +265,8 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 * @version 2.0.0
 		 * @since   2.0.0
 		 *
-		 * @param $filename
-		 * @param array $args
+		 * @param          $filename
+		 * @param   array  $args
 		 *
 		 * @return mixed
 		 */
@@ -288,8 +291,8 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 * @version 2.0.0
 		 * @since   2.0.0
 		 *
-		 * @param $filename
-		 * @param array $args
+		 * @param          $filename
+		 * @param   array  $args
 		 *
 		 * @return mixed
 		 */
@@ -314,6 +317,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 */
 		protected function add_separator( $filename, $args ) {
 			$separator = $args['structure']['separator'];
+
 			return preg_replace( '/\}\{/U', "}{$separator}{", $filename );
 		}
 
@@ -340,6 +344,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 					return false;
 				}
 			}
+
 			return true;
 		}
 
@@ -379,6 +384,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 					return false;
 				}
 			}
+
 			return true;
 		}
 
@@ -387,7 +393,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 *
 		 * It's the main function of this plugin.
 		 *
-		 * @version 2.5.2
+		 * @version 2.6.9
 		 * @since   2.0.0
 		 *
 		 * @param $filename
@@ -411,7 +417,8 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			$filename_original = $info['filename'];
 
 			$allowed = apply_filters( 'frou_filename_allowed', true, $filename, array( 'info' => $info, 'extension' => $extension ) );
-			$allowed_to_rename = apply_filters( 'frou_renaming_validation', true, array( 'request' => $_REQUEST, 'info' => $info, 'extension' => $extension, 'filename' => $filename, 'filename_raw' => $filename_raw ) );
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- This is a filter callback, not a form handler. WordPress core verifies upload nonces before sanitize_file_name runs. $_REQUEST is unslashed and passed as read-only context.
+			$allowed_to_rename = apply_filters( 'frou_renaming_validation', true, array( 'request' => wp_unslash( $_REQUEST ), 'info' => $info, 'extension' => $extension, 'filename' => $filename, 'filename_raw' => $filename_raw ) );
 			if ( ! $allowed || ! $allowed_to_rename ) {
 				return $filename;
 			}
@@ -424,14 +431,19 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 				return $filename;
 			}
 
-			// Cancels in case of using github-updater option_page
-			if ( isset( $_GET['page'] ) && $_GET['page'] == 'github_updater' ) {
+			// Cancels in case of using github-updater option_page.
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Not a form handler; reading GET/POST only to detect a specific admin page context.
+			$get_page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '';
+			if ( 'github_updater' === $get_page ) {
 				return $filename;
 			}
-			if ( isset( $_POST['option_page'] ) && $_POST['option_page'] == 'github_updater' ) {
-				return $filename;
+			if ( isset( $_POST['option_page'] ) ) {
+				// phpcs:ignore WordPress.Security.NonceVerification.Missing -- Filter callback runs in unpredictable contexts (AJAX, REST, WP-CLI, etc.); nonce action is unknowable here.
+				$post_option_page = sanitize_text_field( wp_unslash( $_POST['option_page'] ) );
+				if ( 'github_updater' === $post_option_page ) {
+					return $filename;
+				}
 			}
-
 			// Gets plugin rules
 			$filename_arr = apply_filters( 'frou_sanitize_file_name',
 				array(
@@ -447,7 +459,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			);
 
 			$filename_arr_rules = $filename_arr['structure']['rules'];
-			if( empty( $filename_arr_rules ) ){
+			if ( empty( $filename_arr_rules ) ) {
 				return $filename;
 			}
 
@@ -464,6 +476,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 				$extension = ! empty( $filename_arr['new_extension'] ) ? $filename_arr['new_extension'] : $extension;
 				$filename  = $filename . '.' . $extension;
 			}
+
 			//error_log('FINAL: '.print_r($filename,true));
 			return $filename;
 		}
@@ -474,8 +487,8 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 * @version 2.5.2
 		 * @since   2.5.2
 		 *
-		 * @param $filename
-		 * @param array $args
+		 * @param          $filename
+		 * @param   array  $args
 		 *
 		 * @return mixed
 		 */
@@ -485,6 +498,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 					$filename = str_replace( "{" . $key . "}", $translation, $filename );
 				}
 			}
+
 			return $filename;
 		}
 
@@ -510,6 +524,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 					$string = $object->post_title;
 				}
 			}
+
 			return $string;
 		}
 
@@ -562,7 +577,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 * @version 2.0.0
 		 * @since   2.0.0
 		 *
-		 * @param Options $options
+		 * @param   Options  $options
 		 */
 		public function set_options( $options ) {
 			$this->options = $options;

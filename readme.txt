@@ -1,4 +1,4 @@
-=== Rename Media Files: Improve Your WordPress SEO ===
+=== Rename Media Files: Improve Your SEO ===
 Contributors: wpcodefactory, omardabbas, karzin, anbinder, kousikmukherjeeli
 Tags: rename, seo, media, renaming, characters
 Requires at least: 4.0.0
@@ -8,7 +8,7 @@ Stable tag: 2.6.8
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Enhance SEO and organize media effortlessly with Rename Media Files WordPress Plugin. Fix upload issues, santize & optimize filenames, and improve SEO seamlessly.
+Enhance SEO and organize media effortlessly. Fix upload issues, sanitize & optimize filenames, and improve SEO seamlessly.
 
 == Description ==
 
@@ -16,7 +16,7 @@ Enhance SEO and organize media effortlessly with Rename Media Files WordPress Pl
 
 [Main Page](https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "Main Page") | [Support Forum](https://wpfactory.com/support/item/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "Support Forum") | [Documentation & How to](https://wpfactory.com/docs/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "Documentation & How to")
 
-The "Rename Media Files: Improve Your WordPress SEO" plugin will simplify the process of managing media file names (images, PDFs, etc) and metadata, ensuring a tidy and search engine-friendly media repository.
+The "Rename Media Files: Improve Your SEO" plugin will simplify the process of managing media file names (images, PDFs, etc) and metadata, ensuring a tidy and search engine-friendly media repository.
 
 If you're an SEO guru and would like to make a better website for search engines by focusing on Image SEO, or someone who enjoys their files to be perfectly organized, this plugin will turn your dreams into reality.
 
@@ -84,7 +84,7 @@ Customize file renaming behavior with advanced filtering options. Choose to igno
 
 ## 🏆 Do More: PRO Version##
 
-For those who would like to go further and beyond, we have a premium version of [Rename Media Files: Improve Your WordPress SEO](https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme) plugin.
+For those who would like to go further and beyond, we have a premium version of [Rename Media Files: Improve Your SEO](https://wpfactory.com/item/file-renaming-on-upload-wordpress-plugin/?utm_source=wporg&utm_medium=organic&utm_campaign=readme) plugin.
 
 ### 🏆 Rename Media on Upload Based on ANYTHING ###
 
@@ -253,6 +253,10 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 3. Setup how the rules will work on your filename
 
 == Changelog ==
+
+= 2.6.9 - 06/08/2026 =
+* Dev - Removed `load_plugin_textdomain` and `load_textdomain()` functions.
+* Fix - Fixed security issues.
 
 = 2.6.8 - 23/05/2026 =
 * Tested up to: 7.0.
