@@ -254,9 +254,12 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
-= 2.6.9 - 06/08/2026 =
+= 2.6.9 - 07/08/2026 =
 * Dev - Removed `load_plugin_textdomain` and `load_textdomain()` functions.
 * Fix - Fixed security issues.
+* Dev - Updated Admin Menu library to v1.1.2.
+* Dev - Updated Cross-Selling library to v1.1.3.
+* Dev - Updated Promoting Notice to v1.0.7.
 
 = 2.6.8 - 23/05/2026 =
 * Tested up to: 7.0.

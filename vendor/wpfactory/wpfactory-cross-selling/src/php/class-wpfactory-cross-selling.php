@@ -2,7 +2,7 @@
 /**
  * WPFactory Cross-Selling
  *
- * @version 1.0.7
+ * @version 1.1.0
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -32,7 +32,7 @@ if ( ! class_exists( 'WPFactory\WPFactory_Cross_Selling\WPFactory_Cross_Selling'
 		 *
 		 * @var string
 		 */
-		protected $version = '1.0.9';
+		protected $version = '1.1.3';
 
 		/**
 		 * Setup args.
