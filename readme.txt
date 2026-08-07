@@ -259,7 +259,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 * Fix - Fixed security issues.
 * Dev - Updated Admin Menu library to v1.1.2.
 * Dev - Updated Cross-Selling library to v1.1.3.
-* Dev - Updated Promoting Notice to v1.0.7.
+* Dev - Updated Promoting Notice library to v1.0.7.
 
 = 2.6.8 - 23/05/2026 =
 * Tested up to: 7.0.

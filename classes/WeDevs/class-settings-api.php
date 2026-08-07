@@ -80,9 +80,10 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 
 			echo '
 			<div id="' . esc_attr( $id ) . '" class="progress_bar_field">
-                    <span class="values"><span class="absolute-value"></span><span class="percent-value"></span></span>                    
-                    <div class="percent-fill"></div>
-			    </div>
+				<div class="bar">
+					<span class="values"><span class="absolute-value"></span><span class="percent-value"></span></span>
+					<div class="percent-fill"></div>
+				</div>
 			</div>';
 
 			?>
@@ -93,6 +94,29 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 					var percent = 0;
 					var count = 0;
 					var no_queue = false;
+					var completed = false;
+
+					function update_ui( response ) {
+						var data = response && response.data ? response.data : {};
+						var total = parseInt( data.total_count, 10 ) || 0;
+						var queue = parseInt( data.queue_count, 10 ) || 0;
+
+						if ( total > 0 ) {
+							if ( queue >= total ) {
+								percent = 100;
+								completed = true;
+							} else {
+								percent = Math.round( ( queue / total ) * 100 );
+							}
+						} else {
+							percent = 100;
+							completed = true;
+						}
+
+						$( '.progress_bar_field#<?php echo esc_attr( $id ); ?> .percent-fill' ).css( 'width', percent + '%' );
+						$( '.progress_bar_field#<?php echo esc_attr( $id ); ?> .percent-value' ).html( percent + '%' );
+						$( '.progress_bar_field#<?php echo esc_attr( $id ); ?> .absolute-value' ).html( queue + '/' + total );
+					}
 
 					function call_ajax() {
 						var ajax_url = '<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>';
@@ -104,20 +128,26 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 						// We can also pass the url value separately from ajaxurl for front end AJAX implementations
 						jQuery.post( ajax_url, data, function ( response ) {
 							count++;
-							percent = response.data.percent;
-							if ( response.data.no_queue == true ) {
-								no_queue = true;
-								if ( count > 1 || action_called ) {
-									percent = 100;
-									complete_percent();
-								} else {
-									percent = 0;
-								}
+							var data = response && response.data ? response.data : {};
+							var total = parseInt( data.total_count, 10 ) || 0;
+							var queue = parseInt( data.queue_count, 10 ) || 0;
+							var server_percent = parseInt( data.percent, 10 );
+
+							if ( isNaN( server_percent ) ) {
+								server_percent = total > 0 ? Math.round( ( queue / total ) * 100 ) : 0;
 							}
+
+							if ( data.no_queue === true || queue >= total ) {
+								no_queue = true;
+								server_percent = 100;
+								completed = true;
+							}
+
+							percent = server_percent;
 							$( '.progress_bar_field#<?php echo esc_attr( $id ); ?> .percent-fill' ).css( 'width', percent + '%' );
 							$( '.progress_bar_field#<?php echo esc_attr( $id ); ?> .percent-value' ).html( percent + '%' );
-							if ( response.data.total_count && response.data.total_count > 0 ) {
-								$( '.progress_bar_field#<?php echo esc_attr( $id ); ?> .absolute-value' ).html( response.data.queue_count + "/" + response.data.total_count )
+							if ( total > 0 ) {
+								$( '.progress_bar_field#<?php echo esc_attr( $id ); ?> .absolute-value' ).html( queue + '/' + total );
 							} else {
 								complete_percent();
 							}
@@ -128,18 +158,16 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 						$( '.progress_bar_field#<?php echo esc_attr( $id ); ?> .absolute-value' ).html( ' ' )
 					}
 
+					call_ajax();
 					interval = setInterval( handle_interval, 1500 );
 
 					function handle_interval() {
-						if ( percent < 100 && !no_queue ) {
-							call_ajax();
-						} else {
-							complete_percent();
+						if ( completed ) {
 							clearInterval( interval );
+							return;
 						}
+						call_ajax();
 					}
-
-					//call_ajax();
 				} )
 			</script>
 			<?php
@@ -179,11 +207,12 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 
 			$no_queue = false;
 
-			if ( $option_total_count != 0 && $option_queue_count != 0 ) {
-				if ( $option_total_count != $option_queue_count ) {
-					$final_percent = round( ( $option_queue_count / $option_total_count ) * 100 );
+			if ( $option_total_count > 0 ) {
+				if ( $option_queue_count >= $option_total_count ) {
+					$final_percent = 100;
+					$no_queue      = true;
 				} else {
-					$final_percent = 0;
+					$final_percent = round( ( $option_queue_count / $option_total_count ) * 100 );
 				}
 			} else {
 				$final_percent = 0;
