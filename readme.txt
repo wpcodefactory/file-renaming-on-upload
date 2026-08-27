@@ -254,6 +254,9 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
+= 2.7.0 - 27/08/2026 =
+* Fix - Fixed `.gitattributes` file.
+
 = 2.6.9 - 07/08/2026 =
 * Dev - Removed `load_plugin_textdomain` and `load_textdomain()` functions.
 * Fix - Fixed security issues.

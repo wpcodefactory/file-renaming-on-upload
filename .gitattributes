@@ -7,5 +7,5 @@ README.md export-ignore
 /git-tag.sh export-ignore
 
 # Composer
-composer.json
-composer.lock export ignore
+composer.json export-ignore
+composer.lock export-ignore
