@@ -183,7 +183,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**
 		 * Disables renaming when using WooCommerce Export Products.
 		 *
-		 * @version 2.3.9
+		 * @version 2.7.0
 		 * @since   2.3.9
 		 *
 		 * @param $validation
@@ -200,8 +200,8 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 				return $validation;
 			}
 			if (
-				'woocommerce_do_ajax_product_export' == $info['request']['action'] ||
-				'download_product_csv' == $info['request']['action']
+				'woocommerce_do_ajax_product_export' === $info['request']['action'] ||
+				'download_product_csv' === $info['request']['action']
 			) {
 				$validation = false;
 			}
@@ -340,7 +340,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**.
 		 * Checks if extension is allowed for renaming.
 		 *
-		 * @version 2.1.8
+		 * @version 2.7.0
 		 * @since   2.1.1
 		 *
 		 * @param $extension
@@ -356,7 +356,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 				$ignored_extensions_arr = array_map( 'trim', $ignored_extensions_arr );
 				$ignored_extensions_arr = array_map( 'sanitize_text_field', $ignored_extensions_arr );
 				$ignored_extensions_arr = array_unique( $ignored_extensions_arr );
-				if ( ! empty( $ignored_extensions_str ) && in_array( $extension, $ignored_extensions_arr ) ) {
+				if ( ! empty( $ignored_extensions_str ) && in_array( $extension, $ignored_extensions_arr, true ) ) {
 					return false;
 				}
 			}
@@ -367,7 +367,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**
 		 * Checks if filename is allowed for renaming.
 		 *
-		 * @version 2.1.1
+		 * @version 2.7.0
 		 * @since   2.1.1
 		 *
 		 * @param $filename
@@ -396,7 +396,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 				$ignored_filenames_arr = explode( ",", $ignored_filenames_str );
 				$ignored_filenames_arr = array_map( 'trim', $ignored_filenames_arr );
 				$ignored_filenames_arr = array_map( 'sanitize_text_field', $ignored_filenames_arr );
-				if ( in_array( $info['filename'], $ignored_filenames_arr ) ) {
+				if ( in_array( $info['filename'], $ignored_filenames_arr, true ) ) {
 					return false;
 				}
 			}
@@ -469,10 +469,6 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 * @return mixed|string
 		 */
 		public function sanitize_filename( $filename, $filename_raw, $ignore_upload_check = false ) {
-			/*error_log('--- sanitize_filename ---');
-			error_log(print_r($_REQUEST,true));
-			error_log(print_r($filename,true));*/
-
 			// Only acts while a file upload is being handled (or when explicitly forced), so unrelated sanitize_file_name calls are not affected.
 			if ( ! $ignore_upload_check && ! $this->is_upload_in_progress() ) {
 				return $filename;
@@ -553,7 +549,6 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 				$filename  = $filename . '.' . $extension;
 			}
 
-			//error_log('FINAL: '.print_r($filename,true));
 			return $filename;
 		}
 

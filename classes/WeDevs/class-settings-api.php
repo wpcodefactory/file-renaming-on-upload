@@ -510,7 +510,7 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 		/**
 		 * Displays a multi select dropdown for a settings field.
 		 *
-		 * @version 2.6.9
+		 * @version 2.7.0
 		 * @since   1.0.0
 		 *
 		 * @param   array  $args  settings field args
@@ -523,7 +523,7 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 			$html  = sprintf( '<select multiple="multiple" class="%1$s" name="%2$s[%3$s][]" id="%2$s[%3$s]">', esc_attr( $size ), esc_attr( $args['section'] ), esc_attr( $args['id'] ) );
 
 			foreach ( $args['options'] as $key => $label ) {
-				$checked = in_array( $key, $value ) ? $key : '0';
+				$checked = in_array( $key, $value, true ) ? $key : '0';
 				$html    .= sprintf( '<option value="%s"%s>%s</option>', esc_attr( $key ), selected( $checked, $key, false ), esc_html( $label ) );
 			}
 

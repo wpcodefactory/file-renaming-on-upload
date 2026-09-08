@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Option.
  *
- * @version 2.5.9
+ * @version 2.7.0
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -75,7 +75,7 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 		/**
 		 * Gets option from this option section.
 		 *
-		 * @version 2.0.0
+		 * @version 2.7.0
 		 * @since   2.0.0
 		 *
 		 * @param           $option
@@ -96,9 +96,8 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 			}
 
 			foreach ( $this->fields as $index => $field ) {
-				if ( $field['name'] == $option && isset( $field['default'] ) ) {
+				if ( $field['name'] === $option && isset( $field['default'] ) ) {
 					return $field['default'];
-					break;
 				}
 			}
 
@@ -108,7 +107,7 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 		/**
 		 * Add settings fields.
 		 *
-		 * @version 2.5.5
+		 * @version 2.7.0
 		 * @since   2.0.0
 		 */
 		public function add_fields( $fields, $section ) {
@@ -124,6 +123,7 @@ if ( ! class_exists( 'FROU\Options\Option' ) ) {
 							break;
 						case 'multiselect':
 							$this->fields[ $k ]['sanitize_callback'] = array( $this, 'sanitize_multiselect' );
+							break;
 						case 'multicheck':
 							$this->fields[ $k ]['sanitize_callback'] = array( $this, 'sanitize_multicheck' );
 							break;
