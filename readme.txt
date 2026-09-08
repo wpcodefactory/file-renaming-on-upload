@@ -211,6 +211,7 @@ It's the option where you can put your rules or any other characters you want to
 = Are there any hooks available?
 * **frou_sanitize_file_name** Creates custom rules. Take a look on (Can I create a custom rule?)
 * **frou_ignored_extensions** Ignores extensions. Take a look on (How to ignore extensions programmatically?)
+* **frou_is_upload_in_progress** Filters whether a file upload is currently in progress. Return `true` to force filename sanitization outside uploads (e.g. when renaming files manually).
 
 = How to ignore extensions programmatically?
 You can use the **'frou_ignored_extensions'** filter to ignore extensions programmatically.
@@ -257,6 +258,10 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 = 2.7.0 - 27/08/2026 =
 * Fix - Fixed `.gitattributes` file.
 * Fix - `Requires at least` in readme now uses major version only.
+* Fix - Filename sanitization now only runs while a file upload is actually in progress, so unrelated filename sanitization by WordPress core or other plugins is no longer affected.
+* Fix - "Update permalink" option no longer relies on `sanitize_file_name` hook priorities and only updates the attachment slug when the file was actually renamed.
+* Dev - New filter: `frou_before_sanitize_file_name`.
+* Dev - New filter: `frou_is_upload_in_progress`.
 
 = 2.6.9 - 07/08/2026 =
 * Dev - Removed `load_plugin_textdomain` and `load_textdomain()` functions.

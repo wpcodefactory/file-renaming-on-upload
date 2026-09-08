@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Permalink update Option.
  *
- * @version 2.2.8
+ * @version 2.7.0
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -53,54 +53,52 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 		/**
 		 * Initializes.
 		 *
-		 * @version 2.0.0
+		 * @version 2.7.0
 		 * @since   2.0.0
 		 */
 		function init() {
 			parent::init();
-			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename_before' ), 9 );
-			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename_after' ), PHP_INT_MAX );
+			add_filter( 'frou_before_sanitize_file_name', array( $this, 'sanitize_filename_before' ), 9, 2 );
+			add_filter( 'frou_after_sanitize_file_name', array( $this, 'sanitize_filename_after' ), PHP_INT_MAX, 2 );
 			add_action( 'add_attachment', array( $this, 'add_attachment' ), PHP_INT_MAX );
-		}
-
-		/**
-		 * Gets original filename when a file is uploaded.
-		 *
-		 * @param $filename
-		 *
-		 * @version 2.0.0
-		 * @since   2.0.0
-		 * @return mixed
-		 */
-		public function sanitize_filename_after( $filename ) {
-			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
-				return $filename;
-			}
-
-			$info                            = pathinfo( $filename );
-			$filename_original               = $info['filename'];
-			$this->current_filename_modified = $filename_original;
-
-			return $filename;
 		}
 
 		/**
 		 * Gets the modified filename when a file is uploaded and the plugin has done its work.
 		 *
 		 * @param $filename
+		 * @param $info
 		 *
-		 * @version 2.0.0
+		 * @version 2.7.0
 		 * @since   2.0.0
 		 * @return mixed
 		 */
-		public function sanitize_filename_before( $filename ) {
+		public function sanitize_filename_after( $filename, $info ) {
 			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $filename;
 			}
 
-			$info                            = pathinfo( $filename );
-			$filename_original               = $info['filename'];
-			$this->current_filename_original = $filename_original;
+			$this->current_filename_modified = $filename;
+
+			return $filename;
+		}
+
+		/**
+		 * Gets the original filename when a file is uploaded.
+		 *
+		 * @param $filename
+		 * @param $info
+		 *
+		 * @version 2.7.0
+		 * @since   2.0.0
+		 * @return mixed
+		 */
+		public function sanitize_filename_before( $filename, $info ) {
+			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
+				return $filename;
+			}
+
+			$this->current_filename_original = $info['filename'];
 
 			return $filename;
 		}
@@ -108,7 +106,7 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 		/**
 		 * After a file is uploaded, make its name unique.
 		 *
-		 * @version 2.2.8
+		 * @version 2.7.0
 		 * @since   2.0.0
 		 *
 		 * @param $post_id
@@ -119,6 +117,9 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 			}
 			$post = get_post( $post_id );
 			if ( $post->post_type != 'attachment' ) {
+				return;
+			}
+			if ( empty( $this->current_filename_modified ) ) {
 				return;
 			}
 			$unique_slug     = wp_unique_post_slug( $this->current_filename_modified, $post->ID, $post->post_status, $post->post_type, $post->post_parent );

@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Filename Option.
  *
- * @version 2.6.9
+ * @version 2.7.0
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -10,6 +10,7 @@
 namespace FROU\Options\Rules;
 
 use FROU\Options\Option;
+use FROU\Plugin_Core;
 use FROU\Options\Rule_Option;
 use FROU\WordPress\Post;
 use function FROU\file_renaming_on_upload;
@@ -227,7 +228,7 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		/**
 		 * Removes specific chars from filename.
 		 *
-		 * @version 2.0.9
+		 * @version 2.7.0
 		 * @since   2.0.0
 		 *
 		 * @param $chars
@@ -235,6 +236,9 @@ if ( ! class_exists( 'FROU\Options\Rules\Filename_Option' ) ) {
 		 * @return array
 		 */
 		public function remove_specific_chars( $chars ) {
+			if ( ! Plugin_Core::get_instance()->is_upload_in_progress() ) {
+				return $chars;
+			}
 			if ( ! filter_var( $this->get_option( $this->option_id, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				return $chars;
 			}

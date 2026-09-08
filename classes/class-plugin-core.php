@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core.
  *
- * @version 2.6.9
+ * @version 2.7.0
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -56,6 +56,18 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		public $current_filename_original;
 
 		/**
+		 * upload_in_progress.
+		 *
+		 * Whether a file upload (upload or sideload) is currently being handled
+		 * by WordPress, so filename sanitization is only modified on upload.
+		 *
+		 * @since 2.7.0
+		 *
+		 * @var bool
+		 */
+		public $upload_in_progress = false;
+
+		/**
 		 * options.
 		 *
 		 * @since 1.0.0
@@ -88,7 +100,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**
 		 * Initializes.
 		 *
-		 * @version 2.6.1
+		 * @version 2.7.0
 		 * @since   2.0.0
 		 *
 		 * @param   array  $args
@@ -108,6 +120,10 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 
 			add_action( 'init', array( $this, 'handle_settings_page' ) );
 			add_action( 'init', array( $this, 'add_options' ), 1 );
+			// Scopes filename sanitization to actual uploads (upload or sideload), so unrelated sanitize_file_name calls are not modified.
+			add_filter( 'wp_handle_upload_prefilter', array( $this, 'set_upload_in_progress' ) );
+			add_filter( 'wp_handle_sideload_prefilter', array( $this, 'set_upload_in_progress' ) );
+			add_filter( 'wp_handle_upload', array( $this, 'clear_upload_in_progress' ), PHP_INT_MAX );
 			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename' ), 10, 2 );
 			add_action( 'admin_init', array( $this, 'add_promoting_notice' ) );
 			//add_action( 'admin_notices', array( $this, 'create_notice' ) );
@@ -389,21 +405,78 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		}
 
 		/**
+		 * set_upload_in_progress.
+		 *
+		 * Marks the request as handling a file upload (or sideload), so filename
+		 * sanitization is only modified while an upload is actually taking place.
+		 *
+		 * @version 2.7.0
+		 * @since   2.7.0
+		 *
+		 * @param   array  $file
+		 *
+		 * @return array
+		 */
+		public function set_upload_in_progress( $file ) {
+			$this->upload_in_progress = true;
+
+			return $file;
+		}
+
+		/**
+		 * clear_upload_in_progress.
+		 *
+		 * Clears the upload flag once WordPress finishes handling the upload,
+		 * restoring the default sanitize_file_name behaviour for the rest of the request.
+		 *
+		 * @version 2.7.0
+		 * @since   2.7.0
+		 *
+		 * @param   array  $upload
+		 *
+		 * @return array
+		 */
+		public function clear_upload_in_progress( $upload ) {
+			$this->upload_in_progress = false;
+
+			return $upload;
+		}
+
+		/**
+		 * is_upload_in_progress.
+		 *
+		 * @version 2.7.0
+		 * @since   2.7.0
+		 *
+		 * @return bool
+		 */
+		public function is_upload_in_progress() {
+			return apply_filters( 'frou_is_upload_in_progress', (bool) $this->upload_in_progress );
+		}
+
+		/**
 		 * Sanitizes filename.
 		 *
 		 * It's the main function of this plugin.
 		 *
-		 * @version 2.6.9
+		 * @version 2.7.0
 		 * @since   2.0.0
 		 *
-		 * @param $filename
+		 * @param   string  $filename
+		 * @param   string  $filename_raw
+		 * @param   bool    $ignore_upload_check  Set to true to run even when no upload is in progress (e.g. renaming files manually).
 		 *
 		 * @return mixed|string
 		 */
-		public function sanitize_filename( $filename, $filename_raw ) {
+		public function sanitize_filename( $filename, $filename_raw, $ignore_upload_check = false ) {
 			/*error_log('--- sanitize_filename ---');
 			error_log(print_r($_REQUEST,true));
 			error_log(print_r($filename,true));*/
+
+			// Only acts while a file upload is being handled (or when explicitly forced), so unrelated sanitize_file_name calls are not affected.
+			if ( ! $ignore_upload_check && ! $this->is_upload_in_progress() ) {
+				return $filename;
+			}
 
 			//Does nothing if plugin is not enabled
 			$option = new Enable_Option( array( 'section' => 'frou_general_opt' ) );
@@ -444,6 +517,9 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 					return $filename;
 				}
 			}
+			// Fires right before the plugin applies its renaming rules, passing the original filename and its info.
+			$filename = apply_filters( 'frou_before_sanitize_file_name', $filename, $info );
+
 			// Gets plugin rules
 			$filename_arr = apply_filters( 'frou_sanitize_file_name',
 				array(
