@@ -180,21 +180,23 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 		 * @since   1.0.0
 		 */
 		public function ajax_callback_progress_bar() {
-			// Check the nonce and capabilities before returning any option-derived data.
+			// Verify the request is an authenticated, intentional admin request before processing any input.
 			check_ajax_referer( $this->ajax_action_progress_bar, 'nonce' );
 
-			if ( ! current_user_can( 'manage_options' ) ) {
-				wp_send_json_error( array( 'message' => __( 'You do not have permission to perform this action.', 'file-renaming-on-upload' ) ) );
+			// Match the capability required to access the settings page that renders this progress bar.
+			$capability = class_exists( 'WooCommerce' ) ? 'manage_woocommerce' : 'manage_options';
+			if ( ! current_user_can( $capability ) ) {
+				wp_send_json_error(
+					array( 'message' => __( 'You do not have permission to perform this action.', 'file-renaming-on-upload' ) ),
+					403
+				);
 			}
 
-			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Nonce already verified via check_ajax_referer() above.
-			$args = wp_parse_args( wp_unslash( $_REQUEST ), array(
-				'option_queue_count' => '',
-				'option_total_count' => '',
-			) );
+			// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Nonce already verified via check_ajax_referer() above.
+			$total = isset( $_POST['option_total_count'] ) ? sanitize_key( wp_unslash( $_POST['option_total_count'] ) ) : '';
+			$queue = isset( $_POST['option_queue_count'] ) ? sanitize_key( wp_unslash( $_POST['option_queue_count'] ) ) : '';
+			// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
-			$total        = sanitize_key( $args['option_total_count'] );
-			$queue        = sanitize_key( $args['option_queue_count'] );
 			$option_total = get_option( $total );
 			$option_queue = get_option( $queue );
 
