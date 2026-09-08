@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Settings API.
  *
- * @version 2.6.9
+ * @version 2.7.0
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -29,7 +29,7 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 		/**
 		 * Settings_Api constructor.
 		 *
-		 * @version 1.0.0
+		 * @version 2.7.0
 		 * @since   1.0.0
 		 */
 		public function __construct() {
@@ -37,7 +37,6 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 
 			$action = $this->ajax_action_progress_bar;
 			add_action( "wp_ajax_{$action}", array( $this, 'ajax_callback_progress_bar' ) );
-			add_action( "wp_ajax_nopriv_{$action}", array( $this, 'ajax_callback_progress_bar' ) );
 		}
 
 		/**
@@ -59,7 +58,7 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 		/**
 		 * Displays a title field for a settings field.
 		 *
-		 * @version 2.6.9
+		 * @version 2.7.0
 		 * @since   1.0.0
 		 *
 		 * @param   array  $args  settings field args
@@ -122,6 +121,7 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 						var ajax_url = '<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>';
 						var data = {
 							'action': '<?php echo esc_js( $this->ajax_action_progress_bar ); ?>',
+							'nonce': '<?php echo esc_js( wp_create_nonce( $this->ajax_action_progress_bar ) ); ?>',
 							'option_queue_count': '<?php echo esc_js( $queue ); ?>',
 							'option_total_count': '<?php echo esc_js( $total ); ?>'
 						};
@@ -176,17 +176,25 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 		/**
 		 * ajax_callback_progress_bar.
 		 *
-		 * @version 2.6.9
+		 * @version 2.7.0
 		 * @since   1.0.0
 		 */
 		public function ajax_callback_progress_bar() {
-			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- This is a read-only progress check AJAX endpoint; no sensitive data is processed.
+			// Check the nonce and capabilities before returning any option-derived data.
+			check_ajax_referer( $this->ajax_action_progress_bar, 'nonce' );
+
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error( array( 'message' => __( 'You do not have permission to perform this action.', 'file-renaming-on-upload' ) ) );
+			}
+
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Nonce already verified via check_ajax_referer() above.
 			$args = wp_parse_args( wp_unslash( $_REQUEST ), array(
 				'option_queue_count' => '',
+				'option_total_count' => '',
 			) );
 
-			$total        = sanitize_text_field( $args['option_total_count'] );
-			$queue        = sanitize_text_field( $args['option_queue_count'] );
+			$total        = sanitize_key( $args['option_total_count'] );
+			$queue        = sanitize_key( $args['option_queue_count'] );
 			$option_total = get_option( $total );
 			$option_queue = get_option( $queue );
 
