@@ -264,7 +264,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 * Fix - Fixed security issues.
 * Dev - New filter: `frou_before_sanitize_file_name`.
 * Dev - New filter: `frou_is_upload_in_progress`.
-* Tested up to: 7.0.
+* Tested up to: 7.1.
 
 = 2.6.9 - 07/08/2026 =
 * Dev - Removed `load_plugin_textdomain` and `load_textdomain()` functions.
