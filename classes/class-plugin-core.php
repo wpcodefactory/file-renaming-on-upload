@@ -486,8 +486,19 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			$filename_original = $info['filename'];
 
 			$allowed = apply_filters( 'frou_filename_allowed', true, $filename, array( 'info' => $info, 'extension' => $extension ) );
-			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- This is a filter callback, not a form handler. WordPress core verifies upload nonces before sanitize_file_name runs. $_REQUEST is unslashed and passed as read-only context.
-			$allowed_to_rename = apply_filters( 'frou_renaming_validation', true, array( 'request' => wp_unslash( $_REQUEST ), 'info' => $info, 'extension' => $extension, 'filename' => $filename, 'filename_raw' => $filename_raw ) );
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Filter callback, not a form handler. WordPress core verifies upload nonces before sanitize_file_name runs; the array is sanitized below and passed as read-only context.
+			$request = isset( $_REQUEST ) ? map_deep( wp_unslash( $_REQUEST ), 'sanitize_text_field' ) : array();
+			$allowed_to_rename = apply_filters(
+				'frou_renaming_validation',
+				true,
+				array(
+					'request'      => $request,
+					'info'         => $info,
+					'extension'    => $extension,
+					'filename'     => $filename,
+					'filename_raw' => $filename_raw,
+				)
+			);
 			if ( ! $allowed || ! $allowed_to_rename ) {
 				return $filename;
 			}

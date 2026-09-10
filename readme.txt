@@ -2,7 +2,7 @@
 Contributors: wpcodefactory, omardabbas, karzin, anbinder, kousikmukherjeeli
 Tags: rename, seo, media, renaming, characters
 Requires at least: 4.0
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 5.3
 Stable tag: 2.6.9
 License: GNU General Public License v3.0
@@ -255,14 +255,16 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
-= 2.7.0 - 08/09/2026 =
+= 2.7.0 - 10/09/2026 =
 * Fix - Fixed `.gitattributes` file.
 * Fix - `Requires at least` in readme now uses major version only.
 * Fix - Filename sanitization now only runs while a file upload is actually in progress, so unrelated filename sanitization by WordPress core or other plugins is no longer affected.
 * Fix - "Update permalink" option no longer relies on `sanitize_file_name` hook priorities and only updates the attachment slug when the file was actually renamed.
 * Fix - Fixed security issues.
+* Fix - Request data passed to the `frou_renaming_validation` filter is now sanitized.
 * Dev - New filter: `frou_before_sanitize_file_name`.
 * Dev - New filter: `frou_is_upload_in_progress`.
+* Tested up to: 7.0.
 
 = 2.6.9 - 07/08/2026 =
 * Dev - Removed `load_plugin_textdomain` and `load_textdomain()` functions.
