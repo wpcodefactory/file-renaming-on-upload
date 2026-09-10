@@ -124,7 +124,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			add_filter( 'wp_handle_upload_prefilter', array( $this, 'set_upload_in_progress' ) );
 			add_filter( 'wp_handle_sideload_prefilter', array( $this, 'set_upload_in_progress' ) );
 			add_filter( 'wp_handle_upload', array( $this, 'clear_upload_in_progress' ), PHP_INT_MAX );
-			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename' ), 10, 2 );
+			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename_on_upload' ), 10, 2 );
 			add_action( 'admin_init', array( $this, 'add_promoting_notice' ) );
 			//add_action( 'admin_notices', array( $this, 'create_notice' ) );
 			add_filter( 'frou_filename_allowed', array( $this, 'block_ignored_filenames' ), 10, 3 );
@@ -455,6 +455,26 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		}
 
 		/**
+		 * sanitize_filename_on_upload.
+		 *
+		 * Callback for the sanitize_file_name filter, keeping the exact
+		 * signature of the hook. It only renames filenames while an upload is
+		 * actually in progress, so unrelated sanitize_file_name calls are not
+		 * affected.
+		 *
+		 * @version 2.7.0
+		 * @since   2.7.0
+		 *
+		 * @param   string  $filename      Sanitized file name.
+		 * @param   string  $filename_raw  The filename prior to sanitization.
+		 *
+		 * @return mixed|string
+		 */
+		public function sanitize_filename_on_upload( $filename, $filename_raw ) {
+			return $this->sanitize_filename( $filename, $filename_raw );
+		}
+
+		/**
 		 * Sanitizes filename.
 		 *
 		 * It's the main function of this plugin.
@@ -464,7 +484,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 *
 		 * @param   string  $filename
 		 * @param   string  $filename_raw
-		 * @param   bool    $ignore_upload_check  Set to true to run even when no upload is in progress (e.g. renaming files manually).
+		 * @param   bool    $ignore_upload_check  Optional. Set to true when calling this method directly, outside of the sanitize_file_name filter (e.g. renaming files manually).
 		 *
 		 * @return mixed|string
 		 */
