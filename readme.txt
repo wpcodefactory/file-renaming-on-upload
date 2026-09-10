@@ -1,10 +1,10 @@
 === Rename Media Files: Improve Your SEO ===
 Contributors: wpcodefactory, omardabbas, karzin, anbinder, kousikmukherjeeli
 Tags: rename, seo, media, renaming, characters
-Requires at least: 4.0
+Requires at least: 5.3
 Tested up to: 7.1
 Requires PHP: 5.3
-Stable tag: 2.6.9
+Stable tag: 2.7.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -257,7 +257,8 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 = 2.7.0 - 10/09/2026 =
 * Fix - Fixed `.gitattributes` file.
-* Fix - `Requires at least` in readme now uses major version only.
+* Fix - `Requires at least` now uses a major version only (5.3).
+* Dev - Excluded `git-tag.sh` from the distribution archive.
 * Fix - Filename sanitization now only runs while a file upload is actually in progress, so unrelated filename sanitization by WordPress core or other plugins is no longer affected.
 * Fix - "Update permalink" option no longer relies on `sanitize_file_name` hook priorities and only updates the attachment slug when the file was actually renamed.
 * Fix - Fixed security issues.

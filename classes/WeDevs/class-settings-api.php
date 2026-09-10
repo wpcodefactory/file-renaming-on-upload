@@ -234,7 +234,6 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 			}
 
 			wp_send_json_success( array( 'no_queue' => $no_queue, 'total_count' => $option_total_count, 'queue_count' => $option_queue_count, 'percent' => $final_percent ) );
-			wp_die();
 		}
 
 		/**
