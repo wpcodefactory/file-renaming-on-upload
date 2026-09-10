@@ -261,7 +261,6 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 * Fix - Filename sanitization now only runs while a file upload is actually in progress, so unrelated filename sanitization by WordPress core or other plugins is no longer affected.
 * Fix - "Update permalink" option no longer relies on `sanitize_file_name` hook priorities and only updates the attachment slug when the file was actually renamed.
 * Fix - Fixed security issues.
-* Fix - Request data passed to the `frou_renaming_validation` filter is now sanitized.
 * Dev - New filter: `frou_before_sanitize_file_name`.
 * Dev - New filter: `frou_is_upload_in_progress`.
 * Tested up to: 7.0.
