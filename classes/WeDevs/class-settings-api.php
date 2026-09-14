@@ -197,19 +197,27 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 			$queue = isset( $_POST['option_queue_count'] ) ? sanitize_key( wp_unslash( $_POST['option_queue_count'] ) ) : '';
 			// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
-			// Only allow option names the plugin itself registers, so request
-			// data can never be used to probe arbitrary options in the database.
-			$allowed_option_names = array();
+			// Only allow option names declared by the plugin's own progress bar
+			// fields, so request data can never be used to probe arbitrary
+			// options in the database.
+			$allowed_option_names = array( '' );
 			foreach ( $this->settings_fields as $section_fields ) {
 				if ( ! is_array( $section_fields ) ) {
 					continue;
 				}
 				foreach ( $section_fields as $field ) {
-					if ( ! empty( $field['name'] ) ) {
-						$allowed_option_names[] = $field['name'];
+					if ( empty( $field['type'] ) || 'progress_bar' !== $field['type'] ) {
+						continue;
+					}
+					if ( ! empty( $field['option_total_count'] ) ) {
+						$allowed_option_names[] = $field['option_total_count'];
+					}
+					if ( ! empty( $field['option_queue_count'] ) ) {
+						$allowed_option_names[] = $field['option_queue_count'];
 					}
 				}
 			}
+			$allowed_option_names = array_unique( $allowed_option_names );
 			if ( ! in_array( $total, $allowed_option_names, true ) || ! in_array( $queue, $allowed_option_names, true ) ) {
 				wp_send_json_error(
 					array( 'message' => __( 'Invalid option name.', 'file-renaming-on-upload' ) ),
