@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - WordPress Post Utils.
  *
- * @version 2.6.9
+ * @version 2.7.1
  * @since   2.6.1
  * @author  WPFactory
  */
@@ -164,23 +164,31 @@ if ( ! class_exists( 'FROU\Post_Utils' ) ) {
 		/**
 		 * get_post_id_from_query_string.
 		 *
-		 * @version 2.6.9
+		 * @version 2.7.1
 		 * @since   2.6.1
 		 *
 		 * @return mixed
 		 */
 		function get_post_id_from_query_string() {
 			$post_id_possibilities = apply_filters( 'frou_post_id_query_string_params', array( 'post_id', 'post_ID', 'post', 'product_id', 'frou_query_string_post_id' ) );
-			$post_id               = null;
+			$post_id               = 0;
 			foreach ( $post_id_possibilities as $key ) {
-				// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Utility reading URL params for post ID context, not processing form data.
+				// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only context hint set by the WordPress upload UI, whose own endpoints already verify upload nonces. No single nonce action applies here, and a nonce cannot prevent the flagged leak anyway; the post is access-checked with current_user_can() below before anything is used.
 				if ( isset( $_REQUEST[ $key ] ) ) {
-					$post_id = sanitize_text_field( wp_unslash( $_REQUEST[ $key ] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+					$request_value = wp_unslash( $_REQUEST[ $key ] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+					$post_id       = is_scalar( $request_value ) ? absint( $request_value ) : 0;
 					break;
 				}
 			}
 
-			return filter_var( $post_id, FILTER_SANITIZE_NUMBER_INT );
+			// Only accept posts the current user can read, so a
+			// requester-controlled post id cannot leak another post's title
+			// into the generated filename.
+			if ( $post_id && ( ! get_post( $post_id ) || ! current_user_can( 'read_post', $post_id ) ) ) {
+				return null;
+			}
+
+			return $post_id;
 		}
 	}
 }

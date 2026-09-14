@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core.
  *
- * @version 2.7.0
+ * @version 2.7.1
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -100,7 +100,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**
 		 * Initializes.
 		 *
-		 * @version 2.7.0
+		 * @version 2.7.1
 		 * @since   2.0.0
 		 *
 		 * @param   array  $args
@@ -123,6 +123,9 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 			// Scopes filename sanitization to actual uploads (upload or sideload), so unrelated sanitize_file_name calls are not modified.
 			add_filter( 'wp_handle_upload_prefilter', array( $this, 'set_upload_in_progress' ) );
 			add_filter( 'wp_handle_sideload_prefilter', array( $this, 'set_upload_in_progress' ) );
+			// Clear the flag when the upload fails too (see add_upload_error_cleanup()). These hooks exist since WordPress 5.7.
+			add_filter( 'wp_handle_upload_overrides', array( $this, 'add_upload_error_cleanup' ) );
+			add_filter( 'wp_handle_sideload_overrides', array( $this, 'add_upload_error_cleanup' ) );
 			add_filter( 'wp_handle_upload', array( $this, 'clear_upload_in_progress' ), PHP_INT_MAX );
 			add_filter( 'sanitize_file_name', array( $this, 'sanitize_filename_on_upload' ), 10, 2 );
 			add_action( 'admin_init', array( $this, 'add_promoting_notice' ) );
@@ -410,7 +413,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 * Marks the request as handling a file upload (or sideload), so filename
 		 * sanitization is only modified while an upload is actually taking place.
 		 *
-		 * @version 2.7.0
+		 * @version 2.7.1
 		 * @since   2.7.0
 		 *
 		 * @param   array  $file
@@ -419,6 +422,10 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 */
 		public function set_upload_in_progress( $file ) {
 			$this->upload_in_progress = true;
+
+			// Safety net: reset the flag when the request ends, even if the
+			// upload flow is sideloaded or fails before wp_handle_upload runs.
+			add_action( 'shutdown', array( $this, 'clear_upload_in_progress_on_shutdown' ) );
 
 			return $file;
 		}
@@ -443,6 +450,50 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		}
 
 		/**
+		 * add_upload_error_cleanup.
+		 *
+		 * Wraps the upload error handler so the upload flag is cleared even when
+		 * _wp_handle_upload() fails, which otherwise returns without firing the
+		 * wp_handle_upload filter. This keeps filename sanitization from leaking
+		 * to later sanitize_file_name calls in the same request.
+		 *
+		 * @version 2.7.1
+		 * @since   2.7.0
+		 *
+		 * @param   array|false  $overrides  Upload override parameters.
+		 *
+		 * @return array
+		 */
+		public function add_upload_error_cleanup( $overrides ) {
+			if ( ! is_array( $overrides ) ) {
+				$overrides = array();
+			}
+
+			$original_handler = isset( $overrides['upload_error_handler'] ) && is_callable( $overrides['upload_error_handler'] ) ? $overrides['upload_error_handler'] : 'wp_handle_upload_error';
+
+			$overrides['upload_error_handler'] = function ( &$file, $message ) use ( $original_handler ) {
+				$this->upload_in_progress = false;
+
+				return call_user_func_array( $original_handler, array( &$file, $message ) );
+			};
+
+			return $overrides;
+		}
+
+		/**
+		 * clear_upload_in_progress_on_shutdown.
+		 *
+		 * Resets the upload flag at the end of the request so filename
+		 * sanitization can never leak past a sideload or a failed upload.
+		 *
+		 * @version 2.7.1
+		 * @since   2.7.0
+		 */
+		public function clear_upload_in_progress_on_shutdown() {
+			$this->upload_in_progress = false;
+		}
+
+		/**
 		 * is_upload_in_progress.
 		 *
 		 * @version 2.7.0
@@ -462,7 +513,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 * actually in progress, so unrelated sanitize_file_name calls are not
 		 * affected.
 		 *
-		 * @version 2.7.0
+		 * @version 2.7.1
 		 * @since   2.7.0
 		 *
 		 * @param   string  $filename      Sanitized file name.
@@ -479,7 +530,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 *
 		 * It's the main function of this plugin.
 		 *
-		 * @version 2.7.0
+		 * @version 2.7.1
 		 * @since   2.0.0
 		 *
 		 * @param   string  $filename

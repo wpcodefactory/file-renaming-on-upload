@@ -32,6 +32,7 @@
     "preferred-install": "dist"
   },
   "require": {
+    "php": ">=7.0",
     "wpfactory/wpfactory-promoting-notice": "*",
     "tareq1988/wordpress-settings-api-class": "dev-master",
     "pablo-sg-pacheco/wp-namespace-autoloader": "dev-master",

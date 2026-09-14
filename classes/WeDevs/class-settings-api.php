@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Settings API.
  *
- * @version 2.7.0
+ * @version 2.7.1
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -176,7 +176,7 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 		/**
 		 * ajax_callback_progress_bar.
 		 *
-		 * @version 2.7.0
+		 * @version 2.7.1
 		 * @since   1.0.0
 		 */
 		public function ajax_callback_progress_bar() {
@@ -196,6 +196,26 @@ if ( ! class_exists( 'FROU\WeDevs\Settings_Api' ) ) {
 			$total = isset( $_POST['option_total_count'] ) ? sanitize_key( wp_unslash( $_POST['option_total_count'] ) ) : '';
 			$queue = isset( $_POST['option_queue_count'] ) ? sanitize_key( wp_unslash( $_POST['option_queue_count'] ) ) : '';
 			// phpcs:enable WordPress.Security.NonceVerification.Recommended
+
+			// Only allow option names the plugin itself registers, so request
+			// data can never be used to probe arbitrary options in the database.
+			$allowed_option_names = array();
+			foreach ( $this->settings_fields as $section_fields ) {
+				if ( ! is_array( $section_fields ) ) {
+					continue;
+				}
+				foreach ( $section_fields as $field ) {
+					if ( ! empty( $field['name'] ) ) {
+						$allowed_option_names[] = $field['name'];
+					}
+				}
+			}
+			if ( ! in_array( $total, $allowed_option_names, true ) || ! in_array( $queue, $allowed_option_names, true ) ) {
+				wp_send_json_error(
+					array( 'message' => __( 'Invalid option name.', 'file-renaming-on-upload' ) ),
+					403
+				);
+			}
 
 			$option_total = get_option( $total );
 			$option_queue = get_option( $queue );

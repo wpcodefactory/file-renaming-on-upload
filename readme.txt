@@ -3,8 +3,8 @@ Contributors: wpcodefactory, omardabbas, karzin, anbinder, kousikmukherjeeli
 Tags: rename, seo, media, renaming, characters
 Requires at least: 5.3
 Tested up to: 7.1
-Requires PHP: 5.3
-Stable tag: 2.7.0
+Requires PHP: 7.0
+Stable tag: 2.7.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -254,6 +254,12 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 3. Setup how the rules will work on your filename
 
 == Changelog ==
+
+= 2.7.1 - 14/09/2026 =
+* Fix - Declared `Requires PHP` (7.0) in the readme and plugin header, matching the code syntax.
+* Fix - Upload-in-progress flag is now cleared when the upload finishes, fails, or the request ends, so sanitization can't leak after sideloads or failed uploads.
+* Fix - Progress bar AJAX endpoint now only reads option names registered by the plugin.
+* Fix - Post ID from request data is now validated against the current user's read access before it is used for the filename.
 
 = 2.7.0 - 10/09/2026 =
 * Fix - Fixed `.gitattributes` file.
