@@ -587,7 +587,8 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 
 			$allowed = apply_filters( 'frou_filename_allowed', true, $filename, array( 'info' => $info, 'extension' => $extension ) );
 			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Filter callback, not a form handler. WordPress core verifies upload nonces before sanitize_file_name runs; the array is sanitized below and passed as read-only context.
-			$request = isset( $_REQUEST ) ? map_deep( wp_unslash( $_REQUEST ), 'sanitize_text_field' ) : array();
+			$request_raw = isset( $_REQUEST ) ? wp_unslash( $_REQUEST ) : array();
+			$request     = map_deep( $request_raw, 'sanitize_text_field' );
 			$allowed_to_rename = apply_filters(
 				'frou_renaming_validation',
 				true,

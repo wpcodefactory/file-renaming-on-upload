@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Permalink update Option.
  *
- * @version 2.7.0
+ * @version 2.7.2
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -106,7 +106,7 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 		/**
 		 * After a file is uploaded, make its name unique.
 		 *
-		 * @version 2.7.0
+		 * @version 2.7.2
 		 * @since   2.0.0
 		 *
 		 * @param $post_id
@@ -124,9 +124,11 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 			}
 			$unique_slug     = wp_unique_post_slug( $this->current_filename_modified, $post->ID, $post->post_status, $post->post_type, $post->post_parent );
 			$post->post_name = $unique_slug;
-			//do_action('frou_update_post_before', $post_id);
 			wp_update_post( $post );
-			//do_action('frou_update_post_after', $post_id);
+
+			// Prevent this value from being reused for a later, unrelated attachment in the same request.
+			$this->current_filename_modified  = null;
+			$this->current_filename_original  = null;
 		}
 
 		/**
