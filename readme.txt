@@ -1,10 +1,10 @@
 === Rename Media Files: Improve Your SEO ===
 Contributors: wpcodefactory, omardabbas, karzin, anbinder, kousikmukherjeeli
 Tags: rename, seo, media, renaming, characters
+Stable tag: 2.7.1
 Requires at least: 5.3
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 2.7.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -255,7 +255,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 
 == Changelog ==
 
-= 2.7.1 - 14/09/2026 =
+= 2.7.1 - 15/09/2026 =
 * Fix - Declared `Requires PHP` (7.0) in the readme and plugin header, matching the code syntax.
 * Fix - Upload-in-progress flag is now cleared when the upload finishes, fails, or the request ends, so sanitization can't leak after sideloads or failed uploads.
 * Fix - Code refactoring.
