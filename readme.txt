@@ -258,6 +258,7 @@ Head over to the [File Renaming on Upload plugin GitHub Repository](https://gith
 = 2.7.1 - 14/09/2026 =
 * Fix - Declared `Requires PHP` (7.0) in the readme and plugin header, matching the code syntax.
 * Fix - Upload-in-progress flag is now cleared when the upload finishes, fails, or the request ends, so sanitization can't leak after sideloads or failed uploads.
+* Fix - Code refactoring.
 * Fix - Fixed security issues.
 
 = 2.7.0 - 10/09/2026 =
