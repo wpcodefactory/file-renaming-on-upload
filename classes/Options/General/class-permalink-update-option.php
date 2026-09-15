@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Permalink update Option.
  *
- * @version 2.7.2
+ * @version 2.7.1
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -106,7 +106,7 @@ if ( ! class_exists( 'FROU\Options\General\Permalink_Update_Option' ) ) {
 		/**
 		 * After a file is uploaded, make its name unique.
 		 *
-		 * @version 2.7.2
+		 * @version 2.7.1
 		 * @since   2.0.0
 		 *
 		 * @param $post_id

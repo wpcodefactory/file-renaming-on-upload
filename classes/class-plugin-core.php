@@ -2,7 +2,7 @@
 /**
  * File renaming on upload - Plugin core.
  *
- * @version 2.7.2
+ * @version 2.7.1
  * @since   2.0.0
  * @author  WPFactory
  */
@@ -100,7 +100,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		/**
 		 * Initializes.
 		 *
-		 * @version 2.7.2
+		 * @version 2.7.1
 		 * @since   2.0.0
 		 *
 		 * @param   array  $args
@@ -422,7 +422,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 * Attaches the sanitize_file_name filter for the duration of the upload
 		 * only, instead of leaving it registered for the whole request.
 		 *
-		 * @version 2.7.2
+		 * @version 2.7.1
 		 * @since   2.7.0
 		 *
 		 * @param   array  $file
@@ -447,7 +447,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 * Clears the upload flag once WordPress finishes handling the upload,
 		 * restoring the default sanitize_file_name behaviour for the rest of the request.
 		 *
-		 * @version 2.7.2
+		 * @version 2.7.1
 		 * @since   2.7.0
 		 *
 		 * @param   array  $upload
@@ -468,7 +468,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 * wp_handle_upload filter. This keeps filename sanitization from leaking
 		 * to later sanitize_file_name calls in the same request.
 		 *
-		 * @version 2.7.2
+		 * @version 2.7.1
 		 * @since   2.7.0
 		 *
 		 * @param   array|false  $overrides  Upload override parameters.
@@ -497,7 +497,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 * Resets the upload flag at the end of the request so filename
 		 * sanitization can never leak past a sideload or a failed upload.
 		 *
-		 * @version 2.7.2
+		 * @version 2.7.1
 		 * @since   2.7.0
 		 */
 		public function clear_upload_in_progress_on_shutdown() {
@@ -512,7 +512,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 * stack once the upload (or sideload) has finished, failed, or the
 		 * request is shutting down.
 		 *
-		 * @version 2.7.2
+		 * @version 2.7.1
 		 * @since   2.7.2
 		 */
 		protected function deactivate_upload_in_progress() {
@@ -542,7 +542,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 * deactivate_upload_in_progress()), so unrelated sanitize_file_name
 		 * calls elsewhere in WordPress are never touched by this plugin.
 		 *
-		 * @version 2.7.2
+		 * @version 2.7.1
 		 * @since   2.7.0
 		 *
 		 * @param   string  $filename      Sanitized file name.
@@ -559,7 +559,7 @@ if ( ! class_exists( 'FROU\Plugin_Core' ) ) {
 		 *
 		 * It's the main function of this plugin.
 		 *
-		 * @version 2.7.2
+		 * @version 2.7.1
 		 * @since   2.0.0
 		 *
 		 * @param   string  $filename
