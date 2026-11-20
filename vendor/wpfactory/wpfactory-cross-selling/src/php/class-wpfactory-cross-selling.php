@@ -32,7 +32,7 @@ if ( ! class_exists( 'WPFactory\WPFactory_Cross_Selling\WPFactory_Cross_Selling'
 		 *
 		 * @var string
 		 */
-		protected $version = '1.1.3';
+		protected $version = '1.1.7';
 
 		/**
 		 * Setup args.
